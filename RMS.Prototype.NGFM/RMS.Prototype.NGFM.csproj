@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{315B534A-66AD-405E-8029-6D769D6E233F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RMS.Prototype.NGFM</RootNamespace>
+    <AssemblyName>RMS.Prototype.NGFM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/extractbrowser/</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\lib\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\lib\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <PostSharpProperties>IgnoredAssemblies=noesis.javascript</PostSharpProperties>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FA122CAD81CC687FAF8C0C26E4E97AF85BBA7732</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>RMS.Prototype.NGFM_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CurrentPlatform>$(PlatformTarget)</CurrentPlatform>
+    <CurrentPlatform Condition="'$(CurrentPlatform)'=='AnyCPU' and '$(PROCESSOR_ARCHITECTURE)'=='AMD64'">x64</CurrentPlatform>
+    <CurrentPlatform Condition="'$(CurrentPlatform)'=='AnyCPU' and '$(PROCESSOR_ARCHITECTURE)'=='IA64'">x64</CurrentPlatform>
+    <CurrentPlatform Condition="'$(CurrentPlatform)'=='AnyCPU' and '$(PROCESSOR_ARCHITEW6432)'=='AMD64'">x64</CurrentPlatform>
+    <CurrentPlatform Condition="'$(CurrentPlatform)'=='AnyCPU' and '$(PROCESSOR_ARCHITEW6432)'=='IA64'">x64</CurrentPlatform>
+    <CurrentPlatform Condition="'$(CurrentPlatform)'=='AnyCPU' and '$(PROCESSOR_ARCHITECTURE)'=='x86'">x86</CurrentPlatform>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\ThirdParty\Antlr\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Jint, Version=2.4.0.0, Culture=neutral, PublicKeyToken=2e92ba9c8d81157f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdParty\Jint.2.4.0\lib\portable-net40+sl50+win+wpa81+wp80\Jint.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonPrettyPrinterPlus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdParty\JsonPrettyPrinterPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Jurassic">
+      <HintPath>..\ThirdParty\Jurassic\Jurassic.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\NG3rdParty\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NGFMReference, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\NGFMReference.dll</HintPath>
+    </Reference>
+    <Reference Include="Noesis.Javascript, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdParty\Noesis.Javascript v0.7 - Binaries\.Net4.0\$(CurrentPlatform)\Noesis.Javascript.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView">
+      <HintPath>..\ThirdParty\ObjectListViewDemo\ObjectListView\obj\Debug\ObjectListView.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.480, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\NG3rdParty\ProtoBuf\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Analytics.DataService.Zip, Version=1.0.1365.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\Rms.Analytics.DataService.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Analytics.Module.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Rms.Analytics.Module.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Cdl.Backend">
+      <HintPath>..\..\..\..\CDL\Lib\Rms.Cdl.Backend.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.CDL.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CDL\Lib\Rms.CDL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Cdl.DataObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\CDL\Lib\Rms.Cdl.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5353c9f66d4ed1ec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.DataObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5353c9f66d4ed1ec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.LogExtension, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5353c9f66d4ed1ec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.LogExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Platform.Infrastructure.Diagnostics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5353c9f66d4ed1ec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\NGPlatform\lib\Rms.Platform.Infrastructure.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContractExposureTreeListModelNode.cs" />
+    <Compile Include="ContractGraphBuilder.cs" />
+    <Compile Include="grammar\CDL.g4.lexer.cs">
+      <DependentUpon>CDL.g4</DependentUpon>
+    </Compile>
+    <Compile Include="grammar\CDL.g4.parser.cs">
+      <DependentUpon>CDL.g4</DependentUpon>
+    </Compile>
+    <Compile Include="JurassicHarness.cs" />
+    <Compile Include="HDFM.cs" />
+    <Compile Include="IParsingHarness.cs" />
+    <Compile Include="JintHarness.cs" />
+    <Compile Include="NoesisJsHarness.cs" />
+    <Compile Include="TaskManager.cs" />
+    <Compile Include="Utilities\ObjectUtilities.cs" />
+    <Compile Include="Utilities\DebugMessager.cs" />
+    <Compile Include="Utilities\TypeUtilities.cs" />
+    <Compile Include="ContractsAndExposuresHarness.cs" />
+    <Compile Include="NGFMPrototypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NGFMPrototypeForm.Designer.cs">
+      <DependentUpon>NGFMPrototypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NGFMPrototype.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+    <EmbeddedResource Include="NGFMPrototypeForm.resx">
+      <DependentUpon>NGFMPrototypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="..\cdl2js_ir\src\grammar\grammar-ast.jison">
+      <Link>grammar\grammar-ast.jison</Link>
+    </None>
+    <None Include="..\cdl2js_ir\src\grammar\grammar.flex">
+      <Link>grammar\grammar.flex</Link>
+    </None>
+    <Antlr4 Include="grammar\CDL.g4">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>RMS.Prototype.NGFM.grammar</CustomToolNamespace>
+    </Antlr4>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RMSLogger.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\cdl2js_ir\src\underscore.js">
+      <Link>underscore.js</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NGFM.Reference.MatrixHDFM\NGFM.Reference.MatrixHDFM.csproj">
+      <Project>{ae80708e-2bbe-4103-b62d-2dd523c78902}</Project>
+      <Name>NGFM.Reference.MatrixHDFM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.CDLModel\RMS.ContractObjectModel.csproj">
+      <Project>{ec1cde85-fd21-4abd-ab56-d0b8fc1d672e}</Project>
+      <Name>RMS.ContractObjectModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.ContractGraphModel\RMS.ContractGraphModel.csproj">
+      <Project>{8ea7d950-6e8d-4715-a440-d8c037f6a3bc}</Project>
+      <Name>RMS.ContractGraphModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <!-- Folder containing AntlrBuildTask.dll -->
+    <AntlrBuildTaskPath>..\ThirdParty\Antlr</AntlrBuildTaskPath>
+    <!-- Path to the ANTLR Tool itself. -->
+    <AntlrToolPath>..\ThirdParty\Antlr\Antlr.exe</AntlrToolPath>
+  </PropertyGroup>
+  <Import Project="..\ThirdParty\Antlr\Antlr3.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>jison ../Sandbox/CDLNGFMPrototype/cdl2js_ir/src/grammar/grammar-ast.jison ../Sandbox/CDLNGFMPrototype/cdl2js_ir/src/grammar/grammar.flex -o grammar-ast.js
+
+java -jar ../Sandbox/CDLNGFMPrototype/ThirdParty/Antlr/antlr-4.5-complete.jar -Dlanguage=CSharp ../Sandbox/CDLNGFMPrototype/RMS.Prototype.NGFM/grammar/CDL.g4
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy .\grammar-ast.js ..\Sandbox\CDLNGFMPrototype\cdl2js_ir\public\scripts\grammar-ast.js
+
+copy ..\Sandbox\CDLNGFMPrototype\RMS.Prototype.NGFM\App.config .\App.config
+
+IF EXIST ..\..\..\..\..\NGDLM\Lib\ (
+    copy .\grammar-ast.js ..\..\..\..\..\NGDLM\Lib\grammar-ast.js
+    copy .\underscore.js ..\..\..\..\..\NGDLM\Lib\underscore.js
+)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

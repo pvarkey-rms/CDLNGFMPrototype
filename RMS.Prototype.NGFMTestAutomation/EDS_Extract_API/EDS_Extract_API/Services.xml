@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ServicesToRegister>
+  <Service Name="ExportLossResults" DevOwner="Nathalie.Grima@rms.com" DependentDevOwner="Nathalie.Grima@rms.com" QAOwner="Shilpa.Amarnath@rms.com"  Type="ExportLosses.ExportResultsService"></Service>
+  <Service Name="ExportLossValidation" DevOwner="Nathalie.Grima@rms.com" DependentDevOwner="Nathalie.Grima@rms.com" QAOwner="Shilpa.Amarnath@rms.com"  Type="ExportLosses.ExportLossValidation"></Service>
+  <Service Name="ExportLossDownloadMgrRESTAPI" DevOwner="Nathalie.Grima@rms.com" DependentDevOwner="Nathalie.Grima@rms.com" QAOwner="Shilpa.Amarnath@rms.com"  Type="ExportLosses.ExportLossDownloadMgrRESTAPI"></Service>
+  <Service Name="GetHealthCheck" DevOwner="Suman.Bhattacharya@rms.com" DependentDevOwner="Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"  Type="ServiceHealthCheck.GetHealthCheck"></Service>
+  <Service Name="WindowsServiceHealthCheck" DevOwner="Suman.Bhattacharya@rms.com" DependentDevOwner=" Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"  Type="ServiceHealthCheck.WindowsServiceHealthCheck"></Service>
+  <Service Name="PseudoServiceHealthCheck" DevOwner="Jayant.Srivastava@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="wlin@rms.com" Type="ServiceHealthCheck.PseudoServiceHealthCheck"></Service>
+  <Service Name="GetPortfolioById" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetPortfolioByIdClient"></Service>
+  <Service Name="GetPortfolioCedantExposure" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetPortfolioCedantExposureClient"></Service>
+  <!-- Exposure Service Filters -->
+  <Service Name="CreateExposureFilter" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.CreateExposureFilterClient"></Service>
+  <Service Name="GetExposureFilter" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetExposureFilterClient"></Service>
+  <Service Name="GetExposureFilterList" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetExposureFilterListClient"></Service>
+  <!-- Exposure Service Filters -->
+  <Service Name="CreateExposedParty" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.CreateExposedPartyClient"></Service>
+  <Service Name="GetExposedPartyList" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetExposedPartyListClient"></Service>
+  <Service Name="CreatePortfolio" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.CreatePortfolioClient"></Service>
+  <Service Name="GetWhatIfTagList" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetWhatIfTagListClient"></Service>
+  <Service Name="GetContractListAsOfDate" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Neeraj.Mehta@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetContractListAsOfDateClient"></Service>
+  <Service Name="GetContractList" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Neeraj.Mehta@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureData.GetContractListClient"></Service>
+  <Service Name="GetContractDetail" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Neeraj.Mehta@rms.com" QAOwner="Rahul.Patasariya@rms.com"  Type="ExposureData.GetContractDetailClient"></Service>
+  <Service Name="GetContractsByProgram" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Neeraj.Mehta@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetContractsByProgramClient"></Service>
+  <Service Name="GetContractVersions" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Neeraj.Mehta@rms.com" QAOwner="Rahul.Patasariya@rms.com"  Type="ExposureData.GetContractVersionsClient"></Service>
+  <Service Name="GetProgramById" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Neeraj.Mehta@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetProgramByIdClient"></Service>
+  <Service Name="GetPrograms" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Neeraj.Mehta@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetProgramsClient"></Service>
+  <Service Name="CreateProgram" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Neeraj.Mehta@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.CreateProgramClient"></Service>
+  <Service Name="GetPortfolioContractList" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureData.GetPortfolioContractListClient"></Service>
+  <Service Name="GetPortfolioAsOfDate" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetPortfolioAsOfDateClient"></Service>
+  <Service Name="GetPortfolioList" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetPortfolioListClient"></Service>
+  <Service Name="UpdatePortfolio" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.UpdatePortfolioClient"></Service>
+  <Service Name="CreatePortfolioValidation" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.CreatePortfolioValidation"></Service>
+  <Service Name="ReportingSegmentsValidation" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.ReportingSegmentsValidation"></Service>
+  <Service Name="GetCedantAsOfDate" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetCedantListAsOfDateClient"></Service>
+  <Service Name="GetCedantById" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetCedantByIDClient"></Service>
+  <Service Name="GetCedantByIdOnlyId" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.GetCedantExposureByIdV2OnlyIdUrl"></Service>
+  <Service Name="CreateCedantExposure" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.CreateCedantExposureClient"></Service>
+  <Service Name="UpdateCedantExposure" DevOwner="Maayan.Taragan@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Ramola.Malar@rms.com"  Type="ExposureService.UpdateCedantExposureClient"></Service>
+  <Service Name="CreateTreaty" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Vikram.patankr@rms.com" QAOwner="Liwei.Sun@rms.com;Ramola.Malar@rms.com" Type="ExposureService.CreateTreatyClient"></Service>
+  <Service Name="UpdateTreaty" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Vikram.patankr@rms.com" QAOwner="Liwei.Sun@rms.com;Ramola.Malar@rms.com" Type="ExposureService.UpdateTreatyClient"></Service>
+  <Service Name="CopyTreaty" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Vikram.patankr@rms.com" QAOwner="Liwei.Sun@rms.com;Ramola.Malar@rms.com" Type="ExposureService.CopyTreatyClient"></Service>
+  <Service Name="CreateContract" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Vikram.patankr@rms.com" QAOwner="Liwei.Sun@rms.com;Ramola.Malar@rms.com" Type="ExposureService.CreateContract"></Service>
+  <Service Name="GetRiskItemList" DevOwner="Puja.sinha@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Rohit.Kaushik@rms.com" Type="ExposureService.GetRiskItemListClient"></Service>
+  <Service Name="GetRiskItemListValidation" DevOwner="Puja.sinha@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="Rohit.Kaushik@rms.com" Type="ExposureService.GetRiskItemListValidation" enum="Validating"></Service>
+
+  <!--RITManager test services v2-->
+	
+  <!-- Risk Item test services -->	
+  <Service Name="CreateRiskItem" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.CreateRiskItemClient"></Service>
+  <Service Name="CreateRiskItemValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.CreateRiskItemValidation"></Service>
+  <Service Name="UpdateRiskItem" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.UpdateRiskItemClient"></Service>
+  <Service Name="UpdateRiskItemValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.UpdateRiskItemValidation"></Service>
+  <Service Name="GetRiskItemById" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.GetRiskItemByIdClient"></Service>
+  <Service Name="GetRiskItemByIdValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.GetRiskItemByIdValidation"></Service>
+  <Service Name="GetRiskItemListV2" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.GetRiskItemListClient"></Service>
+  <Service Name="GetRiskItemVersions" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.GetRiskItemVersionsClient"></Service>
+  <Service Name="GetRiskItemVersionsValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.GetRiskItemVersionsValidation"></Service>
+	
+  <Service Name="GetRiskItemAddress" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.GetRiskItemAddressClient"></Service>
+  <Service Name="GetRiskItemAddressValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.GetRiskItemAddressValidation"></Service>
+  <Service Name="GetRiskItemCommonChar" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.GetRiskItemCommonCharClient"></Service>
+  <Service Name="GetRiskItemCommonCharValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.GetRiskItemCommonCharValidation"></Service>
+  <Service Name="GetRiskItemHazard" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.GetRiskItemHazardClient"></Service>
+  <Service Name="GetRiskItemHazardValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemClients.GetRiskItemHazardValidation"></Service>
+
+  <!-- Contract test services V2-->
+  <Service Name="GetRiskItemsByContract" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.ContractClients.GetRiskItemsByContractClient"></Service>
+	
+  <!-- Account test services -->	 
+  <Service Name="CreateAccount" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.AccountTestClients.CreateAccountClient"></Service>
+  <Service Name="CreateAccountValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.AccountTestClients.CreateAccountValidation"></Service>
+  <Service Name="UpdateAccount" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.AccountTestClients.UpdateAccountClient"></Service>
+  <Service Name="UpdateAccountValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.AccountTestClients.UpdateAccountValidation"></Service>
+  <Service Name="GetAccountById" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.AccountTestClients.GetAccountByIdClient"></Service>
+  <Service Name="GetAccountByIdValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.AccountTestClients.GetAccountByIdValidation"></Service>
+  <Service Name="GetRiskItemSchedulesByAccountId" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.AccountTestClients.GetRiskItemSchedulesByAccountIdClient"></Service>
+  <Service Name="GetRiskItemSchedulesByAccountIdValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.AccountTestClients.GetRiskItemSchedulesByAccountIdValidation"></Service>
+  <Service Name="GetAccountList" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.AccountTestClients.GetAccountListClient"></Service>
+  <Service Name="GetAccountListValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.AccountTestClients.GetAccountListValidation"></Service>
+  <Service Name="GetRiskItemsByAccountId" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.AccountTestClients.GetRiskItemsByAccountIdClient"></Service>
+
+  <!-- RiskItemSchedule test services -->	
+  <Service Name="CreateRiskItemSchedule" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.CreateRiskItemScheduleClient"></Service>
+  <Service Name="CreateRiskItemScheduleValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.CreateRiskItemScheduleValidation"></Service>
+  <Service Name="UpdateRiskItemSchedule" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.UpdateRiskItemScheduleClient"></Service>
+  <Service Name="UpdateRiskItemScheduleValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.UpdateRiskItemScheduleValidation"></Service>
+  <Service Name="GetRiskItemsByRiskItemScheduleId" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.GetRiskItemsByRiskItemScheduleIdClient"></Service>
+  <Service Name="GetRiskItemScheduleList" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.GetRiskItemScheduleListClient"></Service>
+  <Service Name="GetRiskItemScheduleListValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.GetRiskItemScheduleListValidation"></Service>
+  <Service Name="GetRiskItemScheduleById" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.GetRiskItemScheduleByIdClient"></Service>
+  <Service Name="GetRiskItemScheduleByIdValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.GetRiskItemScheduleByIdValidation"></Service>
+  <Service Name="GetRiskItemScheduleVersions" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.GetRiskItemScheduleVersionsClient"></Service>
+  <Service Name="GetRiskItemScheduleVersionsValidation" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.GetRiskItemScheduleVersionsValidation"></Service>
+  <Service Name="GetCountriesByRiskItemScheduleId" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.GetCountriesByRiskItemScheduleIdClient"></Service>
+  <Service Name="GetSubjectAtRisksByRiskItemScheduleId" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.GetSubjectAtRisksByRiskItemScheduleIdClient"></Service>
+  <Service Name="GetSubjectAtRisksWithRiskItemByRiskItemScheduleId" DevOwner="Neeraj.Mehta@rms.com" DependentDevOwner="Puja.Sinha@rms.com" QAOwner="rmsngqa@haemimont.com" Type="ExposureService.RiskItemScheduleClients.GetSubjectAtRisksWithRiskItemByRiskItemScheduleIdClient"></Service>
+  
+  <!--RITManager test services v2 - end-->
+  
+  <Service Name="GetWidgetData" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Supreet.Singh@rms.com"  Type="BIDataService.GetWidgetDataClient"></Service>
+  <Service Name="GetDashBoardData" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Supreet.Singh@rms.com"  Type="BIDataService.GetDashBoardDataClient"></Service>
+  <Service Name="PortfolioFacts_Validation" DevOwner="ramola.malar@rms.com" DependentDevOwner="rahul.patasariya@rms.com" QAOwner="Shobana.Azariah@rms.com" Type="BIDataService.ValidatePortfolioFactsClient" enum = "Validating"></Service>
+  <Service Name="ELAResultValidation" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Supreet.Singh@rms.com"  Type="BIDataService.ELAResultValidation" enum="Validating"></Service>
+  <Service Name="UpdateWFLJobDetails" DevOwner="namit.Juyal@rms.com" DependentDevOwner="ankur.gupta@rms.com" QAOwner="Shobana.Azariah@rms.com" Type="BIDataService.UpdateWFLJobDetails"></Service>
+  <Service Name="ComparisonDashboard" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Kanika.Maheshwari@rms.com"  Type="BIDataService.ComparisonDashboardClient"></Service>
+  <Service Name="ExpLimitBaselineCompare" DevOwner="NATHALIE.GRIMA@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="Ramani.Balijepalli@rms.com"  Type="BIDataService.ExpLimitBaselineCompare"></Service>
+  <Service Name="SaveWidget" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com;Anirban.Kundu@rms.com;Ravisher.Dhillon@rms.com" QAOwner="Chris.Perianayagam@rms.com"  Type="WidgetService.SaveWidgetClient"></Service>
+  <Service Name="SaveDashBoardTemplate" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com;Anirban.Kundu@rms.com;Ravisher.Dhillon@rms.com" QAOwner="Chris.Perianayagam@rms.com"  Type="WidgetService.SaveUpdateTemplateClient"></Service>
+  <Service Name="GetDashBoardTemplate" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Chris.Perianayagam@rms.com"  Type="WidgetService.GetDashBoardTemplateClient"></Service>
+  <Service Name="DeleteDashBoardTemplate" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Chris.Perianayagam@rms.com"  Type="WidgetService.DeleteTemplate"></Service>
+  <Service Name="SeedELAPredefinedDashboardTemplate" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Chris.Perianayagam@rms.com"  Type="Utilities.SeedELADashboardTemplate.SeedELADashboardTemplate"></Service>
+  <Service Name="ETLtoDWPush" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Steven.Chau@rms.com"  Type="ETL2DW.ETL2DW_Push_CLient"></Service>
+  <Service Name="ETLtoDWSeedDataComparison" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Steven.Chau@rms.com"  Type="ETL2DW.ETL2DW_SeedDataComparison_Client"></Service>
+  <Service Name="ETLtoDWMongoDetailComparison" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Steven.Chau@rms.com"  Type="ETL2DW.ETL2DW_MongoDetailComparison_Client"></Service>
+  <Service Name="ETLtoDWDimensionTableComparisson" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Steven.Chau@rms.com"  Type="ETL2DW.ETL2DW_DimensionTableComparisson_Client"></Service>
+  <Service Name="ETLtoDWZoneStampingClient" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Tanmay.Kumar@rms.com" QAOwner="Steven.Chau@rms.com"  Type="ETL2DW.ETL2DW_ZoneStamping_Client"></Service>
+  <Service Name="GetExposureUpload" DevOwner="Terry.Liu@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="ramani.balijepalli@rms.com" Type="ExposureUpload.GetExposureUploadClient"></Service>
+  <Service Name="CreateExposureUpload" DevOwner="Valli.Gadiyaram@rms.com" DependentDevOwner="Terry.Liu@rms.com" QAOwner="ramani.balijepalli@rms.com" Type="ExposureUpload.CreateExposureUploadClient" enum="Processing"></Service>
+  <Service Name="ImportExposure" DevOwner="Valli.Gadiyaram@rms.com" DependentDevOwner="Valli.Gadiyaram@rms.com" QAOwner="ramani.balijepalli@rms.com" Type="ImportExposure.ImportExposureClient" enum="Processing" Namespace="BETA.Service.AutomationSuite.ImportExposure"></Service>
+  <Service Name="CancelExposureUpload" DevOwner="Terry.Liu@rms.com" DependentDevOwner="Vikram.Patankar@rms.com" QAOwner="ramani.balijepalli@rms.com" Type="ExposureUpload.CancelExposureUploadClient"></Service>
+  <Service Name="Data_Validation" DevOwner="Jayant.Srivastava@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="Shobana.Azariah@rms.com" Type="Validation.DataValidation" enum="Validating"></Service>
+  <Service Name="ImportData_Validation" DevOwner="Valli.Gadiyaram@rms.com" DependentDevOwner="Ashish.Chaturvedi@rms.com" QAOwner="Kiru.Subramanian@rms.com" Type="ImportDataValidation.ImportDataValidation" enum="Validating"></Service>
+  <Service Name="ImportExposure_Validation" DevOwner="Valli.Gadiyaram@rms.com" DependentDevOwner="Valli.Gadiyaram@rms.com" QAOwner="Rohit.Kaushik@rms.com" Type="ImportExposureValidation.ImportExposureValidation" enum="Validating"></Service>
+  <Service Name="ExportExposure" DevOwner="Alexandra.Chalaya@rms.com" DependentDevOwner="Alexandra.Chalaya@rms.com" QAOwner="yauhen.lysakou@rms.com" Type="ExportExposure.ExportExposure" enum="Processing"></Service>
+  <Service Name="ExportExposureValidation" DevOwner="Alexandra.Chalaya@rms.com" DependentDevOwner="Alexandra.Chalaya@rms.com" QAOwner="siarhei.sobaleu@rms.com"  Type="ExportExposureValidation.ExportExposureValidation" enum="Validating"></Service>
+  <Service Name="DOTManagement" DevOwner="Jayant.Srivastava@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="Shobana.Azariah@rms.com" Type="DOTMgmt.DOTManagement"></Service>
+  <Service Name="GEOHAZ_Validation" DevOwner="Atin.Jain@rms.com" DependentDevOwner="Shraddha.Sahay@rms.com" QAOwner="njuyal@rms.com"  Type="GeoCoding.ValidateGeoHaz"></Service>
+  <Service Name="DEPLOYMENT_VALIDATE" DevOwner=" Suman.Bhattacharya@rms.com" DependentDevOwner=" Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"   Type="Deployment.DeploymentValidation"></Service>
+  <Service Name="MongoMGC_Validation" DevOwner=" Suman.Bhattacharya@rms.com" DependentDevOwner=" Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"  Type="Deployment.MongoMGC_Validations"></Service>
+  <Service Name="DomainDataValidation" DevOwner=" Suman.Bhattacharya@rms.com" DependentDevOwner=" Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"  Type="Deployment.DomainDataValidation"></Service>
+  <Service Name="EnvIniValidation" DevOwner=" Suman.Bhattacharya@rms.com" DependentDevOwner=" Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"  Type="Deployment.EnvIniFileTokenValidation"></Service>
+  <Service Name="TestClientUploader" DevOwner=" Suman.Bhattacharya@rms.com" DependentDevOwner=" Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"  Type="Deployment.ClientUploaderValidation"></Service>
+  <Service Name="Service_Validation" DevOwner=" Suman.Bhattacharya@rms.com" DependentDevOwner=" Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"  Type="Deployment.ServerXMLandThirdPartyValidation"></Service>
+  <Service Name="ServerConfigKeyValueValidation" DevOwner=" Suman.Bhattacharya@rms.com" DependentDevOwner=" Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"  Type="Deployment.ServerConfigKeyValueValidation"></Service>
+  <Service Name="ServerDatabase_Validation" DevOwner=" Suman.Bhattacharya@rms.com" DependentDevOwner=" Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"  Type="Deployment.ServerDatabaseValidation"></Service>
+  <Service Name="ServerInformatica_Validation" DevOwner=" Suman.Bhattacharya@rms.com" DependentDevOwner=" Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"  Type="Deployment.ServerInformaticaValidation"></Service>
+  <Service Name="SetConfiguration" DevOwner="Jayant.Srivastava@rms.com" DependentDevOwner="NATHALIE.GRIMA@rms.com" QAOwner="umesh.chander@rms.com"  Type="ConfigurationTest.SetConfigurationClient"></Service>
+  <Service Name="GetConfiguration" DevOwner="Jayant.Srivastava@rms.com" DependentDevOwner="NATHALIE.GRIMA@rms.com" QAOwner="umesh.chander@rms.com"  Type="ConfigurationTest.GetConfigurationClient"></Service>
+  <Service Name="DeleteConfiguration" DevOwner="Jayant.Srivastava@rms.com" DependentDevOwner="NATHALIE.GRIMA@rms.com" QAOwner="umesh.chander@rms.com"  Type="ConfigurationTest.DeleteConfigurationClient"></Service>
+  <Service Name="RLFMCompare" DevOwner="rmsngqa@haemimont.com" DependentDevOwner="Nina.He@rms.com" QAOwner="ankur.gupta@rms.comm" Type="RLFMComparer.RlfmComparer"></Service>
+  <Service Name="BatchGenerator" DevOwner="rmsngqa@haemimont.com" DependentDevOwner="Nina.He@rms.com" QAOwner="ankur.gupta@rms.com" Type="BatchGenerator.BatchGenerator"></Service>
+  <Service Name="TileService" DevOwner="Deval.Chauhan@rms.com" DependentDevOwner="Aman.Bhardwaj@rms.com" QAOwner="Gaurav.Kumar@rms.com"  Type="MappingService.TileService"></Service>
+  <Service Name="FeatureInfo" DevOwner="Deval.Chauhan@rms.com" DependentDevOwner="Aman.Bhardwaj@rms.com" QAOwner="Gaurav.Kumar@rms.com"  Type="MappingService.GetFeatureInfo"></Service>
+  <Service Name="ThematicMap" DevOwner="Deval.Chauhan@rms.com" DependentDevOwner="Aman.Bhardwaj@rms.com" QAOwner="Gaurav.Kumar@rms.com"  Type="MappingService.ThematicMap"></Service>
+  <Service Name="MappingPerf" DevOwner="Deval.Chauhan@rms.com" DependentDevOwner="Aman.Bhardwaj@rms.com" QAOwner="Gaurav.Kumar@rms.com"  Type="MappingService.MappingPerf"></Service>
+  <Service Name="MAP_ThematicTile" DevOwner="Deval.Chauhan@rms.com" DependentDevOwner="Aman.Bhardwaj@rms.com" QAOwner="Gaurav.Kumar@rms.com"  Type="MappingService.ThematicTiles"></Service>
+
+  <Service Name="CreateProfileCopy" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com" Type="RAPService.CreateProfileCopyServiceClient"></Service>
+  <Service Name="CreateProfile" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com;Namit.Juyal@rms.com"  Type="RAPService.CreateProfileServiceClient"></Service>
+  <Service Name="CreateRapCopy" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com" Type="RAPService.CreateRapCopyServiceClient"></Service>
+  <Service Name="CreateRap" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com;Namit.Juyal@rms.com"  Type="RAPService.CreateRapServiceClient"></Service>
+  <Service Name="CreateRapInstance" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com"  Type="RAPService.CreateRapInstanceServiceClient"></Service>
+  <Service Name="DeleteProfile" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com" Type="RAPService.DeleteProfileServiceClient"></Service>
+  <Service Name="DeleteRap" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com" Type="RAPService.DeleteRapServiceClient"></Service>
+  <Service Name="GetProfileList" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com;Namit.Juyal@rms.com"  Type="RAPService.GetProfileListServiceClient"></Service>
+  <Service Name="GetProfileByID" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com"  Type="RAPService.GetProfileByIDClient"></Service>
+  <Service Name="GetRapCollectionMetadata" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com"  Type="RAPService.GetRapCollectionMetadataClient"></Service>
+  <Service Name="GetRapDefinitionList" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com"  Type="RAPService.GetRapDefinitionListServiceClient"></Service>
+  <Service Name="GetRapDefinitionById" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com"  Type="RAPService.GetRapDefinitionByIdClient"></Service>
+  <Service Name="GetRapInstanceListClient" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com" Type="RAPService.GetRapInstanceListClient"></Service>
+  <Service Name="UpdateProfile" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com" Type="RAPService.UpdateProfileServiceClient"></Service>
+  <Service Name="UpdateMetadata" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com" Type="RAPService.UpdateMetaDataServiceClient"></Service>
+  <Service Name="UpdateRap" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com" Type="RAPService.UpdateRapServiceClient"></Service>
+  <Service Name="GetAttributeList" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Harsh.Kulshreshtha@rms.com" Type="RAPService.GetAttributeListServiceClient"></Service>
+
+  <Service Name="ServerTimeAndClock_Validation" DevOwner="Suman.Bhattacharya@rms.com" DependentDevOwner="Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com" Type="Deployment.ServerTimeAndClockValidation"></Service>
+  <Service Name="ServerToken_Validation" DevOwner="Suman.Bhattacharya@rms.com" DependentDevOwner="Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com" Type="Deployment.ServerTokenValidation"></Service>
+  <Service Name="CheckLoadBalance" DevOwner="wlin@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="wlin@rms.com" Type="HA.CheckLoadBalance"></Service>
+  <Service Name="FailOverWinService" DevOwner="wlin@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="wlin@rms.com" Type="HA.FailOverWinService"></Service>
+  <Service Name="FailOverLinuxService" DevOwner="wlin@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="wlin@rms.com" Type="HA.FailOverLinuxService"></Service>
+  <Service Name="ClientEdmCopyService" DevOwner="wlin@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="wlin@rms.com" Type="CDLImportValidation.ClientEdmCopyService"></Service>
+  <Service Name="CDLBaseLineMetrics" DevOwner="wlin@rms.com" DependentDevOwner="wlin@rms.com" QAOwner="wlin@rms.com" Type="CDLImportValidation.CDLInvalidationBaselineMetricsService"></Service>
+  <Service Name="CreateProduct" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Vikram.patankr@rms.com" QAOwner="liwei.sun@rms.com" Type="ExposureService.CreateProduct"></Service>
+  <Service Name="UpdateProduct" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Vikram.patankr@rms.com" QAOwner="liwei.sun@rms.com" Type="ExposureService.UpdateProduct"></Service>
+  <Service Name="DeleteProduct" DevOwner="Puja.Sinha@rms.com" DependentDevOwner="Vikram.patankr@rms.com" QAOwner="liwei.sun@rms.com" Type="ExposureService.DeleteProduct"></Service>
+  <Service Name="RMSExceedanceDataExe" DevOwner="Jayant.Srivastava@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="Shobana.Azariah@rms.com" Type="RMSExceedanceDataExe.RMSExceedanceDataExeClass"></Service>
+  <Service Name="MexValidation" DevOwner="ankur.gupta@rms.com" DependentDevOwner="ankur.gupta@rms.com" QAOwner="Shobana.Azariah@rms.com" Type="MEXValidation.MEXResultComparison"></Service>
+  <Service Name="MEXInputComparison" DevOwner="rmsngqa@haemimont.com" DependentDevOwner="Nina.He@rms.com" QAOwner="Ankur.Gupta@rms.com" Type="MEXExtractValidation.MEXExtractValidation"></Service>
+  <Service Name="AALValidation" DevOwner="rmsngqa@haemimont.com" DependentDevOwner="Nina.He@rms.com" QAOwner="Ankur.Gupta@rms.com" Type="AALValidation.AALValidationClient"  Namespace="BETA.Service.AutomationSuite.AALValidation"></Service>
+  <Service Name="SmokeServiceFileCountValidation" DevOwner=" Suman.Bhattacharya@rms.com" DependentDevOwner="Victoria.Babina@rms.com" QAOwner="umesh.chander@rms.com"  Type="Deployment.SmokeServiceFileCountValidation"></Service>
+  <Service Name="WorkspaceValidation" DevOwner="Venkat.Morampudi@rms.com" DependentDevOwner="Lin.Guo@rms.com" QAOwner="umesh.chander@rms.com"  Type="WorkSpaceTest.WorkspaceValidation"></Service>
+  <Service Name="DL_PortfolioView" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Gaurav.Kumar@rms.com"  Type="DataLibraryServices.DataLibrary_PortfolioViews" Namespace="BETA.Service.AutomationSuite.DataLibraryService"></Service>
+  <Service Name="DL_AccountView" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Gaurav.Kumar@rms.com"  Type="DataLibraryServices.DataLibrary_AccountView" Namespace="BETA.Service.AutomationSuite.DataLibraryService"></Service>
+  <Service Name="DL_ContractView" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="Gaurav.Kumar@rms.com"  Type="DataLibraryServices.DataLibrary_ContractView" Namespace="BETA.Service.AutomationSuite.DataLibraryService"></Service>
+  <Service Name="ExposureSearch" DevOwner="Vinay.Pandey@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="njuyal@rms.com"  Type="DataLibraryServices.ExposureSearch" Namespace="BETA.Service.AutomationSuite.DataLibraryService"></Service>
+
+  <Service Name="SeedWidgetLibrary" DevOwner="Reenal.Mahajan@rms.com" DependentDevOwner="Anirban.Kundu@rms.com" QAOwner="Chris.Perianayagam@rms.com"  Type="WidgetService.SeedWidgetLibrary"></Service>
+  
+  <!-- Import APIs -->
+  
+  <Service Name="ImpAPIGetTreaty" DevOwner="Valli.Gadiyaram@rms.com" DependentDevOwner="Valli.Gadiyaram@rms.com" QAOwner="ramani.balijepalli@rms.com" Type="ImportExposure.ImportAPIGetTreaty" enum="Processing" Namespace="BETA.Service.AutomationSuite.ImportExposure"></Service>
+  <Service Name="ImpAPIGetPortfolios" DevOwner="Valli.Gadiyaram@rms.com" DependentDevOwner="Valli.Gadiyaram@rms.com" QAOwner="ramani.balijepalli@rms.com" Type="ImportExposure.ImportAPIGetPortfolios" enum="Processing" Namespace="BETA.Service.AutomationSuite.ImportExposure"></Service>
+  <Service Name="ImpAPIGetExposure" DevOwner="Valli.Gadiyaram@rms.com" DependentDevOwner="Valli.Gadiyaram@rms.com" QAOwner="ramani.balijepalli@rms.com" Type="ImportExposure.ImportAPIGetExposureClient" enum="Processing" Namespace="BETA.Service.AutomationSuite.ImportExposure"></Service>
+  <Service Name="ImpAPIGETEDM" DevOwner="Valli.Gadiyaram@rms.com" DependentDevOwner="Valli.Gadiyaram@rms.com" QAOwner="ramani.balijepalli@rms.com" Type="ImportExposure.ImportAPIGetEDMClient" enum="Processing" Namespace="BETA.Service.AutomationSuite.ImportExposure"></Service>
+  <Service Name="ImpAPIGetExposureALL" DevOwner="Valli.Gadiyaram@rms.com" DependentDevOwner="Valli.Gadiyaram@rms.com" QAOwner="ramani.balijepalli@rms.com" Type="ImportExposure.ImportAPIGetExposureALLClient" enum="Processing" Namespace="BETA.Service.AutomationSuite.ImportExposure"></Service>
+  <Service Name="ImpAPIImportSetID" DevOwner="Valli.Gadiyaram@rms.com" DependentDevOwner="Valli.Gadiyaram@rms.com" QAOwner="ramani.balijepalli@rms.com" Type="ImportExposure.ImportAPIImportSetIDclient" enum="Processing" Namespace="BETA.Service.AutomationSuite.ImportExposure"></Service>
+  
+  The below services cannot be registered
+  <Service Name="CreateFilter" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateFilter"></Service>
+  <Service Name="DeleteFilter" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.DeleteFilter"></Service>
+  <Service Name="CreatePolicy" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreatePolicy"></Service>
+  <Service Name="DeletePolicy" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.DeletePolicy"></Service>
+  <Service Name="CheckACL" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CheckACL"></Service>
+  <Service Name="CheckFeatureAccess" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CheckFeatureAccess"></Service>
+  <Service Name="CheckUriAccess" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CheckUriAccess"></Service>
+  <Service Name="Authentication" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.Authentication"></Service>
+  <Service Name="CreateWorkFlow" DevOwner="Karishma.Dambe@rms.com;Archana.purohit@rms.com" DependentDevOwner="Shraddha.Sahay@rms.com" QAOwner="Sushil.Dhyani@rms.com;Namit.Juyal@rms.com" Type="ExposureService.CreateBIWorkFlowClient" enum="Processing" Namespace="BETA.Service.AutomationSuite.ExposureService"></Service>
+  <Service Name="CreateUser" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateUser"></Service>
+  <Service Name="SeedUser" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateUser"></Service>
+  
+  <Service Name="UpdateUser" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UpdateUser"></Service>
+  <Service Name="BulkUpdateUser" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.BulkUpdateUser"></Service>
+  <Service Name="BulkImportUser" DevOwner="xyz@rms.com" DependentDevOwner="xyz@rms.com" QAOwner="mbarysenka@rms.com" Type="AdminService.BulkImportUser"></Service>
+  
+  <Service Name="DeleteUser" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.DeleteUser"></Service>
+  <Service Name="ChangePassword" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.ChangePassword"></Service>
+  <Service Name="UnlockUser" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UnlockUser"></Service>
+  <Service Name="FilterUser" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.FilterUser"></Service>
+  <Service Name="CreateUserGroup" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateUserGroup"></Service>
+  <Service Name="UpdateUserGroup" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UpdateUserGroup"></Service>
+  <Service Name="DeleteUserGroup" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.DeleteUserGroup"></Service>
+  <Service Name="CreateSymbol" DevOwner="wlin@rms.com" DependentDevOwner="wlin@rms.com" QAOwner="wlin@rms.com" Type="AdminService.BeanSymbolService"></Service>
+  <Service Name="CreateRole" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateRole"></Service>
+  <Service Name="UpdateRole" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UpdateRole"></Service>
+  <Service Name="DeleteRole" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.DeleteRole"></Service>
+  <Service Name="AssignFeatures" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.AssignFeatures"></Service>
+  <Service Name="SuspendWorkFlow" DevOwner="wlin@rms.com" DependentDevOwner="wlin@rms.com" QAOwner="wlin@rms.com" Type="AdminService.SuspendWorkFlow"></Service>
+  <Service Name="CreateTenant" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateTenant"></Service>
+  <Service Name="UpdateTenant" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UpdateTenant"></Service>
+  <Service Name="DeleteTenant" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.DeleteTenant"></Service>
+  <Service Name="EntitlementCreation" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateEntitlement"></Service>
+  <Service Name="EntitlementUpdate" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UpdateEntitlement"></Service>
+  <Service Name="EntitlementDelete" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="wlin@rms.com" Type="AdminService.DeleteEntitlement"></Service>
+
+  <Service Name="EntitlementGroupCreation" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateEntitlementGroup"></Service>
+  <Service Name="EntitlementGroupUpdate" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UpdateEntitlementGroup"></Service>
+  <Service Name="EntitlementGroupDelete" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="wlin@rms.com" Type="AdminService.DeleteEntitlementGroup"></Service>
+
+
+  <Service Name="DomainCreate" DevOwner="Balachandar.Sankar@rms.com" DependentDevOwner="Vishal.Dogra@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateDomain"></Service>
+  <Service Name="DomainUpdate" DevOwner="Balachandar.Sankar@rms.com" DependentDevOwner="Vishal.Dogra@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UpdateDomain"></Service>
+  <Service Name="DomainNodeDelete" DevOwner="wlin@rms.com" DependentDevOwner="wlin@rms.com" QAOwner="wlin@rms.com" Type="AdminService.DeleteDomainNode"></Service>
+  <Service Name="DomainNodeRead" DevOwner="Balachandar.Sankar@rms.com" DependentDevOwner="Vishal.Dogra@rms.com" QAOwner="wlin@rms.com" Type="AdminService.ReadDomainNode"></Service>
+  <Service Name="CompareDomainNodeId" DevOwner="Balachandar.Sankar@rms.com" DependentDevOwner="Vishal.Dogra@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CompareDomainNodeId"></Service>
+  <Service Name="NameSpaceCreate" DevOwner="Balachandar.Sankar@rms.com" DependentDevOwner="Vishal.Dogra@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateNameSpace"></Service>
+  <Service Name="NameSpaceUpdate" DevOwner="Balachandar.Sankar@rms.com" DependentDevOwner="Vishal.Dogra@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UpdateNameSpace"></Service>
+  <Service Name="EntityCreate" DevOwner="Balachandar.Sankar@rms.com" DependentDevOwner="Vishal.Dogra@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateEntity"></Service>
+  <Service Name="EntityUpdate" DevOwner="Balachandar.Sankar@rms.com" DependentDevOwner="Vishal.Dogra@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UpdateEntity"></Service>
+  <Service Name="EntityValueCreate" DevOwner="Balachandar.Sankar@rms.com" DependentDevOwner="Vishal.Dogra@rms.com" QAOwner="wlin@rms.com" Type="AdminService.CreateEntityValue"></Service>
+  <Service Name="EntityValueUpdate" DevOwner="Balachandar.Sankar@rms.com" DependentDevOwner="Vishal.Dogra@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UpdateEntityValue"></Service>
+  <Service Name="ReadAuditTrail" DevOwner="Jayant.Srivastava@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="Rhoderick.Rivera@rms.com" Type="AdminService.ReadAuditTrail"></Service>
+  <Service Name="CreateAuditConfig" DevOwner="Jayant.Srivastava@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="Rhoderick.Rivera@rms.com" Type="AdminService.CreateAuditConfig"></Service>
+  <Service Name="UpdateAuditConfig" DevOwner="Jayant.Srivastava@rms.com" DependentDevOwner="Jayant.Srivastava@rms.com" QAOwner="Rhoderick.Rivera@rms.com" Type="AdminService.UpdateAuditConfig"></Service>
+  <Service Name="AccValidation" DevOwner="njuyal@rms.com" DependentDevOwner="njuyal@rms.com" QAOwner="njuyal@rms.com" Type="AccumulationValidation.AccValidation"></Service>
+  <Service Name="ImportTool" DevOwner="njuyal@rms.com" DependentDevOwner="njuyal@rms.com" QAOwner="njuyal@rms.com" Type="ImportTool.Import"></Service>
+
+  <Service Name="ValidateCurrency" DevOwner="Balachandar.Sankar@rms.com" DependentDevOwner="Vishal.Dogra@rms.com" QAOwner="wlin@rms.com" Type="AdminService.ValidateCurrency"></Service>
+
+
+  <Service Name="UserCapacity" DevOwner="Vishal.Dogra@rms.com" DependentDevOwner="Balachandar.Sankar@rms.com" QAOwner="wlin@rms.com" Type="AdminService.UserCapacity"></Service>
+  <Service Name="SLAValidation" DevOwner="Jacky.zhang@rms.com" DependentDevOwner="lin.guo@rms.com" QAOwner="wlin@rms.com" Type="SLAValidation.SLAResourceManagerValidation"></Service>
+  <Service Name="UsageMetgSvc" DevOwner="lin.guo@rms.com" DependentDevOwner="lin.guo@rms.com" QAOwner="uchander@rms.com" Type="UsageMetg.UsageMetgSvc"></Service>
+  <Service Name="ElasticSearch" DevOwner="Vikram.Patankar@rms.com" DependentDevOwner="Vishal.Batghare@rms.com" QAOwner="njuyal@rms.com" Type="ElasticSearchValidation.ElasticSearchDataValidation"></Service>
+
+</ServicesToRegister>

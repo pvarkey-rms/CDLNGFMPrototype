@@ -1,0 +1,3 @@
+cake buildall
+mv src/grammar/grammar-ast.js public/scripts/grammar-ast.js
+coffee app.coffee $1

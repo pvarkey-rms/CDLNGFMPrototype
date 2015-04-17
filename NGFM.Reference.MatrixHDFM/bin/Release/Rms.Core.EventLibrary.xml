@@ -1,0 +1,656 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.Core.EventLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Core.EventLibrary.CauseOfLoss">
+            <summary>
+            Represents CauseOfLoss
+            </summary>
+        </member>
+        <member name="M:Rms.Core.EventLibrary.CauseOfLoss.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Core.EventLibrary.CauseOfLoss"/> class.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.EventLibrary.CauseOfLoss.#ctor(System.Int16,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Core.EventLibrary.CauseOfLoss"/> class.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="code">The code.</param>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.CauseOfLoss.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.CauseOfLoss.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.CauseOfLossMap">
+            <summary>
+            CauseOfLossMap
+            </summary>
+        </member>
+        <member name="M:Rms.Core.EventLibrary.CauseOfLossMap.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Core.EventLibrary.CauseOfLossMap"/> class.
+            </summary>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.CauseOfLossMap.RLCauseOfLoss">
+            <summary>
+            Gets or sets the RL cause of loss.
+            </summary>
+            <value>
+            The RL cause of loss.
+            </value>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.CauseOfLossMap.NGCauseOfLoss">
+            <summary>
+            Gets or sets the NG cause of loss.
+            </summary>
+            <value>
+            The NG cause of loss.
+            </value>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.CDFUploaderOuput.ImportedCdfFiles">
+            <summary>
+            Gets or sets the imported CDF files.
+            </summary>
+            <value>
+            The imported CDF files.
+            </value>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.CDFUploaderOuput.RiskItemReadFileConfigList">
+            <summary>
+            Gets or sets the risk item read file config list.
+            </summary>
+            <value>
+            The risk item read file config list.
+            </value>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.ExportEngineNames">
+            <summary>
+            All engine names related to Export functionality.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ExportEngineNames.ExposureExporter">
+            <summary>
+            An engine name for EES (exposure export service).
+            </summary>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.ExposureExporterOutput">
+            <summary>
+            An exposure export output structure.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.ExposureImportPayloadKeys">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ExposureImportPayloadKeys.CreateExposureImportSetJobInput">
+            <summary>
+            The create exposure import set job input
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ExposureImportPayloadKeys.CompressedImportFilePath">
+            <summary>
+            The compressed import file path
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ExposureImportPayloadKeys.UnCompressedImportFilePath">
+            <summary>
+            The un compressed import file path
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ExposureImportPayloadKeys.DomainDataPath">
+            <summary>
+            The domain data path
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ExposureImportPayloadKeys.CdfFilePath">
+            <summary>
+            The CDF file path
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ExposureImportPayloadKeys.ImportRUFDictionary">
+            <summary>
+            The import RUF dictionary
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ExposureImportPayloadKeys.ImportCDFDictionary">
+            <summary>
+            CDFileConfigs to CDL/EDS
+            </summary>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.ImportEngineNames">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.ImportRufExceptionFileNames">
+            <summary>
+            All the Ruf file names that can be generated during the import process
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufExceptionFileNames.LoccvgException">
+            <summary>
+            RLEDM Loccvg RUF file Exception
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufExceptionFileNames.AccgrpException">
+            <summary>
+            RLEDM Accgrp RUF file Exception
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufExceptionFileNames.PropertyException">
+            <summary>
+            RLEDM Property RUF file Exception
+            </summary>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.ImportRITExposureFileNames">
+            <summary>
+            Files names that containing mappings
+            </summary>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.ImportRufValidFileNames">
+            <summary>
+            All the Ruf file names that can be generated during the import process
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.PortInfoValid">
+            <summary>
+            RLEDM portinfo RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.AddressValid">
+            <summary>
+            RLEDM Address Valid RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.AccgrpValid">
+            <summary>
+            RLEDM accgrp RUF Validated file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.PolicyValid">
+            <summary>
+            RLEDM policy RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.PropertyValid">
+            <summary>
+            RLEDM property Valid RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.LoccvgValid">
+            <summary>
+            LoccvgValid
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.EqDetValid">
+            <summary>
+            RLEDM eqdet RUF Currency Conversion file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.HuDetValid">
+            <summary>
+            RLEDM hudet RUF Currency Conversion file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.FlDetValid">
+            <summary>
+            RLEDM fldet RUF Currency Conversion file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.FrDetValid">
+            <summary>
+            RLEDM frdet RUF Currency Conversion file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.TrDetValid">
+            <summary>
+            RLEDM trdet RUF Currency Conversion file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.ToDetValid">
+            <summary>
+            RLEDM todet RUF Currency Conversion file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.PortAcct">
+            <summary>
+            RLEDM portacct RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.LocConditionsValid">
+            <summary>
+            RLEDM locconditions RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.PolicyConditionsValid">
+            <summary>
+            RLEDM policyconditions RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.PolcvgValid">
+            <summary>
+            RLEDM polcvg RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufValidFileNames.DBAttribute">
+            <summary>
+            DB attribut file
+            </summary>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.DomainDataManagerOutput.ImportedDomainDataFiles">
+            <summary>
+            Gets or sets the domain data files.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.ImportDomainFileNames">
+            <summary>
+            All the Cdf file names that can be generated during the import process
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportDomainFileNames.Party">
+            <summary>
+            ETL generated CDF file for Party
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportDomainFileNames.LOB">
+            <summary>
+            ETL generated CDF file for LOB
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportDomainFileNames.ImportedParty">
+            <summary>
+            EDS generated Party object
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportDomainFileNames.ImportedLOB">
+            <summary>
+            EDS generated Party object
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportDomainFileNames.Currencyvintage">
+            <summary>
+            EDS generated Party object
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportDomainFileNames.CurrencyvintageMember">
+            <summary>
+            EDS generated Party object
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.EventNames.FinancialContractGetEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.EventNames.FinancialContractGetEventCompleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.ImportCdfFileNames">
+            <summary>
+            All the Cdf file names that can be generated during the import process
+            don't change sequence of EnumMember
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.ImportSet">
+            <summary>
+            ETL generated CDF file for ImportSet
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.CedantProjectAsset">
+            <summary>
+            The cedeant project asset
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.ContractSubjectExposure">
+            <summary>
+            ContractSubjectExposure
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.SubjectAtRisk">
+            <summary>
+            SubjectAtRisk
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.ExposureRITECache">
+            <summary>
+            ExposureRITECache
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.Filter">
+            <summary>
+            Filter
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.RiskItemExposure">
+            <summary>
+            RiskItemExposure
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.ContractExposure">
+            <summary>
+            ContractExposure
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.ExposureFilter">
+            <summary> 
+            
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.Exposure">
+            <summary>
+            Exposure
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.ImportedIdTagPair">
+            <summary>
+            The imported id tag pair
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.ImportedContractMetadata">
+            <summary>
+            The imported contract metadata
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.ContractHierarchyHistogram">
+            <summary>
+            The histogram
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.ImportedRITExposureIdMap">
+            <summary>
+            The imported RIT exposure id map
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.RITExposureCharacteristicsMap">
+            <summary>
+            The RIT exposure characteristics map
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.CauseOfLossMap">
+            <summary>
+            The cause of loss map
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.ContractSubjectExposureMap">
+            <summary>
+            The contract subject exposure map
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.CommonCharacteristics">
+            <summary>
+            The common characteristics
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.Address">
+            <summary>
+            The address
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.ModelHazard">
+            <summary>
+            The model hazard
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.RiskitemCharacteristicsList">
+            <summary>
+            The riskitem characteristics list
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.MoveablePropertyCharacteristics">
+            <summary>
+            The moveable property characteristics
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.RealPropertyCharacteristics">
+            <summary>
+            The real property characteristics
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.BusinessInterruptionCharacteristics">
+            <summary>
+            The business interruption characteristics
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportCdfFileNames.PopulationCharacteristics">
+            <summary>
+            The population characteristics
+            </summary>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.ImportMapFileNames">
+            <summary>
+            Files names that containing mappings
+            </summary>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.ImportRufFileNames">
+            <summary>
+            All the Ruf file names that can be generated during the import process
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.PortInfo">
+            <summary>
+            RLEDM portinfo RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.Accgrp">
+            <summary>
+            RLEDM accgrp RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.Policy">
+            <summary>
+            RLEDM policy RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.Property">
+            <summary>
+            RLEDM property RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.Loccvg">
+            <summary>
+            RLEDM loccvg RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.EqDet">
+            <summary>
+            RLEDM eqdet RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.HuDet">
+            <summary>
+            RLEDM hudet RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.FlDet">
+            <summary>
+            RLEDM fldet RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.FrDet">
+            <summary>
+            RLEDM frdet RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.TrDet">
+            <summary>
+            RLEDM trdet RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.ToDet">
+            <summary>
+            RLEDM todet RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.PortAcct">
+            <summary>
+            RLEDM portacct RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.LocConditions">
+            <summary>
+            RLEDM locconditions RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.PolicyConditions">
+            <summary>
+            RLEDM policyconditions RUF file
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.ImportRufFileNames.Polcvg">
+            <summary>
+            RLEDM polcvg RUF file
+            </summary>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.JobInfo.UserId">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.JobInfo.OrganizationName">
+            <summary>
+            Gets or sets the name of the organization.
+            </summary>
+            <value>
+            The name of the organization.
+            </value>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.JobInfo.ExposureImportSetId">
+            <summary>
+            Gets or sets the exposure import set id.
+            </summary>
+            <value>
+            The exposure import set id.
+            </value>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.RufFilesS3Path">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.RufFilesS3Path.BucketName">
+            <summary>
+            Gets or sets the name of the bucket.
+            </summary>
+            <value>
+            The name of the bucket.
+            </value>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.RufFilesS3Path.TenantBranch">
+            <summary>
+            Gets or sets the tenant branch.
+            </summary>
+            <value>
+            The tenant branch.
+            </value>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.RufFilesS3Path.JobFolderName">
+            <summary>
+            Gets or sets the name of the job folder.
+            </summary>
+            <value>
+            The name of the job folder.
+            </value>
+        </member>
+        <member name="P:Rms.Core.EventLibrary.RufFilesS3Path.JobInfo">
+            <summary>
+            Gets or sets the job info.
+            </summary>
+            <value>
+            The job info.
+            </value>
+        </member>
+        <member name="T:Rms.Core.EventLibrary.SharedPayloadKeys">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.ImportSetGuidKey">
+            <summary>
+            Making ImportSetGuid available for all engines
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.ImportRUFDictionary">
+            <summary>
+            RUFFileConfigs to CDL
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.ImportCDFDictionary">
+            <summary>
+            CDFileConfigs to CDL/EDS
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.ImportMapFileDictionary">
+            <summary>
+            RUFFileConfigs to CDL
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.EDSMapFileConfigKey">
+            <summary>
+            EDSMapFileConfigs to CDL
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.ContractFileConfigKey">
+            <summary>
+            ContractFileConfigs to EDS
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.RufFilesS3Path">
+            <summary>
+            JobId and TenantID information
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Rms.Core.EventLibrary.SharedPayloadKeys.CDFUploaderOuput" -->
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.CompressedRufFileLocalPath">
+            <summary>
+            CompressedRufFileLocalPath
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.UnCompressedRufFileLocalPath">
+            <summary>
+            UnCompressedRufFileLocalPath
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.CdfFileLocalPath">
+            <summary>
+            CdfFileLocalPath
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.DomainDataLocalPath">
+            <summary>
+            DomainDataLocalPath
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.ImportRiteExpousreMapKey">
+            <summary>
+            ImportRiteExpousreMapKey
+            </summary>
+        </member>
+        <member name="F:Rms.Core.EventLibrary.SharedPayloadKeys.JobInfo">
+            <summary>
+            JobInfo
+            </summary>
+        </member>
+    </members>
+</doc>

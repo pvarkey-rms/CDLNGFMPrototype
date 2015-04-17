@@ -1,0 +1,1717 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.AccountSearch">
+            <summary> 
+            Defination of AccountSearch.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.AccountSearch.SourceId">
+            <summary>
+            Gets or sets the SourceId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.AccountSearch.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.AccountSearch.CreateUserId">
+            <summary>
+            Gets or sets the CreateUserId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.AccountSearch.ExposedPartyName">
+            <summary>
+            Gets or sets the ExposedPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.AccountSearch.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.AccountSearch.Number">
+            <summary>
+            Gets or sets the account number.
+            </summary>
+            <value>
+            The account number.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.AccountSearch.Description">
+            <summary>
+            Gets or sets the account descr.
+            </summary>
+            <value>
+            The account descr.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.AccountSearch.ContractCount">
+            <summary>
+            Gets or sets the contract count.
+            </summary>
+            <value>
+            The contract count.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.AccountSearch.RiskItemCount">
+            <summary>
+            Gets or sets the risk item count.
+            </summary>
+            <value>
+            The risk item count.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch">
+            <summary> 
+            Defination of CedantExposureSearch.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.CollExposureWhatIfTagName">
+            <summary>
+            Gets or sets the CollExposureWhatIfTagName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.Description">
+            <summary>
+            Gets or sets the Description.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.ExposureNumber">
+            <summary>
+            Gets or sets the ExposureNumber.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.CreateUserId">
+            <summary>
+            Gets or sets the CreateUserId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.SourceId">
+            <summary>
+            Gets or sets the SourceId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.IsDynamic">
+            <summary>
+            Gets or sets the IsDynamic.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.CloneTypeId">
+            <summary>
+            Gets or sets the CloneTypeId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.IsReference">
+            <summary>
+            Gets or sets the IsReference.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.ExposedPartyName">
+            <summary>
+            Gets or sets the ExposedPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.ExposureId">
+            <summary>
+            Gets or sets the ExposureId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.CalculatedTIV">
+            <summary>
+            Gets or sets the calculated TIV.
+            </summary>
+            <value>
+            The calculated TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.CalculatedBuildingTIV">
+            <summary>
+            Gets or sets the calculated building TIV.
+            </summary>
+            <value>
+            The calculated building TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.CalculatedContentsTIV">
+            <summary>
+            Gets or sets the calculated contents TIV.
+            </summary>
+            <value>
+            The calculated contents TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.CalculatedBITIV">
+            <summary>
+            Gets or sets the calculated BITIV.
+            </summary>
+            <value>
+            The calculated BITIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.RiskItemCount">
+            <summary>
+            Gets or sets the risk item count.
+            </summary>
+            <value>
+            The risk item count.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.ContractCount">
+            <summary>
+            Gets or sets the contract count.
+            </summary>
+            <value>
+            The contract count.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureSearch.ACLTag">
+            <summary>
+            Gets or sets the ACL tag.
+            </summary>
+            <value>
+            The ACL tag.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantProjectSearch">
+            <summary> 
+            Defination of CedantProjectSearch.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantProjectSearch.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantProjectSearch.CreateUserId">
+            <summary>
+            Gets or sets the CreateUserId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantProjectSearch.ExposedPartyName">
+            <summary>
+            Gets or sets the ExposedPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantProjectSearch.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch">
+            <summary> 
+            Defination of ContractSearch.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ContractStatusName">
+            <summary>
+            Gets or sets the ContractStatusName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ContractTypeName">
+            <summary>
+            Gets or sets the ContractTypeName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.WhatIfName">
+            <summary>
+            Gets or sets the WhatIfName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.Description">
+            <summary>
+            Gets or sets the Description.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ExposureNumber">
+            <summary>
+            Gets or sets the ExposureNumber.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.CreateUserId">
+            <summary>
+            Gets or sets the CreateUserId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.SourceId">
+            <summary>
+            Gets or sets the SourceId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ClonedExposureId">
+            <summary>
+            Gets or sets the ClonedExposureId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.CloneTypeId">
+            <summary>
+            Gets or sets the CloneTypeId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.InceptionDate">
+            <summary>
+            Gets or sets the InceptionDate.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ExpirationDate">
+            <summary>
+            Gets or sets the ExpirationDate.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.Premium">
+            <summary>
+            Gets or sets the Premium.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.PaidReinstatement">
+            <summary>
+            Gets or sets the PaidReinstatement.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.FreeReinstatement">
+            <summary>
+            Gets or sets the FreeReinstatement.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ReinstatementsPremium">
+            <summary>
+            Gets or sets the ReinstatementsPremium.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.IsProRataTemporis">
+            <summary>
+            Gets or sets the IsProRataTemporis.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.CurrencyCode">
+            <summary>
+            Gets or sets the CurrencyCode.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.RenewalDate">
+            <summary>
+            Gets or sets the RenewalDate.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.Jurisdiction">
+            <summary>
+            Gets or sets the Jurisdiction.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ExpectedShares">
+            <summary>
+            Gets or sets the ExpectedShares.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.SignedShares">
+            <summary>
+            Gets or sets the SignedShares.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.WrittenShares">
+            <summary>
+            Gets or sets the WrittenShares.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.IsRenewal">
+            <summary>
+            Gets or sets the IsRenewal.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ProductAsOfDate">
+            <summary>
+            Gets or sets the ProductAsOfDate.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.AttachmentBasisName">
+            <summary>
+            Gets or sets the AttachmentBasisName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.AttachmentLevelName">
+            <summary>
+            Gets or sets the AttachmentLevelName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ClaimAdjustmentDeductibleName">
+            <summary>
+            Gets or sets the ClaimAdjustmentDeductibleName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.PrimaryAccordOccupancyName">
+            <summary>
+            Gets or sets the PrimaryAccordOccupancyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ClaimAdjustmentSublimitName">
+            <summary>
+            Gets or sets the ClaimAdjustmentSublimitName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ProgramName">
+            <summary>
+            Gets or sets the ProgramName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ProductName">
+            <summary>
+            Gets or sets the ProductName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.UserDefContractTypeName">
+            <summary>
+            Gets or sets the UserDefContractTypeName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.LineofBusinessName">
+            <summary>
+            Gets or sets the LineofBusinessName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.MarketChannelName">
+            <summary>
+            Gets or sets the MarketChannelName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ContractTypeIsInsurance">
+            <summary>
+            Gets or sets the ContractTypeIsInsurance.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ReinstatementsPercentCharge">
+            <summary>
+            Gets or sets the ReinstatementsPercentCharge.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ExposedPartyName">
+            <summary>
+            Gets or sets the ExposedPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ExposureId">
+            <summary>
+            Gets or sets the exposure identifier.
+            </summary>
+            <value>
+            The exposure identifier.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.InsuredPartyName">
+            <summary>
+            Gets or sets the InsuredPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.InsurerPartyName">
+            <summary>
+            Gets or sets the InsurerPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.BrokerPartyName">
+            <summary>
+            Gets or sets the BrokerPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.UnderwriterPartyName">
+            <summary>
+            Gets or sets the UnderwriterPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ProducerPartyName">
+            <summary>
+            Gets or sets the ProducerPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.AgentPartyName">
+            <summary>
+            Gets or sets the AgentPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.UnderwritingAccountPartyName">
+            <summary>
+            Gets or sets the UnderwritingAccountPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.BranchPartyName">
+            <summary>
+            Gets or sets the BranchPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.AccountingOrganizationPartyName">
+            <summary>
+            Gets or sets the AccountingOrganizationPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.LegalEntityPartyName">
+            <summary>
+            Gets or sets the LegalEntityPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.CostCenterPartyName">
+            <summary>
+            Gets or sets the CostCenterPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.HubPartyName">
+            <summary>
+            Gets or sets the HubPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.OfficePartyName">
+            <summary>
+            Gets or sets the OfficePartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ACLTag">
+            <summary>
+            Gets or sets the ACL tag.
+            </summary>
+            <value>
+            The ACL tag.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.IsCedantContract">
+            <summary>
+            Gets or sets a value indicating whether this instance is cedant contract.
+            </summary>
+            <value>
+            <c>true</c> if this instance is cedant contract; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.CalculatedTIV">
+            <summary>
+            Gets or sets the calculated TIV.
+            </summary>
+            <value>
+            The calculated TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.CalculatedBuildingTIV">
+            <summary>
+            Gets or sets the calculated building TIV.
+            </summary>
+            <value>
+            The calculated building TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.CalculatedContentsTIV">
+            <summary>
+            Gets or sets the calculated contents TIV.
+            </summary>
+            <value>
+            The calculated contents TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.CalculatedBITIV">
+            <summary>
+            Gets or sets the calculated BITIV.
+            </summary>
+            <value>
+            The calculated BITIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.RiskItemCount">
+            <summary>
+            Gets or sets the risk item count.
+            </summary>
+            <value>
+            The risk item count.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ContractSearch.ImportSetId">
+            <summary>
+            Gets or sets the import set id.
+            </summary>
+            <value>
+            The import set id.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureGraphSearch">
+            <summary>
+            Class to represent CedantExposure Graph object
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureGraphSearch.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureGraphSearch.CedantExposureId">
+            <summary>
+            Gets or sets the cedant exposure id.
+            </summary>
+            <value>
+            The cedant exposure id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureGraphSearch.ReInsurancePortfolioIdList">
+            <summary>
+            Gets or sets the re insurance portfolio id list.
+            </summary>
+            <value>
+            The re insurance portfolio id list.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.CedantExposureGraphSearch.TreatyIdList">
+            <summary>
+            Gets or sets the treaty id list.
+            </summary>
+            <value>
+            The treaty id list.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProductSearch">
+            <summary> 
+            Defination of ProductSearch.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProductSearch.ContractTypeId">
+            <summary>
+            Gets or sets the ContractTypeID.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProductSearch.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProductSearch.Description">
+            <summary>
+            Gets or sets the Description.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProductSearch.CreateUserId">
+            <summary>
+            Gets or sets the CreateUserId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProductSearch.SourceID">
+            <summary>
+            Gets or sets the SourceID.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProductSearch.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProductSearch.ContractId">
+            <summary>
+            Gets or sets the ContractId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProductSearch.ProductSchemeId">
+            <summary>
+            Gets or sets the product scheme ID.
+            </summary>
+            <value>
+            The product scheme ID.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramGraphSearch">
+            <summary>
+            Class to represent Program Graph object
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramGraphSearch.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramGraphSearch.ProgramId">
+            <summary>
+            Gets or sets the program id.
+            </summary>
+            <value>
+            The program id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramGraphSearch.ReInsurancePortfolioIdList">
+            <summary>
+            Gets or sets the re insurance portfolio id list.
+            </summary>
+            <value>
+            The re insurance portfolio id list.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramGraphSearch.TreatyIdList">
+            <summary>
+            Gets or sets the treaty id list.
+            </summary>
+            <value>
+            The treaty id list.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioGraphSearch">
+            <summary>
+            Class to represent Portfolio Graph object
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioGraphSearch.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioGraphSearch.PortfolioId">
+            <summary>
+            Gets or sets the portfolio id.
+            </summary>
+            <value>
+            The portfolio id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioGraphSearch.ReInsurancePortfolioIdList">
+            <summary>
+            Gets or sets the re insurance portfolio id list.
+            </summary>
+            <value>
+            The re insurance portfolio id list.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioGraphSearch.TreatyIdList">
+            <summary>
+            Gets or sets the treaty id list.
+            </summary>
+            <value>
+            The treaty id list.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch">
+            <summary> 
+            Defination of RITEScheduleSearch.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.Description">
+            <summary>
+            Gets or sets the Description.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.Number">
+            <summary>
+            Gets or sets the Number.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.CreateUserId">
+            <summary>
+            Gets or sets the CreateUserId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.SourceId">
+            <summary>
+            Gets or sets the SourceId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.AccountId">
+            <summary>
+            Gets or sets the AccountId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.ACLTag">
+            <summary>
+            Gets or sets the ACL tag.
+            </summary>
+            <value>
+            The ACL tag.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.ImportSetId">
+            <summary>
+            Gets or sets the import set id.
+            </summary>
+            <value>
+            The import set id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.AccountName">
+            <summary>
+            Gets or sets the name of the account.
+            </summary>
+            <value>
+            The name of the account.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.AccountNumber">
+            <summary>
+            Gets or sets the account number.
+            </summary>
+            <value>
+            The account number.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RITEScheduleSearch.CedantProjectId">
+            <summary>
+            Gets or sets the cedant project ID.
+            </summary>
+            <value>
+            The cedant project ID.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ExposureGraphSearch">
+            <summary>
+            Class to represent Exposure Graph object
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ExposureGraphSearch.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ExposureGraphSearch.ContractId">
+            <summary>
+            Gets or sets the contract id.
+            </summary>
+            <value>
+            The contract id.(same as Parent id)
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ExposureGraphSearch.PortfolioIdList">
+            <summary>
+            Gets or sets the portfolio id list.
+            </summary>
+            <value>
+            The portfolio id list.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ExposureGraphSearch.CedantExposureIdList">
+            <summary>
+            Gets or sets the cedant exposure id list.
+            </summary>
+            <value>
+            The cedant exposure id list.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ExposureGraphSearch.ProgramIdList">
+            <summary>
+            Gets or sets the program id list.
+            </summary>
+            <value>
+            The program id list.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ExposureGraphSearch.ReInsurancePortfolioIdList">
+            <summary>
+            Gets or sets the re insurance portfolio id list.
+            </summary>
+            <value>
+            The re insurance portfolio id list.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ExposureGraphSearch.PositionIdList">
+            <summary>
+            Gets or sets the position id list.
+            </summary>
+            <value>
+            The position id list.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ExposureGraphSearch.TreatyIdList">
+            <summary>
+            Gets or sets the treaty id list.
+            </summary>
+            <value>
+            The treaty id list.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ImportSetSearch">
+            <summary> 
+            Defination of ImportSetSearch.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ImportSetSearch.ImportAppTypeName">
+            <summary>
+            Gets or sets the ImportAppTypeName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ImportSetSearch.ImportSourceName">
+            <summary>
+            Gets or sets the ImportSourceName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ImportSetSearch.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ImportSetSearch.SourceDataInfo">
+            <summary>
+            Gets or sets the SourceDataInfo.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ImportSetSearch.SourceDataKey">
+            <summary>
+            Gets or sets the SourceDataKey.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ImportSetSearch.CreateUserId">
+            <summary>
+            Gets or sets the CreateUserId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ImportSetSearch.ExposedPartyName">
+            <summary>
+            Gets or sets the ExposedPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ImportSetSearch.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch">
+            <summary> 
+            Defination of PortfolioSearch.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.CollExposureWhatIfTagName">
+            <summary>
+            Gets or sets the CollExposureWhatIfTagName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.Description">
+            <summary>
+            Gets or sets the Description.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.ExposureNumber">
+            <summary>
+            Gets or sets the ExposureNumber.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.CreateUserId">
+            <summary>
+            Gets or sets the CreateUserId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.SourceId">
+            <summary>
+            Gets or sets the SourceId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.IsDynamic">
+            <summary>
+            Gets or sets the IsDynamic.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.CloneTypeId">
+            <summary>
+            Gets or sets the CloneTypeId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.IsReference">
+            <summary>
+            Gets or sets the IsReference.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.ExposedPartyName">
+            <summary>
+            Gets or sets the ExposedPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.ExposureId">
+            <summary>
+            Gets or sets the ExposureId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.CalculatedTIV">
+            <summary>
+            Gets or sets the calculated TIV.
+            </summary>
+            <value>
+            The calculated TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.CalculatedBuildingTIV">
+            <summary>
+            Gets or sets the calculated building TIV.
+            </summary>
+            <value>
+            The calculated building TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.CalculatedContentsTIV">
+            <summary>
+            Gets or sets the calculated contents TIV.
+            </summary>
+            <value>
+            The calculated contents TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.CalculatedBITIV">
+            <summary>
+            Gets or sets the calculated BITIV.
+            </summary>
+            <value>
+            The calculated BITIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.RiskItemCount">
+            <summary>
+            Gets or sets the risk item count.
+            </summary>
+            <value>
+            The risk item count.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.ContractCount">
+            <summary>
+            Gets or sets the contract count.
+            </summary>
+            <value>
+            The contract count.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.PortfolioSearch.ACLTag">
+            <summary>
+            Gets or sets the ACL tag.
+            </summary>
+            <value>
+            The ACL tag.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch">
+            <summary> 
+            Defination of ProgramSearch.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.CollExposureWhatIfTagName">
+            <summary>
+            Gets or sets the CollExposureWhatIfTagName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.Description">
+            <summary>
+            Gets or sets the Description.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.ExposureNumber">
+            <summary>
+            Gets or sets the ExposureNumber.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.CreateUserId">
+            <summary>
+            Gets or sets the CreateUserId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.SourceId">
+            <summary>
+            Gets or sets the SourceId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.IsDynamic">
+            <summary>
+            Gets or sets the IsDynamic.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.CloneTypeId">
+            <summary>
+            Gets or sets the CloneTypeId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.IsReference">
+            <summary>
+            Gets or sets the IsReference.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.ExposedPartyName">
+            <summary>
+            Gets or sets the ExposedPartyName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.ExposureId">
+            <summary>
+            Gets or sets the ExposureId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.ACLTag">
+            <summary>
+            Gets or sets the ACL tag.
+            </summary>
+            <value>
+            The ACL tag.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.IsReinsurance">
+            <summary>
+            Gets or sets a value indicating whether [is reinsurance].
+            </summary>
+            <value>
+              <c>true</c> if [is reinsurance]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.CalculatedTIV">
+            <summary>
+            Gets or sets the calculated TIV.
+            </summary>
+            <value>
+            The calculated TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.CalculatedBuildingTIV">
+            <summary>
+            Gets or sets the calculated building TIV.
+            </summary>
+            <value>
+            The calculated building TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.CalculatedContentsTIV">
+            <summary>
+            Gets or sets the calculated contents TIV.
+            </summary>
+            <value>
+            The calculated contents TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.CalculatedBITIV">
+            <summary>
+            Gets or sets the calculated BITIV.
+            </summary>
+            <value>
+            The calculated BITIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.RiskItemCount">
+            <summary>
+            Gets or sets the risk item count.
+            </summary>
+            <value>
+            The risk item count.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.ProgramSearch.ContractCount">
+            <summary>
+            Gets or sets the contract count.
+            </summary>
+            <value>
+            The contract count.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemCharValuationSearch">
+            <summary> 
+            Defination of RiskItemCharValuationSearch.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemCharValuationSearch.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemCharValuationSearch.TypeId">
+            <summary>
+            Gets or sets the TypeId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemCharValuationSearch.CurrencyCode">
+            <summary>
+            Gets or sets the CurrencyCode.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemCharValuationSearch.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemCharValuationSearch.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch">
+            <summary> 
+            Defination of RiskItemSearch.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.AddressTypeName">
+            <summary>
+            Gets or sets the AddressType.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.ExposureId">
+            <summary>
+            Gets or sets the ExposureId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Number">
+            <summary>
+            Gets or sets the Number.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.CreateUserId">
+            <summary>
+            Gets or sets the CreateUserId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.SourceId">
+            <summary>
+            Gets or sets the SourceId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.BuildingName">
+            <summary>
+            Gets or sets the BuildingName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.ACORDResolutionCode">
+            <summary>
+            Gets or sets the ACORDResolutionCode.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Admin1Name">
+            <summary>
+            Gets or sets the Admin1Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Admin2Name">
+            <summary>
+            Gets or sets the Admin2Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Admin3Name">
+            <summary>
+            Gets or sets the Admin3Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.CountryCode">
+            <summary>
+            Gets or sets the CountryCode.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Latitude">
+            <summary>
+            Gets or sets the Latitude.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Longitude">
+            <summary>
+            Gets or sets the Longitude.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.StreetAddress">
+            <summary>
+            Gets or sets the StreetAddress.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.PostalCode">
+            <summary>
+            Gets or sets the PostalCode.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.CityName">
+            <summary>
+            Gets or sets the CityName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Zone1Name">
+            <summary>
+            Gets or sets the Zone1Name.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.LandslideValue">
+            <summary>
+            Gets or sets the LandslideValue.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Liquefaction">
+            <summary>
+            Gets or sets the Liquefaction.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.SoilType">
+            <summary>
+            Gets or sets the SoilType.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.DistanceToCoastValue">
+            <summary>
+            Gets or sets the DistanceToCoastValue.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.BuildingElevation">
+            <summary>
+            Gets or sets the BuildingElevation.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.NFIPRate">
+            <summary>
+            Gets or sets the NFIPRate.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.NFIPYear">
+            <summary>
+            Gets or sets the NFIPYear.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.NaturalRoughnessValue">
+            <summary>
+            Gets or sets the NaturalRoughnessValue.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.MMI475YrReturnPeriod">
+            <summary>
+            Gets or sets the MMI475YrReturnPeriod.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.ConstructionCompletePercent">
+            <summary>
+            Gets or sets the ConstructionCompletePercent.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.FloorArea">
+            <summary>
+            Gets or sets the FloorArea.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.FloorOccupied">
+            <summary>
+            Gets or sets the FloorOccupied.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.NumStories">
+            <summary>
+            Gets or sets the NumStories.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.NumBuildings">
+            <summary>
+            Gets or sets the NumBuildings.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.YearBuilt">
+            <summary>
+            Gets or sets the YearBuilt.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.BuildingHeight">
+            <summary>
+            Gets or sets the BuildingHeight.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.CurrencyCode">
+            <summary>
+            Gets or sets the CurrencyCode.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.SubjectAtRiskName">
+            <summary>
+            Gets or sets the SubjectAtRiskName.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.AccountId">
+            <summary>
+            Gets or sets the AccountId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.TIV">
+            <summary>
+            Gets or sets the TIV.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.BuildingTIV">
+            <summary>
+            Gets or sets the BuildingTIV.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.ContentTIV">
+            <summary>
+            Gets or sets the ContentTIV.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.BITIV">
+            <summary>
+            Gets or sets the BITIV.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.LatlongGeoHash">
+            <summary>
+            Gets or sets the LatlongGeoHash.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.RITEScheduleId">
+            <summary>
+            Gets or sets the RITEScheduleId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.RiskItemCharValuationSearchList">
+            <summary>
+            Gets or sets the RiskItemCharValuationSearchList.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.ContractId">
+            <summary>
+            Gets or sets the ContractId.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.ConstructionScheme">
+            <summary>
+            Gets or sets the construction scheme.
+            </summary>
+            <value>
+            The construction scheme.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.OccupancyScheme">
+            <summary>
+            Gets or sets the occupancy scheme.
+            </summary>
+            <value>
+            The occupancy scheme.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.SubjectAtRiskID">
+            <summary>
+            Gets or sets the subject at risk ID.
+            </summary>
+            <value>
+            The subject at risk ID.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.RevisionLabel">
+            <summary>
+            Gets or sets the revision label.
+            </summary>
+            <value>
+            The revision label.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.QuadKey">
+            <summary>
+            Gets or sets the quad key.
+            </summary>
+            <value>
+            The quad key.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.CalculatedTIV">
+            <summary>
+            Gets or sets the calculated TIV.
+            </summary>
+            <value>
+            The calculated TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.CalculatedBuildingTIV">
+            <summary>
+            Gets or sets the calculated building TIV.
+            </summary>
+            <value>
+            The calculated building TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.CalculatedContentsTIV">
+            <summary>
+            Gets or sets the calculated contents TIV.
+            </summary>
+            <value>
+            The calculated contents TIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.CalculatedBITIV">
+            <summary>
+            Gets or sets the calculated BITIV.
+            </summary>
+            <value>
+            The calculated BITIV.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.QuadKey11">
+            <summary>
+            Gets or sets the quad key11.
+            </summary>
+            <value>
+            The quad key11.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.QuadKey12">
+            <summary>
+            Gets or sets the quad key12.
+            </summary>
+            <value>
+            The quad key12.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.QuadKey13">
+            <summary>
+            Gets or sets the quad key13.
+            </summary>
+            <value>
+            The quad key13.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.QuadKey14">
+            <summary>
+            Gets or sets the quad key14.
+            </summary>
+            <value>
+            The quad key14.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.QuadKey15">
+            <summary>
+            Gets or sets the quad key15.
+            </summary>
+            <value>
+            The quad key15.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.QuadKey16">
+            <summary>
+            Gets or sets the quad key16.
+            </summary>
+            <value>
+            The quad key16.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.QuadKey17">
+            <summary>
+            Gets or sets the quad key17.
+            </summary>
+            <value>
+            The quad key17.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.QuadKey18">
+            <summary>
+            Gets or sets the quad key18.
+            </summary>
+            <value>
+            The quad key18.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.AlquistPrioloZoneName">
+            <summary>
+            Gets or sets the name of the alquist priolo zone.
+            </summary>
+            <value>
+            The name of the alquist priolo zone.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.BaseFloodElevation">
+            <summary>
+            Gets or sets the base flood elevation.
+            </summary>
+            <value>
+            The base flood elevation.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.ConstructionName">
+            <summary>
+            Gets or sets the name of the construction.
+            </summary>
+            <value>
+            The name of the construction.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Elevation">
+            <summary>
+            Gets or sets the elevation.
+            </summary>
+            <value>
+            The elevation.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.FloodZone">
+            <summary>
+            Gets or sets the flood zone.
+            </summary>
+            <value>
+            The flood zone.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.OccupancyName">
+            <summary>
+            Gets or sets the name of the occupancy.
+            </summary>
+            <value>
+            The name of the occupancy.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.PrimaryRisk">
+            <summary>
+            Gets or sets a value indicating whether [primary risk].
+            </summary>
+            <value>
+              <c>true</c> if [primary risk]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.WindPoolZone">
+            <summary>
+            Gets or sets the wind pool zone.
+            </summary>
+            <value>
+            The wind pool zone.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.ImportSetId">
+            <summary>
+            Gets or sets the import set id.
+            </summary>
+            <value>
+            The import set id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.BuildingHeightUOMName">
+            <summary>
+            Gets or sets the name of the building height UOM.
+            </summary>
+            <value>
+            The name of the building height UOM.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.DistanceToCoastResolutionName">
+            <summary>
+            Gets or sets the name of the distance to coast resolution.
+            </summary>
+            <value>
+            The name of the distance to coast resolution.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.FloorAreaUOMName">
+            <summary>
+            Gets or sets the name of the floor area UOM.
+            </summary>
+            <value>
+            The name of the floor area UOM.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.GeocodeProductVersionDescription">
+            <summary>
+            Gets or sets the geocode product version description.
+            </summary>
+            <value>
+            The geocode product version description.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.ElevationResolutionName">
+            <summary>
+            Gets or sets the name of the elevation resolution.
+            </summary>
+            <value>
+            The name of the elevation resolution.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.LandslideResolutionName">
+            <summary>
+            Gets or sets the name of the landslide resolution.
+            </summary>
+            <value>
+            The name of the landslide resolution.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.LiquefactionResolutionName">
+            <summary>
+            Gets or sets the name of the liquefaction resolution.
+            </summary>
+            <value>
+            The name of the liquefaction resolution.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.SoilTypeResolutionName">
+            <summary>
+            Gets or sets the name of the soil type resolution.
+            </summary>
+            <value>
+            The name of the soil type resolution.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Admin1GeoId">
+            <summary>
+            Gets or sets the admin1 geo id.
+            </summary>
+            <value>
+            The admin1 geo id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.Zone1GeoId">
+            <summary>
+            Gets or sets the zone1 geo id.
+            </summary>
+            <value>
+            The zone1 geo id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.RiskItemSearch.GeocodingResolutionCode">
+            <summary>
+            Gets or sets the GeocodingResolutionCode.
+            </summary>
+        </member>
+    </members>
+</doc>

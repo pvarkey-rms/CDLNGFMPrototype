@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.DomainDataService.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.DomainDataService.Contracts.IDomain">
+            <summary>
+                Data service interface for resource type - Domain
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IDomain.GetDomain(System.String[],System.Int32,System.Int32)">
+            <summary>
+            Gets the domain.
+            </summary>
+            <param name="code">The code.</param>
+            <param name="top">The top.</param>
+            <param name="skip">The skip.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IDomain.CreateDomain(System.Collections.Generic.List{Rms.DataServices.DomainDataService.Data.DomainSchema})">
+            <summary>
+            Saves the domain.
+            </summary>
+            <param name="schemas">The schema.</param>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IDomain.UpdateDomain(System.Collections.Generic.List{Rms.DataServices.DomainDataService.Data.DomainSchema})">
+            <summary>
+            Updates the domain.
+            </summary>
+            <param name="schemas">The schemas.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IDomain.CountDomain">
+            <summary>
+            Counts the domain.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.DomainDataService.Contracts.IEntity">
+            <summary>
+            Entity interface 
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IEntity.GetEntity(System.String,System.String,System.String[],System.Int32,System.Int32)">
+            <summary>
+            Gets the entity.
+            </summary>
+            <param name="domainCode">The domain code.</param>
+            <param name="namespaceCode">The namespace code.</param>
+            <param name="code">The code.</param>
+            <param name="top">The top.</param>
+            <param name="skip">The skip.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IEntity.CreateEntity(System.String,System.String,System.Collections.Generic.List{Rms.DataServices.DomainDataService.Data.EntitySchema})">
+            <summary>
+            Creates the entity.
+            </summary>
+            <param name="domainCode">The domain code.</param>
+            <param name="namespaceCode">The namespace code.</param>
+            <param name="schemas">The schemas.</param>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IEntity.UpdateEntity(System.String,System.String,System.Collections.Generic.List{Rms.DataServices.DomainDataService.Data.EntitySchema})">
+            <summary>
+            Updates the entity.
+            </summary>
+            <param name="domainCode">The domain code.</param>
+            <param name="namesapceCode">The namesapce code.</param>
+            <param name="schemas">The schemas.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IEntity.CountEntity(System.String,System.String)">
+            <summary>
+            Counts the entity.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.DomainDataService.Contracts.IEntityValue">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IEntityValue.GetEntityValue(System.String,System.String,System.String,System.Int32,System.Int32,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{MongoDB.Bson.BsonValue}},System.Int64@)">
+            <summary>
+                Gets the entity.
+            </summary>
+            <param name="domainCode">The domain code.</param>
+            <param name="namespaceCode">The namespace code.</param>
+            <param name="entityCode">The entity code.</param>
+            <param name="top">The top.</param>
+            <param name="skip">The skip.</param>
+            <param name="filters">The filters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IEntityValue.GetEntityValue(System.String,System.String,System.String,System.Int32,System.Int32,System.Collections.Generic.Dictionary{System.String,System.String[]},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.String,System.Int64@)">
+            <summary>
+            Gets the entity value.
+            </summary>
+            <param name="domainCode">The domain code.</param>
+            <param name="namespaceCode">The namespace code.</param>
+            <param name="entityCode">The entity code.</param>
+            <param name="limit">The limit.</param>
+            <param name="offset">The offset.</param>
+            <param name="filters">The filters.</param>
+            <param name="expand">The expand.</param>
+            <param name="selectFields">The select fields.</param>
+            <param name="sortFields">The sort fields.</param>
+            <param name="order">The order.</param>
+            <param name="count">The count.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IEntityValue.CreateEntityValue(System.String,System.String,System.String,System.Collections.Generic.List{Rms.DataServices.DomainDataService.Data.EntityValue})">
+            <summary>
+                Creates the entity value.
+            </summary>
+            <param name="domainCode">The domain code.</param>
+            <param name="namespaceCode">The namespace code.</param>
+            <param name="entityCode">The entity code.</param>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.IEntityValue.UpdateEntityValue(System.String,System.String,System.String,System.Collections.Generic.List{Rms.DataServices.DomainDataService.Data.EntityValue})">
+            <summary>
+                Updates the entity value.
+            </summary>
+            <param name="domainCode">The domain code.</param>
+            <param name="namespaceCode">The namespace code.</param>
+            <param name="entityCode">The entity code.</param>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.DomainDataService.Contracts.INamespace">
+            <summary>
+                Data service interface for resource type - Namespace
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.INamespace.GetNamespace(System.String,System.String[],System.Int32,System.Int32)">
+            <summary>
+            Gets the namespace.
+            </summary>
+            <param name="domainCode">The domain code.</param>
+            <param name="code">The code.</param>
+            <param name="top">The top.</param>
+            <param name="skip">The skip.</param>
+            <param name="count">The count.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.INamespace.CreateNamespace(System.String,System.Collections.Generic.List{Rms.DataServices.DomainDataService.Data.NamespaceSchema})">
+            <summary>
+            Creates the namespace.
+            </summary>
+            <param name="domainCode">The domain code.</param>
+            <param name="schemas">The schemas.</param>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.INamespace.UpdateNamespace(System.String,System.Collections.Generic.List{Rms.DataServices.DomainDataService.Data.NamespaceSchema})">
+            <summary>
+            Updates the namespace.
+            </summary>
+            <param name="domainCode">The domain code.</param>
+            <param name="schemas">The schemas.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.INamespace.CountNamespace(System.String)">
+            <summary>
+            Counts the namespace.
+            </summary>
+            <param name="domainCode">The domain code.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.DomainDataService.Contracts.ISearch">
+            <summary>
+            Search interface
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.ISearch.SearchTerm(System.String,System.Int32,System.Int32)">
+            <summary>
+            Searches the term.
+            </summary>
+            <param name="term">The term.</param>
+            <param name="top">The top.</param>
+            <param name="skip">The skip.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DomainDataService.Contracts.ISearch.SearchCount(System.String)">
+            <summary>
+            Searches the count.
+            </summary>
+            <param name="term">The term.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

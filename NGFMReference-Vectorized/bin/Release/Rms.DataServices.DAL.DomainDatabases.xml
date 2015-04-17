@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.DAL.DomainDatabases</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1">
+            <summary>
+                Domain Data Manager
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.#ctor(Rms.Core.Platform.MongoDBConfig,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1"/> class.
+            </summary>
+            <param name="mongoDBConfig">The mongo DB config.</param>
+            <param name="collectionName">Name of the collection.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.SetCollection(System.String)">
+            <summary>
+            Sets the collection.
+            </summary>
+            <param name="collectionName">Name of the collection.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.ReadByQuery(MongoDB.Driver.IMongoQuery,System.Int32,System.Int32,MongoDB.Driver.IMongoSortBy,MongoDB.Driver.IMongoFields)">
+            <summary>
+            Reads the by query.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="top">The top.</param>
+            <param name="skip">The skip.</param>        
+            <param name="sortBy">The sort by.</param>
+            <param name="fields">The fields.</param>
+            <returns></returns>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.InsertObjects(System.Collections.Generic.List{`0})">
+            <summary>
+                Inserts the objects.
+            </summary>
+            <param name="objects">The objects.</param>
+            <exception cref="T:System.Exception">Create failed. Data might be inconsistent.</exception>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.UpsertObjects(System.Collections.Generic.List{`0})">
+            <summary>
+                Upserts the objects.
+            </summary>
+            <param name="objects">The objects.</param>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.UpdateObjects(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoUpdate)">
+            <summary>
+            Updates the objects.
+            </summary>
+            <param name="mongoQuery">The mongo query.</param>
+            <param name="mongoUpdate">The mongo update.</param>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.CreateCollection(System.String)">
+            <summary>
+            Creates the collection.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception">Exception creating collection</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.HasCollection(System.String)">
+            <summary>
+            Determines whether the specified config has collection.
+            </summary>
+            <param name="collectionName">Name of the collection.</param>
+            <returns>
+              <c>true</c> if the specified config has collection; otherwise, <c>false</c>.
+            </returns>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.DeleteObjects(MongoDB.Driver.IMongoQuery)">
+            <summary>
+                Deletes the objects.
+            </summary>
+            <param name="query">The query.</param>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.EnsureIndex(MongoDB.Driver.IMongoIndexKeys,MongoDB.Driver.IMongoIndexOptions)">
+            <summary>
+            Ensures the index.
+            </summary>
+            <param name="indexKeys">The index keys.</param>
+            <param name="indexOptions">The index options.</param>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.CopyCollection(Rms.Core.Platform.MongoDBConfig,System.String,MongoDB.Driver.IMongoQuery)">
+            <summary>
+            Copies the collection.
+            </summary>
+            <param name="destConfig">The dest config.</param>
+            <param name="destCollectionName">Name of the dest collection.</param>
+            <param name="query">The query.</param>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.CountByQuery(MongoDB.Driver.IMongoQuery)">
+            <summary>
+            Counts the by query.
+            </summary>
+            <param name="query">The query.</param>
+            <returns></returns>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.ReadOneByQuery(MongoDB.Driver.IMongoQuery)">
+            <summary>
+            Reads the one by query.
+            </summary>
+            <param name="query">The query.</param>
+            <returns></returns>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.RollBackObjects(System.Collections.Generic.List{`0})">
+            <summary>
+            Roll Back Objects
+            </summary>
+            <param name="originalObjectList"></param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.DomainDatabases.DomainDataMongoManager`1.RetrieveObjectsSnapshot(System.Collections.Generic.List{`0})">
+            <summary>
+            RetrieveObjectsSnapshot
+            </summary>
+            <param name="objects"></param>
+        </member>
+    </members>
+</doc>

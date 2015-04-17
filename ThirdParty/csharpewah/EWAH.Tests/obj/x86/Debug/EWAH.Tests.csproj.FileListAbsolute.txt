@@ -1,0 +1,10 @@
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH.Tests\obj\x86\Debug\EWAH.Tests.csprojResolveAssemblyReference.cache
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH.Tests\bin\Debug\EWAH.Tests.dll.config
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH.Tests\bin\Debug\EWAH.Tests.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH.Tests\bin\Debug\EWAH.Tests.pdb
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH.Tests\bin\Debug\EWAH.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH.Tests\bin\Debug\nunit.framework.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH.Tests\bin\Debug\EWAH.pdb
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH.Tests\bin\Debug\nunit.framework.xml
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH.Tests\obj\x86\Debug\EWAH.Tests.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH.Tests\obj\x86\Debug\EWAH.Tests.pdb

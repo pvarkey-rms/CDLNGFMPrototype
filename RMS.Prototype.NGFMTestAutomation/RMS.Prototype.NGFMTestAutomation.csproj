@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E21E93F-EDA9-46D8-B362-B5ACE924096F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RMS.Prototype.NGFMTestAutomation</RootNamespace>
+    <AssemblyName>RMS.Prototype.NGFMTestAutomation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\lib\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\lib\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <PostSharpProperties>IgnoredAssemblies=noesis.javascript</PostSharpProperties>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CurrentPlatform>$(PlatformTarget)</CurrentPlatform>
+    <CurrentPlatform Condition="'$(CurrentPlatform)'=='AnyCPU' and '$(PROCESSOR_ARCHITECTURE)'=='AMD64'">x64</CurrentPlatform>
+    <CurrentPlatform Condition="'$(CurrentPlatform)'=='AnyCPU' and '$(PROCESSOR_ARCHITECTURE)'=='IA64'">x64</CurrentPlatform>
+    <CurrentPlatform Condition="'$(CurrentPlatform)'=='AnyCPU' and '$(PROCESSOR_ARCHITEW6432)'=='AMD64'">x64</CurrentPlatform>
+    <CurrentPlatform Condition="'$(CurrentPlatform)'=='AnyCPU' and '$(PROCESSOR_ARCHITEW6432)'=='IA64'">x64</CurrentPlatform>
+    <CurrentPlatform Condition="'$(CurrentPlatform)'=='AnyCPU' and '$(PROCESSOR_ARCHITECTURE)'=='x86'">x86</CurrentPlatform>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=3.1.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdParty\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Noesis.Javascript, Version=0.0.0.0, Culture=neutral, PublicKeyToken=ae36d046c7f89f85, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdParty\Noesis.Javascript v0.7 - Binaries\.Net4.0\$(CurrentPlatform)\Noesis.Javascript.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\..\..\NG3rdParty\ProtoBuf\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Analytics.DataService.Zip">
+      <HintPath>..\..\..\..\LossAnalytics\Lib\Rms.Analytics.DataService.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Analytics.Module.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Rms.Analytics.Module.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.Common">
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.DataObjects">
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WorkFlowAutomationForProtobuffs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>EDS_Extract_API\WorkFlowAutomationForProtobuffs.exe</HintPath>
+    </Reference>
+    <Reference Include="WorkflowExecution, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>EDS_Extract_API\WorkflowExecution.exe</HintPath>
+    </Reference>
+    <Reference Include="WorkflowGenerator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>EDS_Extract_API\WorkflowGenerator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NinaTest.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="EDS_Extract_API\RmsOne_WFGenerator_NewDesign.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EDS_Extract_API\WorkFlowAutomationForProtobuffs.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EDS_Extract_API\WorkFlowAutomationForProtobuffs.vshost.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EDS_Extract_API\WorkFlowAutomationForProtobuffs.vshost.exe.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EDS_Extract_API\WorkflowExecution.application">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EDS_Extract_API\WorkflowExecution.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EDS_Extract_API\WorkflowExecution.exe.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EDS_Extract_API\WorkflowExecution.vshost.application">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EDS_Extract_API\WorkflowExecution.vshost.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EDS_Extract_API\WorkflowExecution.vshost.exe.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EDS_Extract_API\WorkflowGenerator.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="EDS_Extract_API\WorkFlowGenerator.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Template\NTA Results Output Format.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NGFM.Reference.MatrixHDFM\NGFM.Reference.MatrixHDFM.csproj">
+      <Project>{ae80708e-2bbe-4103-b62d-2dd523c78902}</Project>
+      <Name>NGFM.Reference.MatrixHDFM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NGFMReference-Vectorized\NGFMReference.csproj">
+      <Project>{cbdc38b1-69da-4ef9-a38c-e7bb241d9d3c}</Project>
+      <Name>NGFMReference %28Reference-Vectorized\NGFMReference%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.CDLModel\RMS.ContractObjectModel.csproj">
+      <Project>{ec1cde85-fd21-4abd-ab56-d0b8fc1d672e}</Project>
+      <Name>RMS.ContractObjectModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.ContractGraphModel\RMS.ContractGraphModel.csproj">
+      <Project>{8ea7d950-6e8d-4715-a440-d8c037f6a3bc}</Project>
+      <Name>RMS.ContractGraphModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Prototype.NGFM\RMS.Prototype.NGFM.csproj">
+      <Project>{315b534a-66ad-405e-8029-6d769d6e233f}</Project>
+      <Name>RMS.Prototype.NGFM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="EDS_Extract_API\Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EDS_Extract_API\EdmServerDetails.xml" />
+    <Content Include="EDS_Extract_API\EMT2.exe" />
+    <Content Include="EDS_Extract_API\Services.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EDS_Extract_API\WorkFlowAutomationForProtobuffs.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EDS_Extract_API\WorkFlowAutomationForProtobuffs.pdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EDS_Extract_API\WorkFlowAutomationForProtobuffs.vshost.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EDS_Extract_API\WorkflowExecution.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EDS_Extract_API\WorkflowExecution.vshost.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EDS_Extract_API\WorkflowGenerator.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

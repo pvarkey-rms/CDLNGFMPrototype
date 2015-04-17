@@ -1,0 +1,11 @@
+Product Simple 
+  Declarations
+      Type is Insurance
+      Required Parameters are ( PolicyNum, Subject, Inception, Expiration, WindSublim, BlanketLim )
+      Optional Parameters are ( Insured )
+      WindSublim is 0
+      BlanketLim is 0
+  Covers 
+    100% share of BlanketLim 
+  Sublimits
+    WindSublim  by Wind

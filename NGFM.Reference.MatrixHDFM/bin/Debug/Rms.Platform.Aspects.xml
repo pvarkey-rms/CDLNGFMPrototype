@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.Platform.Aspects</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Platform.Aspects.ResponseFormatAttribute">
+            <summary>
+            Aspect for setting appropriate response format
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Aspects.ResponseFormatAttribute.OnEntry(PostSharp.Aspects.MethodExecutionArgs)">
+            <summary>
+            Method executed <b>before</b> the body of methods to which this aspect is applied.
+            </summary>
+            <param name="args">Event arguments specifying which method
+            is being executed, which are its arguments, and how should the execution continue
+            after the execution of <see cref="M:PostSharp.Aspects.IOnMethodBoundaryAspect.OnEntry(PostSharp.Aspects.MethodExecutionArgs)" />.</param>
+        </member>
+        <member name="T:Rms.Platform.Aspects.MethodTraceAttribute">
+            <summary>
+            Method Trace Aspect.  
+            Log Begin/End to functions
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Aspects.MethodTraceAttribute.OnEntry(PostSharp.Aspects.MethodExecutionArgs)">
+            <summary>
+            Method executed <b>before</b> the body of methods to which this aspect is applied.
+            </summary>
+            <param name="args">Event arguments specifying which method
+            is being executed, which are its arguments, and how should the execution continue
+            after the execution of <see cref="M:PostSharp.Aspects.IOnMethodBoundaryAspect.OnEntry(PostSharp.Aspects.MethodExecutionArgs)" />.</param>
+        </member>
+        <member name="M:Rms.Platform.Aspects.MethodTraceAttribute.InitMethodInfo(PostSharp.Aspects.MethodExecutionArgs)">
+            <summary>
+            Inits the method info.
+            </summary>
+            <param name="args">The args.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Aspects.MethodTraceAttribute.IsProperty(PostSharp.Aspects.MethodExecutionArgs)">
+            <summary>
+            Determines whether the specified args is property.
+            </summary>
+            <param name="args">The args.</param>
+            <returns>
+              <c>true</c> if the specified args is property; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Rms.Platform.Aspects.MethodTraceAttribute.OnExit(PostSharp.Aspects.MethodExecutionArgs)">
+            <summary>
+            Method executed <b>after</b> the body of methods to which this aspect is applied,
+            even when the method exists with an exception (this method is invoked from
+            the <c>finally</c> block).
+            </summary>
+            <param name="args">Event arguments specifying which method
+            is being executed and which are its arguments.</param>
+        </member>
+    </members>
+</doc>

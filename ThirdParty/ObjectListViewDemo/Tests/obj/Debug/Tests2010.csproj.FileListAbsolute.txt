@@ -1,0 +1,3 @@
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\ThirdParty\ObjectListViewDemo\Tests\obj\Debug\Tests2010.csprojResolveAssemblyReference.cache
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\ThirdParty\ObjectListViewDemo\Tests\obj\Debug\BrightIdeasSoftware.Tests.MainForm.resources
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\ThirdParty\ObjectListViewDemo\Tests\obj\Debug\Tests2010.csproj.GenerateResource.Cache

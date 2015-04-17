@@ -1,0 +1,17 @@
+Contract 
+  Declarations
+      Subject is Loss to Acme by HU
+COVERS
+  100% share of 10M 
+SECTIONS
+   Section SectionLabel:
+     Declarations
+       Subject is s
+       Inception is 5 Jun 2014
+	   CoverNames are (CovA, CovB)
+  Section SecondSection:
+     Declarations
+       Subject is something
+	   CoverNames are (CovE, CovF, CovG)
+Sublimits
+    10000 by Wind

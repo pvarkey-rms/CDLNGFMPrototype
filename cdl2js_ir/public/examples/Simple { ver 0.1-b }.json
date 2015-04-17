@@ -1,0 +1,109 @@
+{ "Name" : "Product",
+  "Declarations" : [
+
+    { "Key" : "ProductName",
+      "Value" : "Simple",
+      "Type" : "String"
+    },
+
+    { "Key" : "ContractType",
+      "Value" :  "Insurance",
+      "Type" : "Lookup"
+    },
+
+    { "Key" : "Currency",
+      "Value" :  "USD",
+      "Type" : "Lookup"
+    }
+   ],
+
+   "RequiredParameters" : [
+
+    { "Key" : "PolicyNum",
+      "Value" :  "",
+      "Type" : "String"
+    },
+
+    { "Key" : "Inception",
+      "Value" :  "",
+      "Type" : "Date"
+    },
+    
+    { "Key" : "Expiration",
+      "Value" :  "",
+      "Type" : "Date"
+    },
+
+    { "Key" : "WindSubLim",
+      "Value" :  0,
+      "Type" : "Number"
+    },
+
+    { "Key" : "BlanketLim",
+      "Value" :  0,
+      "Type" : "Number"
+    },
+   ],
+
+   "OptionalParameters" : [ 
+
+     { "Key" : "CauseOfLoss",
+       "Value" :  "",
+       "Type" : "Lookup"
+     },
+
+     { "Key" : "Schedule",
+       "Value" :  "",
+       "Type" : "Lookup"
+     },
+
+     { "Key" : "CoverageType",
+       "Value" :  "",
+       "Type" : "Lookup"
+     }
+
+   ],
+
+   "Covers" : [ 
+     [
+	{ "Key" : "Share",
+	  "Value" :  "100%",
+	  "Type" : "Percent"
+	},
+
+	{ "Key" : "TimeBasis",
+	  "Value" :  "Occurrence",
+	  "Type" : "Lookup"
+	},
+
+	{ "Key" : "Limit",
+	  "Value" :  "@BlanketLim",
+	  "Type" : "Number"
+	},
+       
+	{ "Key" : "Attachment",
+	  "Value" :  "0",
+	  "Type" : "Number"
+	}
+     ]
+   ],
+   "Sublimits" : [
+    [
+	{ "Key" : "Amount",
+	  "Value" :  "@WindSublim",
+	  "Type" : "Number"
+	},
+
+	{ "Key" : "TimeBasis",
+	  "Value" :  "Occurrence",
+	  "Type" : "Lookup"
+	},
+
+	{ "Key" : "CauseOfLoss",
+	  "Value" :  "Wind",
+	  "Type" : "Lookup"
+	}
+    ]
+   ],
+   "Deductibles": []
+}

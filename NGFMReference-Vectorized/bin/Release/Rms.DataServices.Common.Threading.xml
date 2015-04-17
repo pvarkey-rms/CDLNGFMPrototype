@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.Common.Threading</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.Common.Threading.IReader`1">
+            <summary>
+            Interface for generic reader
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.Common.Threading.IReader`1.Read">
+            <summary>
+            Reads an object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>object</returns>
+        </member>
+        <member name="T:Rms.DataServices.Common.Threading.IWriter`1">
+            <summary>
+            Interface for generic writer
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.Common.Threading.IWriter`1.Write(`0)">
+            <summary>
+            Writes the specified obj.
+            </summary>
+            <typeparam name="U"></typeparam>
+            <param name="obj">The obj.</param>
+        </member>
+        <member name="T:Rms.DataServices.Common.Threading.Reader`1">
+            <summary>
+            Generic class for reader
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Rms.DataServices.Common.Threading.Reader`1.#ctor(Rms.DataServices.Common.Threading.IReader{`0},System.Collections.Generic.Queue{`0},System.Object,System.Int32,System.Int32,System.Threading.ManualResetEvent,System.Threading.ManualResetEvent,System.Threading.ManualResetEvent,Rms.DataServices.Common.Threading.SharedStatus)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.Common.Threading.Reader`1"/> class.
+            </summary>
+            <param name="readInterface">The read interface.</param>
+            <param name="queue">The queue.</param>
+            <param name="lockObject">The lock object.</param>
+            <param name="queueThrottleSize">Size of the queue throttle.</param>
+            <param name="sleepInterval">The sleep interval.</param>
+            <param name="readerCompletionEvent">The reader completion event.</param>
+            <param name="queueInsertionEvent">The batch available event.</param>
+            <param name="shutdownEvent">The shutdown event.</param>
+            <param name="sharedStatus">The shared status.</param>
+        </member>
+        <member name="M:Rms.DataServices.Common.Threading.Reader`1.BeginReading">
+            <summary>
+            Begins the reading.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.Common.Threading.Reader`1.SharedStatus">
+            <summary>
+            Gets the shared status.
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.Common.Threading.SharedStatus">
+            <summary>
+            Holds shared status
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.Common.Threading.SharedStatus.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.Common.Threading.SharedStatus"/> class.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.Common.Threading.SharedStatus.Succeeded">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Rms.DataServices.Common.Threading.SharedStatus"/> is succeeded.
+            </summary>
+            <value>
+              <c>true</c> if succeeded; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.Common.Threading.SharedStatus.FailureExceptionPopulatorId">
+            <summary>
+            Gets or sets the failure exception populator id.
+            </summary>
+            <value>
+            The failure exception populator id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.Common.Threading.SharedStatus.FailureException">
+            <summary>
+            Gets or sets the failure exception.
+            </summary>
+            <value>
+            The failure exception.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.Common.Threading.Writer`1">
+            <summary>
+            Generic class for writer
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Rms.DataServices.Common.Threading.Writer`1.#ctor(Rms.DataServices.Common.Threading.IWriter{`0},System.Collections.Generic.Queue{`0},System.Object,System.Threading.ManualResetEvent,System.Threading.ManualResetEvent,System.Threading.ManualResetEvent,System.Threading.ManualResetEvent,Rms.DataServices.Common.Threading.SharedStatus)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.Common.Threading.Writer`1"/> class.
+            </summary>
+            <param name="writeBatchInterface">The write batch interface.</param>
+            <param name="queue">The queue.</param>
+            <param name="lockObject">The lock object.</param>
+            <param name="writerCompletionEvent">The writer completion event.</param>
+            <param name="queueInsertionEvent">The queue insertion event.</param>
+            <param name="readerCompletionEvent">The reader completion event.</param>
+            <param name="shutdownEvent">The shutdown event.</param>
+            <param name="sharedStatus">The shared status.</param>
+        </member>
+        <member name="M:Rms.DataServices.Common.Threading.Writer`1.BeginWriting">
+            <summary>
+            Begins the writing.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.Common.Threading.Writer`1.SharedStatus">
+            <summary>
+            Gets the shared status.
+            </summary>
+        </member>
+    </members>
+</doc>

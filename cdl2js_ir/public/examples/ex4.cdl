@@ -1,0 +1,14 @@
+Contract
+  Declarations
+      UMR is B123-89234
+      Subject is Gross Net of Fac, PerRisk
+      Inception is 4 May 2014
+      Expiration is 3 May 2015
+      Currency is EUR
+      Attachment Basis is Risk Attaching
+      Reinsured is { ABC Company }
+      Status is Signed
+  Covers 
+    L1: 100% share of 10M per occurrence xs 10M  { territory is US } 
+    L2: 30% share of 10M per occurrence xs 10M   { territory is RestOfWorld } 
+    L3: 100% share of 100M aggregate on L1, L2

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE80708E-2BBE-4103-B62D-2DD523C78902}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NGFM.Reference.MatrixHDFM</RootNamespace>
+    <AssemblyName>NGFM.Reference.MatrixHDFM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\lib\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Rms.Analytics.DataService.Zip">
+      <HintPath>..\..\..\..\LossAnalytics\lib\Rms.Analytics.DataService.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.Common">
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.DataObjects">
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HasseManager\HasseManager.csproj">
+      <Project>{0042d5e3-1937-4612-9f3b-2d277c9046b6}</Project>
+      <Name>HasseManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.CDLModel\RMS.ContractObjectModel.csproj">
+      <Project>{ec1cde85-fd21-4abd-ab56-d0b8fc1d672e}</Project>
+      <Name>RMS.ContractObjectModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllocationState.cs" />
+    <Compile Include="MatrixResultOutput.cs" />
+    <Compile Include="FactorInputEngine.cs" />
+    <Compile Include="CoverInputEngine.cs" />
+    <Compile Include="CoverLevelInfo.cs" />
+    <Compile Include="ContractInfo.cs" />
+    <Compile Include="GULossInputEngine.cs" />
+    <Compile Include="IAggregator.cs" />
+    <Compile Include="ICoverAggregator.cs" />
+    <Compile Include="ICoverEngine.cs" />
+    <Compile Include="ITermEngine.cs" />
+    <Compile Include="IVectorEvent.cs" />
+    <Compile Include="MatrixCoverGraphAllocation.cs" />
+    <Compile Include="MatrixGraphAllocation.cs" />
+    <Compile Include="LossState.cs" />
+    <Compile Include="MatrixGraph.cs" />
+    <Compile Include="TermLevelInfo.cs" />
+    <Compile Include="MatrixGraphExecuter.cs" />
+    <Compile Include="PatternInfo.cs" />
+    <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

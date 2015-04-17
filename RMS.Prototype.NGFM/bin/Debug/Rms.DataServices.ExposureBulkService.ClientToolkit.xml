@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.ExposureBulkService.ClientToolkit</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit">
+            <summary>
+            Toolkit for calling functions of the ExposureBulkService
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.#ctor(System.String,System.String,Rms.DataServices.Common.BulkService.ClientToolkit.Settings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit"/> class.
+            </summary>
+            <param name="exposureBulkServiceUrl">The url of the exposure bulk service.</param>
+            <param name="token">The authentication token to be used when executing exposure bulk 
+            service requests.</param>
+            <param name="settings">The settings to be assigned to the toolkit or null if the default ones 
+            should be used.</param>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.#ctor(System.String,System.String,Rms.Platform.Services.Admin.TokenInfoLibrary.ITokenRenewer,Rms.DataServices.Common.BulkService.ClientToolkit.Settings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit"/> class.
+            </summary>
+            <param name="exposureBulkServiceUrl">The url of the exposure bulk service.</param>
+            <param name="token">The authentication token to be used when executing exposure bulk 
+            service requests.</param>
+            <param name="settings">The settings to be assigned to the toolkit or null if the default ones should be used.</param>
+            <param name="tokenRenewer">A token renewer, to get fresh auth tokens for interim flushes in long batches.</param>        
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetRITExposureReader(System.Guid,System.Int32[])">
+            <summary>
+            Gets the RITExposure reader.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="partitionId">The partition id.</param>
+            <returns></returns>
+            <example> This sample shows how to use this function.
+            <code>
+            static void ReaderWriterSample()
+            {
+            var token = AuthenticationUtilities.GetToken();
+            int exposureId = -1;
+            DateTime asOfDate = DateTime.UtcNow;
+              <![CDATA[List<Address> addresses = new List<Address>();]]>
+            ExposureBulkServiceClientToolkit clientToolkit =
+            new ExposureBulkServiceClientToolkit(
+            "http:localhost/ExposureBulkService/ExposureBulkService.svc", token);
+              <![CDATA[using (ExposureReader<RITExposureEntity<Address>> addressReader =
+            clientToolkit.GetRITExposureAddressReader(exposureId, asOfDate))]]>
+            {
+              <![CDATA[using (ExposureWriter<RITExposureEntity<Address>> addressWriter =
+            clientToolkit.GetRITExposureAddressWriter())]]>
+            {
+            foreach (var item in addressReader)
+            {
+            item.RITExposureSubEntity.ACORDResolutionCode = "New ACORDResolutionCode Value";
+            item.RITExposureSubEntity.Alley = "New Alley Value";
+            addressWriter.Add(item);
+            }
+            }
+            }
+            }
+              </code>
+              </example>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetContractExposureReader(System.Guid,System.Int32[])">
+            <summary>
+            Gets the contract exposure reader.
+            </summary>
+            <param name="sessionId"></param>
+            <param name="partitionIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetProductReader(System.Guid,System.Int64[])">
+            <summary>
+            Gets the product reader.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="productIds">The product ids.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">productIds</exception>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetProductReader(System.Guid,System.Collections.Generic.List{System.Tuple{System.Int64,System.DateTime}})">
+            <summary>
+            Gets the product reader.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="productIds">The product keys.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">productIds</exception>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetExposure(System.Guid,Rms.DataServices.DataObjects.ExposureSnapshotKey,System.Boolean)">
+            <summary>
+            Gets the exposure reader.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="exposureSnapshotKey"></param>
+            <param name="loadTree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetRITExposureWriter(System.Guid)">
+            <summary>
+            Gets the RIT exposure writer.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetPartitions(System.Guid,Rms.DataServices.DataObjects.ExposureSnapshotKey,Rms.DataServices.Common.PartitionType)">
+            <summary>
+            Gets the partition ids.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="exposureSnapshotKey"></param>
+            <param name="partitionType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetPartitionsForLI(System.Guid,Rms.DataServices.DataObjects.ExposureSnapshotKey,System.Int32)">
+            <summary>
+            Gets the partitions for LI.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="exposureSnapshotKey">The exposure snapshot key.</param>
+            <param name="batchSize">Size of the batch.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetSubjectsAtRisk(System.Guid,Rms.DataServices.DataObjects.ExposureSnapshotKey,Rms.DataServices.ExposureBulkService.DataObjects.BoundingBox)">
+            <summary>
+            Gets the SubjectsAtRisk Information that exist in the specified bounding box.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="exposureSnapshotKey">The exposure snapshot key.</param>
+            <param name="boundingBox">The bounding box.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.CreateRITExposureAttributeSets(System.Guid,Rms.DataServices.DataObjects.ExposureSnapshotKey,System.String[])">
+            <summary>
+            Creates the RIT exposure attribute sets.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="exposureSnapshotKey">The exposure snapshot key.</param>
+            <param name="attributes">The attributes.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">attributes</exception>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetRITExposureAttributeSet(System.Guid,Rms.DataServices.DataObjects.ExposureSnapshotKey,Rms.DataServices.DataObjects.AttributeSet)">
+            <summary>
+            Gets the attribute set.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="exposureSnapshotKey">The exposure snapshot key.</param>
+            <param name="attributeSet">The attribute set.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetRITExposureAttributeSetWithCount(System.Guid,Rms.DataServices.DataObjects.ExposureSnapshotKey,Rms.DataServices.DataObjects.AttributeSet)">
+            <summary>
+            Gets the attribute set.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="exposureSnapshotKey">The exposure snapshot key.</param>
+            <param name="attributeSet">The attribute set.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetPositionStructures(System.Guid,System.Collections.Generic.List{System.Int64})">
+            <summary>
+            Gets the position structures.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="positionStructureIds">The position structure ids.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">positionStructureIds</exception>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetExposures(System.Guid,System.Collections.Generic.List{Rms.DataServices.DataObjects.ExposureSnapshotKey})">
+            <summary>
+            Gets the exposures.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="exposureSnapshotKeys">The exposure snapshot keys.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">exposureSnapshotKeys</exception>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.GetPositions(System.Guid,Rms.DataServices.DataObjects.ExposureSnapshotKey)">
+            <summary>
+            Gets the positions.
+            </summary>
+            <param name="sessionId">The session id.</param>
+            <param name="exposureSnapshotkey">The exposure snapshotkey.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">exposureSnapshotKey</exception>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.ApplyFilter(System.Collections.Generic.IEnumerable{Rms.DataServices.DataObjects.ContractExposure},Rms.DataServices.DataObjects.Filter)">
+            <summary>
+            Applies EQl filter on ContractExposure list
+            </summary>
+            <param name="contractExposures"></param>
+            <param name="filter"></param>
+            <returns>List of ContractExposures</returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.CDLContractReader_ObjectRead(System.Object,Rms.DataServices.Common.EventArgs.GenericEventArgs{Rms.DataServices.ExposureBulkService.DataObjects.CDLContract})">
+            <summary>
+            Called when a <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract"/> is read from the <see cref="!:ExposureReader&lt;T&gt;"/>
+            to subscribe the toolkit for <see cref="E:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract.CDLContractRitesRequested"/> event.
+            </summary>
+            <param name="sender">The CDL Contract Reader which read the <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract"/>.</param>
+            <param name="e">Event arguments that keep the <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract"/> which was read.</param>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.CDLContract_Disposed(System.Object,System.EventArgs)">
+            <summary>
+            Called when <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract"/> is disposed to unsubscribe the toolkit from any events 
+            in the <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract"/>.
+            </summary>
+            <param name="sender">The CDL Contract Reader which fired the 
+            <see cref="E:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract.Disposed"/> event.</param>
+            <param name="e">Empty <see cref="T:System.EventArgs"/>.</param>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.CDLContract_CDLContractRitesRequested(System.Object,Rms.DataServices.ExposureBulkService.DataObjects.EventArgs.CDLContractRitesEventArgs)">
+            <summary>
+            Requests CDL Contract Rites from the Exposure Bulk Service.
+            </summary>
+            <param name="sender">The CDL Contract Reader which fired the 
+            <see cref="E:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract.CDLContractRitesRequested"/> event.</param>
+            <param name="e">Additional data coming with the <see cref="E:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract.CDLContractRitesRequested"/> event 
+            which keeps the url from which CDL Contract Rites will be requested. The CDL Contract rites retrieved
+            from the Exposure Bulk Service will be passed back to the <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract"/> using 
+            <paramref name="e"/>.</param>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.CDLContractReader_Disposed(System.Object,System.EventArgs)">
+            <summary>
+            Unsubscribes the toolkit for a cdl contract reader's events when the reader is disposed.
+            </summary>
+            <param name="sender">The cdl contract reader firing the disposed event.</param>
+            <param name="e">Event args passed from the CDL contract reader when the Disposed event is fired.</param>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.ExecuteGetReader``1(System.String,System.String)">
+            <summary>
+            Executes a get operation that returns a reader. It makes request to the exposure bulk service.
+            </summary>
+            <typeparam name="T">The type of the objects to be returned by the reader.</typeparam>
+            <param name="operation">The part of the data service url that identifies the operation 
+            (i.e. the one after the base address.)</param>
+            <param name="operationAlias">A short string that will be set in the request header 
+            to identify the operation.</param>
+            <returns>A reader to read the elements returned by the operation.</returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.FormatDate(System.DateTime)">
+            <summary>
+            Formats a date time object to a string which can be passed to the exposure bulk service.
+            </summary>
+            <param name="dateTime">The data time object to be formatted.</param>
+            <returns>The formatted data time string.</returns>
+            <remarks>The date time is converted to UTC date time.</remarks>
+        </member>
+        <member name="T:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.ExposureRequestHandler">
+            <summary>
+            Event handler for lazyily loading child exposures.
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.ExposureRequestHandler.#ctor(Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit,System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.ExposureRequestHandler"/> class.
+            </summary>
+            <param name="toolkit">The toolkit.</param>
+            <param name="sessionId">The session id.</param>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.ExposureBulkServiceClientToolkit.ExposureRequestHandler.ContractExposureReader_ObjectRead(System.Object,Rms.DataServices.Common.EventArgs.GenericEventArgs{Rms.DataServices.DataObjects.ContractExposure})">
+            <summary>
+            Event handler for lazy loading the child exposures.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The e.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1179 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.Rap.Service.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Rap.Service.Data.AnalysisSettingMetadata">
+            <summary>
+            Analysis Setting Metadata class
+            </summary>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.BaseMetadata">
+            <summary>
+            Base Metadata class
+            </summary>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.BaseMetadata.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.EntityType">
+            <summary>
+            Gets or sets the type of the entity.
+            </summary>
+            <value>
+            The type of the entity.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.RiskAnalysisProfileCategory">
+            <summary>
+            Gets or sets the rap category.
+            </summary>
+            <value>
+            The rap category.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.TagList">
+            <summary>
+            Gets or sets the tags.
+            </summary>
+            <value>
+            The tags.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.CreatedDate">
+            <summary>
+            Gets or sets the created date.
+            </summary>
+            <value>
+            The created date.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.UpdatedDate">
+            <summary>
+            Gets or sets the updated date.
+            </summary>
+            <value>
+            The updated date.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.IsDefault">
+            <summary>
+            Gets or sets a value indicating whether the RAP is default.
+            </summary>
+            <value><c>true</c> if this RAP is default; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.IsHidden">
+            <summary>
+            Gets or sets a value indicating whether this instance is hidden.
+            </summary>
+            <value>
+              <c>true</c> if this instance is hidden; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.ACLTagList">
+            <summary>
+            Gets or sets the acl tag list.
+            </summary>
+            <value>
+            The acl tag list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.HashCode">
+            <summary>
+            The hash code
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.BaseMetadata.OwnerId">
+            <summary>
+            Gets or sets the owner unique identifier.
+            </summary>
+            <value>
+            The owner unique identifier.
+            </value>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.AnalysisSettingMetadata.#ctor(Rms.Rap.Service.Data.AnalysisSettingMetadata)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Rap.Service.Data.RapMetadata"/> class.
+            </summary>
+            <param name="metadata">The Metadata.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.AnalysisSettingMetadata.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Rap.Service.Data.AnalysisSettingMetadata"/> class.
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSettingMetadata.AnalysisSettingType">
+            <summary>
+            Gets or sets the type of the analysis setting.
+            </summary>
+            <value>
+            The type of the analysis setting.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.Attribute">
+            <summary>
+            Class to represent rap attribute
+            </summary>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.Attribute.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Attribute.HashCode">
+            <summary>
+            The hash code
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Attribute.DataType">
+            <summary>
+            Gets or sets the type of the setting.
+            </summary>
+            <value>
+            The type of the setting.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Attribute.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>
+            The key.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Attribute.ValueList">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Attribute.ValueUrlList">
+            <summary>
+            Gets or sets the value URL.
+            </summary>
+            <value>
+            The value URL.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Attribute.ReadOnly">
+            <summary>
+            Gets or sets a value indicating whether [read only].
+            </summary>
+            <value>
+              <c>true</c> if [read only]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Attribute.Required">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Rms.Rap.Service.Data.Attribute"/> is required.
+            </summary>
+            <value>
+              <c>true</c> if required; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Attribute.Hidden">
+            <summary>
+            Gets or sets a value indicating whether this instance is hidden.
+            </summary>
+            <value>
+              <c>true</c> if this instance is hidden; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Attribute.DisplayText">
+            <summary>
+            Gets or sets the display text.
+            </summary>
+            <value>
+            The display text.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Attribute.RenderType">
+            <summary>
+            Gets or sets the type of the render.
+            </summary>
+            <value>
+            The type of the render.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.AttributeRenderType">
+            <summary>
+            enum to represent attribute reder type
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.CheckBox">
+            <summary>
+            The check box
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.CheckBoxRepeat">
+            <summary>
+            The checkbox repeat
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.CheckBoxGroup">
+            <summary>
+            The checkbox group
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.Number">
+            <summary>
+            The number
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.DropDown">
+            <summary>
+            The drop down box
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.RadioButton">
+            <summary>
+            The radio button
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.RadioButtonGroup">
+            <summary>
+            The radio button group
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.TextBox">
+            <summary>
+            The text box
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.Date">
+            <summary>
+            The date
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.CheckBoxTree">
+            <summary>
+            The CheckBoxTree
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.Invisible">
+            <summary>
+            The Invisible
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.TextArea">
+            <summary>
+            The TextArea
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.CodeEditor">
+            <summary>
+            The CodeEditor
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.Label">
+            <summary>
+            The Label
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.HeaderLabel">
+            <summary>
+            The Header Label
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.CheckBoxGroupWithScroll">
+            <summary>
+            The CheckBoxGroup With Scroll
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.DamageAdjustmentComponent">
+            <summary>
+            The Damage Adjustment Component
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.CheckBoxGrid">
+            <summary>
+            The Check Box Grid Component
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AttributeRenderType.CSVTextBox">
+            <summary>
+            The CSV Text Box Component
+            </summary>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.GetAnalysisSettingInstanceListOutput">
+            <summary>
+            List of Analysis Setting Instances
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetAnalysisSettingInstanceListOutput.AnalysisSettingInstanceList">
+            <summary>
+            Gets or sets the analysis setting instance list.
+            </summary>
+            <value>
+            The analysis setting instance list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetAnalysisSettingInstanceListOutput.TotalNumberOfItems">
+            <summary>
+            Gets or sets the total number of items.
+            </summary>
+            <value>
+            The total number of items.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.GetMetadataCollectionInput">
+            <summary>
+            class to represent GetMetadataCollectionInput
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetMetadataCollectionInput.Filter">
+            <summary>
+            Gets or sets the filter.
+            </summary>
+            <value>
+            The filter.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetMetadataCollectionInput.EntityType">
+            <summary>
+            Gets or sets the type of the entity.
+            </summary>
+            <value>
+            The type of the entity.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetMetadataCollectionInput.PageAttributes">
+            <summary>
+            Gets or sets the page attributes.
+            </summary>
+            <value>
+            The page attributes.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetMetadataCollectionInput.SortFieldList">
+            <summary>
+            Gets or sets the sort field list.
+            </summary>
+            <value>
+            The sort field list.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.GetAnalysisSettingListInput">
+            <summary>
+            class to represent GetProfileList input
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetAnalysisSettingListInput.PageAttributes">
+            <summary>
+            Gets or sets the page attributes.
+            </summary>
+            <value>
+            The page attributes.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetAnalysisSettingListInput.Filter">
+            <summary>
+            Gets or sets the filter.
+            </summary>
+            <value>
+            The filter.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetAnalysisSettingListInput.SortFieldList">
+            <summary>
+            Gets or sets the sort field list.
+            </summary>
+            <value>
+            The sort field list.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.GetRapDefinitionListInput">
+            <summary>
+            class to represent GetRapDefinitionList input
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetRapDefinitionListInput.PageAttributes">
+            <summary>
+            Gets or sets the page attributes.
+            </summary>
+            <value>
+            The page attributes.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetRapDefinitionListInput.Filter">
+            <summary>
+            Gets or sets the filter.
+            </summary>
+            <value>
+            The filter.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetRapDefinitionListInput.SortFieldList">
+            <summary>
+            Gets or sets the sort field list.
+            </summary>
+            <value>
+            The sort field list.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.InputValidationManager">
+            <summary>
+            Class to validate different input data objects
+            </summary>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.#cctor">
+            <summary>
+            Initializes the <see cref="T:Rms.Rap.Service.Data.InputValidationManager"/> class.
+            </summary>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.ValidateCreateRap(Rms.Rap.Service.Data.RiskAnalysisProfile,Rms.Core.Configuration.RapService.RapServiceConfig)">
+            <summary>
+            Validates the RiskAnalysisProfile Metadata.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="rapServiceConfig">The rap service configuration.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.ValidateUpdateRap(Rms.Rap.Service.Data.RiskAnalysisProfile,Rms.Core.Configuration.RapService.RapServiceConfig)">
+            <summary>
+            Validates the update RiskAnalysisProfile.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="rapServiceConfig">The rap service configuration.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.ValidateGetRapDefinitionList(Rms.Rap.Service.Data.GetRapDefinitionListInput)">
+            <summary>
+            Validates the get rap definition list.
+            </summary>
+            <param name="input">The input.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.ValidateMetaData(Rms.Rap.Service.Data.BaseMetadata,System.Boolean,System.Nullable{Rms.Rap.Service.Data.EntityType})">
+            <summary>
+            Validates the RiskAnalysisProfile meta data.
+            </summary>
+            <param name="metadata">The input.</param>
+            <param name="isUpdateOperation">if set to <c>true</c> [is update operation].</param>
+            <param name="entityType">Type of the entity.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.ValidateProfile(Rms.Rap.Service.Data.AnalysisSetting)">
+            <summary>
+            Validates the profile.
+            </summary>
+            <param name="analysisSetting">The rap entity.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.VaildateGetProfileListInput(Rms.Rap.Service.Data.GetAnalysisSettingListInput)">
+            <summary>
+            Vaildates the get profile list input.
+            </summary>
+            <param name="input">The input.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.ValidateSortField(System.Collections.Generic.List{Rms.Platform.Common.Filters.SortField})">
+            <summary>
+            Validates the sort field.
+            </summary>
+            <param name="input">The input.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.ValidateRap(Rms.Rap.Service.Data.RiskAnalysisProfile,System.Boolean,System.Boolean,Rms.Core.Configuration.RapService.RapServiceConfig)">
+            <summary>
+            Validates the rap.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="isUpdateOperation">if set to <c>true</c> [is update operation].</param>
+            <param name="isCopyOperation">if set to <c>true</c> [is copy operation].</param>
+            <param name="rapServiceConfig">The rap service configuration.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.ValidateRapAttribute(Rms.Rap.Service.Data.Attribute)">
+            <summary>
+            Validates the rap attribute.
+            </summary>
+            <param name="attribute">The attribute.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.ValidateDataType(Rms.Rap.Service.Data.DataType,System.String)">
+            <summary>
+            Validates the type of the data.
+            </summary>
+            <param name="dataType">Type of the data.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.ValidatePageAttributes(Rms.Rap.Service.Data.PageAttributes)">
+            <summary>
+            Validates the page attributes.
+            </summary>
+            <param name="pageAttributes">The page attributes.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.InputValidationManager.ValidateFilter(Rms.Platform.Common.Filters.Filter)">
+            <summary>
+            Validates the filter.
+            </summary>
+            <param name="filter">The filter.</param>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.RapMetadata">
+            <summary>
+            Class to represent RiskAnalysisProfile Metadata
+            </summary>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.RapMetadata.#ctor(Rms.Rap.Service.Data.BaseMetadata)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Rap.Service.Data.RapMetadata"/> class.
+            </summary>
+            <param name="rapMetadata">The Metadata.</param>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.RapMetadata.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Rap.Service.Data.RapMetadata"/> class.
+            </summary>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.Outputs.GetMetadataCollectionOutput">
+            <summary>
+            class to represent GetCollectionMetadataOutput
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Outputs.GetMetadataCollectionOutput.MetadataList">
+            <summary>
+            Gets or sets the Metadata list.
+            </summary>
+            <value>
+            The Metadata list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.Outputs.GetMetadataCollectionOutput.TotalNumberOfItems">
+            <summary>
+            Gets or sets the total number of items for Metadata collection.
+            </summary>
+            <value>
+            The total number of items.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.GetColumnInfoListOutput">
+            <summary>
+            Class to represent GetColumnInfoListOutput
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetColumnInfoListOutput.ColumnInfoList">
+            <summary>
+            Gets or sets the column info list.
+            </summary>
+            <value>The column info list.</value>
+            <remarks></remarks>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.GetDataTypeOperationsOutput">
+            <summary>
+            Class to represent GetDataTypeOperationsOutput
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetDataTypeOperationsOutput.DataTypeOperationListMapping">
+            <summary>
+            Gets or sets the data type operation list mapping.
+            </summary>
+            <value>The data type operation list mapping.</value>
+            <remarks></remarks>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.GetAnalysisSettingListOutput">
+            <summary>
+            Class to represent GetRapDefinitionListOutput
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetAnalysisSettingListOutput.AnalysisSettingList">
+            <summary>
+            Gets or sets the profile list.
+            </summary>
+            <value>
+            The profile list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetAnalysisSettingListOutput.TotalNumberOfItems">
+            <summary>
+            Gets or sets the total number of items for definition list.
+            </summary>
+            <value>
+            The total number of items.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.GetRapDefinitionListOutput">
+            <summary>
+            Class to represent GetRapDefinitionListOutput
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetRapDefinitionListOutput.RapDefinitionList">
+            <summary>
+            Gets or sets the rap definition list.
+            </summary>
+            <value>
+            The rap definition list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.GetRapDefinitionListOutput.TotalNumberOfItems">
+            <summary>
+            Gets or sets the total number of items for definition list.
+            </summary>
+            <value>
+            The total number of items.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.PageAttributes">
+            <summary>
+            Pagination Attributes
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.PageAttributes.StartIndex">
+            <summary>
+            Gets or sets the start index.
+            </summary>
+            should be great than 0
+            <value>
+            The start index.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.PageAttributes.NumOfItems">
+            <summary>
+            Gets or sets the num of items.
+            </summary>
+            -1 means unlimited
+            <value>
+            The num of items.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.AnalysisSetting">
+            <summary>
+            Class to represent rap profile
+            </summary>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.AnalysisSetting.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.AnalysisSetting.GetAttribute(System.String)">
+            <summary>
+            Gets the attribute.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSetting.AnalysisSettingType">
+            <summary>
+            Gets or sets the type of the profile.
+            </summary>
+            <value>
+            The type of the profile.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSetting.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSetting.Metadata">
+            <summary>
+            Gets or sets the Metadata.
+            </summary>
+            <value>
+            The Metadata.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSetting.AttributeList">
+            <summary>
+            Gets or sets the attribute list.
+            </summary>
+            <value>
+            The attribute list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSetting.InnerAnalysisSettingIdList">
+            <summary>
+            Gets or sets the inner profile id list.
+            </summary>
+            <value>
+            The inner profile id list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSetting.InnerAnalysisSettingUrls">
+            <summary>
+            Gets or sets the inner analysis setting URls.
+            </summary>
+            <value>
+            The inner analysis setting URls.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSetting.HashCode">
+            <summary>
+            Gets or sets the hash code.
+            </summary>
+            <value>
+            The hash code.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.AnalysisSettingInstance">
+            <summary>
+            Class to represent rap  profile instance
+            </summary>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.AnalysisSettingInstance.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSettingInstance.AnalysisSettingType">
+            <summary>
+            Gets or sets the type of the profile.
+            </summary>
+            <value>
+            The type of the profile.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSettingInstance.Id">
+            <summary>
+            Gets or sets the Id of the profile.
+            </summary>
+            <value>
+            The Id of the profile.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSettingInstance.ParentId">
+            <summary>
+            Gets or sets the parent id.
+            </summary>
+            <value>
+            The parent id.
+            </value>        
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSettingInstance.ParentURL">
+            <summary>
+            Gets or sets the parent URL.
+            </summary>
+            <value>
+            The parent URL.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSettingInstance.Metadata">
+            <summary>
+            Gets or sets the Metadata.
+            </summary>
+            <value>
+            The Metadata.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSettingInstance.AttributeList">
+            <summary>
+            Gets or sets the attribute list.
+            </summary>
+            <value>
+            The attribute list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSettingInstance.InnerAnalysisSettingInstanceList">
+            <summary>
+            Gets or sets the inner profile instance list.
+            </summary>
+            <value>
+            The inner profile instance list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.AnalysisSettingInstance.HashCode">
+            <summary>
+            The hash code
+            </summary>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.RiskAnalysisProfileInstance">
+            <summary>
+            Class to represent RiskAnalysisProfile instance
+            </summary>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.RiskAnalysisProfileInstance.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+            </returns>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.RiskAnalysisProfileInstance.GetProfileInstanceList(System.Collections.Generic.List{Rms.Rap.Service.Data.AnalysisSettingType})">
+            <summary>
+            Gets the profile instance list.
+            </summary>
+            <param name="profileTypeList">The profile type list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.RiskAnalysisProfileInstance.AddProfileInstanceList(System.Collections.Generic.IEnumerable{Rms.Rap.Service.Data.AnalysisSettingInstance},System.Collections.Generic.List{Rms.Rap.Service.Data.AnalysisSettingType},System.Collections.Generic.IDictionary{Rms.Rap.Service.Data.AnalysisSettingType,System.Collections.Generic.List{Rms.Rap.Service.Data.AnalysisSettingInstance}})">
+            <summary>
+            Adds the profile instance list.
+            </summary>
+            <param name="profileInstanceList">The profile instance list.</param>
+            <param name="profileTypeList">The profile type list.</param>
+            <param name="output">The output.</param>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfileInstance.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfileInstance.ParentId">
+            <summary>
+            Gets or sets the parent id.
+            </summary>
+            <value>
+            The parent id.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfileInstance.AnalysisSettingInstanceList">
+            <summary>
+            Gets or sets the instance profile list.
+            </summary>
+            <value>
+            The instance profile list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfileInstance.Metadata">
+            <summary>
+            Gets or sets the Metadata.
+            </summary>
+            <value>
+            The Metadata.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfileInstance.HashCode">
+            <summary>
+            The hash code
+            </summary>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.RiskAnalysisProfileInstanceInformation">
+            <summary>
+            Class to represent rap Instance information
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfileInstanceInformation.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfileInstanceInformation.Url">
+            <summary>
+            Gets or sets the URL.
+            </summary>
+            <value>
+            The URL.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfileInstanceInformation.CreatedDate">
+            <summary>
+            Gets or sets the created date.
+            </summary>
+            <value>
+            The created date.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfileInstanceInformation.UserId">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.RiskAnalysisProfileCategory">
+            <summary>
+            enum to represent rap category
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.RiskAnalysisProfileCategory.RmsRecommended">
+            <summary>
+            RmsRecommended = 1
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.RiskAnalysisProfileCategory.UserDefined">
+            <summary>
+            UserDefined
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.RiskAnalysisProfileCategory.BestPractice">
+            <summary>
+            BestPractice
+            </summary>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.RiskAnalysisProfile">
+            <summary>
+            Class to represent RiskAnalysisProfile definition
+            </summary>
+        </member>
+        <member name="M:Rms.Rap.Service.Data.RiskAnalysisProfile.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+            </returns>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfile.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfile.AnalysisSettingIdList">
+            <summary>
+            Gets or sets the profile id list.
+            </summary>
+            <value>
+            The profile id list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfile.AnalysisSettingUrlList">
+            <summary>
+            Gets or sets the analysis setting id list.
+            </summary>
+            <value>
+            The analysis setting id list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfile.RiskAnalysisProfileInstanceInformationList">
+            <summary>
+            Gets or sets the rap instance information list.
+            </summary>
+            <value>
+            The rap instance information list.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfile.Metadata">
+            <summary>
+            Gets or sets the rap Metadata.
+            </summary>
+            <value>
+            The rap Metadata.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RiskAnalysisProfile.HashCode">
+            <summary>
+            The hash code
+            </summary>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.AnalysisSettingType">
+            <summary>
+            Class to represent profile type
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.Geocoding">
+            <summary>
+            The geocoding
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.Hazard">
+            <summary>
+            The hazard
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.Accumulation">
+            <summary>
+            The accumulation
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.DQ">
+            <summary>
+            The DQ
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.PerilModel">
+            <summary>
+            The peril model
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.GeoHaz">
+            <summary>
+            The geo haz
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.Exposure">
+            <summary>
+            The exposure
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.LossAnalysis">
+            <summary>
+            The loss analysis
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.EventDefinition">
+            <summary>
+            The event definition
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.SubPerilModel">
+            <summary>
+            The sub peril model
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.AccumulationArea">
+            <summary>
+            The accumulation area
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.AccumulationAreaDamage">
+            <summary>
+            The accumulation area damage
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.Adjustment">
+            <summary>
+            The adjustment
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.Enhancement">
+            <summary>
+            The enhancement
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.Historical">
+            <summary>
+            The Historical
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.Scenario">
+            <summary>
+            The Schenario
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.AnalysisSettingType.Footprint">
+            <summary>
+            The Footprint
+            </summary>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.EntityType">
+            <summary>
+            Enum to represt all entity types in RAP framework
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.EntityType.RiskAnalysisProfile">
+            <summary>
+            The rap
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.EntityType.RiskAnalysisProfileInstance">
+            <summary>
+            The rap instance
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.EntityType.AnalysisSetting">
+            <summary>
+            The profile
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.EntityType.AnalysisSettingInstance">
+            <summary>
+            The profile instance
+            </summary>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.DataType">
+            <summary>
+            Class to represent setting type
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.DataType.String">
+            <summary>
+            String = 1
+            </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.DataType.Int">
+             <summary>
+            Int
+             </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.DataType.Double">
+             <summary>
+            Double
+             </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.DataType.Float">
+             <summary>
+            Float
+             </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.DataType.Date">
+             <summary>
+            Date
+             </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.DataType.Bool">
+             <summary>
+            Bool
+             </summary>
+        </member>
+        <member name="F:Rms.Rap.Service.Data.DataType.Int64">
+             <summary>
+            Int64
+             </summary>
+        </member>
+        <member name="T:Rms.Rap.Service.Data.RapTenantConfig">
+            <summary>
+            Tenant Config
+            </summary>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RapTenantConfig.DACLOverride">
+            <summary>
+            Gets or sets a value indicating whether [dacl override].
+            </summary>
+            <value>
+              <c>true</c> if [dacl override]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Rap.Service.Data.RapTenantConfig.CacheStore">
+            <summary>
+            Gets or sets the cache store.
+            </summary>
+            <value>
+            The cache store.
+            </value>
+        </member>
+    </members>
+</doc>

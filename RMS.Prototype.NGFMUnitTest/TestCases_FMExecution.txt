@@ -1,0 +1,135 @@
+﻿// *******************************************************
+/ *** Independent Primary Contracts (Single Building) ***
+// *******************************************************
+
+[Test 001] //With Factor
+RITE:001_extract.dat
+DR:001_damage_ratios.txt
+RESULT:1,559186.51;2,621200.99;3,559186.51;4,560186.51;5,526200.99;6,559901.25;7,571200.99;8,500000;9,500000;10,150000;11,150000;12,165000;13,165000;14,579452.91;15,560186.51;16,560186.51;17,517665.41;18,501200.99;19,500000;
+
+[Test 002]
+RITE:002_extract.dat
+DR:002_damage_ratios.txt
+RESULT:1,229459.50;2,302576.98;3,292576.98;4,182576.98;5,162576.98;6,208221.44;7,150000;8,150000;9,165000;10,165000;11,229459.50;12,229459.50;13,162576.98
+
+[Test 003]
+RITE:003_extract.dat
+DR:003_damage_ratios.txt
+RESULT:1,140350.67;2,75000;3,75000;4,140350.67;5,140350.67
+
+[Test 004]
+RITE:004_extract.dat
+DR:004_damage_ratios.txt
+RESULT:1,750000;2,1347085.44
+
+[Test 005]
+RITE:005_extract.dat
+DR:005_damage_ratios.txt
+RESULT:1,619602.55;2,725560.64
+
+[Test 016]
+RITE:016_extract.dat
+DR:016_damage_ratios.txt
+RESULT:11331,565975.4;1,81195.08;2,302780.32;3,662931.46;4,2000000
+
+// *******************************************************
+// *** Independent Primary Contracts (Multi Building) ***
+// *******************************************************
+
+[Test 006]
+RITE:006_extract.dat
+DR:006_damage_ratios.txt
+RESULT:1,2045361.52;2,2201571.39
+
+[Test 007]
+RITE:007_extract.dat
+DR:007_damage_ratios.txt
+RESULT:1,684452.20;2,684452.20
+
+[Test 008]
+RITE:008_extract.dat
+DR:008_damage_ratios.txt
+RESULT:1,986986.47;2,986986.47
+
+[Test 009]
+RITE:009_extract.dat
+DR:009_damage_ratios.txt
+RESULT:1,0;2,0
+
+[Test 010]
+RITE:010_extract.dat
+DR:010_damage_ratios.txt
+RESULT:1,2045361.52
+
+[Test 011]
+RITE:011_extract.dat
+DR:011_damage_ratios.txt
+RESULT:1,684452.20
+
+[Test 012]
+RITE:012_extract.dat
+DR:012_damage_ratios.txt
+RESULT:1,986986.47
+
+[Test 013]
+RITE:013_extract.dat
+DR:013_damage_ratios.txt
+RESULT:1,0
+
+[Test 014]
+RITE:014_extract.dat
+DR:014_damage_ratios.txt
+RESULT:1,1990515.94;2,1368904.41
+
+
+// *******************************************************
+// *** Treaty Contracts ***
+// *******************************************************
+
+//[Test 015]
+//RITE:015_extract.dat
+//DR:015_damage_ratios.txt
+//RESULT:-2,2000000
+
+//Hours Clause
+// TODO : highlight this as the case where my old greedy approach (as opposed to Slava/Swapna's new approach is worse!!!)
+[Test 017]
+RITE:017_extract.dat
+DR:017_damage_ratios.txt
+RESULT:-1,35000;-2,100000
+
+//Hours Clause, Reinstatements
+// -1 used to be 165220.59 !! -- another case as above
+[Test 018]
+RITE:018_extract.dat
+DR:018_damage_ratios.txt
+RESULT:-1,180220.59;-2,180220.59
+
+// *******************************************************
+// *** Per Risk Covers w/ Single Building ***
+// *******************************************************
+
+[Test 019]
+RITE:Derived_NoPerRisk_ChildrenBothPerRisk.dat
+DR:PerRiskCovers_SINGLEBUILDING_DRs.txt
+RESULT:11331,150000
+
+[Test 020]
+RITE:Derived_NoPerRisk_OneChildPerRisk.dat
+DR:PerRiskCovers_SINGLEBUILDING_DRs.txt
+RESULT:11331,400000
+
+[Test 021]
+RITE:Derived_PerRisk_Example2(OneChildIsDerived).dat
+DR:PerRiskCovers_SINGLEBUILDING_DRs.txt
+RESULT:11331,617675.02
+
+// *******************************************************
+// *** Vector of Factors  ***
+// *******************************************************
+
+[Test 022]
+RITE:rites_batch_AfterDisagg_ManyContracts.dat
+DR:Diasagg_damage_ratios.txt
+RESULT:1,494228.96;2,395473.85;3,0;4,1295473.85
+

@@ -1,0 +1,224 @@
+﻿// *******************************************************
+// *** Independent Primary Contracts (No Overlap) ***
+// *******************************************************
+
+[Test 001, not-overlap multi-building]
+RITE:rites_batch0.dat
+ContractID:11324656
+GraphType:FixedGraph1
+Building:0,10;1,345
+//DR:001_damage_ratios.txt
+CDL:"Contract Declarations
+                            Name is {NGFM EQ102}
+                            Currency is USD
+                            Using RMS {22 Jul 2014}
+                            Inception is 01 Jan 2000
+                            Expiration is 31 Dec 2003
+                            Type is {Primary Policy}
+                            Subject is Loss to S2729 by EQ
+                            Covers 
+                            L102_3222: 100% Share of 1M xs 500 For Loss to S2729.EQ by EQ
+                            Sections
+                            Section Sec1:
+                                    Declarations
+                            Premium is 10
+                                    CoverNames are (L102_3222)
+                            SubLimits 
+                            30K For Loss to S2729.EQ.59491 by EQ Per Risk
+                            55K For Loss to S2729.EQ.59492 by EQ Per Risk
+                            10M For Building to S2729.EQ.59491 by EQ Per Risk
+                            100K For Contents to S2729.EQ.59491 by EQ Per Risk
+                            Deductibles 
+                            1K For Loss to S2729.EQ.59491 by EQ Per Risk
+                            200 For Loss to S2729.EQ.59492 by EQ Per Risk
+                            30K For Building to S2729.EQ.59491 by EQ Per Risk"
+//--------------------------------------------------------------------------------------
+[Test 002, not-overlap diff perils, multi-building]
+RITE:rites_batch0.dat
+ContractID:11324656
+GraphType:FixedGraph2
+Building:0,1;1,234
+CDL:"Contract Declarations
+                            Name is {NGFM EQ102}
+                            Currency is USD
+                            Using RMS {22 Jul 2014}
+                            Inception is 01 Jan 2000
+                            Expiration is 31 Dec 2003
+                            Type is {Primary Policy}
+                            Subject is Loss to S2729 by EQ, WS
+                            Covers 
+                            L102_3222: 100% Share of 1M xs 500 For Loss to S2729.EQ by EQ, WS
+                            Sections
+                            Section Sec1:
+                                    Declarations
+                            Premium is 10
+                                    CoverNames are (L102_3222)
+                            SubLimits 
+                            30K For Loss to S2729.EQ.59491 by EQ Per Risk
+                            55K For Loss to S2729.EQ.59492 by WS Per Risk
+                            10M For Building to S2729.EQ.59491 by EQ Per Risk
+                            100K For Contents to S2729.EQ.59491 by EQ Per Risk
+                            Deductibles 
+                            1K For Loss to S2729.EQ.59491 by EQ Per Risk
+                            200 For Loss to S2729.EQ.59492 by WS Per Risk
+                            30K For Building to S2729.EQ.59491 by EQ Per Risk"
+//------------------------------------------------------------------------------------------
+[Test 003, overlap multi-building]
+RITE:rites_batch0_SingleBuilding_overlap.dat
+ContractID:11331
+GraphType:FixedGraphOverlap
+Building:0,5;1,100;2,345
+CDL:"Contract Declarations
+                                Name is {Test 1 EQ}
+                                Currency is USD
+                                Using RMS {19 Jun 2014}
+                                Inception is 29 Mar 2005
+                                Expiration is 29 Mar 2007
+                                Type is {Primary Policy}
+                                Subject is Loss to S16 by EQ 
+                                Covers 
+                                L938_365: 100% Share of 500M xs 0.01 For Loss to S16.EQ by EQ 
+                                SubLimits 
+                                1M For Building to S16.EQ by EQ 
+                                500K For Contents to S16.EQ by EQ 
+                                150K For BI to S16.EQ by EQ 
+                                300K For Loss to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                1M For Loss to S16.EQ.SubPolicy5229.47 by EQ 
+                                200K For Loss to S16.EQ.48 by EQ 
+                                500K For Building to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                200K For Contents to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                50K For BI to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                1M For Building to S16.EQ.SubPolicy5229.47 by EQ 
+                                400K For Contents to S16.EQ.SubPolicy5229.47 by EQ 
+                                200K For BI to S16.EQ.SubPolicy5229.47 by EQ 
+                                300K For Building to S16.EQ.48 by EQ 
+                                200K For Contents to S16.EQ.48 by EQ 
+                                40K For BI to S16.EQ.48 by EQ 
+                                Deductibles 
+                                40K For Loss to S16.EQ by EQ 
+                                50K For Building to S16.EQ by EQ 
+                                50K For Contents to S16.EQ by EQ 
+                                10K For BI to S16.EQ by EQ 
+                                32K For Loss to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                40K For Loss to S16.EQ.SubPolicy5229.47 by EQ 
+                                5K For Loss to S16.EQ.48 by EQ 
+                                20K For Building to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                25K For Contents to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                2K  For BI to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                20K For Building to S16.EQ.SubPolicy5229.47 by EQ 
+                                50K For Contents to S16.EQ.SubPolicy5229.47 by EQ"
+//----------------------------------------------------------------------------------------------------------------------------------------------
+[Test 004, overlap subPeril]
+RITE:rites_batch0_SingleBuilding_overlap.dat
+ContractID:11331
+GraphType:FixedGraphOverlapSubperil
+Building:0,323;1,245;2,345
+CDL:"Contract Declarations
+                                Name is {Test 1 EQ}
+                                Currency is USD
+                                Using RMS {19 Jun 2014}
+                                Inception is 29 Mar 2005
+                                Expiration is 29 Mar 2007
+                                Type is {Primary Policy}
+                                Subject is Loss to S16 by EQ,WS
+                                Covers 
+                                L937_16: 100% Share of 500M xs 0.01 For Loss to S16.EQ by EQ,WS
+                                SubLimits 
+                                1M For Building to S16.EQ by EQ,WS
+                                500K For Contents to S16.EQ by EQ,WS
+                                150K For BI to S16.EQ by EQ,WS
+                                300K For Loss to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                1M For Loss to S16.EQ.SubPolicy5229.47 by EQ,WS Per Risk
+                                200K For Loss to S16.EQ.48 by EQ,WS Per Risk
+                                500K For Building to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                200K For Contents to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                50K For BI to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                1M For Building to S16.EQ.SubPolicy5229.47 by EQ,WS Per Risk
+                                400K For Contents to S16.EQ.SubPolicy5229.47 by EQ,WS Per Risk
+                                200K For BI to S16.EQ.SubPolicy5229.47 by EQ,WS Per Risk
+                                300K For Building to S16.EQ.48 by EQ,WS Per Risk
+                                200K For Contents to S16.EQ.48 by EQ,WS Per Risk
+                                40K For BI to S16.EQ.48 by EQ,WS Per Risk
+                                Deductibles 
+                                40K For Loss to S16.EQ by EQ,WS
+                                50K For Building to S16.EQ by EQ,WS
+                                50K For Contents to S16.EQ by EQ,WS
+                                10K For BI to S16.EQ by EQ,WS
+                                32K For Loss to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                40K For Loss to S16.EQ.SubPolicy5229.47 by EQ,WS Per Risk
+                                5K For Loss to S16.EQ.48 by EQ,WS Per Risk
+                                20K For Building to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                25K For Contents to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                2K  For BI to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                20K For Building to S16.EQ.SubPolicy5229.47 by EQ,WS Per Risk
+                                50K For Contents to S16.EQ.SubPolicy5229.47 by EQ,WS Per Risk"
+//--------------------------------------------------------------------------------------------
+[Test 005, overlap subPeril sep]
+RITE:rites_batch0_SingleBuilding_overlap.dat
+ContractID:11331
+GraphType:FixedGraphOverlapSubperil2
+Building:0,345;1,10;2,21
+CDL:"Contract Declarations
+                                Name is {Test 1 EQ}
+                                Currency is USD
+                                Using RMS {19 Jun 2014}
+                                Inception is 29 Mar 2005
+                                Expiration is 29 Mar 2007
+                                Type is {Primary Policy}
+                                Subject is Loss to S16 by EQ,WS
+                                Covers 
+                                L937_16: 100% Share of 500M xs 0.01 For Loss to S16.EQ by EQ,WS
+                                SubLimits 
+                                1M For Building to S16.EQ by EQ
+                                500K For Contents to S16.EQ by WS
+                                150K For BI to S16.EQ by EQ,WS
+                                300K For Loss to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                1M For Loss to S16.EQ.SubPolicy5229.47 by WS Per Risk
+                                200K For Loss to S16.EQ.48 by EQ,WS Per Risk
+                                500K For Building to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                200K For Contents to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                50K For BI to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                1M For Building to S16.EQ.SubPolicy5229.47 by WS Per Risk
+                                400K For Contents to S16.EQ.SubPolicy5229.47 by WS Per Risk
+                                200K For BI to S16.EQ.SubPolicy5229.47 by WS Per Risk
+                                300K For Building to S16.EQ.48 by EQ,WS Per Risk
+                                200K For Contents to S16.EQ.48 by EQ,WS Per Risk
+                                40K For BI to S16.EQ.48 by EQ,WS Per Risk
+                                Deductibles 
+                                40K For Loss to S16.EQ by EQ,WS
+                                50K For Building to S16.EQ by EQ
+                                50K For Contents to S16.EQ by WS
+                                10K For BI to S16.EQ by EQ,WS
+                                32K For Loss to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                40K For Loss to S16.EQ.SubPolicy5229.47 by WS Per Risk
+                                5K For Loss to S16.EQ.48 by EQ,WS Per Risk
+                                20K For Building to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                25K For Contents to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                2K  For BI to S16.EQ.SubPolicy5229.SubPolicy5228.46 by EQ Per Risk
+                                20K For Building to S16.EQ.SubPolicy5229.47 by WS Per Risk
+                                50K For Contents to S16.EQ.SubPolicy5229.47 by WS Per Risk"
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+[Test 006, MTH]
+RITE:rites_batch0_MTH1.dat
+ContractID:11352687
+GraphType:Auto
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+[Test 007, MTH2]
+RITE:rites_batch0_MTH2.dat
+ContractID:11366278
+GraphType:Auto
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+[Test 008, MTH896]
+RITE:rites_batch0_896.dat
+ContractID:2142577
+GraphType:Auto
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+[Test 009, MTH896]
+RITE:rites_batch0_MTH1013.dat
+ContractID:2142554
+GraphType:Auto
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+[Test 010, Treaty]
+RITE:TreatyTestCaseWithPositions.dat
+ContractID:36030
+GraphType:Auto

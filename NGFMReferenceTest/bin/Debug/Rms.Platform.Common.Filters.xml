@@ -1,0 +1,831 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.Platform.Common.Filters</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Platform.Common.Filters.AggregateFilter">
+            <summary>
+            Class representing Aggregate Filter
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.Filter">
+            <summary>
+            Class representing Filter base class
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Filter.ToSqlString(System.String)">
+            <summary>
+            Gets the SQL string for the filter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Filter.ToSqlString(System.String,System.Boolean)">
+            <summary>
+            Gets the SQL string for the filter using display name of fields.
+            </summary>
+            <param name="alias">Alias associated with fields.</param>
+            <param name="useDisplayName">True, if want to use field's display name rather SQL name; else False.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Filter.Clone">
+            <summary>
+            Deep copies this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Filter.FilterType">
+            <summary>
+            Gets or sets the type of the filter.
+            </summary>
+            <value>
+            The type of the filter.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Filter.EntityType">
+            <summary>
+            Gets or sets the type of the entity.
+            </summary>
+            <value>
+            The type of the entity.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Filter.SqlString">
+            <summary>
+            Gets or sets the SQL string.
+            </summary>
+            <value>The SQL string.</value>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.AggregateFilter.Add(Rms.Platform.Common.Filters.Filter)">
+            <summary>
+            Adds the specified filter.
+            </summary>
+            <param name="filter">The filter.</param>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.AggregateFilter.Remove(System.Int32)">
+            <summary>
+            Removes the specified index.
+            </summary>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.AggregateFilter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Platform.Common.Filters.AggregateFilter"/> class.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.AggregateFilter.#ctor(Rms.Platform.Common.Filters.Filter[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Platform.Common.Filters.AggregateFilter"/> class.
+            </summary>
+            <param name="filters">The filters.</param>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.AggregateFilter.ToSqlString(System.String)">
+            <summary>
+            Gets the SQL string for the filter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.AggregateFilter.ToSqlString(System.String,System.Boolean)">
+            <summary>
+            Gets the SQL string for the filter using display name of fields.
+            </summary>
+            <param name="alias">Alias associated with fields.</param>
+            <param name="useDisplayName">True, if want to use field's display name rather SQL name; else False.</param>
+            <returns>string to represent the filter.</returns>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.AggregateFilter.FilterList">
+            <summary>
+            Gets or sets the filter list.
+            </summary>
+            <value>
+            The filter list.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.AggregateFilter.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:Rms.Platform.Common.Filters.Filter"/> at the specified index.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.AndFilter">
+            <summary>
+            Class representing And AggregateFilter
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.AndFilter.#ctor(Rms.Platform.Common.Filters.Filter[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Platform.Common.Filters.AndFilter"/> class.
+            </summary>
+            <param name="filters">The filters.</param>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.AndFilter.Clone">
+            <summary>
+            Deep copies this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.AndFilter.FilterType">
+            <summary>
+            Gets the type of the filter.
+            </summary>
+            <value>
+            The type of the filter.
+            </value>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.ColumnInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.ColumnInfo.ColumnName">
+            <summary>
+            Gets or sets the name of the column.
+            </summary>
+            <value>
+            The name of the column.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.ColumnInfo.ColumnDataType">
+            <summary>
+            Gets or sets the type of the column data.
+            </summary>
+            <value>
+            The type of the column data.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.ColumnInfo.DBColumnName">
+            <summary>
+            Gets or sets the name of the DB column.
+            </summary>
+            <value>
+            The name of the DB column.
+            </value>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.Criterion">
+            <summary>
+            Class representing 
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Criterion.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Platform.Common.Filters.Criterion"/> class.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Criterion.#ctor(Rms.Platform.Common.Filters.Field,Rms.Platform.Common.Filters.Operator,System.Collections.Generic.List{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Platform.Common.Filters.Criterion"/> class.
+            </summary>
+            <param name="field">The field.</param>
+            <param name="criterionOperator">The criterion operator.</param>
+            <param name="valueList">The value list.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Criterion.Init(Rms.Platform.Common.Filters.Field,Rms.Platform.Common.Filters.Operator,System.Collections.Generic.List{System.String})">
+            <summary>
+            Inits the specified field.
+            </summary>
+            <param name="field">The field.</param>
+            <param name="criterionOperator">The criterion operator.</param>
+            <param name="valueList">The value list.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Criterion.ToSqlString(System.String)">
+            <summary>
+            Gets the SQL string for the filter
+            </summary>
+            <param name="alias">Alias associated with fields.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Criterion.ToSqlString(System.String,System.Boolean)">
+            <summary>
+            Gets the SQL string for the filter using display name of fields.
+            </summary>
+            <param name="alias">Alias associated with fields.</param>
+            <param name="useDisplayName">True, if want to use field's display name rather SQL name; else False.</param>
+            <returns>string to represent the filter.</returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Criterion.ToFieldNameString(System.String,System.Boolean)">
+            <summary>
+            Toes the field name string.
+            </summary>
+            <param name="alias">The alias.</param>
+            <param name="useDisplayName">if set to <c>true</c> [use display name].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Criterion.GetValueForInOperator">
+            <summary>
+            Gets the value for in operator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Criterion.ToValueString">
+            <summary>
+            Gets the value string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Criterion.Clone">
+            <summary>
+            Deep copies this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Criterion.InitializeLogger">
+            <summary>
+            Intializes the logger.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Criterion.Field">
+            <summary>
+            Gets or sets the field.
+            </summary>
+            <value>
+            The field.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Criterion.Operator">
+            <summary>
+            Gets or sets the operator.
+            </summary>
+            <value>
+            The operator.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Criterion.ValueList">
+            <summary>
+            Gets or sets the value list.
+            </summary>
+            <value>The value list.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Criterion.FilterType">
+            <summary>
+            Gets the type of the filter.
+            </summary>
+            <value>
+            The type of the filter.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Criterion.NullValueOperation">
+            <summary>
+            Gets or sets a value indicating whether [null value operation].
+            Supported only for Equals and Not Equals operation.
+            </summary>
+            <value>
+            True is user wants to filter data on Null values
+            e.g. Field1 Is Null or Field2 Is Not Null
+            if this operator is True then ValueList is ignored
+            </value>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.DataType">
+            <summary>
+            Enum representing filter data type
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.DataType.Integer">
+            <summary>
+            Integer = 1
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.DataType.Double">
+            <summary>
+            Double
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.DataType.Float">
+            <summary>
+            Float
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.DataType.VarChar">
+            <summary>
+            VarChar
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.DataType.DateTime">
+            <summary>
+            DateTime
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.DataType.Boolean">
+            <summary>
+            Boolean
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.DataType.Long">
+            <summary>
+            Long
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.EntityType">
+            <summary>
+            Enum representing exposure type
+            Sortable entities for now
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.Nothing">
+            <summary>
+            Default Fallback
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.Portfolio">
+            <summary>
+            Portfolio = 1
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.Contract">
+            <summary>
+            Contract = 2
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.RiskItem">
+            <summary>
+            RiskItem = 3
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.Account">
+            <summary>
+            Account = 4
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.RiskItemExposure">
+            <summary>
+            RiskItemExposure = 5
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.Rap">
+            <summary>
+            Rap = 6
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.UserProfile">
+            <summary>
+            UserProfile = 7
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.UserGroup">
+            <summary>
+            UserGroup = 8
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.Role">
+            <summary>
+            Role = 9
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.Organization">
+            <summary>
+            Organization = 10
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.DashboardTemplate">
+            <summary>
+            DashboardTemplate = 11
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.DashboardSnapshot">
+            <summary>
+            DashboardSnapshot = 12
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.BICacheObject">
+            <summary>
+            BICacheObject = 13
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.EntityType.Profile">
+            <summary>
+            Profile = 14
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.EntityUtility">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.GetTableInfoByEntityType(Rms.Platform.Common.Filters.EntityType)">
+            <summary>
+            Gets the type of the database info by entity.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.GetDefaultSortOrderByEntityType(Rms.Platform.Common.Filters.EntityType)">
+            <summary>
+            Gets the default type of the sort order by entity.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.ValidateDataForDataType(Rms.Platform.Common.Filters.Field,System.String@,Rms.Platform.Common.Filters.EntityType,Rms.Platform.Common.Filters.Operation)">
+            <summary>
+            Validates the type of the data for data.
+            </summary>
+            <param name="field">The field.</param>
+            <param name="value">The value.</param>
+            <param name="entityType">Type of the entity.</param>
+            <param name="operation">The operation.</param>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.GetDBColumn(Rms.Platform.Common.Filters.EntityType,System.String)">
+            <summary>
+            Gets the name of the DB column.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="columnName">Name of the column.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.GetColumnInfoList(Rms.Platform.Common.Filters.EntityType)">
+            <summary>
+            Gets the column info list.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.TryParseEnum``1(System.Object,``0@)">
+            <summary>
+            Tries the parse enum.
+            </summary>
+            <typeparam name="TEnum">The type of the enum.</typeparam>
+            <param name="enumValue">The enum value.</param>
+            <param name="retVal">The ret val.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.IsValidData(System.String,System.Type)">
+            <summary>
+            Determines whether [is valid data] [the specified input].
+            </summary>
+            <param name="input">The input.</param>
+            <param name="targetType">Type of the target.</param>
+            <returns>
+              <c>true</c> if [is valid data] [the specified input]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.ConvertStringToTypeValue``1(System.String)">
+            <summary>
+            Converts the string to type value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="mystring">The mystring.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.TryParseEnum``1(``0,``0@)">
+            <summary>
+            Tries the parse enum.
+            </summary>
+            <typeparam name="TEnum">The type of the enum.</typeparam>
+            <param name="enumValue">The enum value.</param>
+            <param name="retVal">The ret val.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.GetDataTypeOperations">
+            <summary>
+            Gets the data type operations.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.ConvertFilterToMongoQuery(Rms.Platform.Common.Filters.Filter)">
+            <summary>
+            Converts the filter to mongo query.
+            </summary>
+            <param name="filter">The filter.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.ConvertSortFieldListToMongoSortBy(System.Collections.Generic.List{Rms.Platform.Common.Filters.SortField},Rms.Platform.Common.Filters.EntityType)">
+            <summary>
+            Converts the sort field list to mongo sort by.
+            </summary>
+            <param name="sortFieldList">The sort field list.</param>
+            <param name="entityType">Type of the entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.GetTypeFromDataTypeEnum(Rms.Platform.Common.Filters.DataType)">
+            <summary>
+            Gets the type from data type enum.
+            </summary>
+            <param name="dataType">Type of the data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.ConvertCriteria(Rms.Platform.Common.Filters.Criterion)">
+            <summary>
+            Converts the criteria.
+            </summary>
+            <param name="criterion">The criterion.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.GetDBColumnName(Rms.Platform.Common.Filters.Criterion)">
+            <summary>
+            Gets the name of the DB column.
+            </summary>
+            <param name="criterion">The criterion.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.GetBsonValueArray(System.Type,System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the bson value array.
+            </summary>
+            <param name="t">The t.</param>
+            <param name="valueList">The value list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.HandleSpecialCharacters(System.String)">
+            <summary>
+            Handles the special characters.
+            Sql server needs these special charcters to be escaped
+            "'" , 
+            </summary>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.HandleSpecialCharactersForLikeOperation(System.String)">
+            <summary>
+            Handles the special characters.
+            Sql server needs these special charcters to be escaped
+            "[" , "%", "_".
+            So if your input is somehting like this "Filters test[program_stringwith%and_]" 
+            then output of this function should be 'Filters test[[]program[_]stringwith[%]and[_]]"
+            </summary>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.LogErrorMessage(System.String,System.Exception)">
+            <summary>
+            Logs the error message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="ex">The ex.</param>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.ValidateTableInfoObject(Rms.Platform.Common.Filters.TableInfo)">
+            <summary>
+            Validates the DB info object.
+            </summary>
+            <param name="tableInfo">The database info.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.IntializeLogger">
+            <summary>
+            Intializes the logger.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.LoadTableInfoConfiguration(Rms.Platform.Common.Filters.EntityType)">
+            <summary>
+            Loads the database info configuration.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.EntityUtility.LoadDataTypeOperatorsMapping(System.String)">
+            <summary>
+            Loads the data type operators mapping.
+            </summary>
+            <param name="dataTypeOperatorMappingFileName">Name of the data type operator mapping file.</param>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.Field">
+            <summary>
+            Class representing criterion field
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.Field.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Field.DisplayName">
+            <summary>
+            Gets or sets the display name.
+            </summary>
+            <value>
+            The display name.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Field.DataType">
+            <summary>
+            Gets or sets the type of the data.
+            </summary>
+            <value>
+            The type of the data.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Field.DBColumnName">
+            <summary>
+            Gets or sets the name of the DB column.
+            </summary>
+            <value>
+            The name of the DB column.
+            </value>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.FilterType">
+            <summary>
+            Enum representing filter type
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.FilterType.Criterion">
+            <summary>
+            Criterion
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.FilterType.And">
+            <summary>
+            And
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.FilterType.Or">
+            <summary>
+            Or
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.Operation">
+            <summary>
+            Enum representing filter operation types
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.LessThan">
+            <summary>
+            LessThan
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.GreaterThan">
+            <summary>
+            GreaterThan
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.LessThanEquals">
+            <summary>
+            LessThanEquals
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.GreaterThanEquals">
+            <summary>
+            GreaterThanEquals
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.Equals">
+            <summary>
+            Equals
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.NotEquals">
+            <summary>
+            NotEquals
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.In">
+            <summary>
+            In
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.NotIn">
+            <summary>
+            NotIn
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.Like">
+            <summary>
+            Like
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.NotLike">
+            <summary>
+            NotLike
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.Between">
+            <summary>
+            Between
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.Top">
+            <summary>
+            Top
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.Operation.Bottom">
+            <summary>
+            Bottom
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.Operator">
+            <summary>
+            Class to be implemented by filter operators
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Operator.Operation">
+            <summary>
+            Gets the operation.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.Operator.SqlString">
+            <summary>
+            Gets the SQL string.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.OrFilter">
+            <summary>
+            Class representing Or AggregateFilter
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.OrFilter.#ctor(Rms.Platform.Common.Filters.Filter[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Platform.Common.Filters.OrFilter"/> class.
+            </summary>
+            <param name="filters">The filters.</param>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.OrFilter.Clone">
+            <summary>
+            Deep copies this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.OrFilter.FilterType">
+            <summary>
+            Gets the type of the filter.
+            </summary>
+            <value>
+            The type of the filter.
+            </value>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.SortField">
+            <summary>
+            Class representing SortField
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.SortField.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents this instance.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Common.Filters.SortField.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.SortField.Field">
+            <summary>
+            Gets or sets the sort field.
+            </summary>
+            <value>
+            The sort field.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.SortField.SortOrder">
+            <summary>
+            Gets or sets the sort order.
+            </summary>
+            <value>
+            The sort order.
+            </value>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.SortOrder">
+            <summary>
+            SortOrder
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.SortOrder.Asc">
+            <summary>
+            Asc
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Common.Filters.SortOrder.Desc">
+            <summary>
+            Asc
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Common.Filters.TableInfo">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.TableInfo.ColumnList">
+            <summary>
+            Gets or sets the columns.
+            </summary>
+            <value>
+            The columns.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.TableInfo.DBTableName">
+            <summary>
+            Gets or sets the name of the DB table.
+            </summary>
+            <value>
+            The name of the DB table.
+            </value>
+        </member>
+        <member name="P:Rms.Platform.Common.Filters.TableInfo.DefaultSortColumns">
+            <summary>
+            Gets or sets the default sort column.
+            </summary>
+            <value>
+            The default sort column.
+            </value>
+        </member>
+    </members>
+</doc>

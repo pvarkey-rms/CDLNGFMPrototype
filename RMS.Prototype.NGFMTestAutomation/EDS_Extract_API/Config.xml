@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <!-- QE Automation database Information-->
+  <AutomationMachineName>ca1automation2</AutomationMachineName>
+  <AutomationDBName>RMSOneServiceTestFramework</AutomationDBName>
+  <username>sa</username>
+  <password>Rmsuser</password>
+  <!-- Environment details-->
+  <environment>
+    <env_name value="vCloudQaf03" EDSExtractsServer="ifs2f15d1bc.swlab.rmscloud.net" EDSExtractsSourceFolder="\\\\ifs2f15d1bc.swlab.rmscloud.net\\NGDLM\\Input\\FromCache\\" SQPServerName="sqp2f94870b.swlab.rmscloud.net,1521" SQPUserName="sa" SQPPassword="_RmsOne12345">
+    </env_name>
+    <env_name value="vcloudKEFQE" EDSExtractsServer="ZFS17ECF830.swlab.rmscloud.net" EDSExtractsSourceFolder="\\\\ZFS17ECF830.swlab.rmscloud.net\\NGDLM\\Input\\FromCache\\" SQPServerName="sqp203e221.swlab.rmscloud.net,1521" SQPUserName="sa" SQPPassword="_RmsOne12345">
+    </env_name>
+    <env_name value="HWD03" EDSExtractsServer="ifsd8f013.lab.rmsonecloud.net" EDSExtractsSourceFolder="\\\\ifsd8f013.lab.rmsonecloud.net\\NGDLM\\Input\\FromCache\\" SQPServerName="sqp2e8b1355.lab.rmsonecloud.net,1521" SQPUserName="sa" SQPPassword="_RmsOne12345">
+    </env_name>
+  </environment>
+  <!-- logs folder -->
+  <logfolder>D:\\ExtractLog\\</logfolder>
+  <!-- EDS Extracts Downloads Folder -->
+  <EDSExtractTargetFolder>D:\Nina_Automation_Testing\NTA_EDS_Extract\</EDSExtractTargetFolder>
+  <!-- SWLab user credentials -->
+  <RemoteServerDomain>LAB</RemoteServerDomain>
+  <SWLabUserName>svc-rmsadmin</SWLabUserName>
+  <SWLabPassword>eH5oQX3q7DmL</SWLabPassword>
+</Configuration>

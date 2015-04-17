@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6FBF68F9-4CF9-49EB-8892-5F448BC5642A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VectorizedReferenceTest</RootNamespace>
+    <AssemblyName>VectorizedReferenceTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HasseManager">
+      <HintPath>..\ThirdParty\HasseManager\HasseManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Noesis.Javascript, Version=0.0.0.0, Culture=neutral, PublicKeyToken=ae36d046c7f89f85, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdParty\Noesis.Javascript v0.7 - Binaries\.Net4.0\x64\Noesis.Javascript.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\..\..\NG3rdParty\ProtoBuf\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Analytics.DataService.Zip">
+      <HintPath>..\..\..\Lib\Rms.Analytics.DataService.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Analytics.Module.Common">
+      <HintPath>..\..\..\lib\Rms.Analytics.Module.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.Common">
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.DataObjects">
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NGFM.Reference.MatrixHDFM\NGFM.Reference.MatrixHDFM.csproj">
+      <Project>{ae80708e-2bbe-4103-b62d-2dd523c78902}</Project>
+      <Name>NGFM.Reference.MatrixHDFM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NGFMReference-Vectorized\NGFMReference.csproj">
+      <Project>{cbdc38b1-69da-4ef9-a38c-e7bb241d9d3c}</Project>
+      <Name>NGFMReference %28Reference-Vectorized\NGFMReference%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.CDLModel\RMS.ContractObjectModel.csproj">
+      <Project>{ec1cde85-fd21-4abd-ab56-d0b8fc1d672e}</Project>
+      <Name>RMS.ContractObjectModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Prototype.NGFM\RMS.Prototype.NGFM.csproj">
+      <Project>{315b534a-66ad-405e-8029-6d769d6e233f}</Project>
+      <Name>RMS.Prototype.NGFM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>jison ../../../cdl2js_ir/src/grammar/grammar-ast.jison ../../../cdl2js_ir/src/grammar/grammar.flex -o grammarAst.js</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

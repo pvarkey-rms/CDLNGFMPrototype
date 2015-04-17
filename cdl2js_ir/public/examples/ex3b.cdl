@@ -1,0 +1,10 @@
+Contract 
+  Declarations
+      Product is Simple { ver 0.1-b }
+      Subject is Loss to Schedule
+      Insured is Acme
+      PolicyNum is P-12456A.2014
+      Inception is 5 Jun 2014
+      Expiration is 4 Jun 2015
+      WindSublim is 10000
+      BlanketLim is 10000000

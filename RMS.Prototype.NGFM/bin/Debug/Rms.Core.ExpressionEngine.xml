@@ -1,0 +1,1264 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.Core.ExpressionEngine</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.ConstantHelper">
+            <summary>
+            Shared utilities to handle evaluation of constant expressions. 
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ConstantHelper.TryEvalConst(Irony.Parsing.ParseTreeNode,System.Reflection.MethodInfo,System.Linq.Expressions.Expression[])">
+            <summary>
+            If all arguments are constant expressions, evaluates <paramref name="methodInfo"/> and returns result wrapped in <see cref="T:System.Linq.Expressions.ConstantExpression"/>.
+            Otherwise, returns an expression that will evaluate given method at run-time.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ConstantHelper.TryEvalConst(Irony.Parsing.ParseTreeNode,System.Reflection.PropertyInfo,System.Linq.Expressions.Expression)">
+            <summary>
+            If <paramref name="instance"/> is a constant expression of type Nullable(T), evaluates <paramref name="propertyInfo"/> and returns result wrapped in <see cref="T:System.Linq.Expressions.ConstantExpression"/>.
+            Otherwise, returns an expression that will evaluate given method at run-time.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ConstantHelper.TryEvalConst(Irony.Parsing.ParseTreeNode,System.Reflection.FieldInfo,System.Linq.Expressions.Expression)">
+            <summary>
+            If <paramref name="instance"/> is a constant expression of type Nullable(T), evaluates <paramref name="fieldInfo"/> and returns result wrapped in <see cref="T:System.Linq.Expressions.ConstantExpression"/>.
+            Otherwise, returns an expression that will evaluate given method at run-time.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ConstantHelper.TryEvalConst(Irony.Parsing.ParseTreeNode,System.Reflection.ConstructorInfo,System.Linq.Expressions.Expression[])">
+            <summary>
+            If all arguments are constant expressions, evaluates <paramref name="constructorInfo"/> and returns created object wrapped in <see cref="T:System.Linq.Expressions.ConstantExpression"/>.
+            Otherwise, returns an expression that will run this constructor at run-time.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ConstantHelper.TryEvalConst(Irony.Parsing.ParseTreeNode,System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,System.Linq.Expressions.ExpressionType,System.Type)">
+            <summary>
+            If <paramref name="left"/> and <paramref name="right"/> are constant expressions, evaluates operator <paramref name="op"/> and returns result wrapped in <see cref="T:System.Linq.Expressions.ConstantExpression"/>.
+            Otherwise, returns an expression that will evaluate given method at run-time.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ConstantHelper.EvalConst(Irony.Parsing.ParseTreeNode,System.Linq.Expressions.ConstantExpression,System.Linq.Expressions.ConstantExpression,System.Linq.Expressions.ExpressionType,System.Type)">
+            <summary>
+            Evaluates operator <paramref name="op"/> and returns result wrapped in <see cref="T:System.Linq.Expressions.ConstantExpression"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ConstantHelper.TryEvalConst(Irony.Parsing.ParseTreeNode,System.Linq.Expressions.Expression,System.Linq.Expressions.ExpressionType,System.Type)">
+            <summary>
+            Evaluates operator <paramref name="op"/> and returns result wrapped in <see cref="T:System.Linq.Expressions.ConstantExpression"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ConstantHelper.EvalConst(Irony.Parsing.ParseTreeNode,System.Linq.Expressions.ConstantExpression,System.Linq.Expressions.ExpressionType,System.Type)">
+            <summary>
+            Evaluates operator <paramref name="op"/> and returns result wrapped in <see cref="T:System.Linq.Expressions.ConstantExpression"/>.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime">
+            <summary>
+            Implements compiler runtime.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime">
+            <summary>
+            Interface of expression evaluation factory. 
+            All methods are thread-safe and compiled lambdas.
+            Thread safety guarantee does not cover custom extensions.
+            Parsing may incur some waiting if number of concurrent parsing operations exceeds Environment.ProcessorCount * 2.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.RegisterDynamicAtomHandler(Rms.Core.ExpressionEngine.Interfaces.AtomMetadata)">
+            <summary>
+            Registers at atom to process identifiers whose names are not known at the time of runtime initialization.
+            Atom will be used as a handler and must have non-null <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator"/> member.
+            This handler will be invoked from inside <see cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.Analyze(Irony.Parsing.ParseTreeNode,Rms.Core.ExpressionEngine.Interfaces.CompilerState)"/> for identifiers which are not statically known atoms.
+            More than one handler can be registered, they will be invoked one after another in arbitrary order 
+            until one of their expression generators returns a non-null value.
+            </summary>
+            <param name="atom">An atom to register. Must have non-null <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator"/> member</param>
+            <see cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.RegisterAtom(Rms.Core.ExpressionEngine.Interfaces.AtomMetadata)"/>
+            <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator"/>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.RegisterAtom(Rms.Core.ExpressionEngine.Interfaces.AtomMetadata)">
+            <summary>
+            Registers a new atom. This API is for statically known identifiers and functions.
+            To process identifiers whose names are not known at the time of runtime init use <see cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.RegisterDynamicAtomHandler(Rms.Core.ExpressionEngine.Interfaces.AtomMetadata)"/>.
+            </summary>
+            <param name="atom">An atom to register</param>
+            <seealso cref="T:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata"/>
+            <seealso cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.RegisterDynamicAtomHandler(Rms.Core.ExpressionEngine.Interfaces.AtomMetadata)"/>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.IsAtomRegistered(System.String)">
+            <summary>
+            Checks if an atom with this name is already registered.
+            </summary>
+            <param name="name">Name to look for</param>
+            <returns>True if an atom with this name is already registered</returns>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.Parse(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Parses specified expression text, with a cancellation option. 
+            May incur some waiting in highly concurrent environment, because the number of pooled parsers is limited.
+            </summary>
+            <param name="text">Expression text</param>
+            <param name="cancellation">Cancellation token source to be used to abort waiting. Supply null to wait indefinitely.</param>
+            <returns>Abstract syntax tree</returns>
+            <exception cref="T:System.OperationCanceledException">Aborted while waiting for some parser to become available</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Failed to parse, message contains details from parser</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.Analyze(Irony.Parsing.ParseTreeNode,Rms.Core.ExpressionEngine.Interfaces.CompilerState)">
+            <summary>
+            Produces .NET Expression object from the given abstract syntax tree.
+            Supports re-entrancy, useful for expression generators (see <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator"/>).
+            </summary>
+            <param name="root">Parse tree root</param>
+            <param name="state">Compiler state</param>
+            <returns>Expression node with verified logical data type (may not match return type specified in CompilerState)</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="state"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Some errors in the compilation</exception>
+            <seealso cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.AdjustReturnType(System.Linq.Expressions.Expression,System.Type)"/>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.AdjustReturnType(System.Linq.Expressions.Expression,System.Type)">
+            <summary>
+            If return type of the given <paramref name="expression"/> does not match <paramref name="type"/>,
+            attempts to adjust it. Returns same or new Expression object.
+            If supplied type is <c>null</c>, expression becomes Action.
+            </summary>
+            <param name="expression">Parse tree root</param>
+            <param name="type">Desired return type, or null to produce an action</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="expression"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Could produce a safe adjustment</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.Compile(System.String,System.Type,System.Tuple{System.String,System.Type}[])">
+            <summary>
+            Parses, analyzes and compiles given expression string into a CLR lambda of appropriate type (some flavor of Func or Action).
+            May incur some waiting in highly concurrent environment, because the number of pooled parsers is limited.
+            </summary>
+            <param name="text">Expression text</param>
+            <param name="returnType">Desired return type - used for verification. Supply null to compile to Action</param>
+            <param name="args">Ordered name-type pairs of input arguments</param>
+            <returns>Compiled lambda, some flavor of Func or Action</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="text"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Some errors in the compilation</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.Compile(System.String,System.Threading.CancellationToken,System.Type,System.Tuple{System.String,System.Type}[])">
+            <summary>
+            Parses, analyzes and compiles given expression string into a CLR lambda of appropriate type (some flavor of Func or Action).
+            May incur some waiting in highly concurrent environment, because the number of pooled parsers is limited.
+            Has cancellation option.
+            </summary>
+            <param name="text">Expression text</param>
+            <param name="cancellation">Cancellation token source to be used to abort waiting. Supply null to wait indefinitely.</param>
+            <param name="returnType">Desired return type - used for verification. Supply null to compile to Action</param>
+            <param name="args">Ordered name-type pairs of input arguments</param>
+            <returns>Compiled lambda, some flavor of Func or Action</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="text"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Some errors in the compilation</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.Compile``2(System.String)">
+            <summary>
+            Parses, analyzes and compiles given expression string into a CLR lambda of appropriate type (some flavor of Func or Action).
+            May incur some waiting in highly concurrent environment, because the number of pooled parsers is limited.
+            </summary>
+            <param name="text">Expression text</param>
+            <typeparam name="TContext">Desired input holder type, will be the only input argument. Available in <seealso cref="F:Rms.Core.ExpressionEngine.Interfaces.CompilerState.Arguments"/> by name "Context"</typeparam>
+            <typeparam name="T">Desired return type, used for verification</typeparam>
+            <returns>Compiled Func</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="text"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Some errors in the compilation</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.Compile``2(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Parses, analyzes and compiles given expression string into a CLR lambda of appropriate type (some flavor of Func or Action).
+            May incur some waiting in highly concurrent environment, because the number of pooled parsers is limited.
+            Has cancellation option.
+            </summary>
+            <param name="text">Expression text</param>
+            <param name="cancellation">Cancellation token source to be used to abort waiting. Supply null to wait indefinitely.</param>
+            <typeparam name="TContext">Desired input holder type, will be the only input argument. Available in <seealso cref="F:Rms.Core.ExpressionEngine.Interfaces.CompilerState.Arguments"/> by name "Context"</typeparam>
+            <typeparam name="T">Desired return type, used for verification</typeparam>
+            <returns>Compiled Func</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="text"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Some errors in the compilation</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.Compile(System.Linq.Expressions.Expression,Rms.Core.ExpressionEngine.Interfaces.CompilerState)">
+            <summary>
+            Given an expression (assuming it was generated with <see cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.Analyze(Irony.Parsing.ParseTreeNode,Rms.Core.ExpressionEngine.Interfaces.CompilerState)"/>), attempts to compile it into a lambda of some type.
+            </summary>
+            <param name="expression">Expression</param>
+            <param name="state">Compiler state</param>
+            <returns>Compiled Func</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="expression"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="state"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Mismatch in argument or context types, other consistency errors</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.RegisterDynamicAtomHandler(Rms.Core.ExpressionEngine.Interfaces.AtomMetadata)">
+            <summary>
+            Registers at atom to process identifiers whose names are not known at the time of runtime initialization.
+            Atom will be used as a handler and must have non-null <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator"/> member.
+            This handler will be invoked from inside <see cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.Analyze(Irony.Parsing.ParseTreeNode,Rms.Core.ExpressionEngine.Interfaces.CompilerState)"/> for identifiers which are not statically known atoms.
+            More than one handler can be registered, they will be invoked one after another in arbitrary order 
+            until one of their expression generators returns a non-null value.
+            </summary>
+            <param name="atom">An atom to register. Must have non-null <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator"/> member</param>
+            <see cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.RegisterAtom(Rms.Core.ExpressionEngine.Interfaces.AtomMetadata)"/>
+            <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator"/>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.RegisterAtom(Rms.Core.ExpressionEngine.Interfaces.AtomMetadata)">
+            <summary>
+            Registers a new atom. This API is for statically known identifiers and functions.
+            To process identifiers whose names are not known at the time of runtime init use <see cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.RegisterDynamicAtomHandler(Rms.Core.ExpressionEngine.Interfaces.AtomMetadata)"/>.
+            </summary>
+            <param name="atom">An atom to register</param>
+            <seealso cref="T:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata"/>
+            <seealso cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.RegisterDynamicAtomHandler(Rms.Core.ExpressionEngine.Interfaces.AtomMetadata)"/>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.IsAtomRegistered(System.String)">
+            <summary>
+            Checks if an atom with this name is already registered.
+            </summary>
+            <param name="name">Name to look for</param>
+            <returns>True if an atom with this name is already registered</returns>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.AdjustReturnType(System.Linq.Expressions.Expression,System.Type)">
+            <summary>
+            If return type of the given <paramref name="expression"/> does not match <paramref name="type"/>,
+            attempts to adjust it. Returns same or new Expression object.
+            If supplied type is <c>null</c>, expression becomes Action.
+            </summary>
+            <param name="expression">Parse tree root</param>
+            <param name="type">Desired return type, or null to produce an action</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="expression"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Could produce a safe adjustment</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.Compile(System.String,System.Type,System.Tuple{System.String,System.Type}[])">
+            <summary>
+            Parses, analyzes and compiles given expression string into a CLR lambda of appropriate type (some flavor of Func or Action).
+            May incur some waiting in highly concurrent environment, because the number of pooled parsers is limited.
+            </summary>
+            <param name="text">Expression text</param>
+            <param name="returnType">Desired return type - used for verification. Supply null to compile to Action</param>
+            <param name="args">Ordered name-type pairs of input arguments</param>
+            <returns>Compiled lambda, some flavor of Func or Action</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="text"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Some errors in the compilation</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.Compile(System.String,System.Threading.CancellationToken,System.Type,System.Tuple{System.String,System.Type}[])">
+            <summary>
+            Parses, analyzes and compiles given expression string into a CLR lambda of appropriate type (some flavor of Func or Action).
+            May incur some waiting in highly concurrent environment, because the number of pooled parsers is limited.
+            Has cancellation option.
+            </summary>
+            <param name="text">Expression text</param>
+            <param name="cancellation">Cancellation token source to be used to abort waiting. Supply null to wait indefinitely.</param>
+            <param name="returnType">Desired return type - used for verification. Supply null to compile to Action</param>
+            <param name="args">Ordered name-type pairs of input arguments</param>
+            <returns>Compiled lambda, some flavor of Func or Action</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="text"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Some errors in the compilation</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.Compile``2(System.String)">
+            <summary>
+            Parses, analyzes and compiles given expression string into a CLR lambda of appropriate type (some flavor of Func or Action).
+            May incur some waiting in highly concurrent environment, because the number of pooled parsers is limited.
+            </summary>
+            <param name="text">Expression text</param>
+            <typeparam name="TContext">Desired input holder type, will be the only input argument. Available in <seealso cref="F:Rms.Core.ExpressionEngine.Interfaces.CompilerState.Arguments"/> by name "Context"</typeparam>
+            <typeparam name="T">Desired return type, used for verification</typeparam>
+            <returns>Compiled Func</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="text"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Some errors in the compilation</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.Compile``2(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Parses, analyzes and compiles given expression string into a CLR lambda of appropriate type (some flavor of Func or Action).
+            May incur some waiting in highly concurrent environment, because the number of pooled parsers is limited.
+            Has cancellation option.
+            </summary>
+            <param name="text">Expression text</param>
+            <param name="cancellation">Cancellation token source to be used to abort waiting. Supply null to wait indefinitely.</param>
+            <typeparam name="TContext">Desired input holder type, will be the only input argument. Available in <seealso cref="F:Rms.Core.ExpressionEngine.Interfaces.CompilerState.Arguments"/> by name "Context"</typeparam>
+            <typeparam name="T">Desired return type, used for verification</typeparam>
+            <returns>Compiled Func</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="text"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Some errors in the compilation</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.Compile(System.Linq.Expressions.Expression,Rms.Core.ExpressionEngine.Interfaces.CompilerState)">
+            <summary>
+            Given an expression (assuming it was generated with call to Analyze, attempts to compile it into a lambda of some type.
+            </summary>
+            <param name="expression">Expression</param>
+            <param name="state">Compiler state</param>
+            <returns>Compiled Func</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="expression"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="state"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Mismatch in argument or context types, other consistency errors</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.Parse(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Parses specified expression text, with a cancellation option. 
+            May incur some waiting in highly concurrent environment without factory delegate, because the number of pooled parsers is limited.
+            </summary>
+            <param name="text">Expression text</param>
+            <param name="cancellation">Cancellation token source to be used to abort waiting for parser. Supply <see cref="P:System.Threading.CancellationToken.None"/> to wait indefinitely.</param>
+            <returns>Abstract syntax tree</returns>
+            <exception cref="T:System.OperationCanceledException">Waiting for some parser to become available was aborted</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Failed to parse, message contains details from parser</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.Analyze(Irony.Parsing.ParseTreeNode,Rms.Core.ExpressionEngine.Interfaces.CompilerState)">
+            <summary>
+            Produces .NET Expression object from the given abstract syntax tree.
+            Supports re-entrancy, useful for expression generators (see <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator"/>).
+            </summary>
+            <param name="root">Parse tree root</param>
+            <param name="state">Compiler state</param>
+            <returns>Expression node with verified logical data type</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="state"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Some errors in the compilation</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Compiler.ExpressionEvaluatorRuntime.#ctor">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata">
+            <summary>
+            A placeholder to register extensions to runtime.
+            </summary>
+            <seealso cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.IsAtomRegistered(System.String)"/>
+            <seealso cref="M:Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime.RegisterAtom(Rms.Core.ExpressionEngine.Interfaces.AtomMetadata)"/>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.AtomType">
+            <summary>
+            Type of this atom.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.Name">
+            <summary>
+            Name of the element, will be used to parse expression.
+            May contain dots, dotted notation will by default be transformed into field/property access expressions.
+            Do not use special character '@' in names, to avoid conflicts with arguments used by expression.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator">
+            <summary>
+            An alternative to <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.Functor"/>, client can supply an expression generator delegate.
+            This delegate will be invoked during compilation time, in order to create an Expression object given the parse tree context.
+            </summary>
+            <seealso cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.Functor"/>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.Functor">
+            <summary>
+            Must be some sort of Func{TArg1, TArg2, ..., TResult}, where types must be compatible with logical data types.
+            May have zero or more arguments, may constitute a field accessor or function.
+            Compilation engine will bind arguments, if any, to real arguments of this functor.
+            </summary>
+            <seealso cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator"/>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.MethodInfo">
+            <summary>
+            Reflected method information on the functor. Automatically derived from the functor's reflected metadata.
+            </summary>
+            <seealso cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.Functor"/>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.MethodTarget">
+            <summary>
+            Closure instance on the functor. Automatically derived from the functor's reflected metadata.
+            </summary>
+            <seealso cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.Functor"/>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.#ctor(Rms.Core.ExpressionEngine.Interfaces.AtomType,System.String,System.Object)">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="atomType">Atom type.</param>
+            <param name="name">The name to be used for parsing. See <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.Name"/>.</param>
+            <param name="functor">Functor responsible for extracting values from source. See <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.Functor"/>.</param>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.#ctor(Rms.Core.ExpressionEngine.Interfaces.AtomType,System.String,Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGeneratorCallback)">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="atomType">Atom type.</param>
+            <param name="name">The name to be used for parsing. See <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.Name"/>.</param>
+            <param name="expressionGenerator">The functor responsible for generating expressions.</param>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGeneratorCallback">
+            <summary>
+            Delegate type for use by <see cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator"/>.
+            </summary>
+            <param name="root">Parse tree node, for which an expression must be generated</param>
+            <param name="state">Current state of the compiler instance, has context values</param>
+            <seealso cref="F:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGenerator"/>
+            <seealso cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilerState"/>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.AtomType">
+            <summary>
+            Possible values for atom types.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.AtomType.InvalidValue">
+            <summary>
+            Dummy value to help detect bugs.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.AtomType.Identifier">
+            <summary>
+            Identifier (non-function, non-array).
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.AtomType.Function">
+            <summary>
+            Function call, may have zero or more arguments.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">
+            <summary>
+            Compilation exception.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.CompilationException.#ctor(System.String)">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.CompilationException.#ctor(System.String,Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.CompilationException.#ctor(Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.CompilationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.CompilationException.CreateErrorMessage(System.String,Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.CompilationException.CreateErrorMessage(Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Formats an error message based on given location.
+            </summary>
+            <param name="location">Optional location</param>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.CompilationException.FormatLocationString(Irony.Parsing.SourceLocation,System.Int32)">
+            <summary>
+            Formats location string.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.CompilerState">
+            <summary>
+            Utility class used by compiler during parsing-analysis-compilation sequence.
+            API consumers may extend this class and provide their own instance into Analyze and Compile methods.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.CompilerState.ParentRuntime">
+            <summary>
+            Reference to the runtime which created this state object.
+            Useful for implementors of <see cref="T:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGeneratorCallback"/>, to perform re-entrant calls.
+            </summary>
+            <see cref="T:Rms.Core.ExpressionEngine.Interfaces.AtomMetadata.ExpressionGeneratorCallback"/>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.CompilerState.Arguments">
+            <summary>
+            Argument expression, reference to the value provider object.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.CompilerState.ReturnType">
+            <summary>
+            Desired return type of the resulting compiled lambda expression.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.CompilerState.RawReturnType">
+            <summary>
+            Return type as derived from the source Expression.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.CompilerState.CompileToAction">
+            <summary>
+            Set to true to request an Action delegate to be built instead of a Func.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.CompilerState.#ctor(Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime,System.Type,System.Type,System.Tuple{System.String,System.Type}[])">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="parentRuntime">Reference to the runtime which created this state object</param>
+            <param name="contextType">Optional, type of the default @Context argument</param>
+            <param name="returnType">Optional return type, supply null to compile to Action</param>
+            <param name="args">Ordered list of types of arguments</param>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.CompilerState.GetArgumentByName(System.String)">
+            <summary>
+            Finds an argument by name.
+            </summary>
+            <param name="name">Name to look for (case-insensitive).</param>
+            <returns>Parameter expression</returns>
+            <exception cref="T:System.ArgumentException">Argument with this name is not defined</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="name"/> is null or empty</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.CompilerState.TryGetArgumentByName(System.String)">
+            <summary>
+            Finds an argument by name.
+            </summary>
+            <param name="name">Name to look for (case-insensitive).</param>
+            <returns>Parameter expression or null if not found</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="name"/> is null or empty</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.CompilerState.RequireContext">
+            <summary>
+            For some scenarios, it is more convenient to extract identifier values from a single object.
+            This reduces the number of arguments passed into the lambda, improving execution time.
+            Context has predefined name "Context", and is used by "Identifier" atoms to invoke methods, read fields etc.
+            </summary>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Context argument is not registered</exception>
+        </member>
+        <member name="P:Rms.Core.ExpressionEngine.Interfaces.CompilerState.Context">
+            <summary>
+            For some scenarios, it is more convenient to extract identifier values from a single object.
+            This reduces the number of arguments passed into the lambda, improving execution time.
+            Context has predefined name "Context", and is used by "Identifier" atoms to invoke methods, read fields etc.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions">
+            <summary>
+            Utilities for analyzer.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsKeywordAffectedByCase(System.String)">
+            <summary>
+            Keywords and operators use ASCII. Most of them (comparison, arith, negation) are not affected by case sensitivity,
+            and thus we won't need to lowercase them during analysis.
+            </summary>
+            <returns>True if first character <paramref name="text"/> is non-ASCII, or is ASCII letter [a..z], [A..Z]</returns>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.RequireChild(Irony.Parsing.ParseTreeNode,System.String,System.Int32[])">
+            <summary>
+            Verifies that the given root has nested levels of children, as specified by <paramref name="childIndexes"/> for each nesting level.
+            </summary>
+            <param name="root">The parse tree node</param>
+            <param name="leafTermName">Optional name of the leaf term, to be checked on the lowest leaf</param>
+            <param name="childIndexes">Child index to take in each subsequent child node</param>
+            <returns>The lowest parse tree node</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Child is absent at some level, or lead child's term name does not match <paramref name="leafTermName"/></exception> 
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.TryGetChild(Irony.Parsing.ParseTreeNode,System.String,System.Int32[])">
+            <summary>
+            Verifies that the given root has nested levels of children, as specified by <paramref name="childIndexes"/> for each nesting level.
+            </summary>
+            <param name="root">The parse tree node</param>
+            <param name="leafTermName">Optional name of the leaf term, to be checked on the lowest leaf</param>
+            <param name="childIndexes">Child index to take in each subsequent child node</param>
+            <returns>The lowest parse tree node</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.RequireChildren(Irony.Parsing.ParseTreeNode,System.Int32)">
+            <summary>
+            Requires that a given parse tree node has specified number of children.
+            </summary>
+            <param name="root">The parse tree node</param>
+            <param name="count">Number of children to check for</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Number of children does not match <paramref name="count"/></exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.RequireChildren(Irony.Parsing.ParseTreeNode,System.Int32,System.Int32)">
+            <summary>
+            Requires that a given parse tree node has specified number of children.
+            </summary>
+            <param name="root">The parse tree node</param>
+            <param name="minCount">Minimum number of children to check for</param>
+            <param name="maxCount">Maximum number of children to check for</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Number of children is not between <paramref name="minCount"/> and <paramref name="maxCount"/></exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.RequireInteger(System.Linq.Expressions.Expression,Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Requires that the logical data type of specified expression node is one of the integer types.
+            </summary>
+            <param name="target">The expression node</param>
+            <param name="root">Corresponding parse tree node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Expression must be of integer type</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsInteger(System.Linq.Expressions.Expression)">
+            <summary>
+            Requires that the data type of specified expression node is one of the integer types.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsInteger(System.Type)">
+            <summary>
+            Requires that the data type of specified expression node is one of the integer types.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsRealNumeric(System.Linq.Expressions.Expression)">
+            <summary>
+            Requires that the data type of specified expression node is one of the real numeric types.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsRealNumeric(System.Type)">
+            <summary>
+            Requires that the data type of specified expression node is one of the real numeric types.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.RequireBoolean(System.Linq.Expressions.Expression,Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Requires that the data type of specified expression node is of boolean type.
+            </summary>
+            <param name="target">The expression node</param>
+            <param name="root">Corresponding parse tree node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Expression must be of boolean type</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsBoolean(System.Linq.Expressions.Expression)">
+            <summary>
+            Requires that the data type of specified expression node is of boolean type.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsBoolean(System.Type)">
+            <summary>
+            Requires that the data type of specified expression node is of boolean type.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.RequireType(System.Linq.Expressions.Expression,System.Type,Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Requires that the data type of specified expression node is equal to <paramref name="type"/>.
+            </summary>
+            <param name="target">The expression node</param>
+            <param name="root">Corresponding parse tree node</param>
+            <param name="type">The data type to check for</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="type"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Expression must be of specified type</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.RequireReferenceType(System.Linq.Expressions.Expression,Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Requires that the data type of specified expression node is of any reference type.
+            </summary>
+            <param name="target">The expression node</param>
+            <param name="root">Corresponding parse tree node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Expression must be of reference type</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.RequireNumeric(System.Linq.Expressions.Expression,Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Requires that the data type of specified expression node is one of the numeric types.
+            </summary>
+            <param name="target">The expression node</param>
+            <param name="root">Corresponding parse tree node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Expression must be of numeric type</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsNumeric(System.Linq.Expressions.Expression)">
+            <summary>
+            Requires that the data type of specified expression node is one of the numeric types.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsNumeric(System.Type)">
+            <summary>
+            Requires that the data type of specified expression node is one of the numeric types.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsBinary(System.Linq.Expressions.Expression)">
+            <summary>
+            Requires that the data type of specified expression node is binary data.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsBinary(System.Type)">
+            <summary>
+            Requires that the data type of specified expression node is binary data.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.RequireString(System.Linq.Expressions.Expression,Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Requires that the data type of specified expression node is string.
+            </summary>
+            <param name="target">The expression node</param>
+            <param name="root">Corresponding parse tree node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Expression must be of string type</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsString(System.Linq.Expressions.Expression)">
+            <summary>
+            Requires that the data type of specified expression node is string.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsString(System.Type)">
+            <summary>
+            Requires that the data type of specified expression node is string.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsDateTime(System.Linq.Expressions.Expression)">
+            <summary>
+            Requires that the data type of specified expression node is a datetime value.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsDateTime(System.Type)">
+            <summary>
+            Requires that the data type of specified expression node is a datetime value.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsDateTimeOffset(System.Linq.Expressions.Expression)">
+            <summary>
+            Requires that the data type of specified expression node is a DateTimeOffset value.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsDateTimeOffset(System.Type)">
+            <summary>
+            Requires that the data type of specified expression node is a DateTimeOffset value.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsTimeSpan(System.Type)">
+            <summary>
+            Requires that the data type of specified expression node is a timespan value.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsGuid(System.Type)">
+            <summary>
+            Requires that the data type of specified expression node is a Guid value.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsTimeSpan(System.Linq.Expressions.Expression)">
+            <summary>
+            Requires that the data type of specified expression node is a timespan value.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsNullableType(System.Linq.Expressions.Expression)">
+            <summary>
+            Requires that the specified expression is of some specific Nullable(T) type.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsNullableType(System.Type)">
+            <summary>
+            Requires that the specified type is some specific Nullable(T) type.
+            </summary>
+            <param name="target">The type</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.GetUnderlyingType(System.Type)">
+            <summary>
+            If the specified type is some specific Nullable(T) type, returns its underlying type.
+            Otherwise, returns the supplied type.
+            </summary>
+            <param name="target">The type</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.IsVoid(System.Linq.Expressions.Expression)">
+            <summary>
+            Requires that the specified expression is a BlockExpression.
+            </summary>
+            <param name="target">The expression node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.RequireNonVoid(System.Linq.Expressions.Expression,Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Requires that the data type of specified expression node is not a void marker.
+            </summary>
+            <param name="target">The expression node</param>
+            <param name="root">Corresponding parse tree node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="target"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Expression must return some value</exception>
+            <see cref="T:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.VoidTypeMarker"/>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.GetDefaultExpression(System.Type)">
+            <summary>
+            Generates a constant expression of "default(type)".
+            </summary>
+            <param name="targetType">Desired type</param>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.RemoveNullability(System.Linq.Expressions.Expression)">
+            <summary>
+            If supplied expression is of Nullable(T) type, invokes its GetValueOrDefault method.
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.AdjustArgumentsForBinaryOperation(System.Linq.Expressions.Expression@,System.Linq.Expressions.Expression@,Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Attempts to auto-adjust the size of arguments for a binary arithmetic operation. 
+            Integers grow up to Int64, Double or Decimal, floats grow up to Decimal. 
+            </summary>
+            <param name="leftExpr">Left argument</param>
+            <param name="rightExpr">Right argument</param>
+            <param name="root">Corresponding parse tree node</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="root"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="leftExpr"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="rightExpr"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Argument types cannot be adjusted, try conversion</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.AdjustReturnType(Irony.Parsing.ParseTreeNode,System.Linq.Expressions.Expression,System.Type)">
+            <summary>
+            Attempts to auto-adjust the size of argument to the desired type. 
+            Integers grow up to Int64, Double or Decimal, floats grow up to Decimal. 
+            </summary>
+            <param name="root">Optional, corresponding parse tree node</param>
+            <param name="expr">Expression whose value is to be adjusted, must be of numeric value type</param>
+            <param name="targetType">Desired type</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="expr"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="targetType"/> is null</exception>
+            <exception cref="T:Rms.Core.ExpressionEngine.Interfaces.CompilationException">Argument types cannot be adjusted, try conversion</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.TryAdjustReturnType(Irony.Parsing.ParseTreeNode,System.Linq.Expressions.Expression,System.Type,System.Linq.Expressions.Expression@)">
+            <summary>
+            Attempts to auto-adjust the size of argument to the desired type. 
+            Integers grow up to Int64, Double or Decimal, floats grow up to Decimal. 
+            </summary>
+            <param name="root">Optional, corresponding parse tree node</param>
+            <param name="expr">Expression whose value is to be adjusted, must be of numeric value type</param>
+            <param name="targetType">Desired type</param>
+            <param name="adjusted">New or same expression</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="expr"/> is null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="targetType"/> is null</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.MakeNewNullable(System.Type,System.Linq.Expressions.Expression)">
+            <summary>
+            Generates an expression of type Nullable(T), given its underlying value.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.MakeNewNullable(System.Type)">
+            <summary>
+            Generates a default expression of type Nullable(T), given its type.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.EnumerateValues``1(Rms.Core.ExpressionEngine.Interfaces.IExpressionEvaluatorRuntime,Irony.Parsing.ParseTreeNode,Rms.Core.ExpressionEngine.Interfaces.CompilerState)">
+            <summary>
+            DO NOT REMOVE! Used implicitly, via generic method instantiation.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.UnwindTupleExprList(Irony.Parsing.ParseTreeNode)">
+            <summary>
+            Automatically drill down the nested levels of parentheses wrapping a single expression or expression list.
+            Used to handle cases like ((1)), (1,2), (((('a', 'b')))).
+            </summary>
+            <param name="root">The root no to start with</param>
+            <returns>Some lower-level non-tuple node</returns>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.TryAdjustVoid(System.Linq.Expressions.Expression@,System.Linq.Expressions.Expression@)">
+            <summary>
+            If one of the arguments is a void expression, will automatically replace it with default of another expression's type.
+            Returns false if both arguments are void.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.ExpressionTreeExtensions.VoidTypeMarker">
+            <summary>
+            Marker type to indicate "NULL" literals and any other expressions that are not supposed to return a value.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper">
+            <summary>
+            Contains pre-computed reflection data.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.DoubleIsNaN">
+            <summary>
+            MethodInfo for Double.IsNaN.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.DoubleIsInfinity">
+            <summary>
+            MethodInfo for Double.IsInfinity.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.SingleIsNaN">
+            <summary>
+            MethodInfo for Single.IsNaN.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.SingleIsInfinity">
+            <summary>
+            MethodInfo for Single.IsInfinity.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.StringConcat">
+            <summary>
+            MethodInfo for String.Concat.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.StringIsNullOrEmpty">
+            <summary>
+            MethodInfo for String.IsNullOrEmpty.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.StringStartsWith">
+            <summary>
+            MethodInfo for String.StartsWith.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.StringEndsWith">
+            <summary>
+            MethodInfo for String.EndsWith.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.StringIndexOf">
+            <summary>
+            MethodInfo for String.IndexOf.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.StringComparerCompare">
+            <summary>
+            MethodInfo for StringComparer.Compare.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.StringComparerEquals">
+            <summary>
+            MethodInfo for StringComparer.Equals.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.EnumerateValues">
+            <summary>
+            MethodInfo for ReflectionHelper.EnumerateValues.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.DateTimeParseExact">
+            <summary>
+            MethodInfo for ReflectionHelper.EnumerateValues.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.GetOrAddMethodAny(System.Type,System.String)">
+            <summary>
+            Reflects on a method, caches found information. 
+            Does not make assumptions about number of arguments, fails if there are overloads.
+            </summary>
+            <param name="type">Type to reflect on</param>
+            <param name="methodName">Public static or instance method to look for</param>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.GetOrAddMethod0(System.Type,System.String)">
+            <summary>
+            Reflects on a method, caches found information. Assumes number of arguments being zero.
+            </summary>
+            <param name="type">Type to reflect on</param>
+            <param name="methodName">Public instance method to look for</param>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.GetOrAddMethod1(System.Type,System.String,System.Type)">
+            <summary>
+            Reflects on a method, caches found information. Assumes number of arguments being one.
+            </summary>
+            <param name="type">Type to reflect on</param>
+            <param name="methodName">Public static or instance method to look for</param>
+            <param name="type1">Type of the single argument</param>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.ReflectionHelper.GetOrAddMethod2(System.Type,System.String,System.Type,System.Type)">
+            <summary>
+            Reflects on a method, caches found information. Assumes number of arguments being two.
+            </summary>
+            <param name="type">Type to reflect on</param>
+            <param name="methodName">Public static or instance method to look for</param>
+            <param name="type1">Type of the first argument</param>
+            <param name="type2">Type of the second argument</param>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte">
+            <summary>
+            A data structure to hold byte arrays.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.Data">
+            <summary>
+            Actual bytes.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.Length">
+            <summary>
+            Number of bytes in <see cref="F:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.Data"/> which have meaningful data.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.HashCode">
+            <summary>
+            Pre-computed hash code. 
+            Is invalidated by <see cref="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.SetLength(System.Int32)"/> and <see cref="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.EnsureCapacity(System.Int32)"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.#ctor">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.#ctor(System.Byte[])">
+            <summary>
+            Ctr.
+            Copies data from <paramref name="src"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.#ctor(System.String)">
+            <summary>
+            Ctr.
+            Copies data from <paramref name="src"/>, interpreted as Base64 string.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.ToBase64String(Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte)">
+            <summary>
+            Generates a base64 string out of this binary array.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.#ctor(Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte)">
+            <summary>
+            Ctr.
+            Copies data from <paramref name="src"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.CopyFrom(Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte)">
+            <summary>
+            Copies data from <paramref name="src"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.CopyFrom(System.Byte[])">
+            <summary>
+            Copies data from <paramref name="src"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.Append(System.Byte)">
+            <summary>
+            Appends a byte at the end.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            Removes specified range of bytes and shifts tail up.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.Trim">
+            <summary>
+            Trims actual size of <see cref="F:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.Data"/> down to <see cref="F:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.Length"/> number of bytes.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.EnsureCapacity(System.Int32)">
+            <summary>
+            Ensures that <see cref="F:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.Data"/> can hold <paramref name="capacity"/> bytes.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.SetLength(System.Int32)">
+            <summary>
+            Ensures capacity of <see cref="F:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.Data"/> and also assigns <see cref="F:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.Length"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.AssertState">
+            <summary>
+            Verifies consistency.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.DefaultComparer">
+            <summary>
+            Default comparer for byte arrays.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.DefaultComparer.Equals(Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte,Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte)">
+            <summary>
+            Determines whether the specified objects are equal.
+            </summary>
+            <returns>
+            true if the specified objects are equal; otherwise, false.
+            </returns>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.DefaultComparer.GetHashCode(Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <returns>
+            A hash code for the specified object.
+            </returns>
+            <param name="obj">The <see cref="T:System.Object"/> for which a hash code is to be returned.</param>
+            <exception cref="T:System.ArgumentNullException">The type of <paramref name="obj"/> is a reference type and <paramref name="obj"/> is null.</exception>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.DefaultComparer.Compare(Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte,Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte)">
+            <summary>
+            Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+            <returns>
+            A signed integer that indicates the relative values of <paramref name="x"/> and <paramref name="y"/>, as shown in the following table.
+            Value Meaning Less than zero<paramref name="x"/> is less than <paramref name="y"/>.Zero<paramref name="x"/> equals <paramref name="y"/>.
+            Greater than zero<paramref name="x"/> is greater than <paramref name="y"/>.
+            </returns>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+        </member>
+        <member name="P:Rms.Core.ExpressionEngine.Interfaces.SizableArrayOfByte.DefaultComparer.Instance">
+            <summary>
+            Default instance of comparer.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable`1">
+            <summary>
+            Replaces .NET nullable. 
+            Main purpose is to avoid boxing it as null reference, which is a big problem for EQL compilation. 
+            Another purpose is to incorporate some custom behavior and get rid of all kinds of operator overloads defined on .NET Nullable.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable`1.Value">
+            <summary>
+            Value.
+            </summary>
+        </member>
+        <member name="F:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable`1.HasValue">
+            <summary>
+            True if value is initialized.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable`1.#ctor(`0)">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable`1.GetValueOrDefault">
+            <summary>
+            Returns value or default(T) if value is not set.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable`1.Equals(System.Object)">
+            <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+            <returns>
+            true if <paramref name="obj"/> and this instance are the same type and represent the same value; otherwise, false.
+            </returns>
+            <param name="obj">Another object to compare to. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable`1.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>
+            A 32-bit signed integer that is the hash code for this instance.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable`1.op_Equality(Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable{`0},Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable{`0})">
+            <summary>
+            Overloaded equality comparison.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable`1.op_Inequality(Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable{`0},Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable{`0})">
+            <summary>
+            Overloaded equality comparison.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable`1.op_Implicit(`0)~Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable{`0}">
+            <summary>
+            Default conversion.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable">
+            <summary>
+            Utilities for <see cref="T:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable`1"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable.GetUnderlyingType(System.Type)">
+            <summary>
+            Retrieves underlying value type.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Interfaces.UnboxableNullable.Null``1(``0)">
+            <summary>
+            Default conversion.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Utilities.ObjectPool`1">
+            <summary>
+            Implements object pool.
+            </summary>
+            <typeparam name="T">Type of object to hold</typeparam>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Utilities.ObjectPool`1.#ctor(System.Int32,System.Func{`0})">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="boundedCapacity">Maximum number of objects to hold</param>
+            <param name="objectFactory">Optional factory function to produce new objects</param>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Utilities.ObjectPool`1.Take(System.Threading.CancellationToken)">
+            <summary>
+            Attempts to take an available object from pool.
+            Will wait until cancellation token is signaled if pool is empty.
+            </summary>
+            <returns>Helper to facilitate guaranteed return of the object to the pool</returns>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Utilities.ObjectPool`1.Return(`0)">
+            <summary>
+            Returns an object to the pool. 
+            Also use this method to initially populate the pool with free objects.
+            </summary>
+            <exception cref="T:System.Exception">Bounded capacity exceeded</exception>
+        </member>
+        <member name="P:Rms.Core.ExpressionEngine.Utilities.ObjectPool`1.Capacity">
+            <summary>
+            Maximum number of objects to be held.
+            </summary>
+        </member>
+        <member name="T:Rms.Core.ExpressionEngine.Utilities.ObjectPool`1.ObjectPoolAccessor">
+            <summary>
+            Helper to facilitate IDisposable pattern.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Utilities.ObjectPool`1.ObjectPoolAccessor.#ctor(Rms.Core.ExpressionEngine.Utilities.ObjectPool{`0},`0)">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Core.ExpressionEngine.Utilities.ObjectPool`1.ObjectPoolAccessor.Dispose">
+            <summary>
+            Dispose returns the object to pool.
+            </summary>
+        </member>
+        <member name="P:Rms.Core.ExpressionEngine.Utilities.ObjectPool`1.ObjectPoolAccessor.Item">
+            <summary>
+            Element to be returned to the pool once this holder is disposed.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,15 @@
+Product YAP 
+Declarations
+Required Parameters are 
+(Number, Name, Insured, Currency, Inception, Expiration, AttachmentBasis, Risk, Subject, Schedule[])
+Optional Parameters are (AttachPt[], RiskLimit[], CoveredAndPlaced[],OccLimitLayerHeight, Producer, Premium, UserId1, UserId2)
+Type is
+{Surplus Share Treaty}
+CoveredAndPlaced[] is 100 
+AttachPt[] is 0
+RiskLimit[] is Unlimited
+OccLimitLayerHeight is Unlimited
+Insurer is Market 
+Covers
+OccLimCover: 100% Share of OccLimitLayerHeight on Cession[] 
+Cession: CoveredandPlaced Share of RiskLimit xs AttachPt to Schedule per risk

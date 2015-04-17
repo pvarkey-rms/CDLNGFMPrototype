@@ -1,0 +1,2104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="WorkflowExecution.exe" version="5.0.7.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:publisher="WorkflowExecution" asmv2:product="WorkflowExecution" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="WorkflowExecution" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="WorkflowExecution.exe" parameters="" />
+  </entryPoint>
+  <co.v1:useManifestForTrust xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+            If you want to change the Windows User Account Control level replace the 
+            requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel node will disable file and registry virtualization.
+            If you want to utilize File and Registry Virtualization for backward 
+            compatibility then delete the requestedExecutionLevel node.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WorkflowExecution.exe" size="59392">
+      <assemblyIdentity name="WorkflowExecution" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>l0SXXby9O0fNBVHMmfgxV69CaDj0yC0ory0Ov27VERM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="BETAAutomationSuite\AccumulationDetailTemplate.js" size="27414">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>VAYx2IAqe1Q0JrmvYBs8Pf4NDGO7sY63ugkuojsVr/U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\AllAttributeMetrics.js" size="56902">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>y/BoZ5vc8Tyw5zkSKyrWG/ZjM6Yj2WMONk64b76Ey9I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Antlr3.Runtime.dll" size="102912">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>jAc7ti7fUXtUdsaBl8R0LKkhv6rUI+GMMDHXAzag7Ck=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\AWSSDK.dll" size="3338752">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>DGL0dweQVPzm0+EnxGhte/66Amosn1Cl1ExaveQ9UUg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BatchExtract.cfg" size="1474">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>f7jdgLfdjWqI/KPfYXyb5FFsqs5d7dqGPRIF9MWffTc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.AALValidation.dll" size="19968">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>jScV810cfwhiLuSnUiR1GZo/ikOruRACOA//8RBFLdw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.AccumulationValidation.dll" size="13824">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aLakuhBn+1my1Nfs/6WFpLabVeqtcOzi9sH/lyo/CcI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.AdminService.dll" size="216576">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ck/4ufizhZPY44TnMAIZ88EHAnqccaioU28Jjlm7sBM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.API.dll" size="17408">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>se/iLn6I80XsjAP1Q95M+tKSAoPp/8V0BfGIA68vdf4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.Audit.dll" size="11264">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>QzH5Oh6wQm98Xe3tsEf35tX56KRqL4B71/M93jkntyg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.AuthenticationService.dll" size="13312">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7l1D/Rjeg80azIaTx9BHEVpuDcPuJeLLcbrLvPIbdQo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.BALCommon.dll" size="8192">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>g3+ywNRkrqYdlkLLlUv5ztYeEfCqSQMzYZmtxfTlRtE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.BIDataService.dll" size="169472">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2xV3ZmnOWw0DJI1ixAs1wWVrPXL/AVidQwFKTRV+olU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.BIETLDataValidation.dll" size="36352">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+mB4igHBGIE2jlpN7E0Aa2lw7DmZnXlaJHf/O3o3R1U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.BusinessObjects.dll" size="68096">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>KcNxp1Px0jCtxqBfbfR3HUQjFY4f0Kid7g7o1qZvi2U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.CDLImportValidation.dll" size="29696">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mnTsodcqZ6xBB/5msMt5tKnpC362D6oPZizT3P5JS0I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.CDLService.dll" size="10240">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wy30hKmvGOlYFshXH11sOBWnf/9MwBxGDPf8E4yRhkk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ConfigurationTest.dll" size="22016">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>01BlMujWF5xx4fUjDKcW3a2opEVKh/HCNSDN/0qKEMM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.DAL.dll" size="725504">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>A3A92ep+DakkSaz9Qh0D1rn4pN+floRcqUGVgi/a4dw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.DataLibraryService.dll" size="52736">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>vPbP367UadsDv5WBM6CaIRf70at7AbonVN/jyKlX4IQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.Deployment.dll" size="163328">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>dWa1Y6PCX5ZRJKw6cfao87u1uiOfX73p7t6SfBgvAqs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.DOTMgmt.dll" size="16896">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>AvfbChwAG3fUZzSvYYCCK6M4YEaAVE/4Ku6SCaTt8B4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ElasticSearchValidation.dll" size="25600">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>I7MdQwY0AcYgUMWZ3t3nh8cVhbnG+uqpOieGVRCwXM4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.EnterpriseTesterMgnt.dll" size="19456">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MvqmtdqDQZkdwlLb9s221na6ZqPOm04iBl+0oFbltiw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ETL2DW.dll" size="55808">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/+vW0jB+o4Vh+gdgshP7/Nuz6aXuLvAXTj4SwNy0gDY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ExportExposure.dll" size="41984">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1NNPO5NXHPY9xC8j0EGaqFgXx/L5N7oBmNkAHC8BbTw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ExportExposureValidation.dll" size="36864">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ZRYvTadeF+S0DAeix1jeiPKFvOko2Vq6nLGrk8XP81Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ExposureData.dll" size="42496">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>yUMu0EDT4o6MLTnXKAIdwTIxdOdzc9KYZ+680Cl/cUQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ExposureService.dll" size="421888">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>l/gGUsFWkW4g7M8txexOBeVAdJJfgJqR32utFGIBWiU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ExposureUpload.dll" size="312832">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>SaQI1kBG7nGUGhKhuyZzHhZdPVN6jVG6AI9eZgMKGR8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ExposureValidation.dll" size="6144">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1HLLFBatWk8AsVdEhKg0M51QOn+7S6R4WkuvfU1QBf0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.GeoCoding.dll" size="63488">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Jx2VJbcgqWOeTZikFakqBnC7vfDyE640PoaWT9SN7jo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.HA.dll" size="12288">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>BY57FKk3UNaCtr4gpRIe7c7vU/bD392BIh8407IdTx8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ImportDataValidation.dll" size="88064">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+UOjhBoIGfaRGjkoWAXEUHKSyXiMqb/XstdSLfHKzHA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ImportExposure.dll" size="108032">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ltqqYp5oc/xxnYS+mVJXRU+5gpVNqwz/HB72wgcNsKg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ImportExposureValidation.dll" size="121856">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2w+D0yQUGnPGZ23WBfJNJyECXBOtkO4r6wsAdBGw7qE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.MappingService.dll" size="68608">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ffKpGO/QVmhKtiOsm+mEcucnDAuaj5sj9DXEAmrOesU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.MessageFrameworkTest.dll" size="35328">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gAQP9FPic28TOrfkcx+8L/U9g8wf5aCXDm87QgFbEgg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.MEXExtractValidation.dll" size="76800">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>b9wA1gkhBZ+Rc9PVZa6Lktnm3DnCOBbV9QGtalJHc8E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.MEXValidation.dll" size="26112">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ZvCkDLAynYjaLYT9x18I3rjFIhSIz9Hs3PvNyK32QmA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.MongoUtils.dll" size="39936">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fp1+2W5JmOnBFSEz9YdCc8VtMHlfeXh5zJ8WDZN8XWw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.RAPService.dll" size="98816">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7GIoAnE4fL1Lu/Lb3W8lQig7BWUIzIApPNh4rQzfC5k=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.RLFMComparer.dll" size="21504">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>io6IRJOyqJO2qVvbXs5uiKYAgeH7mjU3xFBLCiAFKBo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.RMSExceedanceDataExe.dll" size="11264">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>pFRaOZg+0o2qsOcj4xZKZ7H4X5mdE33ikxXhiyAWHbg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.RQLSetTemplate.dll" size="21504">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6sUaMowvzoWTeNNoLTs61DLD8K5SNIB/Unb1cqPbRm8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.SAL.dll" size="7168">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>c91puNzi8IDKepMEqlXJpFI/qHVAKBB0t3V62+XM8fU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ServiceFactory.dll" size="6656">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>dLHlYWl3XmK9cl5CVd4vXI3mdzTYd0TB/BXiljpqVms=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.ServiceHealthCheck.dll" size="65024">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Ahl/xNNQQ5ecPN+1LXlHjaY+LubHoWYhNzzB0aAuGj0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.SLAValidation.dll" size="24576">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>qhihtFcGeTAZzXxk/IbWNWhRNW6SMxk7MMLlD63eZrY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.UsageMeteringService.dll" size="14336">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>E4XXAkf7IqNatrxcPlga+G7j6NfXscQROUqeIGcO9NU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.Utilities.dll" size="151040">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>I/9xsfL3hsOzPRChbCJ5Zayi0DK0+SPLpflNr58c5Y0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.Validation.dll" size="13824">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2GzaDRMEfECkZENau+IQoG31T9Bd/vigEltaJ/S4QOw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.Versioning.dll" size="9216">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ZJEVd7sFYDDmIymVVozaHXFoHDBB0qMizJhI5DOFRi0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.WidgetService.dll" size="97792">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>JiPNOUfDJY/FPZ3I/eU0ZXWuNqt1CFZfoZor661jn4Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.Workflow.exe" size="39424">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>DiTBhr56veNisEeOOU3OghCk1+kQJQTJKgrqLDZj3jA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.Workflow.exe.config" size="17239">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>LosCgjIdlQa1BX+m0zL6HRHgvYyn6dyaYBTM/K+w9+w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.Workflow.vshost.exe" size="22984">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>9M7+1J+y9YZVzeTCFvTlKh8qquoLWAlmSpfwdQJvkrw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.Workflow.vshost.exe.config" size="17239">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>LosCgjIdlQa1BX+m0zL6HRHgvYyn6dyaYBTM/K+w9+w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.Workflow.vshost.exe.manifest" size="490">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wAhetGfS/JyfOVBH4FcYOzzRUDpAh9DbVlFhwTUnp28=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomationSuite.WorkSpaceTest.dll" size="6656">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gMx3/WV+fc8wgdu+dgau70SIIArrKOwV40oY/5uQyEM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\BETA.Service.AutomatioSuite.AdminServiceTest.dll" size="165888">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4ZYY4i5EJJ7xwDVXUtSbZeaDkVJOPw7jc0JyISJL2Us=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\CDF_NG_Mapping.xlsx" size="10667">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>d6AkWBxrS67ND1T/Cv/Qd5ozd9NvU3GlhADZ7M0AdT8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\CDF_ValidationQueries.xml" size="45">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>y0/qSVb8ZZDx3VO/7K5NafADxvau0UlF51D4wJZf+QI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ConsoleTreeTemplate.js" size="16214">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>QMn2VjPDyalDblGqhqhGMBciA9Vn+4xfOOI3b9eA6RQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Couchbase.dll" size="163328">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>SI8dzHJgH52aMnIJnW5Dr5v6Diil2joZVYh25wBz5+c=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Default_BETA.Service.AutomationSuite.Workflow.exe" size="39424">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>08ayq5G43BwXlxJumE6iYkMmCvEdDIQgywckmael7jQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Default_BETA.Service.AutomationSuite.Workflow.exe.config" size="17239">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>LosCgjIdlQa1BX+m0zL6HRHgvYyn6dyaYBTM/K+w9+w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\EDM_NG_Mapping.xlsx" size="73333">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fBG9KILPICM9eKWF0sB+70VqptmEkQhxZsl+MKP2Q4k=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\EDM_ValidationQueries.xml" size="85030">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>hJxq4djaGDDHNMUOWcBMccGy3kbdZfAWAWBV/cTx4g4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ELA_Create_database_for_ELA_Validation_DDL.sql" size="2843">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Owz7yMV8hI4niDKQctJAma/JPPfV99o881LtGf/bZjM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ELA_Create_OutputTable_Script.sql" size="2185">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>3cqUDlqUJDTevXRqqyMsMI3yxHC5qUE60UMZWeo6TLU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ELA_create_table_script.sql" size="253162">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ABZXlbZResQRa+HbnbErauPMtsJXFOCHfMrhVknx50U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ELA_CreateDB_for_Validation.sql" size="2843">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Owz7yMV8hI4niDKQctJAma/JPPfV99o881LtGf/bZjM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ELA_Datadump_from_Dev.sql" size="3268">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>zSwyjSjI8V5bZEykeKSV174Lp72v7FLWFsy0fNQhdXY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ELA_Stored_procedures.sql" size="1939864">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2EILjCv4qlUnkxO6McaM9Hn5Ecf/yt3y8cHXlRvg42s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ELAValidator.exe" size="92672">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nujrDKLdsJGuIIp+hMmnNCMiRLXFxpriNSQ67QXhyPc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Enyim.Caching.dll" size="156672">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lqhUmy2qskyCsbDfd6cHWc7QNXwV6ZmRR5KA6mFt4FY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ExposureDetailTemplate.js" size="32872">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lNYSxnSRg90jlvq2uAe1FNGEK6JlEJnDNBUSJoHxy6Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Extreme.Numerics.dll" size="950272">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>r/Gpz3g7eWRmuD2BC88SjG7rniyil4Pc66dTF2dKrRc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Google.ProtocolBuffers.dll" size="318976">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>zfS1lNZzXU7NmavLECJOAfL0qtzDT45+wM++IfucU+M=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ICSharpCode.SharpZipLib.dll" size="200704">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>QLPVkPlRkfPjPl0A5TT6QPgj2bG7Kpr+BfE5xOCjr40=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_BCP_Utility_Stored_Procs.sql" size="24406">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>9X8EHG/SSQeiYWA2p3vTaTMbmb7Q4jgNh6VjYtlE9Jc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_BCP_Utility_Stored_Procs_new.sql" size="23465">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>iBj1f5RADFTssF/Ufi1up+Qf4AA9yjxuHzoE0n+XYeQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_CDL_INVALIDATION_RULES_Script.sql" size="41296">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Z6xgUpAV2nEQIWogFabUOchZVdSmu7LOywV0dhNI8W8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_Create_database_for_Import_Validation_DDL.sql" size="2836">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8YJAJCoVxcJLxprEuYOUTij2rzJkD535f6bZSu+1L7c=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_Create_LookUp_tables.sql" size="18423">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xSTKjGDWy/lH/sS8DKG9nmtny1m6F1JXUPA5+gMfuRg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_Create_TBScrp_RUFValid_RLEDMExp_NGEDM.sql" size="107908">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>B+6QDSA/DNGNXhtYQODT6vYtjTXHnomr8xifIPnjxzE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_CreateTableScripts_MongoTargetTables.sql" size="7593">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>voDu90qKvhkepqs/12+LirvskiABEZbFxFpQd0gOWJ4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_GetRiskitemsForAPortfolio.sql" size="2104">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>suhdWGrR8VxrFvhAQpmaLWinmkbxjJG70H++x/FA0vo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_Load_NGEDM_Exp_Port_Cont_Exposureid.sql" size="6388">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>pE6MUGudEdvsf7tXk2gwCkyreln+ZtytXI7vP4AKsj4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_Load_RLEDM_Tables_From_Source_EDM.sql" size="21713">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>YJFgDEvmpGVTnePmR48uOmKuGHmclqyZEhaAxsf/sWU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_Locccvg_Rites_by_Peril_Precidence.sql" size="27910">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>EtdDsUTHOt+31/zTVjSIbtQ7igU4SFF6/72OOnjXATI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_Locccvg_Rites_by_Peril_Precidence_drop_tables.sql" size="1141">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>YpsSoFJnznl11P6oKKbMk7M74WtGBNIkZaTh/mkS9K0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_Loccvg_COL_RIType_Transformation.sql" size="8535">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>b7n6MDX5E4wiVBJij0ziFxYdVhBn+iMG7+8/77IZoz4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_Populate_Loccvg_Valid_Rites.sql" size="3903">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>pwuVn2dyeBgxVJ0d8feVcKOFmHBatxTCgrf/x3+vAwM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_RLEDM_NGEDM_Validation_Stored_Procs.sql" size="180558">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nUuOCISYj3oNx4OkbA9ibCK5/RsK5FrOwzkOGRDduCI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\IMP_RLEDM_NGEDM_Validation_Stored_Procs_new.sql" size="130156">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>jVsrCK7JpQN/XHtr0+b17uOg9ud6A934ZagfB4NHvwE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Imp_Ruf_RufValid_Stored_Procs.sql" size="69440">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1hk3sE31yp3PTK4h1dv7OiVGd2hD8fHZIZRnMhOz4po=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Interop.ADODB.dll" size="102400">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/h9GDIs2jCTMErumNrbB73yRr/RVwtJdTxTggehLj00=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Irony.dll" size="149504">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gqLxbubu72VNEQh+M0l+C+w5b7pZjjJx6siJ/b4hgbY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Load_Acct_Cont_CSE_RIT_RITE_from_NGEDM.sql" size="2568">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>vFyM5X9wzd5a8HL1az/Al71ejUu6MtUf9AOsf+yljVQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Load_Acct_Cont_CSE_RIT_RITE_from_NGEDM_Imp.sql" size="7056">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ANshMp5c/Eb2wpCKBVJExsO4HWcXv+m0eXv7nkgQ1jI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\log4net.dll" size="258048">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>cGrhdEG9h8wGzsrQJUwZSq4mKmiT5uVbEWhtx+S2WW0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Logging.dll" size="8192">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Xzq3iNvsbFoPa6YcLN1wgpJYh5Xa4BYlzz51Dt37Gas=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\MEXResultComparison.xlsx" size="11240">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>llSxv8e+e4mOZLgOD8SdN0SiBcFeWJjiE5RJJgHgL0Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\MEXResultStorage.xlsx" size="11102">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>txg7/vYtkDFpJy6M2PHilBxsHklaFcSNeRPnicri75M=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Microsoft.Office.Interop.Excel.dll" size="1550200">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>OmebSJAJVndSOiHRUyBW9535p4yZUzMh/ZfL65aSDbs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Microsoft.Practices.EnterpriseLibrary.Common.dll" size="334648">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ywFTSVCSyrm7gIA8UbJfAKVQ3q4os1AHxgiI28FSlnM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Microsoft.Practices.EnterpriseLibrary.Data.dll" size="166712">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>q2z79IZfFk4vupPYGHKT8kkn4mfKmWDlGz32NGG9/9s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Microsoft.Practices.ServiceLocation.dll" size="27448">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ICjbp3/+/A+5889aumiGjW9wbLJZmxpn1XhNHMQRzPc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Microsoft.Practices.Unity.dll" size="133944">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>IBZVzS9kGsBeRQ+wPOdjr7xehZ1s4aJa5/7zwnou45o=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Microsoft.Practices.Unity.Interception.dll" size="125752">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>eewLm5dS/mPAw3vEIXwufZ6jMBYQfjhw1eYYieuMw+M=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Microsoft.Vbe.Interop.dll" size="63336">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>OH3V8sw0aSkOsu8a9dRVAXSpvZB0xUrNNixjAeMiCPk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\MigrationLib.dll" size="171008">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2A8nLZWAlDOiBHMseKAmxmeZm07BWyKFCIeY7eJbqvI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\MigrationLibInterface.dll" size="6656">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>AxlgvIK9qdLHWcbRhwHH7qMXkOHN2EKl2LfHz7fNDik=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ModeledLossDetailTemplate.js" size="41355">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>op1IH7QGdm5aR6L6DYApCb5/wBGJ6j9FO72IJVubm+o=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\MongoDB.Bson.dll" size="376832">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>SHu54W03+xUoucHX/WQyAvdhGZlzoTH0Gva66p9JHSg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\MongoDB.Driver.dll" size="434688">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>pfMVz9oNUCS/mHl3hb+fuMXOWdtYI94FEIDg2RJFz3A=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\MRI_NG_Mapping.xlsx" size="10668">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>w/0CFlf4o8LaIJyRDy7FHyAYPOOudUfAROy/5o5LdGM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\MRI_ValidationQueries.xml" size="45">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>y0/qSVb8ZZDx3VO/7K5NafADxvau0UlF51D4wJZf+QI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Newtonsoft.Json.dll" size="368128">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ExDbVKLp+SFRLI7saFy/JRE58xEX7k14a3C3rTybiqg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\NGenerics.dll" size="176128">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>kfEuDbvNudFkkDkDn/L2SHIEnGHm/lpQvmWLch3bpyY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\NPOI.dll" size="1624064">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>kt+X6/Q7PcOUTchSc1Qvy15F9T3AxeVqwuH6S7GdYuw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\nunit.framework.dll" size="77824">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0fuwhgOjp+qlSp+ZXv/qrZxMpGBlJf3652uCXG7gH94=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\office.dll" size="448360">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gI0MYsrsHnstHrxHDjHquo8CqXJxDis/pbkvEt1f3wk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\PlainElastic.Net.dll" size="187904">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+Vj7vQQyPhRy7VHdswLXbBLn+qxjZWWaNZPB7YYq6Wo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\PostSharp.dll" size="151040">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>qJhIXWWH3v6leebO4QpFQq9nJJxGcGmL7mUD8jExUns=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\protobuf-net.dll" size="159232">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1Ucd0//cUbXhSaUewU5IzLNWemADdHgxxoR+25naHwU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\PsExec.exe" size="381816">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+Nur36AwaBMMJ3zknGDjXAKf8p2ePHTDYlIfP7AmcNU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\RiskLinkEDM.InsuranceRepository.dll" size="308224">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>g4z+2EydgmyCq+2L6rPMgKqoiP2AuYFTEQ89O+KJq0U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\RLtoNG_Mapping.xlsx" size="69487">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>znwmdnrK/YvyAl1KbU9d1ki6do9QtSqoRln1g3c5Tq4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Analytics.DataObject.DataTransfer.dll" size="11264">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ycmnFt4r5ctRd46yemx0/ovkCBDQtAGnOHBNIoDyaCI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Analytics.DataService.Exposure.dll" size="44032">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aK+zzAtKYToxnPOWdYU1T0xCaT8zx5AWBVNXQlZsIlw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Analytics.LossValidation.dll" size="44544">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HVYt7YAD1H5GUlni0sH6ECdivmupbPO9tMaP4yHqodQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Analytics.Metrics.dll" size="64633">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>oSTwFW8WsYl+ydiVTjGUtPvkGxFBEziIjI/IIiZIF78=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Analytics.Metrics.Utils.dll" size="12288">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>V/YExG+R1WJi13stuHnId4MPklhlV4RYO8adYbhcPYw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Analytics.Module.EventGen.dll" size="8192">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>v2OlK+bAdCaKlwOWHWixcYqCF0tsIgOlgguqr5nS9k4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.BI.Services.ExposureAnalytics.Data.dll" size="73216">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>iHN/vND8IuQLgt8AhR5Q5k2Nt4hybA4WQBNxJyObfJM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Cdl.Adaptor.dll" size="259584">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>EEO7Vqe+RNDnsvvWJT/p5ewTAteLTdI+Pxlct8WKea4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.CDL.Common.dll" size="16384">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>vSUFXQYNm70mrFB+x6YMiwE9vC6W16qxUV3C8AJLfZY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Cdl.DataObjects.dll" size="26112">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>VEUUEJP9kzkvgO9hwSzwGzeEHhawKuO+D+SbacOFmDc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Compiler.JIT.dll" size="1619456">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ElTzw/Siiuyp6KKI0IIWpPIaTlnHU1C88dM3pz3sMN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Core.Configuration.dll" size="242176">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wlgNwIr+v4FiKvXcIrbZ/BSJgUef/z4HJ72ebBKDUZc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Core.DataObjects.Auditing.dll" size="11776">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>bb5kB334KV/7Kyrc3SgLNHDD+8Ljn3woeZ0QZJstHsc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Core.DataObjects.DistributedFileSystemHandler.dll" size="11264">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ITbEXMoBZF8Ars1OWqrn5qMbwph2xS3AXxT9rs2+QJg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Core.DataObjects.LossAnalytics.dll" size="11776">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>3dxXI2r6K0iW/V1VoGncPe46jDj6TW+SCRW6bpHh1Ig=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Core.DataObjects.SLA.dll" size="5632">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0vD5pdzn+x+1n4KwMta7A3gqgZ7bM+/mCfkE/asEZdA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Core.EventLibrary.dll" size="14336">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>n6uoWyej4HNKik1obuLo7zEqm5jr3ZB64hmPkwNGuho=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Core.EventLibrary.SLA.dll" size="7168">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Ej9rO4B9UiLYdYAH7bjOrLwZquq07QjohK515XCWEOY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Core.ExpressionEngine.dll" size="65536">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ki6ZrfTwpoclg9H1J6Zz8j3kuWs/PYwp9PbHV2PNfPk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.AbstractionLayer.dll" size="9728">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HAUmW31qGq37Puy30BuHwAnQjFp1Ap70MJDDloTpISs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.AbstractionLayers.Data.dll" size="6656">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>K9BtDWyl7A2MPMtcUOppg0rrtOAumBtiQ4syQVuun8g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.Data.dll" size="44544">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>rSLBAiGeZ49gBFJjyPlQW8EWfgL7vjMPOjbKKLXgZGs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.dll" size="27648">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0Y/ortW9Mvpf5UEI5Mmc9g6F0JCUpAGTs/HO1iP8BiE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.Common.BulkService.dll" size="43008">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tMRJECv+WRFQ+NSOXJvtVT3suSYlEW+Jp+CPsIeIiqk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.Common.dll" size="152576">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2XpXsJCF91P7jcKJjjUoZuUZpJklbeaZ4KdQolsGYvg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.DAL.DataObjects.dll" size="6656">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nxOfR1Mo0BLS6Z0kAJaV8PHrC04Zkp2VIZ77qmTovuM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.DAL.Exposure.DataObjects.dll" size="23552">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>qcYmrqLCJTBSOXhSJa61hgKx3ycjl8gQ8uUHlFjRLAI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.DAL.ExposureDatabases.dll" size="212480">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mo8ZqxzEz0FjYlXPDhUUC2y5rS6ZBw1F8NUXXiXxatY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.DAL.Mongo.ClassLibrary.dll" size="90624">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>5oJ3Bvrw3YjtC/4Y1rmILstmTPkdYoxyRagcgKu+BYw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.DataObjects.dll" size="350720">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>goSaUQg21odkTT1iluEMP5Q8zhtPNfkFc4Xef+3K1SQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.DomainDataService.Contracts.dll" size="6656">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wfPXIi+CQs2O/JYSxseyhJ666dv0McUyzeEnpXCtsG0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.DomainDataService.Data.dll" size="18432">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gEjssVDKMjeZ+QbhNLvU+KfUeK3K/eDrtD6v3gCtjIc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.DomainDataService.dll" size="37376">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ZLX/fAeeJrOvP+aqYkj01AkNtKfRsbwp3phkt39F/6A=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.EventObjects.dll" size="13824">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gvIYTddQ/qvRK0CWSZmWB2sbwSe76TGINSkn4yezCFc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.Exposure.Data.dll" size="65536">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lHq9NCQC1DRs3GN42DZ9P3iPaLMrgW2BsEJt/0VweRI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.ExposureBulkService.DataObjects.dll" size="17408">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>sGv6npIq1CivdSu2BpUDtP31sYZjLQMSN1I3sDX9o9I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.ExposureManagement.dll" size="290816">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>qAxsSfoXSiz9vC9d4ZUKT7nAZUttfmfsuO+/Wf+eUOY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.Loaders.Index.dll" size="34304">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1QDhnuFRDNK7Iq1DAifeXlmz+66shhfmAULUXlclWDE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.LogExtension.dll" size="7680">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>af74kjPoIoIcwoy6jiubcHnmqB0woX0XHUHvE4o1Jvs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.RestObjects.dll" size="249344">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>VDoZmwuJFtqvm5LxocYg03Vx6gifTFTO+CoSBvrtfEY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.Utilities.dll" size="22016">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>OzJUNjLhdPJLDmuctTCQMuTOLJmvaZW3paVwnKDx4sI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.DataServices.Workspace.DataObjects.dll" size="20992">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>YPEOdB3M1n+caH70Kc8DzwLv4bWRgAGiB3sSPFfAmJs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Domain.Service.Data.dll" size="17920">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>cObmRsdPTxnM7yCi4q61pap32bEF0iUwGfbICjkVfIk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Exposure.Service.Data.dll" size="18944">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fvc6Qt0vO09yl8qUAFetFqlIRZkgNXLjMzLgXH8I5jw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Gis.LI.DataObject.dll" size="47616">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>JRwZj8iR8AkX/WDbm6NWenATzxLolSvJ445AfjqMlWo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Integration.Services.Notification.Data.dll" size="6656">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>15OnKu2JPn7K1dZwqmJkp6I3CvcoNzI98+n0QwhEkTY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.LossAnalytics.Common.dll" size="74240">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>zM/dSAtF7suQlgrr6DdncW8bieH2R8hNFhuuzElc59A=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.LossAnalytics.DataObjects.dll" size="13824">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>z6DlXwr3YE3nxnZaxjRgH+TE+CVZoKvxLAOHK0uDlZA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.LossAnalytics.Rql.AntlrParser.dll" size="100352">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>f9J0xxBY6nax+wqDbq8nSt1DIbrRdaMzbnZYnDA0b7g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.LossAnalytics.Rql.dll" size="12288">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>UwY3wjfPBfMIZyhXSI4NuC7csUVkXKeYx7VEGqxKGhc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.LossAnalytics.Rql.Parser.dll" size="7168">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>KgPVujKoGpeZJoMS69fBCVp3rL6SMCDPjh4CNmvKFaA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Aspects.dll" size="7680">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gNyiyHO/e04j5RMBoG2UU/EmT3lCVOf31uhw3BrK6is=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Cache.dll" size="24576">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>SQlzAexM2/ZgYAUDzSOp6augHZdGy/6WL5Ch87rfKK0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Common.Filters.dll" size="68096">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>D5oXtIqUVjWR73Qi1djPKM1/Cd8sbHM/rUp92MnoZOQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Common.Response.dll" size="9728">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>cTmwZDoDSJkQgKpCdGnPmfhDlEhKHkaO6rjEoq8KJEA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Configuration.dll" size="9216">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>PBrV46YH6aa8VGI1i1Ts6hGtMHVkcjoSTzjPVs2AqaM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.DataObjects.Common.dll" size="6656">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>UYMT2EJtTDY1Kb9HzX1gEB+NfwgNCMQByRfCL3A7VSU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.DataObjects.DataAccessControl.dll" size="9216">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7P0j2vSBLUmSrZbO7FSpkt7IgP2VmZNcF8CibAczdKE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.DataObjects.FeatureAccessControl.dll" size="5632">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ORWjo4KG/cGOOPsmYV9Hd5aKMOp/KNcgVMZpmpjV++g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.DataObjects.Licensing.dll" size="7680">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4hUC5+D7mncX+7YoM9dHsF9BkLU1ao/UEJ0r20ZreTQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Infrastructure.Configuration.dll" size="22528">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>5fGa8mBKIKsVa+9e/v++Yw0Qm3bfurSsSlL4EAvNzeo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Infrastructure.Core.dll" size="120832">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>L39wfECYS+jGJdSSCFqztlk1JQgcC2PIO08uOKmeGNI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Infrastructure.Diagnostics.dll" size="50176">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>rM8nITx2TsSS5xLK3Y7zCylS4rQg47Q6fBRH5Mw/CtE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Infrastructure.DistributedFileSystemHandler.dll" size="35328">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fKiqZPsunojAgaAEmacp0WX+EMH+2v80KIM1M5ziMTc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Infrastructure.ExceptionHandling.dll" size="18944">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>pPrlRUD8WLuxzOMUZ8027Ga+3BFKD4WoPPb5IsVaM34=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Infrastructure.Interop.dll" size="412672">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>UtMGCRKzRAagu+XXf46ZoOtooFmsjqfgm7SkRb5A5H0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Infrastructure.Messaging.dll" size="56320">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GNEXi975hvwnxTttFbtBTXwPOtzWBvRzMssLU4dfRDk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Infrastructure.Patterns.dll" size="49152">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7AlpKBcp9F6okxJf2hMCAo0+XwSilq+VCuqWko9MXLI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Monitor.Contract.dll" size="5632">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2cpjZ0pzaYl2Jao5g9cR+0kaRFQR74BsEplrqt93WFU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Services.Admin.ServiceObjects.dll" size="56320">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>cUsLE3EnmrD3QK7IYwvTQ/bGXD7IqR9Au0KCw43rcu4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Services.Common.dll" size="12288">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>JjST7jzKYwrxvdK5XiDvWFLNWIkTjCR5yX5L/udQzuI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Services.DataAccessControl.Data.dll" size="9728">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Rkb2YQnIxUNGISnXWpGNnKXviTJ1jYWogy6rkdBQrWk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.SLA.Core.dll" size="72192">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>qC+jkE0g+V2xQaTh6iO+YPUfYW4N1mxZloETBWX6dhE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Rms.Platform.Utils.Crypto.dll" size="6144">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>agBd1H39p8Y1CL02B9X0WlN3L5JywbwHzjdjQY3I71g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Services.xml" size="48277">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lnIO76BZOzjGmSerXjL8INA6OVUpws8+fFsnKgjKyH4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ServiceStack.Common.dll" size="242176">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wAIOXm1pU6G8FeMuSdgSfBndHAurMuqY61trb6Re2dc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ServiceStack.Interfaces.dll" size="96256">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>twcnhBzkv2odegZeJ/KZJOfu5NeQEnOMpg9BtYwaCng=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ServiceStack.Redis.dll" size="219136">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FRRW+tm51IFYViC1jgs3/v2kNwdBY5W0J/3ZHoTR5ro=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ServiceStack.Text.dll" size="173056">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>EzwX1iiomHdSASFiOLcmtiREckQkvazdqEQCc/oTWIo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\SnappyDL.x64.dll" size="26112">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>idm7zG1IxvDGEImftCU3f29KtZQQvpmL5wZjqPZKH0c=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\SnappyDL.x86.dll" size="22016">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7X7YguYdPcjOVdBCSyfCCCmJx2KKkNXm9CfvodJH/4E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\SnappyPI.dll" size="58368">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>naP79S2Ji91K5iMqhQngbUqZ0ARnqSO4UJyoEfqJUhk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\SQAUtils.dll" size="111616">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nBHNUHE5Ga/1MUUzKEeX3ZRYYJDXzo7NdZth1BKFY5g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\SQAUtils.xml" size="9584">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GTEtoiVIMeYni/D2zp1qYJaqgLwFvguX76D5chr8sYA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\SubjectTree.dll" size="7680">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>jr1Y2ygQ2VL7oDOuffW7fu/qNxtA5sZB+HI2XKo/cys=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\SysUtils.dll" size="7680">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>zBSvf0FY3CUzd6EIKRfjmPQV+HfDiUW4EDQNndSI4eQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\TestApiCore.dll" size="210432">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>QUBDUgm0ARhjd2Sbc5IkskHx9HrABU2zh79mVIDZzfQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\usp_BI_ETL_Automation_Stored_Procs.sql" size="24160">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xAAJDE+8IULQOtUt91iIrLS87EwtCQXFzcayYSzM1GE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Validation.config" size="1137">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xrFLDoAMDYd6N+ylVNqKYEYvexmobTMJe4e7cMvMOQU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\ValidationQueries.xml" size="84359">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MkFI9vehx3C+j4QEDlH1Rr89ysAK0OdYBk5P77qYWio=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\VcloudRestSchema_V5_1.dll" size="538624">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lenn7vNVwyU+EO27UNi8YSRYYNjqOX1QiQbAZP0fQJg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\VcloudSDK_V5_1.dll" size="482304">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>IIvQ5KWLMsalmWIHxgW75ZyTeI5MvHi0pMLiP4HlR60=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BETAAutomationSuite\Vertica.dll" size="319488">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+WvmfLyhYW2wGtNHzd6dW28cUDJKiUsY1Y12TwEDrw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="WorkflowExecution.exe.config" size="487">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>NsM/UTlEz5+RL+Bdj+erL9zM5HdEGdn1FlQXzc9aWVo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="WorkflowExecution.pdb" size="77312">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>NtkXLNqU/82H840H+a3OTsd8tf0dYG8Z75dCoh6dCqM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of all Windows versions that this application is designed to work with. 
+      Windows will automatically select the most compatible environment.-->
+      <!-- If your application is designed to work with Windows Vista, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+      <!-- If your application is designed to work with Windows 7, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+      <!-- If your application is designed to work with Windows 8, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+    </application>
+  </compatibility>
+</asmv1:assembly>

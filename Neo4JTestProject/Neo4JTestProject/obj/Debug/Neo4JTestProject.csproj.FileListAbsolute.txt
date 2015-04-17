@@ -1,0 +1,2 @@
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\Neo4JTestProject\Neo4JTestProject\obj\Debug\Neo4JTestProject.csproj.App.config
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\Neo4JTestProject\Neo4JTestProject\obj\Debug\Neo4JTestProject.csprojResolveAssemblyReference.cache

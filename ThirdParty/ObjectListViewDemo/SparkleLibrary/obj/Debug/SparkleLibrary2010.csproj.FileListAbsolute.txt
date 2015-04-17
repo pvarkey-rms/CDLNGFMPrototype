@@ -1,0 +1,5 @@
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\ThirdParty\ObjectListViewDemo\SparkleLibrary\bin\Debug\SparkleLibrary.dll
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\ThirdParty\ObjectListViewDemo\SparkleLibrary\bin\Debug\SparkleLibrary.pdb
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\ThirdParty\ObjectListViewDemo\SparkleLibrary\obj\Debug\SparkleLibrary2010.csprojResolveAssemblyReference.cache
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\ThirdParty\ObjectListViewDemo\SparkleLibrary\obj\Debug\SparkleLibrary.dll
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\ThirdParty\ObjectListViewDemo\SparkleLibrary\obj\Debug\SparkleLibrary.pdb

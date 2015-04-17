@@ -1,0 +1,22 @@
+Contract 
+Declarations
+Product is YAP { ver 1 }
+Name is ABC001
+AttachmentBasis is {Losses Occurring }
+Expiration is UNKNOWN
+Inception is UNKNOWN
+Currency is {USD }
+Insured is AB71510
+Number is ABC001
+Premium is UNKNOWN
+Producer is UNKNOWN
+Schedule[] is [S1, S2]
+Risk is Each Location
+UserId2 is UNKNOWN
+UserId1 is 432432
+OccLimitLayerHeight is 4324324
+CoveredAndPlaced[] is [100, 80]
+RiskLimit[] is [5M, 6M]
+AttachPt[] is [2K, 1K]
+Type is {Surplus Share Treaty}
+Subject is UNKNOWN by FL

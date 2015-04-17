@@ -1,0 +1,883 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.Exposure.Service.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Exposure.Service.Data.SnapShotDateOutput">
+            <summary>
+            Get Portfolio AsOfDate Output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.SnapShotDateOutput.AsOfDateList">
+            <summary>
+            Gets or sets as of date list.
+            </summary>
+            <value>
+            As of date list.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.SnapShotDateOutput.TotalNumberOfItems">
+            <summary>
+            Gets or sets the total number of items.
+            </summary>
+            <value>
+            The total number of items.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.CedantExposureInput">
+            <summary>
+            Class representing ContractExposureInput
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CedantExposureInput.ContractCollectionExposure">
+            <summary>
+            Gets or sets the contract collection exposure.
+            </summary>
+            <value>
+            The contract collection exposure.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CedantExposureInput.CedantProjectId">
+            <summary>
+            Gets or sets the cedant project id.
+            </summary>
+            <value>
+            The cedant project id.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.ContractExpirationData">
+            <summary>
+            Contract Expiration Data
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ContractExpirationData.MonthYear">
+            <summary>
+            Gets or sets the month and year.
+            </summary>
+            <value>The month and year.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ContractExpirationData.ContractCount">
+            <summary>
+            Gets or sets the contract count.
+            </summary>
+            <value>The contract count.</value>
+            <remarks></remarks>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.DeleteContractInput">
+            <summary>
+            Contract Expiration Data
+            </summary>
+        </member>
+        <member name="F:Rms.Exposure.Service.Data.DeleteContractInput.ContractId">
+            <summary>
+            Gets or sets ContractId.
+            </summary>
+        </member>
+        <member name="F:Rms.Exposure.Service.Data.DeleteContractInput.IsDeleteAllVersions">
+            <summary>
+            Get or sets flag for delete all snapshot versions or only current version
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateExposedPartyInput.partyList">
+            <summary>
+            Gets or sets the party.
+            </summary>
+            <value>
+            The party.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateExposedPartyInput.isCedant">
+            <summary>
+            Gets or sets a value indicating whether this instance is cedant.
+            </summary>
+            <value>
+              <c>true</c> if this instance is cedant; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.RefreshPortfolioInput">
+            <summary>
+            Input class representing attributes needed to refresh a portfolio
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.RefreshPortfolioInput.ExposureId">
+            <summary>
+            Gets or sets the exposure unique identifier.
+            </summary>
+            <value>
+            The exposure unique identifier.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.RefreshPortfolioOutput">
+            <summary>
+            Output class representing results of refreshing a portfolio
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.RefreshPortfolioOutput.ActivityUrl">
+            <summary>
+            Gets or sets the activity URL.
+            </summary>
+            <value>
+            The activity URL.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.CreateRiskAnalysesInput">
+            <summary>
+            Input class representing risk analysis
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesInput.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesInput.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesInput.ExposureId">
+            <summary>
+            Gets or sets the unique identifier.
+            </summary>
+            <value>
+            The unique identifier.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesInput.ExposureAsOf">
+            <summary>
+            Gets or sets the version.
+            </summary>
+            <value>
+            The version.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesInput.PortfolioReportingSegment">
+            <summary>
+            Gets or sets the portfolio reporting segment.
+            </summary>
+            <value>
+            The portfolio reporting segment.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesInput.RiskAnalyisProfile">
+            <summary>
+            Gets or sets the risk analyis profile.
+            </summary>
+            <value>
+            The risk analyis profile.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesInput.CurrencyCode">
+            <summary>
+            Gets or sets the currency code.
+            </summary>
+            <value>
+            The currency code.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesInput.CurrencyAsOf">
+            <summary>
+            Gets or sets the currency asynchronous of.
+            </summary>
+            <value>
+            The currency asynchronous of.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesInput.CurrencyScheme">
+            <summary>
+            Gets or sets the currency scheme.
+            </summary>
+            <value>
+            The currency scheme.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesInput.PerformanceLevel">
+            <summary>
+            Gets or sets the performance level.
+            </summary>
+            <value>
+            The performance level.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesInput.OutputTemplate">
+            <summary>
+            Gets or sets the template.
+            </summary>
+            <value>
+            The template.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.CreateRiskAnalysesOutput">
+            <summary>
+            Output class representing risk analysis output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesOutput.ActivityUrl">
+            <summary>
+            Gets or sets the activity URL.
+            </summary>
+            <value>
+            The activity URL.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateRiskAnalysesOutput.RiskAnalyisProfileInstance">
+            <summary>
+            Gets or sets the risk analyis profile instance.
+            </summary>
+            <value>
+            The risk analyis profile instance.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.GetAllFiltersOutput">
+            <summary>
+            Get All Named Filters Output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.GetAllFiltersOutput.FilterList">
+            <summary>
+            Gets or sets the filter list.
+            </summary>
+            <value>
+            The filter list.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.GetAllFiltersOutput.TotalNumberOfFilters">
+            <summary>
+            Gets or sets the total number of named filters.
+            </summary>
+            <value>
+            The total number of named filters.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.RapIdTemplateIdListMapping">
+            <summary>
+            Class representing RapId, TemplateId mapping
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.RapIdTemplateIdListMapping.RapId">
+            <summary>
+            Gets or sets the rap id.
+            </summary>
+            <value>
+            The rap id.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.RapIdTemplateIdListMapping.TemplateIdList">
+            <summary>
+            Gets or sets the template id list.
+            </summary>
+            <value>
+            The template id list.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.WhatifTagOutput">
+            <summary>
+            Get Portfolio AsOfDate Output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.WhatifTagOutput.WhatifTags">
+            <summary>
+            Gets or sets as of date list.
+            </summary>
+            <value>
+            As of date list.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.WhatifTagOutput.TotalNumberOfItems">
+            <summary>
+            Gets or sets the total number of items.
+            </summary>
+            <value>
+            The total number of items.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.RiskAnalysis.RiskAnalysisRuntime">
+            <summary>
+            /Object representing risk analysis runtime estimates by SLA level
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.RiskAnalysis.RiskAnalysisRuntime.SLALevel">
+            <summary>
+            SLALevel of the risk analysis
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.RiskAnalysis.RiskAnalysisRuntime.EstimatedRunTime">
+            <summary>
+            Estimated execution time of the risk analsis in seconds
+            </summary>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.RiskAnalysis.GetAnalysisRuntimeOutput">
+            <summary>
+            Ouput object representing risk analysis runtime estimates for supported sla levels
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.RiskAnalysis.GetAnalysisRuntimeOutput.RiskAnalysisEstimates">
+            <summary>
+            Runtime estimates of a risk analysis runtime estimates
+            </summary>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.CommitSessionInput">
+            <summary>
+            Class representing session commit API input
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CommitSessionInput.SessionId">
+            <summary>
+            Gets or sets the session id.
+            </summary>
+            <value>
+            The session id.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.CommitSessionOutput">
+            <summary>
+            Class representing session commit API output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CommitSessionOutput.WorkflowId">
+            <summary>
+            Gets or sets the workflow id.
+            </summary>
+            <value>
+            The workflow id.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.CreateSessionInput">
+            <summary>
+            CreateSessionInput
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateSessionInput.SessionCreator">
+            <summary>
+            Gets or sets the session creator.
+            </summary>
+            <value>
+            The session creator.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateSessionInput.ExposureSnapshotKey">
+            <summary>
+            Gets or sets the exposure snapshot key.
+            </summary>
+            <value>
+            The exposure snapshot key.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateSessionInput.ExposedPartyId">
+            <summary>
+            Gets or sets the exposed party id.
+            </summary>
+            <value>
+            The exposed party id.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateSessionInput.WhatTagId">
+            <summary>
+            Gets or sets the what tag id.
+            </summary>
+            <value>
+            The what tag id.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateSessionInput.ContractTypeId">
+            <summary>
+            Gets or sets the contract type id.
+            </summary>
+            <value>
+            The contract type id.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateSessionInput.InsuredPartyId">
+            <summary>
+            Gets or sets the insured party id.
+            </summary>
+            <value>
+            The insured party id.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateSessionInput.CedantProjectIdList">
+            <summary>
+            Gets or sets the cedant project id list.
+            </summary>
+            <value>
+            The cedant project id list.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateSessionInput.InceptionDate">
+            <summary>
+            Gets or sets the inception date.
+            </summary>
+            <value>
+            The inception date.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateSessionInput.ExpirationDate">
+            <summary>
+            Gets or sets the expiration date.
+            </summary>
+            <value>
+            The expiration date.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.CreateSessionOutput">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateSessionOutput.WorkflowId">
+            <summary>
+            Gets or sets the instance id.
+            </summary>
+            <value>
+            The instance id.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.DisposeSessionInput">
+            <summary>
+            Class representing session dispose API input
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.DisposeSessionInput.SessionId">
+            <summary>
+            Gets or sets the session id.
+            </summary>
+            <value>
+            The session id.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.DisposeSessionOutput">
+            <summary>
+            Class representing session dispose API output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.DisposeSessionOutput.WorkflowId">
+            <summary>
+            Gets or sets the workflow id.
+            </summary>
+            <value>
+            The workflow id.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.ExpandSessionInput">
+            <summary>
+            Class representing session expand API input
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ExpandSessionInput.SessionId">
+            <summary>
+            Gets or sets the session id.
+            </summary>
+            <value>
+            The session id.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ExpandSessionInput.ExposureSnapshotKey">
+            <summary>
+            Gets or sets the exposure snapshot key.
+            </summary>
+            <value>
+            The exposure snapshot key.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ExpandSessionInput.SessionCreator">
+            <summary>
+            Gets or sets the session creator.
+            </summary>
+            <value>
+            The session creator.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.ExpandSessionOutput">
+            <summary>
+            Class representing session expand API output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ExpandSessionOutput.WorkflowId">
+            <summary>
+            Gets or sets the workflow id.
+            </summary>
+            <value>
+            The workflow id.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.JobStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rms.Exposure.Service.Data.JobStatus.Completed">
+            <summary>
+            Completed
+            </summary>
+        </member>
+        <member name="F:Rms.Exposure.Service.Data.JobStatus.InProgress">
+            <summary>
+            In progress
+            </summary>
+        </member>
+        <member name="F:Rms.Exposure.Service.Data.JobStatus.Failed">
+            <summary>
+            Failed
+            </summary>
+        </member>
+        <member name="F:Rms.Exposure.Service.Data.JobStatus.Unknown">
+            <summary>
+            The unknown
+            </summary>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.WorkflowStatus">
+            <summary>
+            Class representing session status
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.WorkflowStatus.SessionId">
+            <summary>
+            Gets or sets the session id.
+            </summary>
+            <value>
+            The session id.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.WorkflowStatus.JobStatus">
+            <summary>
+            Gets or sets the job status.
+            </summary>
+            <value>
+            The job status.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.GetVersionsOutput">
+            <summary>
+            Class representing output of versions GET API
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.GetVersionsOutput.SupportedVersionsList">
+            <summary>
+            Gets or sets the supported version list.
+            </summary>
+            <value>
+            The supported version list.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.CreateWorkflowInput">
+            <summary>
+            Class representing input for scheduling workflows
+            </summary>
+        </member>
+        <member name="M:Rms.Exposure.Service.Data.CreateWorkflowInput.Initialize(System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Exposure.Service.Data.CreateWorkflowInput"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Rms.Exposure.Service.Data.CreateWorkflowInput.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:Rms.Exposure.Service.Data.CreateWorkflowInput.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Exposure.Service.Data.CreateWorkflowInput"/> class.
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateWorkflowInput.ExposureSnapshotRapTemplateListMapping">
+            <summary>
+            Gets or sets the exposure snapshot rap template mapping.
+            </summary>
+            <value>
+            The exposure snapshot rap template mapping.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.CreateWorkflowOutput">
+            <summary>
+            Run Portfolio Output
+            </summary>
+        </member>
+        <member name="M:Rms.Exposure.Service.Data.CreateWorkflowOutput.Initialize(System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:Rms.Exposure.Service.Data.CreateWorkflowOutput.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:Rms.Exposure.Service.Data.CreateWorkflowOutput.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.Exposure.Service.Data.CreateWorkflowOutput"/> class.
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.CreateWorkflowOutput.ExposureSnapshotKeyJobIdMapping">
+            <summary>
+            Gets or sets the job id list.
+            </summary>
+            <value>
+            The job id list.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.DeletePortfolioInput">
+            <summary>
+            Delete portfolio input
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.DeletePortfolioInput.id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.ExposedPartyInfo">
+            <summary>
+            Exposed Party Info
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ExposedPartyInfo.Party">
+            <summary>
+            Gets or sets the party.
+            </summary>
+            <value>
+            The party.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ExposedPartyInfo.IsCedant">
+            <summary>
+            Gets or sets a value indicating whether this instance is cedant.
+            </summary>
+            <value>
+              <c>true</c> if this instance is cedant; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.GetExposedPartyListOutput">
+            <summary>
+            Get Exposed Party List Output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.GetExposedPartyListOutput.ExposedPartyInfoList">
+            <summary>
+            Gets or sets the exposed party and type info list.
+            </summary>
+            <value>
+            The exposed party and type info list.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.GetExposedPartyListOutput.PartyList">
+            <summary>
+            Gets or sets the party list.
+            </summary>
+            <value>
+            The party list.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.GetExposedPartyListOutput.TotalNumberOfExposedParty">
+            <summary>
+            Gets or sets the total number of exposed party.
+            </summary>
+            <value>
+            The total number of exposed party.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.GetExposedPartyRoleOutput">
+            <summary>
+            Get Exposed Party Type Output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.GetExposedPartyRoleOutput.ExposedPartyRoleList">
+            <summary>
+            Gets or sets the exposed party role list.
+            </summary>
+            <value>
+            The exposed party role list.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.GetExposedPartyRoleOutput.TotalNumberOfRoles">
+            <summary>
+            Gets or sets the total number of roles.
+            </summary>
+            <value>
+            The total number of roles.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.GetReportingSegmentOutput">
+            <summary>
+            Get Reporting Segment output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.GetReportingSegmentOutput.ReportingSegmentNode">
+            <summary>
+            Gets or sets the reporting segment node.
+            </summary>
+            <value>
+            The reporting segment node.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.ReportingSegmentNode">
+            <summary>
+            Reporting Segment Node
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ReportingSegmentNode.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ReportingSegmentNode.Eql">
+            <summary>
+            Gets or sets the eql.
+            </summary>
+            <value>
+            The eql.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ReportingSegmentNode.ReportingSegmentNodeList">
+            <summary>
+            Gets or sets the reporting segment node list.
+            </summary>
+            <value>
+            The reporting segment node list.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.ValidateCedantExposureContractInput">
+            <summary>
+            Validate New Contract Of Cedant Exposure Input
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ValidateCedantExposureContractInput.ContractIdList">
+            <summary>
+            Gets or sets the contract id.
+            </summary>
+            <value>
+            The contract id.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ValidateCedantExposureContractInput.CedantExposureCreationFilter">
+            <summary>
+            Gets or sets the cedant exposure creation filter.
+            </summary>
+            <value>
+            The cedant exposure creation filter.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ValidateCedantExposureContractInput.CedantExposureCededFilter">
+            <summary>
+            Gets or sets the cedant exposure ceded filter.
+            </summary>
+            <value>
+            The cedant exposure ceded filter.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.ValidateCedantExposureContractOutput">
+            <summary>
+            Validate New Contract Of Cedant Exposure Output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ValidateCedantExposureContractOutput.IsValidationPass">
+            <summary>
+            Gets or sets a value indicating whether this instance is validation pass.
+            </summary>
+            <value>
+            <c>true</c> if this instance is validation pass; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ValidateCedantExposureContractOutput.InvalidContractIdList">
+            <summary>
+            Gets or sets the invalid contract id list.
+            </summary>
+            <value>
+            The invalid contract id list.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.ValidateContractsWithExposedPartyInput">
+            <summary>
+            Validate Contracts With Exposed Party Input
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ValidateContractsWithExposedPartyInput.ContractIdList">
+            <summary>
+            Gets or sets the contract id.
+            </summary>
+            <value>
+            The contract id.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ValidateContractsWithExposedPartyInput.PortfolioCreationFilter">
+            <summary>
+            Gets or sets the portfolio creation filter.
+            </summary>
+            <value>
+            The portfolio creation filter.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ValidateContractsWithExposedPartyInput.CededContractFilter">
+            <summary>
+            Gets or sets the ceeded contract filter.
+            </summary>
+            <value>
+            The ceded contract filter.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ValidateContractsWithExposedPartyInput.PortfolioExposedPartyId">
+            <summary>
+            Gets or sets the portfolio exposed party id.
+            </summary>
+            <value>
+            The portfolio exposed party id.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.ValidateContractsWithExposedPartyOutput">
+            <summary>
+            Validate New Contract Exposed Party Output
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ValidateContractsWithExposedPartyOutput.IsValidateionPass">
+            <summary>
+            Gets or sets a value indicating whether this instance is validateion pass.
+            </summary>
+            <value>
+            <c>true</c> if this instance is validateion pass; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.ValidateContractsWithExposedPartyOutput.FailedContractIdList">
+            <summary>
+            Gets or sets the failed contract id list.
+            </summary>
+            <value>
+            The failed contract id list.
+            </value>
+        </member>
+        <member name="T:Rms.Exposure.Service.Data.RapEntityMapper">
+            <summary>
+            Class representing RAP workflow field mappings
+            </summary>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.RapEntityMapper.EntityId">
+            <summary>
+            Gets or sets the entity id.
+            </summary>
+            <value>
+            The entity id.
+            </value>
+        </member>
+        <member name="P:Rms.Exposure.Service.Data.RapEntityMapper.WorkflowName">
+            <summary>
+            Gets or sets the name of the workflow object.
+            </summary>
+            <value>
+            The name of the workflow object.
+            </value>
+        </member>
+    </members>
+</doc>

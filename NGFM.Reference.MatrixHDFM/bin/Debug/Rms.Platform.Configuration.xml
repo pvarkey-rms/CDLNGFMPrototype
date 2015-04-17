@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.Platform.Configuration</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Platform.Configuration.ConfigLevel">
+            <summary>
+            Enum to define the configuration levels
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Configuration.ConfigLevel.Application">
+            <summary>
+            Application
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Configuration.ConfigLevel.Module">
+            <summary>
+            Module
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Configuration.ConfigLevel.Tenant">
+            <summary>
+            Tenant
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Configuration.ConfigLevel.Role">
+            <summary>
+            Role
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Configuration.ConfigLevel.User">
+            <summary>
+            User
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Configuration.ConfigurationHelper">
+            <summary>
+            Definition of Configuration Helper class
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Configuration.ConfigurationHelper.#ctor(Rms.Platform.Cache.CacheStoreType,Rms.Platform.Cache.ICacheConfig)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="cacheStoreType"></param>
+            <param name="cacheConfig"></param>
+        </member>
+        <member name="M:Rms.Platform.Configuration.ConfigurationHelper.GetValue``1(System.Collections.Generic.Dictionary{Rms.Platform.Configuration.ConfigLevel,System.String},System.String)">
+            <summary>
+            Get value for give configuration levels and setting key
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="levelIds"></param>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Configuration.ConfigurationHelper.SetValue``1(System.Collections.Generic.Dictionary{Rms.Platform.Configuration.ConfigLevel,System.String},System.String,``0)">
+            <summary>
+            Set value for give configuration levels and setting key
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="levelIds"></param>
+            <param name="setting"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Configuration.ConfigurationHelper.DeleteValue``1(System.Collections.Generic.Dictionary{Rms.Platform.Configuration.ConfigLevel,System.String},System.String)">
+            <summary>
+            Delete value for give configuration levels and setting key
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="levelIds"></param>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.Platform.Configuration.ConfigurationMgr">
+            <summary>
+            Configuration manager
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Configuration.ConfigurationMgr.#ctor(Rms.Platform.Cache.ICacheStore)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="cacheStore"></param>
+        </member>
+        <member name="M:Rms.Platform.Configuration.ConfigurationMgr.GetValue``1(System.Collections.Generic.Dictionary{Rms.Platform.Configuration.ConfigLevel,System.String},System.String)">
+            <summary>
+            Get value for given key
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="levelIds"></param>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Configuration.ConfigurationMgr.SetValue``1(System.Collections.Generic.Dictionary{Rms.Platform.Configuration.ConfigLevel,System.String},System.String,``0)">
+            <summary>
+            Set value for given key
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="levelIds"></param>
+            <param name="setting"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Configuration.ConfigurationMgr.DeleteValue``1(System.Collections.Generic.Dictionary{Rms.Platform.Configuration.ConfigLevel,System.String},System.String)">
+            <summary>
+            Delete value for given key
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="levelIds"></param>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

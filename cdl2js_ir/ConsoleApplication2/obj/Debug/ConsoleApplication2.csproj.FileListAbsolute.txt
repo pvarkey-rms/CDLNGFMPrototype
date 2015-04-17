@@ -1,0 +1,5 @@
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\cdl2js_ir\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe.config
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\cdl2js_ir\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\cdl2js_ir\ConsoleApplication2\bin\Debug\ConsoleApplication2.pdb
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\cdl2js_ir\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
+D:\main\NGModelCertificationTools\CDLNGFMPrototype\cdl2js_ir\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb

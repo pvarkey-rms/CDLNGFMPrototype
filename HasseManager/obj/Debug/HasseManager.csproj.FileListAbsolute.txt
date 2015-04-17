@@ -1,0 +1,13 @@
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\bin\Debug\HasseManager.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\bin\Debug\HasseManager.pdb
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\bin\Debug\indigo-dotnet.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\bin\Debug\indigo-inchi-dotnet.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\bin\Debug\indigo-renderer-dotnet.dll
+D:\main\NGDLM\lib\HasseManager.dll
+D:\main\NGDLM\lib\HasseManager.pdb
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Debug\HasseManager.Form1.resources
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Debug\HasseManager.Properties.Resources.resources
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Debug\HasseManager.csproj.GenerateResource.Cache
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Debug\HasseManager.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Debug\HasseManager.pdb
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Debug\HasseManager.csprojResolveAssemblyReference.cache

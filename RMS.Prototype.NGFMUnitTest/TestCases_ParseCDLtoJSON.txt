@@ -1,0 +1,929 @@
+[Test 1]
+[CDL]
+Contract 
+  Declarations
+    Name is NonOverlapRP
+    Currency is USD
+    Exclusions are ( XSprinklers by EQSL )
+                OCCURRENCES ARE ( 72 Hours BY WS )
+    Type is Insurance
+  Subject is Loss to S4 by EQ, WS 
+  Covers 
+                L938b_14: 100% Share of 500 USD xs 500 For Loss to S4.EQ.RestrictedPolicy14 by EQ 
+    L938c_15: 100% Share of 500K ON L938b_14
+  SubLimits 
+    RL_Policy: 2M For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24 by EQ 
+    RL_Policy: 1M For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23 by EQ 
+  Deductibles 
+    RL_Policy: 2% RCV Covered For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24 by EQ 
+    RL_Policy: 3K GBP For Loss to S4.EQ.RestrictedPolicy15.SubPolicy27 by EQ 
+[JSON]
+{
+    "Name": "Contract",
+    "Declarations": {
+        "Name": "NonOverlapRP",
+        "Currency": "USD",
+        "Exclusions": "XSprinklers by EQSL",
+        "Hours Clauses": [
+            {
+                "Duration": 72,
+                "DurationTimeUnit": "Hours",
+                "CausesOfLoss": "WS",
+                "OnlyOnce": "False"
+            }
+        ],
+        "ContractType": "Insurance",
+        "ExposureTypes": "Loss",
+        "Schedule": "S4",
+        "CausesOfLoss": "EQ, WS"
+    },
+    "Covers": [
+        {
+            "Participation": {
+                "ExpressionType": "Percentage<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 100
+            },
+            "LimitTimeBasis": "Occurrence",
+            "LimitReinstatements": -1,
+            "LimitSpecification": {
+                "ValueType": "MoneyValue<NumericValue>",
+                "ExpressionType": "Money<NumericValue>",
+                "MonetaryExpressionValueType": "NumericValue",
+                "MonetaryExpressionType": "SimpleExpression<NumericValue>",
+                "Value": 500,
+                "Currency": "USD",
+                "PAY": "False"
+            },
+            "AttachmentTimeBasis": "Occurrence",
+            "AttachmentSpecification": {
+                "ExpressionType": "SimpleExpression<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 500
+            },
+            "IsFranchise": "False",
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy14",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False",
+            "Label": "L938b_14",
+            "Index": 1
+        },
+        {
+            "Participation": {
+                "ExpressionType": "Percentage<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 100
+            },
+            "LimitTimeBasis": "Occurrence",
+            "LimitReinstatements": -1,
+            "LimitSpecification": {
+                "ExpressionType": "SimpleExpression<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 500000,
+                "PAY": "False"
+            },
+            "DerivedSubject": {
+                "ExpressionType": "FunctionInvocation<double>",
+                "FunctionName": "SUM",
+                "FunctionParameterValueType": "SimpleExpression<SymbolicValue>",
+                "Value": [
+                    {
+                        "ExpressionType": "SimpleExpression<SymbolicValue>",
+                        "ValueType": "SymbolicValue",
+                        "Value": "L938b_14"
+                    }
+                ]
+            },
+            "Filter": "",
+            "PerRisk": "False",
+            "Label": "L938c_15",
+            "Index": 2
+        }
+    ],
+    "Sections": [
+        
+    ],
+    "Sublimits": [
+        {
+            "Label": "RL_Policy",
+            "SublimitAmount": "",
+            "SublimitCurrency": "",
+            "SublimitFunction": "",
+            "ExpressionType": "SimpleExpression<NumericValue>",
+            "ValueType": "NumericValue",
+            "Value": 2000000,
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        },
+        {
+            "Label": "RL_Policy",
+            "SublimitAmount": "",
+            "SublimitCurrency": "",
+            "SublimitFunction": "",
+            "ExpressionType": "SimpleExpression<NumericValue>",
+            "ValueType": "NumericValue",
+            "Value": 1000000,
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        }
+    ],
+    "Deductibles": [
+        {
+            "Label": "RL_Policy",
+            "Index": 1,
+            "ExpressionType": "FunctionInvocation<Value>",
+            "ValueType": "Value",
+            "Value": [
+                {
+                    "ExpressionType": "Percentage<NumericValue>",
+                    "ValueType": "NumericValue",
+                    "Value": 2
+                },
+                {
+                    "ExpressionType": "SymbolicExpression",
+                    "ValueType": "SymbolicValue",
+                    "Value": "Covered"
+                }
+            ],
+            "FunctionParameterValueType": "IExpression<Value>",
+            "FunctionName": "RCV",
+            "IsFranchise": "False",
+            "Interaction": "MIN",
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        },
+        {
+            "Label": "RL_Policy",
+            "Index": 2,
+            "ValueType": "MoneyValue<NumericValue>",
+            "ExpressionType": "Money<NumericValue>",
+            "MonetaryExpressionValueType": "NumericValue",
+            "MonetaryExpressionType": "SimpleExpression<NumericValue>",
+            "Value": 3000,
+            "Currency": "GBP",
+            "IsFranchise": "False",
+            "Interaction": "MIN",
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy15.SubPolicy27",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        }
+    ]
+}
+[Test 2]
+[CDL]
+Contract 
+  Declarations
+    Name is NonOverlapRP
+    Currency is USD
+    Exclusions are ( XSprinklers by EQSL )
+                OCCURRENCES ARE ( 72 Hours BY WS )
+    Type is Insurance
+  Subject is Loss to S4 by EQ, WS 
+  Covers 
+                L938b_14: 100% Share of 500 USD xs 500 For Loss to S4.EQ.RestrictedPolicy14 by EQ 
+    L938c_15: 100% Share of 500K ON L938b_14
+  SubLimits 
+    RL_Policy: 2M For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24 by EQ 
+    RL_Policy: 1M For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23 by EQ, WS
+  Deductibles 
+    RL_Policy: 2% RCV Covered For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24 by EQ 
+    RL_Policy: 3K GBP For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23 by EQ  
+[JSON]
+{
+    "Name": "Contract",
+    "Declarations": {
+        "Name": "NonOverlapRP",
+        "Currency": "USD",
+        "Exclusions": "XSprinklers by EQSL",
+        "Hours Clauses": [
+            {
+                "Duration": 72,
+                "DurationTimeUnit": "Hours",
+                "CausesOfLoss": "WS",
+                "OnlyOnce": "False"
+            }
+        ],
+        "ContractType": "Insurance",
+        "ExposureTypes": "Loss",
+        "Schedule": "S4",
+        "CausesOfLoss": "EQ, WS"
+    },
+    "Covers": [
+        {
+            "Participation": {
+                "ExpressionType": "Percentage<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 100
+            },
+            "LimitTimeBasis": "Occurrence",
+            "LimitReinstatements": -1,
+            "LimitSpecification": {
+                "ValueType": "MoneyValue<NumericValue>",
+                "ExpressionType": "Money<NumericValue>",
+                "MonetaryExpressionValueType": "NumericValue",
+                "MonetaryExpressionType": "SimpleExpression<NumericValue>",
+                "Value": 500,
+                "Currency": "USD",
+                "PAY": "False"
+            },
+            "AttachmentTimeBasis": "Occurrence",
+            "AttachmentSpecification": {
+                "ExpressionType": "SimpleExpression<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 500
+            },
+            "IsFranchise": "False",
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy14",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False",
+            "Label": "L938b_14",
+            "Index": 1
+        },
+        {
+            "Participation": {
+                "ExpressionType": "Percentage<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 100
+            },
+            "LimitTimeBasis": "Occurrence",
+            "LimitReinstatements": -1,
+            "LimitSpecification": {
+                "ExpressionType": "SimpleExpression<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 500000,
+                "PAY": "False"
+            },
+            "DerivedSubject": {
+                "ExpressionType": "FunctionInvocation<double>",
+                "FunctionName": "SUM",
+                "FunctionParameterValueType": "SimpleExpression<SymbolicValue>",
+                "Value": [
+                    {
+                        "ExpressionType": "SimpleExpression<SymbolicValue>",
+                        "ValueType": "SymbolicValue",
+                        "Value": "L938b_14"
+                    }
+                ]
+            },
+            "Filter": "",
+            "PerRisk": "False",
+            "Label": "L938c_15",
+            "Index": 2
+        }
+    ],
+    "Sections": [
+        
+    ],
+    "Sublimits": [
+        {
+            "Label": "RL_Policy",
+            "SublimitAmount": "",
+            "SublimitCurrency": "",
+            "SublimitFunction": "",
+            "ExpressionType": "SimpleExpression<NumericValue>",
+            "ValueType": "NumericValue",
+            "Value": 2000000,
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        },
+        {
+            "Label": "RL_Policy",
+            "SublimitAmount": "",
+            "SublimitCurrency": "",
+            "SublimitFunction": "",
+            "ExpressionType": "SimpleExpression<NumericValue>",
+            "ValueType": "NumericValue",
+            "Value": 1000000,
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23",
+            "CausesOfLoss": "EQ, WS",
+            "Filter": "",
+            "PerRisk": "False"
+        }
+    ],
+    "Deductibles": [
+        {
+            "Label": "RL_Policy",
+            "Index": 1,
+            "ExpressionType": "FunctionInvocation<Value>",
+            "ValueType": "Value",
+            "Value": [
+                {
+                    "ExpressionType": "Percentage<NumericValue>",
+                    "ValueType": "NumericValue",
+                    "Value": 2
+                },
+                {
+                    "ExpressionType": "SymbolicExpression",
+                    "ValueType": "SymbolicValue",
+                    "Value": "Covered"
+                }
+            ],
+            "FunctionParameterValueType": "IExpression<Value>",
+            "FunctionName": "RCV",
+            "IsFranchise": "False",
+            "Interaction": "MIN",
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        },
+        {
+            "Label": "RL_Policy",
+            "Index": 2,
+            "ValueType": "MoneyValue<NumericValue>",
+            "ExpressionType": "Money<NumericValue>",
+            "MonetaryExpressionValueType": "NumericValue",
+            "MonetaryExpressionType": "SimpleExpression<NumericValue>",
+            "Value": 3000,
+            "Currency": "GBP",
+            "IsFranchise": "False",
+            "Interaction": "MIN",
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        }
+    ]
+}
+[Test 3]
+[CDL]
+Contract 
+  Declarations
+    Name is NonOverlapRP
+    Currency is USD
+    Exclusions are ( XSprinklers by EQSL )
+                OCCURRENCES ARE ( 72 Hours BY WS, EQ )
+    Type is Insurance
+  Subject is Loss to S4 by EQ, WS 
+  Covers 
+                L938b_14: 100% Share of 500 USD xs 500 For Loss to S4.EQ.RestrictedPolicy14 by EQ 
+    L938c_15: 100% Share of 500K ON L938b_14
+    ggg: 100% Share of 500 USD xs 500 For Loss to S4.EQ.RestrictedPolicy14 by EQ 
+[JSON]                
+{
+    "Name": "Contract",
+    "Declarations": {
+        "Name": "NonOverlapRP",
+        "Currency": "USD",
+        "Exclusions": "XSprinklers by EQSL",
+        "Hours Clauses": [
+            {
+                "Duration": 72,
+                "DurationTimeUnit": "Hours",
+                "CausesOfLoss": "WS, EQ",
+                "OnlyOnce": "False"
+            }
+        ],
+        "ContractType": "Insurance",
+        "ExposureTypes": "Loss",
+        "Schedule": "S4",
+        "CausesOfLoss": "EQ, WS"
+    },
+    "Covers": [
+        {
+            "Participation": {
+                "ExpressionType": "Percentage<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 100
+            },
+            "LimitTimeBasis": "Occurrence",
+            "LimitReinstatements": -1,
+            "LimitSpecification": {
+                "ValueType": "MoneyValue<NumericValue>",
+                "ExpressionType": "Money<NumericValue>",
+                "MonetaryExpressionValueType": "NumericValue",
+                "MonetaryExpressionType": "SimpleExpression<NumericValue>",
+                "Value": 500,
+                "Currency": "USD",
+                "PAY": "False"
+            },
+            "AttachmentTimeBasis": "Occurrence",
+            "AttachmentSpecification": {
+                "ExpressionType": "SimpleExpression<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 500
+            },
+            "IsFranchise": "False",
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy14",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False",
+            "Label": "L938b_14",
+            "Index": 1
+        },
+        {
+            "Participation": {
+                "ExpressionType": "Percentage<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 100
+            },
+            "LimitTimeBasis": "Occurrence",
+            "LimitReinstatements": -1,
+            "LimitSpecification": {
+                "ExpressionType": "SimpleExpression<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 500000,
+                "PAY": "False"
+            },
+            "DerivedSubject": {
+                "ExpressionType": "FunctionInvocation<double>",
+                "FunctionName": "SUM",
+                "FunctionParameterValueType": "SimpleExpression<SymbolicValue>",
+                "Value": [
+                    {
+                        "ExpressionType": "SimpleExpression<SymbolicValue>",
+                        "ValueType": "SymbolicValue",
+                        "Value": "L938b_14"
+                    }
+                ]
+            },
+            "Filter": "",
+            "PerRisk": "False",
+            "Label": "L938c_15",
+            "Index": 2
+        },
+        {
+            "Participation": {
+                "ExpressionType": "Percentage<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 100
+            },
+            "LimitTimeBasis": "Occurrence",
+            "LimitReinstatements": -1,
+            "LimitSpecification": {
+                "ValueType": "MoneyValue<NumericValue>",
+                "ExpressionType": "Money<NumericValue>",
+                "MonetaryExpressionValueType": "NumericValue",
+                "MonetaryExpressionType": "SimpleExpression<NumericValue>",
+                "Value": 500,
+                "Currency": "USD",
+                "PAY": "False"
+            },
+            "AttachmentTimeBasis": "Occurrence",
+            "AttachmentSpecification": {
+                "ExpressionType": "SimpleExpression<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 500
+            },
+            "IsFranchise": "False",
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy14",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False",
+            "Label": "ggg",
+            "Index": 3
+        }
+    ],
+    "Sections": [
+        
+    ],
+    "Sublimits": [
+        
+    ],
+    "Deductibles": [
+        
+    ]
+}
+[Test 4]
+[CDL]                
+Contract 
+  Declarations
+    Name is NonOverlapRP
+      Subject is Loss to Acme by HU
+      Inception is 5 Jun 2014
+      Expiration is 4 Jun 2015
+     Claims Adjustment Options Are (Sublimits are net of deductible, Deductibles are absorbable)
+    Currency is USD
+    Exclusions are ( XSprinklers by EQSL )
+                OCCURRENCES ARE ( 72 Hours BY WS )
+    Type is Insurance
+  Subject is Loss to S4 by EQ, WS 
+  Covers 
+                L938b_14: 100% Share of 500 USD xs 500 For Loss to S4.EQ.RestrictedPolicy14 by EQ 
+    L938c_15: 100% Share of 500K ON L938b_14
+  SubLimits 
+    RL_Policy: 2M For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24 by EQ 
+    RL_Policy: 1M For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23 by EQ, WS
+  Deductibles 
+    RL_Policy: 2% RCV Covered For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24 by EQ 
+    RL_Policy: 3K GBP For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23 by EQ  
+[JSON]
+{
+    "Name": "Contract",
+    "Declarations": {
+        "Name": "NonOverlapRP",
+        "ExposureTypes": "Loss",
+        "Schedule": "S4",
+        "CausesOfLoss": "EQ, WS",
+        "Inception": "5 Jun 2014",
+        "Expiration": "4 Jun 2015",
+        "Claims Adjustment Options": {
+            "Claims Adjustment Sublimits": "Net Of Deductible",
+            "Claims Adjustment Deductibles": "Absorbable"
+        },
+        "Currency": "USD",
+        "Exclusions": "XSprinklers by EQSL",
+        "Hours Clauses": [
+            {
+                "Duration": 72,
+                "DurationTimeUnit": "Hours",
+                "CausesOfLoss": "WS",
+                "OnlyOnce": "False"
+            }
+        ],
+        "ContractType": "Insurance"
+    },
+    "Covers": [
+        {
+            "Participation": {
+                "ExpressionType": "Percentage<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 100
+            },
+            "LimitTimeBasis": "Occurrence",
+            "LimitReinstatements": -1,
+            "LimitSpecification": {
+                "ValueType": "MoneyValue<NumericValue>",
+                "ExpressionType": "Money<NumericValue>",
+                "MonetaryExpressionValueType": "NumericValue",
+                "MonetaryExpressionType": "SimpleExpression<NumericValue>",
+                "Value": 500,
+                "Currency": "USD",
+                "PAY": "False"
+            },
+            "AttachmentTimeBasis": "Occurrence",
+            "AttachmentSpecification": {
+                "ExpressionType": "SimpleExpression<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 500
+            },
+            "IsFranchise": "False",
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy14",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False",
+            "Label": "L938b_14",
+            "Index": 1
+        },
+        {
+            "Participation": {
+                "ExpressionType": "Percentage<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 100
+            },
+            "LimitTimeBasis": "Occurrence",
+            "LimitReinstatements": -1,
+            "LimitSpecification": {
+                "ExpressionType": "SimpleExpression<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 500000,
+                "PAY": "False"
+            },
+            "DerivedSubject": {
+                "ExpressionType": "FunctionInvocation<double>",
+                "FunctionName": "SUM",
+                "FunctionParameterValueType": "SimpleExpression<SymbolicValue>",
+                "Value": [
+                    {
+                        "ExpressionType": "SimpleExpression<SymbolicValue>",
+                        "ValueType": "SymbolicValue",
+                        "Value": "L938b_14"
+                    }
+                ]
+            },
+            "Filter": "",
+            "PerRisk": "False",
+            "Label": "L938c_15",
+            "Index": 2
+        }
+    ],
+    "Sections": [
+        
+    ],
+    "Sublimits": [
+        {
+            "Label": "RL_Policy",
+            "SublimitAmount": "",
+            "SublimitCurrency": "",
+            "SublimitFunction": "",
+            "ExpressionType": "SimpleExpression<NumericValue>",
+            "ValueType": "NumericValue",
+            "Value": 2000000,
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        },
+        {
+            "Label": "RL_Policy",
+            "SublimitAmount": "",
+            "SublimitCurrency": "",
+            "SublimitFunction": "",
+            "ExpressionType": "SimpleExpression<NumericValue>",
+            "ValueType": "NumericValue",
+            "Value": 1000000,
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23",
+            "CausesOfLoss": "EQ, WS",
+            "Filter": "",
+            "PerRisk": "False"
+        }
+    ],
+    "Deductibles": [
+        {
+            "Label": "RL_Policy",
+            "Index": 1,
+            "ExpressionType": "FunctionInvocation<Value>",
+            "ValueType": "Value",
+            "Value": [
+                {
+                    "ExpressionType": "Percentage<NumericValue>",
+                    "ValueType": "NumericValue",
+                    "Value": 2
+                },
+                {
+                    "ExpressionType": "SymbolicExpression",
+                    "ValueType": "SymbolicValue",
+                    "Value": "Covered"
+                }
+            ],
+            "FunctionParameterValueType": "IExpression<Value>",
+            "FunctionName": "RCV",
+            "IsFranchise": "False",
+            "Interaction": "MIN",
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        },
+        {
+            "Label": "RL_Policy",
+            "Index": 2,
+            "ValueType": "MoneyValue<NumericValue>",
+            "ExpressionType": "Money<NumericValue>",
+            "MonetaryExpressionValueType": "NumericValue",
+            "MonetaryExpressionType": "SimpleExpression<NumericValue>",
+            "Value": 3000,
+            "Currency": "GBP",
+            "IsFranchise": "False",
+            "Interaction": "MIN",
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        }
+    ]
+}               
+[Test 5]
+[CDL]                
+Contract 
+  Declarations
+    Name is NonOverlapRP
+      Subject is Loss to Acme by HU
+      Inception is 5 Jun 2014
+      Expiration is 4 Jun 2015
+     Claims Adjustment Options Are (Sublimits are net of deductible, Deductibles are absorbable)
+    Currency is USD
+    Exclusions are ( XSprinklers by EQSL )
+                OCCURRENCES ARE ( 72 Hours BY WS )
+    Type is Insurance
+  Subject is Loss to S4 by EQ, WS 
+  Covers 
+                L938b_14: 100% Share of 500 USD xs 500 For Loss to S4.EQ.RestrictedPolicy14 by EQ 
+    L938c_15: 100% Share of 500K ON L938b_14
+  SubLimits 
+    S1: 1M For Loss, BI to S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23 by EQ, WS
+  Deductibles 
+    D1: 2% RCV Covered For Loss, BI to S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23 by EQ, WS 
+    D2: 3K GBP For Loss, BI to S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23 by EQ 
+                D3: 100 For Loss to S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23 by EQ 
+[JSON]
+{
+    "Name": "Contract",
+    "Declarations": {
+        "Name": "NonOverlapRP",
+        "ExposureTypes": "Loss",
+        "Schedule": "S4",
+        "CausesOfLoss": "EQ, WS",
+        "Inception": "5 Jun 2014",
+        "Expiration": "4 Jun 2015",
+        "Claims Adjustment Options": {
+            "Claims Adjustment Sublimits": "Net Of Deductible",
+            "Claims Adjustment Deductibles": "Absorbable"
+        },
+        "Currency": "USD",
+        "Exclusions": "XSprinklers by EQSL",
+        "Hours Clauses": [
+            {
+                "Duration": 72,
+                "DurationTimeUnit": "Hours",
+                "CausesOfLoss": "WS",
+                "OnlyOnce": "False"
+            }
+        ],
+        "ContractType": "Insurance"
+    },
+    "Covers": [
+        {
+            "Participation": {
+                "ExpressionType": "Percentage<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 100
+            },
+            "LimitTimeBasis": "Occurrence",
+            "LimitReinstatements": -1,
+            "LimitSpecification": {
+                "ValueType": "MoneyValue<NumericValue>",
+                "ExpressionType": "Money<NumericValue>",
+                "MonetaryExpressionValueType": "NumericValue",
+                "MonetaryExpressionType": "SimpleExpression<NumericValue>",
+                "Value": 500,
+                "Currency": "USD",
+                "PAY": "False"
+            },
+            "AttachmentTimeBasis": "Occurrence",
+            "AttachmentSpecification": {
+                "ExpressionType": "SimpleExpression<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 500
+            },
+            "IsFranchise": "False",
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy14",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False",
+            "Label": "L938b_14",
+            "Index": 1
+        },
+        {
+            "Participation": {
+                "ExpressionType": "Percentage<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 100
+            },
+            "LimitTimeBasis": "Occurrence",
+            "LimitReinstatements": -1,
+            "LimitSpecification": {
+                "ExpressionType": "SimpleExpression<NumericValue>",
+                "ValueType": "NumericValue",
+                "Value": 500000,
+                "PAY": "False"
+            },
+            "DerivedSubject": {
+                "ExpressionType": "FunctionInvocation<double>",
+                "FunctionName": "SUM",
+                "FunctionParameterValueType": "SimpleExpression<SymbolicValue>",
+                "Value": [
+                    {
+                        "ExpressionType": "SimpleExpression<SymbolicValue>",
+                        "ValueType": "SymbolicValue",
+                        "Value": "L938b_14"
+                    }
+                ]
+            },
+            "Filter": "",
+            "PerRisk": "False",
+            "Label": "L938c_15",
+            "Index": 2
+        }
+    ],
+    "Sections": [
+        
+    ],
+    "Sublimits": [
+        {
+            "Label": "S1",
+            "SublimitAmount": "",
+            "SublimitCurrency": "",
+            "SublimitFunction": "",
+            "ExpressionType": "SimpleExpression<NumericValue>",
+            "ValueType": "NumericValue",
+            "Value": 1000000,
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss, BI",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23",
+            "CausesOfLoss": "EQ, WS",
+            "Filter": "",
+            "PerRisk": "False"
+        }
+    ],
+    "Deductibles": [
+        {
+            "Label": "D1",
+            "Index": 1,
+            "ExpressionType": "FunctionInvocation<Value>",
+            "ValueType": "Value",
+            "Value": [
+                {
+                    "ExpressionType": "Percentage<NumericValue>",
+                    "ValueType": "NumericValue",
+                    "Value": 2
+                },
+                {
+                    "ExpressionType": "SymbolicExpression",
+                    "ValueType": "SymbolicValue",
+                    "Value": "Covered"
+                }
+            ],
+            "FunctionParameterValueType": "IExpression<Value>",
+            "FunctionName": "RCV",
+            "IsFranchise": "False",
+            "Interaction": "MIN",
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss, BI",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23",
+            "CausesOfLoss": "EQ, WS",
+            "Filter": "",
+            "PerRisk": "False"
+        },
+        {
+            "Label": "D2",
+            "Index": 2,
+            "ValueType": "MoneyValue<NumericValue>",
+            "ExpressionType": "Money<NumericValue>",
+            "MonetaryExpressionValueType": "NumericValue",
+            "MonetaryExpressionType": "SimpleExpression<NumericValue>",
+            "Value": 3000,
+            "Currency": "GBP",
+            "IsFranchise": "False",
+            "Interaction": "MIN",
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss, BI",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        },
+        {
+            "Label": "D3",
+            "Index": 3,
+            "ExpressionType": "SimpleExpression<NumericValue>",
+            "ValueType": "NumericValue",
+            "Value": 100,
+            "IsFranchise": "False",
+            "Interaction": "MIN",
+            "TimeBasis": "Occurrence",
+            "NumberReinstatements": -1,
+            "ExposureTypes": "Loss",
+            "Schedule": "S4.EQ.RestrictedPolicy13.SubPolicy24.SubPolicy23",
+            "CausesOfLoss": "EQ",
+            "Filter": "",
+            "PerRisk": "False"
+        }
+    ]
+}

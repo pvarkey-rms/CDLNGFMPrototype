@@ -1,0 +1,480 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.AbstractionLayer</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.AbstractionLayer.Interfaces.Edge">
+            <summary>
+            Represents a graph Edge
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayer.Interfaces.Edge.Source">
+            <summary>
+            The source node
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayer.Interfaces.Edge.Target">
+            <summary>
+            The target node
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.IGraphAbstractionLayer">
+            <summary>
+            Interface definition for the methods that are required to be implemented
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IGraphAbstractionLayer.GetEdges(Rms.DataServices.AbstractionLayer.Interfaces.Node[])">
+            <summary>
+            Gets the edges.
+            </summary>
+            <param name="startingNodes">The starting nodes.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IGraphAbstractionLayer.AddEdges(System.Collections.Generic.IEnumerable{Rms.DataServices.AbstractionLayer.Interfaces.Edge})">
+            <summary>
+            Adds the edges.
+            </summary>
+            <param name="edges">The edges.</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IGraphAbstractionLayer.GetSuccesors(Rms.DataServices.AbstractionLayer.Interfaces.Node[])">
+            <summary>
+            Gets the succesors.
+            </summary>
+            <param name="startingNodes">The starting nodes.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IGraphAbstractionLayer.GetAllSuccessors(Rms.DataServices.AbstractionLayer.Interfaces.Node[])">
+            <summary>
+            Gets all successors.
+            </summary>
+            <param name="startingNodes">The starting nodes.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IGraphAbstractionLayer.DeleteEdges(System.Collections.Generic.IEnumerable{Rms.DataServices.AbstractionLayer.Interfaces.Edge})">
+            <summary>
+            Deletes the edges.
+            </summary>
+            <param name="edges">The edges.</param>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer">
+            <summary>
+            Interface to defing Index abstraction layer
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.GetResults(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Gets the results.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The eql.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="fields">The fields.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The sort order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.GetResultsWithDistinctCount(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Gets the results with distinct count.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="field">The field.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.GetStatisticalResults(Rms.Platform.Common.Filters.EntityType,System.String,System.String)">
+            <summary>
+            Gets the statistical results.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="fields">The fields.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.GetStatisticalResultsWithScriptField(Rms.Platform.Common.Filters.EntityType,System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Gets the statistical results with script field.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="scriptFieldList">The script field list.</param>
+            <param name="fields">The fields.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.GetDistinctResults(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Gets the distinct results.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="field">The field.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.GetResults(System.Collections.Generic.List{System.String},Rms.Platform.Common.Filters.EntityType,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Gets the results.
+            </summary>
+            <param name="exposureIdList">The exposure id list.</param>
+            <param name="entityType">Type of the entity.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="fields">The fields.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.GetPlainResults(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Gets the results.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.InflateData(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String,System.String,Rms.Platform.Common.Filters.EntityType,System.String)">
+            <summary>
+            Inflates the data.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <param name="parentEntityType">Type of the parent entity.</param>
+            <param name="parentId">The parent identifier.</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.GetResultBySortedId(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Gets the result by sorted id.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="fields">The fields.</param>
+            <param name="?">The ?.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.BulkLoadItems(Rms.Platform.Common.Filters.EntityType,System.String,System.Boolean)">
+            <summary>
+            Bulk loads the items to the index layer
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="jsonObjectArray">The json object array.</param>
+            <param name="refresh">if set to <c>true</c> [refresh].</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.LoadItem(Rms.Platform.Common.Filters.EntityType,System.String,System.String,System.Boolean)">
+            <summary>
+            Loads the item to the search layer
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="jsonObject">The json object.</param>
+            <param name="id">The id.</param>
+            <param name="refresh">if set to <c>true</c> [refresh].</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.LoadItem(Rms.Platform.Common.Filters.EntityType,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Loads the item.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="jsonObject">The json object.</param>
+            <param name="id">The id.</param>
+            <param name="parentId">The parent id.</param>
+            <param name="refresh">if set to <c>true</c> [refresh].</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.Update(Rms.Platform.Common.Filters.EntityType,System.String,System.Collections.Generic.List{System.Tuple{System.String,System.String,Rms.Platform.Common.Filters.DataType,System.Boolean}},System.String)">
+            <summary>
+            Updates the specified query.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="fieldValueDataTypeTupleList">The field value data type tuple list.</param>
+            <param name="elasticSearchScript">The elastic search script.</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.Delete(Rms.Platform.Common.Filters.EntityType,System.String,System.Boolean)">
+            <summary>
+            Deletes the specified entity type.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="isElasticSearchQuery">if set to <c>true</c> [is elastic search query].</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.ValidateQuery(Rms.Platform.Common.Filters.EntityType,System.String)">
+            <summary>
+            Validates the query.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IIndexAbstractionLayer.RefreshIndex">
+            <summary>
+            Refreshes the index.
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.IObjectAbstractionLayer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IObjectAbstractionLayer.Put(Rms.DataServices.AbstractionLayer.IObject)">
+            <summary>
+            Puts the specified obj.
+            </summary>
+            <param name="obj">The obj.</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IObjectAbstractionLayer.MultiPut(System.Collections.Generic.IList{Rms.DataServices.AbstractionLayer.IObject})">
+            <summary>
+            Multis the put.
+            </summary>
+            <param name="objs">The objs.</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IObjectAbstractionLayer.Get(System.ArraySegment{System.Byte},System.Byte[]@)">
+            <summary>
+            Gets the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns>true if the object is found, otherwise false.</returns>
+            // <remarks>
+            The value byte array can be reallocated if the size of data is not big enough to hold the value.
+            </remarks>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IObjectAbstractionLayer.MultiGet(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})">
+            <summary>
+            Multis the get.
+            </summary>
+            <param name="keys">The keys.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IObjectAbstractionLayer.Upsert(Rms.DataServices.AbstractionLayer.IObject)">
+            <summary>
+            Upserts the specified obj.
+            </summary>
+            <param name="obj">The obj.</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IObjectAbstractionLayer.MultiUpsert(System.Collections.Generic.IList{Rms.DataServices.AbstractionLayer.IObject})">
+            <summary>
+            Multis the upsert.
+            </summary>
+            <param name="objs">The objs.</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IObjectAbstractionLayer.Update(Rms.DataServices.AbstractionLayer.IObject)">
+            <summary>
+            Updates the specified obj.
+            </summary>
+            <param name="obj">The obj.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IObjectAbstractionLayer.MultiUpdate(System.Collections.Generic.IList{Rms.DataServices.AbstractionLayer.IObject})">
+            <summary>
+            Multis the update.
+            </summary>
+            <param name="objs">The objs.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IObjectAbstractionLayer.Delete(System.ArraySegment{System.Byte})">
+            <summary>
+            Deletes the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IObjectAbstractionLayer.MultiDelete(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})">
+            <summary>
+            Multis the delete.
+            </summary>
+            <param name="keys">The keys.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.IObject">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayer.IObject.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>
+            The key.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayer.IObject.Data">
+            <summary>
+            Gets or sets the data.
+            </summary>
+            <value>
+            The data.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.Interfaces.Key">
+            <summary>
+            Key that is used to address a node in the graph. Implementations of the 
+            graph may define and use a surrogate key based on this key for internal use.
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.Interfaces.Key.Equals(Rms.DataServices.AbstractionLayer.Interfaces.Key,Rms.DataServices.AbstractionLayer.Interfaces.Key)">
+            <summary>
+            Equalses the specified x.
+            </summary>
+            <param name="x">The x.</param>
+            <param name="y">The y.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.Interfaces.Key.GetHashCode(Rms.DataServices.AbstractionLayer.Interfaces.Key)">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <param name="obj">The obj.</param>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.Interfaces.Node">
+            <summary>
+            Represents a Node in a graph.
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayer.Interfaces.Node.Id">
+            <summary>
+            The identifier field for this node.
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayer.Interfaces.Node.Data">
+            <summary>
+            The data field for this node.
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.IManager">
+            <summary>
+            Resource Manager interface
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IManager.Create(Rms.DataServices.AbstractionLayer.IResource)">
+            <summary>
+            Creates the specified resource. The Ids are meant to be generated
+            outside of this function and set on the resource using IResource.Append()
+            </summary>
+            <param name="resource">The resource.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.ResourceFormat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayer.ResourceFormat.Json">
+            <summary>
+            The json
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayer.ResourceFormat.XML">
+            <summary>
+            The XML
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayer.ResourceFormat.Proto">
+            <summary>
+            The proto
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.ResourceFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.ResourceFactory.CreateInstance(System.String,System.Byte[],Rms.DataServices.AbstractionLayer.ResourceFormat)">
+            <summary>
+            Creates the instance.
+            </summary>
+            <param name="resourceTypeName">Name of the resource type.</param>
+            <param name="resourceBytes">The resource bytes.</param>
+            <param name="format">The format.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.IResource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IResource.Validate">
+            <summary>
+            Validates the resource.
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IResource.ApplyBussinessRules(Rms.DataServices.AbstractionLayer.ResourceOperation)">
+            <summary>
+            Applies the bussiness rules.
+            </summary>
+            <param name="operation">The operation that is being performed on the resource.</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.IResource.GetResourceRepresentation(Rms.DataServices.AbstractionLayer.ResourceFormat)">
+            <summary>
+            Gets the resource representation.
+            </summary>
+            <param name="format">The format.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.ResourceDescriptor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayer.StorageDescriptor">
+            <summary>
+            Storage descriptor that describes the storage cluster
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.StorageDescriptor.Get(Rms.DataServices.AbstractionLayer.Interfaces.Key)">
+            <summary>
+            Gets the specified entity ID.
+            </summary>
+            <param name="entityID">The entity ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayer.StorageDescriptor.Put(System.Byte[])">
+            <summary>
+            Puts the specified entity data.
+            </summary>
+            <param name="entityData">The entity data.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayer.StorageDescriptor.IsWrapped">
+            <summary>
+            Gets or sets a value indicating whether this instance is wrapped.
+            </summary>
+            <value>
+            <c>true</c> if this instance is wrapped; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayer.StorageDescriptor.WrappingFieldNumber">
+            <summary>
+            Gets or sets the wrapping field number.
+            </summary>
+            <value>
+            The wrapping field number.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayer.StorageDescriptor.ChildStorageDescriptors">
+            <summary>
+            Gets or sets the child storage descriptors.
+            </summary>
+            <value>
+            The child storage descriptors.
+            </value>
+        </member>
+    </members>
+</doc>

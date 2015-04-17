@@ -1,0 +1,2642 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.DAL.ExposureDatabases</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.DAL.ExposureDatabases.ConfigurationProvider">
+            <summary>
+            Get DBName and ConnectionString
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.ConfigurationProvider.ConfigurationHelper">
+            <summary>
+            Used for loading tenant configuration.
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.ConfigurationProvider.InitException">
+            <summary>
+            Keeps any exception that occur during the initialization.
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ConfigurationProvider.GetSqlConnectionString">
+            <summary>
+            Gets the SQL connection string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.DAL.ExposureDatabases.DbType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.DbType.Integral">
+            <summary>
+            Integral
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.DbType.Boolean">
+            <summary>
+            Boolean
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.DbType.DateTime">
+            <summary>
+            DateTime
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.DbType.String">
+            <summary>
+            String
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.DbType.Double">
+            <summary>
+            Double
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.DbType.Float">
+            <summary>
+            Float
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.DbType.Byte">
+            <summary>
+            Byte
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.DbType.Short">
+            <summary>
+            Short
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.DbType.Bigint">
+            <summary>
+            The bigint
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.DbType.Decimal">
+            <summary>
+            The decimal
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.DAL.ExposureDatabases.DbUtils">
+            <summary>
+            Class to represent database utility functions
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.UtcNow">
+            <summary>
+            Gets the UtcNow DateTime with milliseconds to a scale of 3.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetFieldValue``1(System.Data.Common.DbDataReader,System.Int32,Rms.DataServices.DAL.ExposureDatabases.DbType)">
+            <summary>
+            Gets the field value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dr">The dr.</param>
+            <param name="index">The index.</param>
+            <param name="dbType">Type of the db.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetByte(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a byte or 0 if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to byte.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetInt16(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a 16-bit signed integer or 0 if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to Int16.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetInt32(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a 32-bit signed integer or 0 if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to Int32.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetInt32(System.Data.Common.DbDataReader,System.Int32)">
+            <summary>
+            Gets the int32.
+            </summary>
+            <param name="dr">The dr.</param>
+            <param name="columnNumber">The column number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetInt64(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a 64-bit signed integer or 0 if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to Int64.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetInt64(System.Data.Common.DbDataReader,System.Int32)">
+            <summary>
+            Gets the int64 from column number
+            </summary>
+            <param name="dr">The dr.</param>
+            <param name="columnNumber">The column number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetString(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as an instance of <see cref="T:System.String"/> or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to string.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetString(System.Data.Common.DbDataReader,System.Int32)">
+            <summary>
+            Gets the string from column number
+            </summary>
+            <param name="dr">The dr.</param>
+            <param name="columnNumber">The column number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetGuid(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a globally-unique identifier (GUID) 
+            or <see cref="F:System.Guid.Empty"/> if DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to int Guid.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetFloat(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a single-precision floating point number or 0 if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to float.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetDouble(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a double-precision floating point number or 0 if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to double.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetDecimal(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a <see cref="T:System.Decimal"/> object or 0 if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to decimal.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetBoolean(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a Boolean or false if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to boolean.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetChar(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a single character or '\0' if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to char.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetDateTime(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a <see cref="T:System.DateTime"/> object 
+            or <see cref="F:System.DateTime.MinValue"/> if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to DateTime.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetBytes(System.Data.Common.DbDataReader,System.String,System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a stream of bytes from the specified column offset into the buffer an array starting at the given buffer offset.
+            </summary>
+            <param name="dr">The datareader.</param>
+            <param name="columnName">Name of the column.</param>
+            <param name="dataOffset">The data offset.</param>
+            <param name="buffer">The buffer into which to read the stream of bytes.</param>
+            <param name="bufferOffset">The index within the buffer where the write operation is to start.</param>
+            <param name="length">The maximum length to copy into the buffer.</param>
+            <returns>The actual number of bytes read.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetBytes(System.Data.Common.DbDataReader,System.String,System.Byte[])">
+            <summary>
+            Gets the value of a specified column as an array of bytes.
+            </summary>
+            <param name="dr">The data reader.</param>
+            <param name="columnName">Name of the column.</param>
+            <param name="buffer">A buffer to be used for reading bytes from the column field.</param>
+            <returns>The actual number of bytes read.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetData(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Returns a DbDataReader object for the requested column or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetNullableByte(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a byte or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to byte?.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetNullableInt16(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a 16-bit signed integer or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to short?.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetNullableInt32(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a 32-bit signed integer or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to int?.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetNullableInt64(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a 64-bit signed integer or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to long?.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetNullableGuid(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a globally-unique identifier (GUID) 
+            or null if DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to Guid?.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetNullableFloat(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a single-precision floating point number or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to float?.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetNullableDouble(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a double-precision floating point number or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to double?.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetNullableDecimal(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a <see cref="T:System.Decimal"/> object or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to decimal?.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetNullableBoolean(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a Boolean or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to bool?.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetNullableChar(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a single character or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to char?.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetNullableDateTime(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the value of the specified column as a <see cref="T:System.DateTime"/> object 
+            or null if it is DBNull.
+            </summary>
+            <param name="dr">The reader to be used for reading the column.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <returns>The value of the specified column.</returns>
+            <exception cref="T:System.InvalidCastException">The value cannot be casted to DateTime?.</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.GetFieldValue``1(System.Data.Common.DbDataReader,System.String,Rms.DataServices.DAL.ExposureDatabases.DbType)">
+            <summary>
+            Gets the field value and use a default value in case of DBNull.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dr">The data reader to be used for reading the value.</param>
+            <param name="columnName">The name of the column to be read.</param>
+            <param name="dbType">The <see cref="T:Rms.DataServices.DAL.ExposureDatabases.DbType"/> of the value stored in the column.</param>
+            <returns>The value in the specified column name.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.CreateSqlCommand(Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Creates the SQL command.
+            </summary>
+            <param name="rmsDatasource">The RMS datasource.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DbUtils.CreateSqlCommand(Rms.Core.Platform.RmsDatasource,System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Creates the SQL command.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="commandText">The command text.</param>
+            <param name="connection">The connection.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.DAL.ExposureDatabases.EntityNames">
+            <summary>
+            Name of Entity
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.EntityNames.RiskItem">
+            <summary>
+            RiskItem
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DAL.ExposureDatabases.EntityNames.Exposure">
+            <summary>
+            Exposure
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer">
+            <summary>
+            A General Purpose Class handling diverse binary items
+            </summary>    
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer.#ctor(System.Byte[],System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer"/> class.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="sharedBuffer">The shared buffer.</param>
+            <param name="start">The start.</param>
+            <param name="size">The size.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer.Deserialize(MongoDB.Bson.IO.BsonReader,System.Type,MongoDB.Bson.Serialization.IBsonSerializationOptions)">
+            <summary>
+            Deserializes the specified bson reader.
+            </summary>
+            <param name="bsonReader">The bson reader.</param>
+            <param name="nominalType">Type of the nominal.</param>
+            <param name="options">The options.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer.Serialize(MongoDB.Bson.IO.BsonWriter,System.Type,MongoDB.Bson.Serialization.IBsonSerializationOptions)">
+            <summary>
+            Serializes the specified bson writer.
+            </summary>
+            <param name="bsonWriter">The bson writer.</param>
+            <param name="nominalType">Type of the nominal.</param>
+            <param name="options">The options.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer.GetDocumentId(System.Object@,System.Type@,MongoDB.Bson.Serialization.IIdGenerator@)">
+            <summary>
+            Gets the document id.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="idNominalType">Type of the id nominal.</param>
+            <param name="idGenerator">The id generator.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer.SetDocumentId(System.Object)">
+            <summary>
+            Sets the document id.
+            </summary>
+            <param name="id">The id.</param>
+        </member>
+        <member name="T:Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBufferComparer">
+            <summary>
+            Compare to BinaryObjectWithSharedBuffer
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBufferComparer.Equals(Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer,Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer)">
+            <summary>
+            Equalses the specified b1.
+            </summary>
+            <param name="b1">The b1.</param>
+            <param name="b2">The b2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBufferComparer.GetHashCode(Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer)">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <param name="obj">The obj.</param>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+            <exception cref="T:System.ArgumentNullException">obj</exception>
+        </member>
+        <member name="T:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB">
+            <summary>
+            Class that contains Mongo Database Functions
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.#cctor">
+            <summary>
+            Initializes the <see cref="T:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB"/> class.
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.CreateMongoDocument``1(Rms.Core.Platform.MongoDBConfig,System.String,``0)">
+            <summary>
+            Creates the mongo document.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="mongoDBConfig">The mongo DB config.</param>
+            <param name="collectionName">Name of the collection.</param>
+            <param name="data">The data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.CreateBinaryObject``1(``0)">
+            <summary>
+            Creates the binary object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj">The obj.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.CreateBinaryObjectFromCompressedBlob(System.Byte[])">
+            <summary>
+            Creates the binary object.
+            </summary>
+            <param name="blob">The blob.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.GetBinaryDocuments(Rms.Core.Platform.MongoDBConfig,System.Collections.Generic.List{System.Byte[]},System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the binary documents.
+            </summary>
+            <param name="mongoDBConfig">The mongo DB config.</param>
+            <param name="ids">The ids.</param>
+            <param name="collectionName">Name of the collection.</param>
+            <param name="slaveOk">if set to <c>true</c> [slave ok].</param>
+            <param name="throwErrorForMissingDocuments">if set to <c>true</c> [throw error for missing documents].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.GetMongoObjects``1(Rms.Core.Platform.MongoDBConfig,System.Collections.Generic.HashSet{System.Byte[]}@,System.String,System.Boolean)">
+            <summary>
+            Gets the mongo objects for a given collection.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="mongoDBConfig">The mongo DB config.</param>
+            <param name="idsSet">The ids.</param>
+            <param name="collectionName">Name of the collection.</param>
+            <param name="slaveOk">if set to <c>true</c> [slave ok].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.SaveBinaryObjectWithSharedBuffer(Rms.Core.Platform.MongoDBConfig,System.Collections.Generic.IEnumerable{Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="mongoDBConfig"></param>
+            <param name="binaryObjects"></param>
+            <param name="collectionName"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.SaveBinaryObject(Rms.Core.Platform.MongoDBConfig,System.Byte[],System.Byte[],System.String)">
+            <summary>
+            Saves the binary object.
+            </summary>
+            <param name="mongoDBConfig">The mongo DB config.</param>
+            <param name="id">The id.</param>
+            <param name="compressedBuffer">The compressed buffer.</param>
+            <param name="collectionName">Name of the collection.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.GetBinaryObject(Rms.Core.Platform.MongoDBConfig,System.Byte[],System.String)">
+            <summary>
+            Gets the binary object.
+            </summary>
+            <param name="mongoDBConfig">The mongo DB config.</param>
+            <param name="id">The id.</param>
+            <param name="collectionName">Name of the collection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.CreateBinaryObjectWithBlockId``1(System.Int64,``0,System.Byte[],System.Int32@,Rms.DataServices.Common.ProtoCompressedSerializer)">
+            <summary>
+            Creates the binary object with block id.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="blockId">The block id.</param>
+            <param name="obj">The obj.</param>
+            <param name="sBytes">The s bytes.</param>
+            <param name="lastOffset">The last offset.</param>
+            <param name="sharedSerializer">The shared serializer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.CreateBinaryObjectWithBlockId``1(System.Int64,``0,System.IO.Stream,Rms.DataServices.Common.ProtoCompressedSerializer)">
+            <summary>
+            Creates the binary object with block id.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="blockId">The block id.</param>
+            <param name="obj">The obj.</param>
+            <param name="stream">The stream.</param>
+            <param name="sharedSerializer">The shared serializer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureMongoDB.SaveOneBinaryObjectWithSharedBuffer(Rms.Core.Platform.MongoDBConfig,Rms.DataServices.DAL.ExposureDatabases.BinaryObjectWithSharedBuffer,System.String)">
+            <summary>
+            Saves the one binary object with shared buffer.
+            </summary>
+            <param name="mongoDBConfig">The mongo DB config.</param>
+            <param name="binaryObject">The binary object.</param>
+            <param name="collectionName">Name of the collection.</param>
+            <exception cref="T:System.ArgumentNullException">mongoDBConfig</exception>
+        </member>
+        <member name="T:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB">
+            <summary>
+            Keeps data access functions for Domain data
+            </summary>
+            <summary>
+            
+            </summary>
+            <summary>
+            Class to represent DAL for LineOfBusinessGroup
+            </summary>    
+            <summary>
+            
+            </summary>
+            <summary>
+            Class to represent DAL for Party
+            </summary>    
+            <summary>
+            Keeps data access functions for assets
+            </summary>
+            <summary>
+            Keeps data access functions for assets
+            </summary>
+            <summary>
+            Exposes stored procedures in the exposure sql database
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetCurrencyScheme(Rms.Core.Platform.RmsDatasource,System.String,System.Int64,System.Int64,System.Int64@,System.Boolean)">
+            <summary>
+            Gets the currency scheme.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="effectiveDate">The effective date.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="totalNumber">The total number.</param>
+            <param name="isDefault">if set to <c>true</c> [is default].</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">@RowCount is null or DBNull.Value</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetCurrency(Rms.Core.Platform.RmsDatasource,System.String,System.String,System.Nullable{System.Int32},System.Int64,System.Int64,System.Int64@,System.Boolean,System.String)">
+            <summary>
+            Gets the currency.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="schemeName">Name of the scheme.</param>
+            <param name="effectiveDate">The effective date.</param>
+            <param name="schemeId">The scheme id.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="totalNumber">The total number.</param>
+            <param name="isDefault">if set to <c>true</c> [is default].</param>
+            <param name="whereClause">The where clause.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">@RowCount is null or DBNull.Value</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExchangeRate(Rms.Core.Platform.RmsDatasource,System.String,System.String,System.Nullable{System.Int32},System.Int64,System.Int64,System.Int64@)">
+            <summary>
+            Gets the exchange rate.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="schemeName">Name of the scheme.</param>
+            <param name="analysisDate">The analysis date.</param>
+            <param name="schemeId">The scheme id.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="totalNumber">The total number.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">@RowCount is null or DBNull.Value</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CreateCurrency(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{Rms.DataServices.DataObjects.Currency})">
+            <summary>
+            Creates the currency.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="currencyList">The currency list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CreateCurrencyScheme(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{Rms.DataServices.DataObjects.CurrencyScheme})">
+            <summary>
+            Creates the currency scheme.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="currencyschemeList">The currencyscheme list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CreateExchangeRate(Rms.Core.Platform.RmsDatasource,System.String,System.Collections.Generic.List{Rms.DataServices.DataObjects.CurrencyExchangeRate})">
+            <summary>
+            Creates the exchange rate.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="schemeName">Name of the scheme.</param>
+            <param name="effectiveDate">The effective date.</param>
+            <param name="currencyExchangeRateInput">The currency exchange rate input.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetProductList(System.Int32,System.String,System.String,System.String,System.Int64,System.Int64,System.Collections.Generic.List{Rms.DataServices.DataObjects.Product}@,System.Int64@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the Product list.
+            </summary>
+            <param name="contractTypeId">The contract type id.</param>
+            <param name="productName">Name of the product.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="numOfItem">The num of item.</param>
+            <param name="productList">The product list.</param>
+            <param name="totalNumberOfItems">The total number of items.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.SetObjectIdInList(System.Collections.Generic.ICollection{System.Byte[]},System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Sets the object id in list.
+            </summary>
+            <param name="objectIdList">The object id list.</param>
+            <param name="sqlDataReader">The SQL data reader.</param>
+            <param name="columnName">Name of the column.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetProductById(System.Int64,System.String,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the Product by id.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetProductAsOfDate(System.Int64,System.Int32,System.Collections.Generic.List{System.DateTime}@,System.Int64@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the Product as of date.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="userId">The user id.</param>
+            <param name="asOfDateList">As of date list.</param>
+            <param name="totalNumberOfItems">The total number of items.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CreateProduct(Rms.DataServices.DataObjects.Product,System.Int32,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Creates the product.
+            </summary>
+            <param name="product">The product.</param>
+            <param name="userId">The user id.</param>
+            <param name="rmsDatasource">The RMS datasource.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CreateBinaryObject``1(``0)">
+            <summary>
+            Creates the binary object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj">The obj.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.DeleteProduct(System.Int64,System.String,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Deletes the product.
+            </summary>
+            <param name="porudctId">The porudct id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetContractSubjectListBySP(System.Int64,System.DateTime,System.Int64,System.Int64,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the contract subject list by sp.
+            </summary>
+            <param name="exposureId">The exposure identifier.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposureCollection(System.Int64,System.Int64,System.String,System.Int64,System.Int32,System.Int32,System.Collections.Generic.List{Rms.DataServices.Exposure.Data.CollectionExposure}@,System.Int64@,Rms.Core.Platform.RmsDatasource,System.String,System.String,System.String)">
+            <summary>
+            Get Exposure Collection
+            </summary>
+            <param name="startIndex">The start index.</param>
+            <param name="numOfItem">The num of item.</param>
+            <param name="startWith">The start with.</param>
+            <param name="patryid">The patryid.</param>
+            <param name="exposuretypeId">The exposuretype id.</param>
+            <param name="userId">The user id.</param>
+            <param name="collectionExposures">The collection exposures.</param>
+            <param name="totalNumberOfItems">The total number of items.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="partyName">Name of the party.</param>
+            <param name="accountName">Name of the account.</param>
+            <param name="sort">The sort.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetContractSubjectExposureList(System.Int64,System.String,System.Int64,System.Int64,System.Int32,System.Collections.Generic.List{Rms.DataServices.DataObjects.ContractSubjectExposure}@,System.Int64@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the contract subject exposure list.
+            </summary>
+            <param name="exposureId">The exposure id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="limit">The limit.</param>
+            <param name="offset">The offset.</param>
+            <param name="userId">The user id.</param>
+            <param name="collectionExposures">The collection exposures.</param>
+            <param name="totalNumberOfItems">The total number of items.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetContractSubjectExposureListByProgramName(Rms.Core.Platform.RmsDatasource,System.String,System.Int32,Rms.DataServices.DataObjects.ContractSubjectExposure@,System.Int64@,System.Int64@,System.Nullable{System.Int64}@)">
+            <summary>
+            Gets the name of the contract subject exposure list by program.
+            </summary>
+            <param name="programName">Name of the program.</param>
+            <param name="userId">The user id.</param>
+            <param name="contractSubjectExposure"></param>
+            <param name="totalNumberOfItems">The total number of items.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="programId"></param>
+            <param name="creationfilterId"></param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetWorkspaceDomainData(Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            
+            </summary>
+            <param name="rmsDataSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.DACLFilterSelectByExposureKey(Rms.Core.Platform.RmsDatasource,Rms.DataServices.DataObjects.ExposureSnapshotKey,System.Collections.Generic.List{System.Int64}@,System.Boolean@)">
+            <summary>
+            DACLs the filter select by exposure key.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="exposureSnapshotKey">The exposure snapshot key.</param>
+            <param name="filterIdList">The filter id list.</param>
+            <param name="isDACLRequired">if set to <c>true</c> [is DACL required].</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetDynamicFilters(Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            DACLs the filter select by exposure key.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetFilter(Rms.Core.Platform.RmsDatasource,Rms.DataServices.DataObjects.FilterType,Rms.DataServices.DataObjects.ExposureType,System.Int64,System.Int64,System.Int64,System.String,System.Collections.Generic.List{Rms.DataServices.DataObjects.Filter}@,System.Int64@)">
+            <summary>
+            Gets the filter.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="type">The type.</param>
+            <param name="subType">Type of the sub.</param>
+            <param name="id">The id.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="startWith">The start with.</param>
+            <param name="filterList">The filter list.</param>
+            <param name="totalNumber">The total number.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetFilterV2(Rms.Core.Platform.RmsDatasource,System.Nullable{Rms.DataServices.DataObjects.FilterType},System.Nullable{System.Int64},System.Int64,System.Int64,System.Nullable{Rms.DataServices.DataObjects.FilterSubjectType},System.String,System.Boolean,System.Boolean,System.String,System.Collections.Generic.List{Rms.DataServices.RestObjects.Filter}@,System.Int64@)">
+            <summary>
+            Gets the filter v2.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="type">The type.</param>
+            <param name="id">The id.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="filterSubjectType">Type of the sub.</param>
+            <param name="startWith">The start with.</param>
+            <param name="includeSegments">if set to <c>true</c> [include segments].</param>
+            <param name="isNamedFilter">if set to <c>true</c> [is named filter].</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="filterList">The filter list.</param>
+            <param name="totalNumber">The total number.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CreateFilter(Rms.Core.Platform.RmsDatasource,Rms.DataServices.DataObjects.Filter,System.Int64@)">
+            <summary>
+            //TODO: will upadate performance counter
+            </summary>
+            <param name="rmsDataSource"></param>
+            <param name="filter"></param>
+            <param name="filterId"></param>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposures(System.Int32,System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{Rms.DataServices.Exposure.Data.ImportExposure}@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the exposures.
+            </summary>
+            <param name="importSetId">The import set id.</param>
+            <param name="exposureTypeIdList">The exposure type id list.</param>
+            <param name="exposureList">The exposure list.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposureImportSetById(System.Int32,Rms.DataServices.Exposure.Data.ExposureImportSet@,System.Int32@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the exposure import set by id.
+            </summary>
+            <param name="importSetId">The import set id.</param>
+            <param name="exposureImportSet">The exposure import set.</param>
+            <param name="jobId">The job id.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposureImportSetList(System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int64,System.Int64,System.Collections.Generic.List{Rms.DataServices.Exposure.Data.ExposureImportSet}@,System.Collections.Generic.Dictionary{System.Int32,System.Int32}@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the exposure import set list.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="sourceDatabaseName">Name of the source database.</param>
+            <param name="owner">The owner.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="numOfItem">The num of item.</param>
+            <param name="exposureImportSetList">The exposure import set list.</param>
+            <param name="exposureImportSetIdJobIdMapping">The exposure import set id job id mapping.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposureImportSet(System.Data.SqlClient.SqlDataReader,Rms.DataServices.Exposure.Data.ExposureImportSet@,System.Int32@)">
+            <summary>
+            Gets the exposure import set.
+            </summary>
+            <param name="dr">The dr.</param>
+            <param name="exposureImportSet">The exposure import set.</param>
+            <param name="jobId">The job id.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetImportSummary(System.Int32,System.Collections.Generic.List{Rms.DataServices.Exposure.Data.ImportSummary}@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the import summary.
+            </summary>
+            <param name="importSetId">The import set id.</param>
+            <param name="importSummaryList">The import summary list.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetImportSource(Rms.Core.Platform.RmsDatasource,System.Int64,System.Int64,System.Int64@)">
+            <summary>
+            Gets the import source.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="totalNumber">The total number.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">@RowCount is null or DBNull.Value</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetImportTarget(Rms.Core.Platform.RmsDatasource,System.Int64,System.Int64,System.Int64@)">
+            <summary>
+            Gets the import source.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="totalNumber">The total number.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">@RowCount is null or DBNull.Value</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetImportAppType(Rms.Core.Platform.RmsDatasource,System.Int64,System.Int64,System.Int64@)">
+            <summary>
+            Gets the type of the import app.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="totalNumber">The total number.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">@RowCount is null or DBNull.Value</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CreateLineOfBusinessGroup(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{Rms.DataServices.DataObjects.LineOfBusiness},System.Boolean)">
+            <summary>
+            Creates the line of business group.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="lineOfBusinessList">The line of business list.</param>
+            <param name="Iscedant">if set to <c>true</c> [iscedant].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetLineOfBusinessGroup(Rms.Core.Platform.RmsDatasource,System.Int64,System.Int64,System.Boolean,System.Int64@)">
+            <summary>
+            Get list of LineOfBusinessGroup
+            </summary>
+            <param name="rmsDataSource"></param>
+            <param name="numberOfItems"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetRITExposureIdsByCOLZones(Rms.Core.Platform.RmsDatasource,System.Int64,System.DateTime,System.Collections.Generic.List{System.Tuple{System.Int32,System.Int32}})">
+            <summary>
+            Retrieves enumerable stream of integers, coming in blocks in this order:
+            *{CauseOfLossId, AliasRiskZoneSetId, Count, *{RITExposureId}}
+            </summary>
+            <param name="rmsDataSource">Data source information</param>
+            <param name="portfolioId">PortfolioID for to retrieve risk item exposures</param>
+            <param name="asOfDate">Version of the portfolio</param>
+            <param name="colZones">Pairs of CauseOfLossId + RiskZoneTreeAliasId values, to filter risk item exposures</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetUserDefContractType(Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Get User 
+            </summary>
+            <param name="rmsDataSource"></param>
+            <param name="tenantId"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetCauseofLoss(Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Get cause of loss
+            </summary>
+            <param name="rmsDataSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.ProcessHistograms(Rms.Core.Platform.RmsDatasource,System.Data.DataTable)">
+            <summary>
+            Pupulates the histograms.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="histogramDataTable">The histogramlist.</param>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.PositionStructureCreate(Rms.Core.Platform.RmsDatasource,System.DateTime,System.Data.DataTable,System.Data.DataTable,System.Nullable{System.Boolean},System.Nullable{System.Int64})">
+            <summary>
+            Positions the structure create.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="exposureAsofdate">The exposure asofdate.</param>
+            <param name="positionsInputTable">The positions input table.</param>
+            <param name="cededfilterContractsTable">The cededfilter contracts table.</param>
+            <param name="positionStructureId">The position structure identifier. To be provided in case of Update operations.</param>
+            <param name="isDirect">The is direct.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetCedantProjects(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the cedant projects.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="CedantProjectNames">The cedant project names.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposureDetails(System.Collections.Generic.List{Rms.DataServices.DataObjects.ExposureSnapshotKey},Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the exposure details.
+            </summary>
+            <param name="exposureSnapshotKeyList">The exposure snapshot key list.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposureDetails(Rms.DataServices.DataObjects.ExposureSnapshotKey,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the exposure details.
+            </summary>
+            <param name="exposureSnapshotKey">The exposure snapshot key.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns>ExposureName and ExposureTypeName</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposureDetailsBySnapShotKeys(System.Collections.Generic.List{Rms.DataServices.DataObjects.ExposureSnapshotKey},Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the exposure details by snap shot keys.
+            </summary>
+            <param name="exposureSnapshotKeyList">The exposure snapshot key list.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetTenantUsageMetrics(Rms.Core.Platform.RmsDatasource,System.DateTime,System.DateTime)">
+            <summary>
+            Gets the tenant usage metrics.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="startDate">The start date.</param>
+            <param name="endDate">The end date.</param>
+            <returns></returns>
+            <exception cref="T:Rms.Platform.Infrastructure.ExceptionHandling.RmsException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CreateExposedParty(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{Rms.DataServices.DataObjects.Party},System.Boolean)">
+            <summary>
+            Creates the exposed party.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="partyList">The party list.</param>
+            <param name="isCedant">if set to <c>true</c> [is cedant].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetRoles(Rms.Core.Platform.RmsDatasource,System.Int32,System.Int64,System.Int64,System.String,System.Collections.Generic.List{Rms.DataServices.DataObjects.PartyRole}@,System.Int64@,System.Boolean)">
+            <summary>
+            Gets the roles.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="partyID">Name of the party.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="startWith">The start with.</param>
+            <param name="roleList">The role list.</param>
+            <param name="totalNumber">The total number.</param>
+            <param name="isCedant">if set to <c>true</c> [is cedant].</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposedParties(Rms.Core.Platform.RmsDatasource,System.Int32,System.Int64,System.Int64,System.String,System.Collections.Generic.List{Rms.DataServices.DataObjects.Party}@,System.Int64@,System.Boolean)">
+            <summary>
+            Gets the exposed parties.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="roleId">Name of the role.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="startWith">The start with.</param>
+            <param name="partyList">The party list.</param>
+            <param name="totalNumber">The total number.</param>
+            <param name="isCedant">if set to <c>true</c> [is cedant].</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetParties(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{System.Int32},System.Int64,System.Int64,System.Int64@,System.Boolean)">
+            <summary>
+            Get Parties by Party Id
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="partyIds">The party ids.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="totalNumber">The total number.</param>
+            <param name="isCedant">if set to <c>true</c> [is cedant].</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">@RowCount is null or DBNull.Value</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.TriggerSummaryCalculation(System.Int64,System.DateTime,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Triggers the summary calculation.
+            </summary>
+            <param name="exposureId">The exposure id.</param>
+            <param name="snapshotDate">Snapshot date.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.AddCheckpoint(Rms.Core.Platform.RmsDatasource,System.String,System.DateTime)">
+            <summary>
+            AddCheckpoint
+            </summary>
+            <param name="rmsDatasource"></param>
+            <param name="engineName"></param>
+            <param name="ceiling"></param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CommitCheckpoint(Rms.Core.Platform.RmsDatasource,System.String,System.DateTime)">
+            <summary>
+            Commits the checkpoint.
+            </summary>
+            <param name="rmsDatasource">The RMS datasource.</param>
+            <param name="engineName">Name of the engine.</param>
+            <param name="ceiling">The ceiling.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposureSnapshotsDeltaForWindow(Rms.Core.Platform.RmsDatasource,System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            Gets the exposure snapshots list.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="windowEndDate">The window end date.</param>
+            <param name="windowStartDate">The window start date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.RegisterAsset(Rms.Core.Platform.RmsDatasource,Rms.DataServices.DataObjects.Domain.ExposureAsset)">
+            <summary>
+            Registers an asset in exposure the database.
+            </summary>
+            <param name="rmsDatasource">The data source settings to be used for establishing a connection to the database and 
+            executing a command against it.</param>
+            <param name="asset">The <see cref="T:Rms.DataServices.DataObjects.Domain.ExposureAsset"/> to be registered.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetAssets(Rms.Core.Platform.RmsDatasource,System.Nullable{System.Int64},System.Nullable{System.DateTime},System.Nullable{System.Int32},System.String,System.Nullable{System.DateTime},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Gets the assets.
+            </summary>
+            <param name="rmsDatasource">The RMS datasource.</param>
+            <param name="exposureID">The exposure ID.</param>
+            <param name="exposureAsOfDate">The exposure as of date.</param>
+            <param name="riskAnalysisProfileID">The risk analysis profile ID.</param>
+            <param name="assetTypeName">Name of the asset type.</param>
+            <param name="createDate">The create date.</param>
+            <param name="skip">The skip.</param>
+            <param name="limit">The limit.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CreateCedantProjectAsset(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{Rms.DataServices.DataObjects.CedantProjectAsset})">
+            <summary>
+            Add cedantprojects if not exists
+            </summary>
+            <param name="rmsDatasource"></param>
+            <param name="cedantProjectAssets"></param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetWhatIfTagV2(System.Int64,System.Int64,System.String,System.Int64,System.String,System.Collections.Generic.List{Rms.DataServices.RestObjects.WhatIfTag}@,System.Int64@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the what difference tag v2.
+            </summary>
+            <param name="startIndex">The start index.</param>
+            <param name="numOfItem">The number of item.</param>
+            <param name="startWith">The start with.</param>
+            <param name="contractId">The contract unique identifier.</param>
+            <param name="asOfDate">The asynchronous of date.</param>
+            <param name="whatIfTagList">The what difference tag list.</param>
+            <param name="totalNumberOfItems">The total number of items.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetWhatIfTag(System.Int64,System.Int64,System.String,System.Int64,System.String,System.Int32,System.Collections.Generic.List{Rms.DataServices.DataObjects.WhatIfTag}@,System.Int64@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+                Gets the what if tag.
+            </summary>
+            <param name="startIndex">The start index.</param>
+            <param name="numOfItem">The num of item.</param>
+            <param name="startWith">The start with.</param>
+            <param name="contractId">The contract id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="userId">The user id.</param>
+            <param name="whatIfTagList">The what if tag list.</param>
+            <param name="totalNumberOfItems">The total number of items.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetWhatIfContracts(System.Int64,System.String,System.Collections.Generic.List{Rms.DataServices.DataObjects.ContractExposure}@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the what if contracts.
+            </summary>
+            <param name="contractId">The contract id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="contractList">The contract list.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetRenewalContracts(System.Int64,System.String,System.Collections.Generic.List{Rms.DataServices.DataObjects.ContractExposure}@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the what if contracts.
+            </summary>
+            <param name="contractId">The contract id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="contractList">The contract list.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.ValidateRenewalContracts(System.Int64,System.String,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Validates the renewal contracts.
+            </summary>
+            <param name="contractId">The contract identifier.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetContractAsOfDate(System.Int64,System.Int64,System.Int64,System.Int32,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+                Gets the portfolio as of date.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="numOfItem">The num of item.</param>
+            <param name="userId">The user id.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CreateWhatIfTag(Rms.Core.Platform.RmsDatasource,System.String,System.String)">
+            <summary>
+            Creates the what if tag.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="name">The name.</param>
+            <param name="description">The description.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CheckWhatIfTag(Rms.Core.Platform.RmsDatasource,System.Nullable{System.Int64},System.Int32)">
+            <summary>
+            Checks the what if tag.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="contractId">The contract id.</param>
+            <param name="whatIfId">The what if id.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">whatIfTag</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CheckProgramContractType(Rms.Core.Platform.RmsDatasource,System.Int64,System.Int64)">
+            <summary>
+            Checks the what if tag.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="programId">The program id.</param>
+            <param name="contractTypeId">The contract type id.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">whatIfTag</exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetParentExposureByCEKey(Rms.Core.Platform.RmsDatasource,System.Int64,System.DateTime,Rms.DataServices.DataObjects.ExposureSnapshotKey@,Rms.DataServices.DataObjects.ExposureType@)">
+            <summary>
+            Gets the parent exposure by CE key.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="cExposureId">The c exposure id.</param>
+            <param name="cExposureSnapshotDate">The c exposure snapshot date.</param>
+            <param name="parentExposureKey">The parent exposure key.</param>
+            <param name="parentExposureType">Type of the parent exposure.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetContractStatusDictionary(Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the contract status dictionary.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetPositionsByExposureKey(Rms.Core.Platform.RmsDatasource,Rms.DataServices.DataObjects.ExposureSnapshotKey)">
+            <summary>
+            Gets the positions by exposure key.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="exposureKey">The exposure key.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetPositionLossSource(System.Int64,System.String,System.String,System.Int32,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the position loss source.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="positionQualifier">The position qualifier.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="contractTypeId">The contract type id.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetPositionByStructure(System.Int64,System.String,Rms.Core.Platform.RmsDatasource,System.Int64,System.Int64)">
+            <summary>
+            Gets the position by structure.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="rmsDataSource">The RMS datasource.</param>
+            <param name="limit">The limit.</param>
+            <param name="offset">The offset.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.#cctor">
+            <summary>
+            Initializes the <see cref="T:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB"/> class.
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.ReserveIdRange(Rms.Core.Platform.RmsDatasource,System.String,System.Int32)">
+            <summary>
+            Reserves the id range.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="entityName">Name of the entity.</param>
+            <param name="numberOfIds">The number of ids.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.AddImportSet(Rms.Core.Platform.RmsDatasource,Rms.DataServices.DataObjects.ImportSet,System.Collections.Generic.List{Rms.DataServices.DataObjects.ImportedAccount},System.Boolean@,System.Collections.Generic.Dictionary{System.Int64,System.Int64}@)">
+            <summary>
+            Adds the import set.
+            </summary>
+            <param name="rmsDatasource">The id of the tenant to which the operation applies.</param>
+            <param name="importSet">The import set.</param>
+            <param name="accounts">The accounts.</param>
+            <param name="isAlreadyCompleted">if set to <c>true</c> [is already completed].</param>
+            <param name="etlToExposureAccountIds">The etl to exposure account ids.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CommitImportSet(Rms.Core.Platform.RmsDatasource,Rms.DataServices.DataObjects.ImportSet)">
+            <summary>
+            Commits the import set.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="importSet">The import set.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.BeginImportRITExposures(Rms.Core.Platform.RmsDatasource,System.String,System.Data.DataTable,System.Data.DataTable,System.Boolean,System.Boolean,System.Boolean,System.Data.SqlClient.SqlCommand@,System.IAsyncResult@)">
+            <summary>
+            Begins the import of risk item exposures.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="importSetGuid">The import set GUID.</param>
+            <param name="accountsAndRiskItems">The accounts and risk items.</param>
+            <param name="RITSVAL">The RITSVAL.</param>
+            <param name="loggingEnabled">if set to <c>true</c> [logging enabled].</param>
+            <param name="IsIncremental">if set to <c>true</c> [is incremental].</param>
+            <param name="returnRiteIdMapping">if set to <c>true</c> [return rite id mapping].</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <param name="asyncResult">The async result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.ImportRITExposures(Rms.Core.Platform.RmsDatasource,System.String,System.Data.DataTable,System.Data.DataTable,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Imports the risk item exposures.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="importSetGuid">The import set GUID.</param>
+            <param name="accountsAndRiskItems">The accounts and risk items.</param>
+            <param name="RITSVAL">The RITSVAL.</param>
+            <param name="loggingEnabled">if set to <c>true</c> [logging enabled].</param>
+            <param name="IsIncremental">if set to <c>true</c> [is incremental].</param>
+            <param name="returnRiteIdMapping">if set to <c>true</c> [return rite id mapping].</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetRITExposuresAndRiskItemKeys(Rms.Core.Platform.RmsDatasource,System.Int64,System.DateTime,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Gets risk item exposures keys (risk item exposure id, as of date) matching the input criteria 
+            grouped by risk item object id.
+            </summary>
+            <param name="rmsDatasource">The <see cref="T:Rms.Core.Platform.RmsDatasource"/> that keeps the information for connecting 
+            to the exposure database.</param>
+            <param name="exposureId">The id of the exposure for which RiskItemIds will be returned.</param>
+            <param name="asOfDate">The date according to which the RiskItemIds will be returned.</param>
+            <param name="skip">The number of items to be skipped when sorted by risk item object id.</param>
+            <param name="limit">The maximum number of items that can be returned. 0 means not limit.</param>
+            <param name="ritesCount">The total number of risk item exposures fetched.</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IDictionary`2"/> with the risk items keys matching the criteria
+            where the key is the RiskItemObjectID and the value is a <see cref="T:System.Collections.IList"/> of <see cref="T:System.Tuple"/> 
+            objects representing the keys of the risk item exposures whose risk item id match the risk item id 
+            used as a key. The tuple's Item1 keeps the risk item exposure id and Item2 - the risk item exposure 
+            as of date.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetRITExposureEntityCount(Rms.Core.Platform.RmsDatasource,System.Int64,System.DateTime)">
+            <summary>
+            Gets the risk items exposures entities count.
+            </summary>
+            <param name="rmsDatasource">The <see cref="T:Rms.Core.Platform.RmsDatasource"/> that keeps the information for connecting 
+            to the exposure database.</param>
+            <param name="exposureId">The id of the exposure whose related risk items exposures count should be returned..</param>
+            <param name="asOfDate">The date based on which the risk item exposures will be filtered.</param>
+            <returns>A long number representing the risk items exposures count.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.UpdateRITExposures(Rms.Core.Platform.RmsDatasource,System.DateTime,System.Collections.Generic.IEnumerable{Rms.DataServices.DataObjects.RITExposure},System.Boolean)">
+            <summary>
+             Updates risk item exposures in the tenant database. This function must be called once
+             the risk item exposures have been saved to mongo and their ids are updated.
+            </summary>
+            <param name="rmsDatasource">Keeps the information for the data source that holds the tenant data.</param>
+            <param name="snapshotDate">The exposure snapshot date to be set.</param>
+            <param name="RITExposures">The risk item exposures to be updated in the database.</param>
+            <param name="copyZones">If true, zones assigned to risk item exposures will be 
+             copied to the created new versions after the update, false otherwise.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetRITExposuresTuples(Rms.Core.Platform.RmsDatasource,System.Int64,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Gets Risk item exposures tuples for an ExposureId and as of date, restricted to range by skip and limit 
+            parameters from the NGExposure database. 
+            </summary>
+            <param name="rmsDatasource">The <see cref="T:Rms.Core.Platform.RmsDatasource"/> that keeps the information for connecting 
+            to the exposure database.</param>
+            <param name="exposureId">The id of the exposure for which risk item exposures tuples will be 
+            returned.</param>
+            <param name="asOfDate">The date according to which the risk item exposures tuples will be 
+            returned.</param>
+            <param name="skip">The number of items to be skipped when sorted by risk item exposure id and as of 
+            date.</param>
+            <param name="limit">The maximum number of items that can be returned.</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.RITETuple"/> objects matching the criteria. 
+            The returned <see cref="T:Rms.DataServices.DataObjects.RITExposure"/> objects in the <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.RITETuple"/> have 
+            only data loaded from SQL Server.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetRITExposuresTuplesEnumerable(Rms.Core.Platform.RmsDatasource,System.Int64,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Gets the risk item exposures for an exposure id and snapshot date as an unmaterialized 
+            <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <param name="rmsDatasource">The RMS datasource.</param>
+            <param name="exposureId">The exposure id.</param>
+            <param name="snapshotDate">The snapshot date.</param>
+            <param name="skip">The skip.</param>
+            <param name="limit">The limit.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetRITExposuresTuplesByKeys(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.IEnumerable{System.Tuple{System.Int64,System.DateTime}},System.Int32,System.Int32)">
+            <summary>
+            Gets Risk item exposures tuples by risk item exposures keys restricted to range by skip and 
+            limit parameters from the NGExposure database. 
+            </summary>
+            <param name="rmsDatasource">The <see cref="T:Rms.Core.Platform.RmsDatasource"/> that keeps the information for connecting 
+            to the exposure database.</param>
+            <param name="RITExposuresKeys">An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Tuple"/>
+            objects representing the risk item exposures keys by which data will be retrieved. Each tuple has
+            Item1 - risk item exposure id, Item2 - risk item exposure as of date.</param>
+            <param name="skip">The number of risk item exposures to be skipped when sorted by risk item exposure id 
+            and then by as of date.</param>
+            <param name="limit">The max number of risk item exposures to be returned. 0 means no limit.</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.RITETuple"/> objects matching the criteria. 
+            The returned <see cref="T:Rms.DataServices.DataObjects.RITExposure"/> objects in the <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.RITETuple"/> have 
+            only data loaded from SQL Server.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.BeginImportContracts(Rms.Core.Platform.RmsDatasource,System.String,System.Data.DataTable,System.Data.DataTable,System.Data.DataTable,System.Data.DataTable,System.Data.DataTable,System.Data.SqlClient.SqlCommand@,System.IAsyncResult@)">
+            <summary>
+            Begins the import contracts.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="importSetGuid">The import set GUID.</param>
+            <param name="contracts">The contracts.</param>
+            <param name="riteCauseOfLoss">The rite cause of loss.</param>
+            <param name="parties">The parties.</param>
+            <param name="lineOfBussiness">The line of bussiness.</param>
+            <param name="exposureMemberDataTable">The exposure member data table.</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <param name="asyncResult">The async result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.ImportContracts(Rms.Core.Platform.RmsDatasource,System.String,System.Data.DataTable,System.Data.DataTable,System.Data.DataTable,System.Data.DataTable,System.Data.DataTable)">
+            <summary>
+            Imports the contracts.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="importSetGuid">The import set GUID.</param>
+            <param name="contracts">The contracts.</param>
+            <param name="riteCauseOfLoss">The rite cause of loss.</param>
+            <param name="parties">The parties.</param>
+            <param name="lineOfBussiness">The line of bussiness.</param>
+            <param name="exposureMemberDataTable">The exposure member data table.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.ImportPortfolios(Rms.Core.Platform.RmsDatasource,System.String,System.Data.DataTable,System.Data.DataTable)">
+            <summary>
+            Imports the portfolios.
+            </summary>
+            <param name="rmsDatasource">The RMS datasource.</param>
+            <param name="importSetGuid">The import set GUID.</param>
+            <param name="portfolios">The portfolios.</param>
+            <param name="parties">The parties.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetRiskZoneTrees(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            Gets the risk zone trees.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="riskZoneTreeIds">The risk zone tree ids.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.SaveRITExposureZones(Rms.Core.Platform.RmsDatasource,System.DateTime,System.Collections.Generic.IEnumerable{System.Tuple{System.Int64,System.DateTime,Rms.DataServices.DataObjects.Domain.ZoneKey}})">
+            <summary>
+            Saves risk item exposures zones to the NGExposure DB.
+            </summary>
+            <param name="rmsDatasource">The <see cref="T:Rms.Core.Platform.RmsDatasource"/> that keeps the information for connecting 
+            to the exposure database.</param>
+            <param name="snapshotDate">The snapshot date assigned to the RITE - zone mappings saved.</param>
+            <param name="RITExposureZones">An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of tuples representing the relationship 
+            riskitem exposure - zone. Each tuple has Item1 - the risk item exposure id, Item2 - the exposure as of date 
+            and Item3 - the zone key (ID anb as of date).</param>        
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetContractExposuresCount(Rms.Core.Platform.RmsDatasource,System.Int64,System.DateTime)">
+            <summary>
+            Gets the contract exposures count by portfolio id and snapshot date. Returns all contract exposures 
+            in the exposure db mathing the criteria without additional filtering for existing contract in mongo
+            or anything else.
+            </summary>
+            <param name="rmsDatasource">The <see cref="T:Rms.Core.Platform.RmsDatasource"/> that keeps the information for connecting 
+            to the exposure database.</param>
+            <param name="portfolioId">The id of the portfolio whose related contract exposures count should be 
+            returned.</param>
+            <param name="snapshotDate">The snapshot date as UTC time based on which the contract exposures will 
+            be filtered when calculating their count.</param>
+            <returns>A long number representing the contract exposures count.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetContractExposureBasicData(Rms.Core.Platform.RmsDatasource,System.Int64,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Gets basic data for the contracts matching the provided portfolio id and as of date.
+            Results are limited by the skip and limit arguments.
+            </summary>
+            <param name="rmsDatasource">The <see cref="T:Rms.Core.Platform.RmsDatasource"/> that keeps the information for connecting 
+            to the exposure database.</param>
+            <param name="portfolioId">The id of the portfolio whose contracts' data will be returned.</param>
+            <param name="asOfDate">The as of date determining the portfolio version by which
+            contracts are filtered.</param>
+            <param name="skip">The number of items to be skipped when sorted by contract object id.</param>
+            <param name="limit">The maximum number of items that can be returned.</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IList`1"/> of <see cref="T:System.Tuple"/> objects representing the basic data
+            for the contracts: Item1 - contract object id by which contract can be loaded from MongoDb 
+            (This value can be <see cref="P:MongoDB.Bson.ObjectId.Empty"/> if contract object id is missing),
+            Item2 - the contract exposure id, Item3 - the contract exposure as of date.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetPartialCDLContractsByPortFolio(Rms.Core.Platform.RmsDatasource,System.Int64,System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns the partially populated CDL contracts for a given Portfolio snapshot.
+            </summary>
+            <param name="rmsDatasource">The <see cref="T:Rms.Core.Platform.RmsDatasource"/> that keeps the information for connecting
+            to the exposure database.</param>
+            <param name="portfolioId">The id of the portfolio whose contracts' data will be returned.</param>
+            <param name="asOfDate">The as of date determining the portfolio version by which
+            contracts are filtered.</param>
+            <param name="skip">The number of items to be skipped when sorted by contract object id.</param>
+            <param name="limit">The maximum number of items that can be returned.</param>
+            <param name="threshold">The threshold.</param>
+            <returns>
+            Returns an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of unmaterialized <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract"/> objects.
+            The objects are read from the SQL Server reader upon request by the consumer functions.
+            </returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetCDLContractRITExposures(Rms.Core.Platform.RmsDatasource,System.Int64,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Gets CDL Contract Rites restricted by skip and limit.
+            </summary>
+            <param name="rmsDatasource">The <see cref="T:Rms.Core.Platform.RmsDatasource"/> that keeps the information for connecting 
+            to the exposure database.</param>
+            <param name="contractExposureId">The id of the contract exposure whose risk item exposures 
+            should be returned.</param>
+            <param name="asOfDate">The as of date determining the contract exposure version by which
+            risk item exposure are filtered.</param>
+            <param name="skip">The number of items to be skipped when sorted by risk item object id and then
+            rite version.</param>
+            <param name="limit">The maximum number of items that can be returned.</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IList`1"/> of <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.CDLContract"/> objects populated with data
+            from the NGExposure database but wihout data from MongoDb.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CheckConnection(System.String)">
+            <summary>
+            Checks if a connection to a database can be established.
+            </summary>
+            <param name="connectionString">
+            The connection string to the database whose connection should be tested.</param>
+            <returns>True if the connection to the database is successful, false otherwise.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetDWExposureAssetSelect(System.String,System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Gets the DW exposure asset select.
+            </summary>
+            <param name="windowStartDate">The window start date.</param>
+            <param name="windowEndDate">The window end date.</param>
+            <param name="sqlConnection">The SQL connection.</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <returns>IDataReader.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetDWProgramSelect(System.String,System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Gets the DW program select.
+            </summary>
+            <param name="windowStartDate">The window start date.</param>
+            <param name="windowEndDate">The window end date.</param>
+            <param name="sqlConnection">The SQL connection.</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <returns>IDataReader.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetDWRITExposureByRiskZoneTreeSelect(System.String,System.String,System.Data.DataTable,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Gets the DW risk item exposure by risk zone tree select.
+            </summary>
+            <param name="windowStartDate">The window start date.</param>
+            <param name="windowEndDate">The window end date.</param>
+            <param name="dtRAP">The RAP data table.</param>
+            <param name="sqlConnection">The SQL connection.</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <returns>IDataReader.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetDWExposureSelect(System.String,System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Gets the DW exposure select.
+            </summary>
+            <param name="windowStartDate">The window start date.</param>
+            <param name="windowEndDate">The window end date.</param>
+            <param name="sqlConnection">The SQL connection.</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <returns>IDataReader.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetDWContractExposureSelect(System.String,System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Gets the DW contract exposure select.
+            </summary>
+            <param name="windowStartDate">The window start date.</param>
+            <param name="windowEndDate">The window end date.</param>
+            <param name="sqlConnection">The SQL connection.</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <returns>IDataReader.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetDWPortfolioModifiedMembersSelect(System.String,System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Gets the DW portfolio modified members select.
+            </summary>
+            <param name="windowStartDate">The window start date.</param>
+            <param name="windowEndDate">The window end date.</param>
+            <param name="sqlConnection">The SQL connection.</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <returns>IDataReader.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetDWRITExposureSelect(System.String,System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Gets the DW risk item exposure select.
+            </summary>
+            <param name="windowStartDate">The window start date.</param>
+            <param name="windowEndDate">The window end date.</param>
+            <param name="sqlConnection">The SQL connection.</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <returns>IDataReader.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetDWAccountModifiedMembersSelect(System.String,System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Gets the DW account modified members select.
+            </summary>
+            <param name="windowStartDate">The window start date.</param>
+            <param name="windowEndDate">The window end date.</param>
+            <param name="sqlConnection">The SQL connection.</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <returns>IDataReader.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetAllDomainData(System.String,System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Gets all domain data.
+            </summary>
+            <param name="windowStartDate">The window start date.</param>
+            <param name="windowEndDate">The window end date.</param>
+            <param name="sqlConnection">The SQL connection.</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <returns>IDataReader.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetAllLookUpData(System.String,System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Gets all LookUp data.
+            </summary>
+            <param name="windowStartDate">The window start date.</param>
+            <param name="windowEndDate">The window end date.</param>
+            <param name="sqlConnection">The SQL connection.</param>
+            <param name="sqlCommand">The SQL command.</param>
+            <returns>IDataReader.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.BuildExposureTree(Rms.Core.Platform.RmsDatasource,System.Guid)">
+            <summary>
+            Builds the exposure tree after an import to allow getting data before transaction is complete.
+            </summary>
+            <param name="rmsDataSource">The data source that keeps information for connecting to the 
+            exposure database.</param>
+            <param name="importSetGuid">The guid of the import operation for which an exposure tree should be 
+            built.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposureSnapshots(Rms.Core.Platform.RmsDatasource,System.Int64,System.Int32,System.Int32)">
+            <summary>
+             Gets the exposure snapshots associated with an exposure ID.
+            </summary>
+            <param name="rmsDataSource">The RMS data source that keeps settings for connecting to exposure db.</param>
+            <param name="exposureID">The id of the exposure by which the exposure snapshots will be filtered.</param>
+            <param name="skip">The number of exposure snapshots to be skipped.</param>
+            <param name="limit">The max number of exposure snapshots to be returned. 0 means not limit.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.ReserveExposureSnapshots(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.IEnumerable{Rms.DataServices.DataObjects.ExposureSnapshot})">
+            <summary>
+            Reserves the exposure snapshots.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="snapshots">The exposure snapshots.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.CommitExposureSnapshots(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.IEnumerable{Rms.DataServices.DataObjects.ExposureSnapshotKey})">
+            <summary>
+            Commits a number of exposure snapshots.
+            </summary>
+            <param name="snapshotKeys">The keys of the exposure snapshots to be committed.</param>
+            <param name="rmsDataSource">The connection string to the exposure database where the exposure
+            snapshots reside and the common command execution settings.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetCauseofLossList(Rms.Core.Platform.RmsDatasource,System.Nullable{System.Int32})">
+            <summary>
+            Gets the causeof loss list.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="causeOfLossID">The int_cause of loss ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetPerilList(Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the peril list.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetRITExposureDamageTypeTuples(Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the exposure damage type list.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetExposureSizeEstimate(Rms.Core.Platform.RmsDatasource,Rms.DataServices.DataObjects.ExposureSnapshotKey,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Gets the exposure size estimate.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="exposureSnapshotKey">The exposure snapshot key.</param>
+            <param name="exposedPartyId"></param>
+            <param name="whatIfTagId"></param>
+            <returns>exposure size estimate</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetRITExposuresTuplesInternal(Rms.Core.Platform.RmsDatasource,System.Data.SqlClient.SqlCommand,System.Boolean)">
+            <summary>
+            Gets Risk item exposures tuples restricted to range by skip and limit parameters from the NGExposure 
+            database. The risk item exposures objects within the tuples are filled using the commands provided 
+            as input parameters for fetching risk item exposures details and risk item exposures valuations.
+            </summary>
+            <param name="rmsDatasource">The <see cref="T:Rms.Core.Platform.RmsDatasource"/> that keeps the information for connecting 
+            to the exposure database.</param>
+            <param name="getRITExposuresDetailsCommand">This is the command to be used for retrieving data 
+            for risk item exposures details. If valuations should be returned, they are returned as a second result 
+            set.</param>
+            <param name="loadMongoIdsOnly">If true the only data that will be loaded are the risk item exposure id
+            and as of date + the ids for the mongo objects (risk item id and rite HC id). The default value is false.
+            </param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.RITETuple"/> objects matching the criteria. 
+            The returned <see cref="T:Rms.DataServices.DataObjects.RITExposure"/> objects in the <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.RITETuple"/> have 
+            only data loaded from SQL Server.</returns>
+            <remarks>The sql commands are disposed in the end of the function.</remarks>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetWorkspaceData(Rms.Core.Platform.RmsDatasource,Rms.DataServices.DataObjects.ExposureSnapshotKey,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.DateTime})">
+            <summary>
+            Gets the workspace data.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="exposureSnapshotKey">The exposure snapshot key.</param>
+            <param name="returnMetadata">if set to <c>true</c> [return metadata].</param>
+            <param name="returnContract">if set to <c>true</c> [return contract].</param>
+            <param name="returnRITExposure">if set to <c>true</c> [return RIT exposure].</param>
+            <param name="returnWhatIfContracts">if set to <c>true</c> [return what if contracts].</param>
+            <param name="returnProducts">if set to <c>true</c> [return products].</param>
+            <param name="watermarkDate">Watermark date of the exposure data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetWorkspaceDataForContractCollectionCreation(Rms.Core.Platform.RmsDatasource,System.Int64,System.Int32,System.Collections.Generic.List{System.Int64},System.Boolean,System.Boolean,System.DateTime,System.DateTime)">
+            <summary>
+            Gets the workspace data for contract collection creation.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="exposedPartyId">The exposed party id.</param>
+            <param name="whatIfTagId">The what if tag id.</param>
+            <param name="cedantProjectIds">The cedant project ids.</param>
+            <param name="isReinsuranceOnly">if set to <c>true</c> [is reinsurance only].</param>
+            <param name="returnProducts">if set to <c>true</c> [return products].</param>
+            <param name="inceptionDate">The inception date.</param>
+            <param name="expirationDate">The expiration date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetCedantProjectId(System.Collections.Generic.List{System.Int32},System.String,System.String,System.Int64,System.Int64,System.Collections.Generic.List{System.Int64}@,System.Int64@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the cedant project id.
+            </summary>
+            <param name="partyIdList">The party id list.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="numOfItem">The num of item.</param>
+            <param name="cedantProjectIds">The cedant project ids.</param>
+            <param name="totalNumberOfItems">The total number of items.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetPortfolioList(System.String,System.String,System.Int64,System.Int64,System.Collections.Generic.IList{System.Int64},System.Boolean,System.Collections.Generic.List{Rms.DataServices.DataObjects.ContractCollectionExposure}@,System.Int64@,System.Collections.Generic.List{System.Int32}@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the portfolio list.
+            </summary>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="numOfItem">The num of item.</param>
+            <param name="daclFilterIdList">The dacl filter id list.</param>
+            <param name="daclExposureOverride">if set to <c>true</c> [dacl exposure override].</param>
+            <param name="contractCollectionList">The contract collection list.</param>
+            <param name="totalNumberOfItems">The total number of items.</param>
+            <param name="partyIdList">The party id list.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetPortfolioById(System.Int64,System.String,System.Int32,System.Int64@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the portfolio by id.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="userId">The user id.</param>
+            <param name="creationFilterId">The creation filter id.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetCreationFilterId(System.Int64,System.DateTime,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the portfolio by id.
+            </summary>
+            <param name="exposureId">The id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetReportingSegmentFilterIds(System.Int64,System.String,System.Int32,System.Int64@,System.Collections.Generic.List{System.Int64}@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the reporting segment filter ids.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="userId">The user id.</param>
+            <param name="defaultFilterId">The default filter id.</param>
+            <param name="reportingSegmentFilterId">The reporting segment filter id.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetCededContractFilterId(System.Int64,System.String,System.Int32,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the ceded contract filter id.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="userId">The user id.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetPortfolioAsOfDate(System.Int64,System.Int64,System.Int64,System.Int32,System.Collections.Generic.IList{System.Int64},System.Boolean,System.Collections.Generic.List{System.DateTime}@,System.Int64@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the portfolio as of date.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="numOfItem">The num of item.</param>
+            <param name="userId">The user id.</param>
+            <param name="daclFilterIdList">The dacl filter id list.</param>
+            <param name="daclExposureOverride">if set to <c>true</c> [dacl exposure override].</param>
+            <param name="asOfDateList">As of date list.</param>
+            <param name="totalNumberOfItems">The total number of items.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetPortfolioCedantExposure(System.Int64,System.String,System.Int64,System.Int64,System.Int64,System.Int32,System.Collections.Generic.List{Rms.DataServices.Exposure.Data.CedantExposureMetaData}@,System.Int64@,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the portfolio cedant exposure.
+            </summary>
+            <param name="id">The id.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="filterId">The filter id.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="numOfItem">The num of item.</param>
+            <param name="userId">The user id.</param>
+            <param name="cedantExposureMetaDataList">The cedant exposure meta data list.</param>
+            <param name="totalNumberOfItems">The total number of items.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.GetReportingSegmentIdByExposureId(System.Int64,System.String,System.String,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Gets the reporting segment identifier by exposure identifier.
+            </summary>
+            <param name="exposureId">The exposure identifier.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="reportingSegmentName">Name of the reporting segment.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.EARiskZoneSelectByEARiskZoneID(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.IList{System.Int64})">
+            <summary>
+            EAs the risk zone select by EA risk zone ID.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="eaRiskZoneIds">The ea risk zone ids.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.ExposureSqlDB.RiskZoneSelectByAliasID(Rms.Core.Platform.RmsDatasource,System.Collections.Generic.IList{System.Int64},System.Int32,System.Int32)">
+            <summary>
+            Risks the zone select by alias ID.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="aliasRiskZoneSetIds">The alias risk zone set ids.</param>
+            <param name="skip">The skip.</param>
+            <param name="limit">The limit.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb">
+            <summary>
+            SQL Access functions for Data Library
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.#cctor">
+            <summary>
+            Initializes the <see cref="T:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb"/> class.
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.AddUniqueNonZero(System.Collections.Generic.ICollection{System.Int32},System.Int32)">
+            <summary>
+            Adds the unique non zero.
+            </summary>
+            <param name="partyIdList">The party id list.</param>
+            <param name="val">The val.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.GetStaticOrDynamicString(System.Boolean)">
+            <summary>
+            Gets the static or dynamic string.
+            </summary>
+            <param name="isDynamic">if set to <c>true</c> [is dynamic].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.PortfolioSegmentSelectByExposureKey(System.Int64,System.DateTime,System.Int64,System.Int64,System.String,System.String,System.String,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Portfolioes the segment select by exposure key.
+            </summary>
+            <param name="exposureId">The exposure identifier.</param>
+            <param name="asOfDate">As of date.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="sqlGroupBy">The SQL group by.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.ExposureSelectByAccount(System.Int64,Rms.DataServices.DataLibrary.Data.ExposureTypeEnum,System.Collections.Generic.IEnumerable{System.Int64},System.Int64,System.Int64,System.String,System.String,Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{System.Int32}@,System.Boolean)">
+            <summary>
+            Exposures the select by account.
+            </summary>
+            <param name="accountId">The account unique identifier.</param>
+            <param name="exposureType">Type of the exposure.</param>
+            <param name="filterIdList">The filter unique identifier list.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="partyIdList">The party unique identifier list.</param>
+            <param name="daclExposureOverride">if set to <c>true</c> [dacl exposure override].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.EDMNameSelect(System.Collections.Generic.IEnumerable{System.Int64},System.Int64,Rms.DataServices.DataLibrary.Data.ExposureTypeEnum,System.Int64,System.Int64,System.String,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Edms the name select.
+            </summary>
+            <param name="filterIdList">The filter unique identifier list.</param>
+            <param name="cedantProjectId">The cedant project unique identifier.</param>
+            <param name="exposureType">Type of the exposure.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.AccountSelect(System.Int64,System.Int64,System.String,System.String,System.String,Rms.Core.Platform.RmsDatasource,System.Boolean,System.Int64,System.Collections.Generic.List{System.Int32}@)">
+            <summary>
+            Accounts the select.
+            </summary>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="sqlGroupBy">The SQL group by.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="isNew">if set to <c>true</c> [is new].</param>
+            <param name="cutOffTimeInSeconds">The cut off time information ticks.</param>
+            <param name="partyIdList">The party unique identifier list.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.ContractExposureSelectByKey(System.Collections.Generic.List{System.Int64},System.Int64,System.Int64,System.String,System.String,System.String,Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.IList{System.Int64},System.Boolean,System.Boolean,System.Int64)">
+            <summary>
+            Contracts the exposure select by key.
+            </summary>
+            <param name="contractIDList">The contract ID list.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="sqlGroupBy">The SQL group by.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="partyIdList">The part id list.</param>
+            <param name="filterIdList">The filter id list.</param>
+            <param name="daclExposureOverride">if set to <c>true</c> [DACL exposure override].</param>
+            <param name="isNew">if set to <c>true</c> [is new].</param>
+            <param name="cutOffTimeInSeconds">The cut off time information ticks.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.ContractExposureSelectByHierarchyLevel(System.Int32,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int64,System.Int64,Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.IList{System.Int64},System.Boolean,System.Boolean,System.Int64)">
+            <summary>
+            Contracts the exposure select by hierarchy level.
+            </summary>
+            <param name="contractHierarychyID">The contract hierarychy ID.</param>
+            <param name="columnValueList">The column value list.</param>
+            <param name="contractName">Name of the contract.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="partyIdList">The party ids.</param>
+            <param name="filterIdList">The filter id list.</param>
+            <param name="daclExposureOverride">if set to <c>true</c> [DACL exposure override].</param>
+            <param name="isNew">if set to <c>true</c> [is new].</param>
+            <param name="cutOffTimeInSeconds">The cutoff time information ticks.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.ExposureSelect(System.Boolean,System.Int16[],System.Int64,System.Int64,System.String,System.String,System.String,Rms.Core.Platform.RmsDatasource,System.Collections.Generic.IList{System.Int64},System.Collections.Generic.List{System.Int32}@,System.Boolean,System.Boolean,System.Int64,System.String)">
+            <summary>
+            Exposures the select.
+            </summary>
+            <param name="isReference">if set to <c>true</c> [is reference].</param>
+            <param name="exposureTypeIdArray">The exposure type I ds.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="sqlGroupBy">The SQL group by.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="filterIdList">The filter id list.</param>
+            <param name="partyIdList">The party id list.</param>
+            <param name="daclExposureOverride">if set to <c>true</c> [dacl exposure override].</param>
+            <param name="isNew">if set to <c>true</c> [is new].</param>
+            <param name="cutOffTimeInSeconds">The cutoff time information ticks.</param>
+            <param name="edmName">Name of the edm.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.ContractSelectByContractCloneType(System.Int64,System.Int32,System.Int64,System.Int64,System.String,System.String,System.String,Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{System.Int32}@,System.Boolean,System.Int64)">
+            <summary>
+            Contracts the type of the select by contract clone.
+            </summary>
+            <param name="exposureID">The exposure ID.</param>
+            <param name="cloneTypeID">The clone type ID.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="sqlGroupBy">The SQL group by.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="partyIdList">The party id list.</param>
+            <param name="isNew">if set to <c>true</c> [is new].</param>
+            <param name="cutOffTimeInSeconds">The cut off time information ticks.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.ScheduleSelectByContract(System.Int64,System.Int64,System.Int64,System.Int32,System.Int32,System.String,System.String,System.String,Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Schedules the select by contract.
+            </summary>
+            <param name="exposureID">The exposure ID.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="scenarioID">The scenario ID.</param>
+            <param name="userId">The user ID.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="sqlGroupBy">The SQL group by.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.ContractHierarchySelectByViewType(Rms.Core.Platform.RmsDatasource)">
+            <summary>
+            Contracts the type of the hierarchy select by view.
+            </summary>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.AssetSelectByCedantProject(System.Int64,System.Int16,System.Int64,System.Int64,System.String,System.String,System.String,Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.IList{System.Int64},System.Boolean,System.Boolean,System.Int64,System.String)">
+            <summary>
+            Assets the select by cedant project.
+            </summary>
+            <param name="cedantProjectId">The cedant project id.</param>
+            <param name="assetTypeID">The asset type ID.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="sqlGroupBy">The SQL group by.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="partyIdList">The party id list.</param>
+            <param name="filterIdList">The filter id list.</param>
+            <param name="daclExposureOverride">if set to <c>true</c> [DACL exposure override].</param>
+            <param name="isNew">if set to <c>true</c> [is new].</param>
+            <param name="cutOffTimeInSeconds">The cutoff time information ticks.</param>
+            <param name="edmName">Name of the edm.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.CedantProjectsSelect(System.Int64,System.Int64,System.String,System.String,System.String,Rms.Core.Platform.RmsDatasource,System.Boolean,System.Int64)">
+            <summary>
+            Cedants the projects select.
+            </summary>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="sqlGroupBy">The SQL group by.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="isNew">if set to <c>true</c> [is new].</param>
+            <param name="cutOffTimeInSeconds">The cutoff time information ticks.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.ContractHierarchyHistogramSelectByLevel(System.Int32,Rms.Core.Platform.RmsDatasource,System.String,System.String,System.Int64,System.Int64,Rms.DataServices.DataLibrary.Data.NodeType,System.Int32,System.Boolean)">
+            <summary>
+            Contracts the hierarchy histogram select by level.
+            </summary>
+            <param name="contractHierarchyID">The contract hierarchy ID.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="histFilter">The hist filter.</param>
+            <param name="histSelect">The hist select.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="nodeType">Type of the node.</param>
+            <param name="level">The level.</param>
+            <param name="hasChild">if set to <c>true</c> [has child].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.ContractExposureSelectByCollectionExposure(System.Int64,System.Int64,System.Int64,System.String,System.String,Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.IList{System.Int64},System.Boolean,Rms.DataServices.DataLibrary.Data.NodeType,System.Boolean,System.Int64)">
+            <summary>
+            Contracts the exposure select by collection exposure.
+            </summary>
+            <param name="exposureId">The exposure id.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="partyIdList">The party id list.</param>
+            <param name="filterIdList">The filter ids.</param>
+            <param name="daclExposureOverride">if set to <c>true</c> [DACL exposure override].</param>
+            <param name="nodeType">Type of the node.</param>
+            <param name="isNew">if set to <c>true</c> [is new].</param>
+            <param name="cutOffTimeInSeconds">The cutoff time information ticks.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.ProgramSelectByCedantProject(System.Int64,System.Int64,System.Int64,Rms.Core.Platform.RmsDatasource,System.Boolean,System.Int64)">
+            <summary>
+            Programs the select by cedant project.
+            </summary>
+            <param name="cedantProjectId">The cedant project id.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="isNew">if set to <c>true</c> [is new].</param>
+            <param name="cutOffTimeInSeconds">The cutoff time information ticks.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.GetCedantExposureByContract(System.Int64,System.Int64,System.Int64,System.String,System.String,Rms.Core.Platform.RmsDatasource,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.IList{System.Int64},System.Boolean,System.Boolean,System.Int64)">
+            <summary>
+            Gets the cedant exposure by contract.
+            </summary>
+            <param name="exposureId">The exposure id.</param>
+            <param name="numberOfItems">The number of items.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="sqlWhere">The SQL where.</param>
+            <param name="sqlOrderBy">The SQL order by.</param>
+            <param name="rmsDataSource">The RMS data source.</param>
+            <param name="partyIdList">The party id list.</param>
+            <param name="filterIdList">The filter id list.</param>
+            <param name="daclExposureOverride">if set to <c>true</c> [DACL exposure override].</param>
+            <param name="isNew">if set to <c>true</c> [is new].</param>
+            <param name="cutOffTimeInSeconds">The cutoff time information ticks.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.SQLAccessFunctions.DataLibrarySqlDb.IsExposureDateOutsideRange(System.Data.SqlClient.SqlDataReader,System.Int64,System.String)">
+            <summary>
+            Determines whether [is exposure date outside range] [the specified dr].
+            </summary>
+            <param name="dr">The dr.</param>
+            <param name="cutOffTimeInSeconds">The cut off time information ticks.</param>
+            <param name="columnName">Name of the column.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions">
+            <summary>
+            A helper class for DB related functions
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.PerformBulkCopy(Rms.Core.Platform.RmsDatasource,System.Data.DataTable,System.String,System.String[])">
+            <summary>
+            Performs the bulk copy.
+            </summary>
+            <param name="rmsDatasource">The RMS datasource.</param>
+            <param name="bcptable">The bcptable.</param>
+            <param name="destinationTable">The destination table.</param>
+            <param name="columns">The columns.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.PerformBulkCopy(Rms.Core.Platform.RmsDatasource,System.Data.DataTable)">
+            <summary>
+            Performs the bulk copy.
+            </summary>
+            <param name="rmsDatasource">The RMS datasource.</param>
+            <param name="bcptable">The bcptable.</param>
+            <param name="batchsize">The batchsize.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetNameListTable(System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the name list table.
+            </summary>
+            <param name="names">The names.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetLineOfBusinessGroupTable(System.Collections.Generic.List{Rms.DataServices.DataObjects.LineOfBusinessGroup})">
+            <summary>
+            Gets the LineOfBusinessGroup table.
+            </summary>
+            <param name="lineOfBusinessGroupList">The LineOfBusinessGroup list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetGroupsLineOfBusinessTable(System.Collections.Generic.List{Rms.DataServices.DataObjects.LineOfBusiness})">
+            <summary>
+            Gets the group's LineOfBusiness table.
+            </summary>
+            <param name="LineOfBusinessList">The LineOfBusinessGroup list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetPartyTable(System.Collections.Generic.List{Rms.DataServices.DataObjects.Party})">
+            <summary>
+            Gets the party table.
+            </summary>
+            <param name="partyList">The party list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetPartyRoleTable(System.Collections.Generic.List{Rms.DataServices.DataObjects.Party})">
+            <summary>
+            Gets the party role table.
+            </summary>
+            <param name="roleList">The role list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetImportSetDataTable(Rms.DataServices.DataObjects.ImportSet)">
+            <summary>
+            Gets the import set data table.
+            </summary>
+            <param name="importSet">The import set.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetAccountDataTable(System.Collections.Generic.List{Rms.DataServices.DataObjects.ImportedAccount})">
+            <summary>
+            Gets the account datatable.
+            </summary>
+            <param name="accounts">The accounts.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.AppendToImportDataTables(System.Data.DataTable,System.Data.DataTable,System.Collections.Generic.List{System.Int64},System.Collections.Generic.List{Rms.DataServices.DataObjects.RITExposure})">
+            <summary>
+            Appends to import data tables.
+            </summary>
+            <param name="accountAndRiskItemDatatable">The account and risk item datatable.</param>
+            <param name="ritsValuationDatatable">The rits valuation datatable.</param>
+            <param name="accountIds">The account ids.</param>
+            <param name="RITExposures">The risk item exposures.</param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetAccountAndRiskItemDataTable">
+            <summary>
+            Gets the account and risk item datatable.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetSubjectAtRiskDataTable">
+            <summary>
+            Gets the subject at risk data table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetRitsValuationDataTable">
+            <summary>
+            Gets the RITSVAL data table.
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetRitesDataTable(System.Collections.Generic.IEnumerable{Rms.DataServices.DataObjects.RITExposure})">
+            <summary>
+            Gets a <see cref="T:System.Data.DataTable"/> that represents the RITES type in the SQL Server NGExposure db. 
+            </summary>
+            <param name="RITExposures">An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Rms.DataServices.DataObjects.RITExposure"/> objects
+            based on which the RITES table should be created.</param>
+            <returns>The created data table.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetRitesValuationsDataTable">
+            <summary>
+            Gets a <see cref="T:System.Data.DataTable"/> that represents the RITESVALS type in the SQL Server NGExposure db. 
+            </summary>
+            <returns>The created data table. No data is populated.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetRitesValuationsDataTable(System.Collections.Generic.IEnumerable{Rms.DataServices.DataObjects.RITExposure})">
+            <summary>
+            Gets a <see cref="T:System.Data.DataTable"/> that represents the RITESVALS type in the SQL Server NGExposure db. 
+            </summary>
+            <param name="RITExposures">An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Rms.DataServices.DataObjects.RITExposure"/> objects
+            based on which the RITESVALUES table should be created.</param>
+            <returns>The created data table.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetRiteKeysDataTable(System.Collections.Generic.IEnumerable{System.Tuple{System.Int64,System.DateTime}})">
+            <summary>
+            Gets a <see cref="T:System.Data.DataTable"/> that represents the RITESKEYS type in the SQL Server NGExposure db. 
+            </summary>
+            <param name="RITExposuresKeys">An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Tuple"/> objects
+            based on which the RITESKEYS table should be created. Each tuple has Item1 - risk item exposure and
+            Item2 - risk item exposure as of date.</param>
+            <returns>The created data table.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetLineOfBussinessDatatable">
+            <summary>
+            Gets the line of bussiness datatable.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetContractsDataTable">
+            <summary>
+            Gets the contracts datatable.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetPopulatedContractsPartiesAndLineOfBussinesDataTables(System.Collections.Generic.List{System.Tuple{Rms.DataServices.DataObjects.ImportedContract,Rms.DataServices.DataObjects.ImportedContractMetadata}},System.Data.DataTable@,System.Data.DataTable@,System.Data.DataTable@,System.Data.DataTable@,System.Data.DataTable@)">
+            <summary>
+            Gets the populated contracts parties and line of bussines data tables.
+            </summary>
+            <param name="importedContractTuples">The imported contract tuples.</param>
+            <param name="contractsDataTable">The contracts data table.</param>
+            <param name="partiesDataTable">The parties data table.</param>
+            <param name="lineOfBussinessDataTable">The line of bussiness data table.</param>
+            <param name="riteCauseOfLossDataTable">The rite cause of loss data table.</param>
+            <param name="exposureMemberDataTable"></param>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetPartiesDataTable">
+            <summary>
+            Gets the parties data table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetPortfoliosDataTable">
+            <summary>
+            Gets the portfolios data table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetSidListDataTable">
+            <summary>
+            Gets the data table that match the SIDLIST type
+            in NGExposure database without any data.
+            </summary>
+            <returns>An empty sid list <see cref="T:System.Data.DataTable"/>.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetSidListDataTable(System.Collections.IEnumerable)">
+            <summary>
+            Gets the data table that match the SIDLIST in NGExposure database 
+            populated with data coming from <paramref name="ids"/> input argument.
+            </summary>
+            <param name="ids">An <see cref="T:System.Collections.IEnumerable"/> of ids to be used for populating the created 
+            data table.</param>
+            <returns>An sid list <see cref="T:System.Data.DataTable"/> populated with data.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetRitesZonesDataTable">
+            <summary>
+            Gets the data table that match the RITESZONES type
+            in NGExposure database without any data.
+            </summary>
+            <returns>An empty rites zones <see cref="T:System.Data.DataTable"/>.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetRitesZonesDataTable(System.Collections.Generic.IEnumerable{System.Tuple{System.Int64,System.DateTime,Rms.DataServices.DataObjects.Domain.ZoneKey}})">
+            <summary>
+            Gets the data table that match the RITESZONES type
+            in NGExposure database filled with data coming as input.
+            </summary>
+            <param name="ritesZones">An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Tuple"/> objects representing
+            the rites zones. Each tuple has Item1 - the risk item exposure id, Item2 - the exposure as of date 
+            and Item3 - the <see cref="T:Rms.DataServices.DataObjects.Domain.ZoneKey"/> of the zone.</param>
+            <returns>Populated with data rites zones <see cref="T:System.Data.DataTable"/>.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetRiteCauseOfLossDataTable">
+            <summary>
+            Gets the rite cause of loss data table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetSnapshotKeysDataTable">
+            <summary>
+            Gets a data table representing snapshot keys.
+            </summary>
+            <returns>An empty <see cref="T:System.Data.DataTable"/> representing SNAPSHOTKEYS type.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetSnapshotKeysDataTable(System.Collections.Generic.IEnumerable{Rms.DataServices.DataObjects.ExposureSnapshotKey})">
+            <summary>
+            Gets a data table representing snapshot keys filled with data.
+            </summary>
+            <param name="snapshotKeys">The exposure snapshots from which the data to be populated in the 
+            exposure snapshot keys data table will be retrieved.</param>
+            <returns>A <see cref="T:System.Data.DataTable"/> representing SNAPSHOTKEYS type filled with the data
+            from the <paramref name="snapshotKeys"/>.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetSnapshotKeysDataTable(System.Collections.Generic.IEnumerable{Rms.DataServices.DataObjects.Exposure})">
+            <summary>
+            Gets a data table representing snapshot keys filled with data.
+            </summary>
+            <param name="snapshotKeys">The exposure snapshots from which the data to be populated in the 
+            exposure snapshot keys data table will be retrieved.</param>
+            <returns>A <see cref="T:System.Data.DataTable"/> representing SNAPSHOTKEYS type filled with the data
+            from the <paramref name="snapshotKeys"/>.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetSnapshotExposuresDataTable">
+            <summary>
+            Gets a data table representing SnapshotExposures type in the exposure database.
+            </summary>
+            <returns>An empty <see cref="T:System.Data.DataTable"/> representing SnapshotExposures type.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetSnapshotExposuresDataTable(System.Collections.Generic.IEnumerable{Rms.DataServices.DataObjects.ExposureSnapshot})">
+            <summary>
+            Gets a data table representing SnapshotExposures type in the exposure database.
+            </summary>
+            <param name="snapshots">The exposure snapshots to be used for populating the created
+            data table.</param>
+            <returns>A <see cref="T:System.Data.DataTable"/> representing SnapshotExposures type filled with data 
+            from <paramref name="snapshots"/>.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureMemberDataTable">
+            <summary>
+             Gets a data table representing EXPOSUREMEMBER type in the exposure database.
+            </summary>
+            <returns>An empty <see cref="T:System.Data.DataTable"/> representing EXPOSUREMEMBER type.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetRiskItemPairsDataTable">
+            <summary>
+             Gets a data table representing RITPAIRS type in the exposure database.
+            </summary>
+            <returns>An empty <see cref="T:System.Data.DataTable"/> representing RITPAIRS type.</returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetSnapshotKeysDataTable(System.Collections.Generic.IEnumerable{System.Int64},System.DateTime)">
+            <summary>
+             Gets a data table representing snapshot keys filled with data.
+            </summary>
+            <param name="exposureIds"></param>
+            <param name="asOfDate"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with Exposure table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetAccountData(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with Exposure table schema filled
+            </summary>
+            <param name="edsTenantConfig">The eds tenant config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetContractExposureDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ContractExposure table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetRITExposureDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with RiskItemExposure table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetFilterDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with RiskItemExposure table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureFilterDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ExposureFilter table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetContractSubjectExposureDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ContractSubjectExposure table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureDVDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ExposureDV table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureFilterDACLDVDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ExposureDV table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureFilterDVDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ExposureFilterDV table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetFilterDVDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with FilterDV table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureCECacheDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ExposureFilterDV table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetCedantProjectAssetDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ExposureFilterDV table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureRITECacheDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ExposureFilterDV table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureFilterDACLDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Gets the exposure filter DACL data table.
+            </summary>
+            <param name="edsTenantConfig">The eds tenant config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetContractExposureWhatIfTagDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ContractExposureWhatIfTag table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureFilterRangeDataDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ExposureData table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureFilterRangeDVDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ExposureFilterRangeDV table schema filled
+            </summary>
+            <param name="edsTenantConfig">The eds tenant configuration.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureFilterRangeDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Get Datatable with ExposureFilterRange table schema filled
+            </summary>
+            <param name="edsTenantConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetExposureDataDataTable(Rms.Core.Configuration.DataServices.EDSTenantConfig)">
+            <summary>
+            Gets the exposure data data table.
+            </summary>
+            <param name="edsTenantConfig">The eds tenant config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetCurrencySchemeTable(System.Collections.Generic.List{Rms.DataServices.DataObjects.CurrencyScheme})">
+            <summary>
+            Gets the currency scheme table.
+            </summary>
+            <param name="currencyschemeList">The currencyscheme list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.CurrencyExchangeRateInput(System.Collections.Generic.List{Rms.DataServices.DataObjects.CurrencyExchangeRate})">
+            <summary>
+            Currencies the exchange rate input.
+            </summary>
+            <param name="currencyExchangeRateInputList">The currency exchange rate input list.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.DAL.ExposureDatabases.DBHelperFunctions.GetCurrencyTable(System.Collections.Generic.List{Rms.DataServices.DataObjects.Currency})">
+            <summary>
+            Gets the currency table.
+            </summary>
+            <param name="currencyList">The currency list.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

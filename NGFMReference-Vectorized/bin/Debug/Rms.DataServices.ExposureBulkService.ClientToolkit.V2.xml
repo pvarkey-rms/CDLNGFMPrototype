@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.ExposureBulkService.ClientToolkit.V2</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit">
+            <summary>
+            Toolkit for calling functions of the ExposureBulkService
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.ProductsBatchSize">
+            <summary>
+            Keeps the size of the batches into which the product keys are split when requesting products.
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.ExposuresBatchSize">
+            <summary>
+            Keeps the size of the batches into which the exposure snapshot keys 
+            are split when requesting exposures.
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.#ctor(System.String,System.String,Rms.DataServices.Common.BulkService.ClientToolkit.Settings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit"/> class.
+            </summary>
+            <param name="exposureBulkServiceUrl">The URL of the exposure bulk service.</param>
+            <param name="token">The authentication token to be used when executing exposure bulk 
+            service requests.</param>
+            <param name="settings">The settings to be assigned to the toolkit or null if the default ones 
+            should be used.</param>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.GetPartitions(System.Nullable{System.Guid},Rms.DataServices.DataObjects.ExposureSnapshotKey,Rms.DataServices.Common.PartitionType,System.Nullable{System.Int32})">
+            <summary>
+            Gets the partitions meta data for an exposure and a specified partition type.
+            </summary>
+            <param name="sessionId">The id of the session representing the exposure in case a session is used. 
+            It can be null and then <paramref name="exposureSnapshotKey" /> will be used.</param>
+            <param name="exposureSnapshotKey">The snapshot key of the exposure being partitioned. 
+            If specified, the session will be ignored.</param>
+            <param name="partitionType">The type of the partitions to be retrieved.</param>
+            <param name="partitionSize">The desired size of the partitions to be created. 
+            It is null when the default size should be used. <br /><br />
+            <b><paramref name="partitionSize" /> is ignored for MEX partitions.</b> </param>
+            <returns>A sequence of partitions filled with the meta data for each partition.</returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.GetContractExposures(System.Nullable{System.Guid},Rms.DataServices.DataObjects.ExposureSnapshotKey,System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Gets the contract exposures for a list of partitions.
+            </summary>
+            <param name="sessionId">The session id in case session is used for this operation. 
+            It can be null and then <paramref name="exposureSnapshotKey"/> will be used.</param>
+            <param name="exposureSnapshotKey">The snapshot key of the exposure whose contract exposures should be read.
+            If this is specified <paramref name="sessionId"/> won't be used.</param>
+            <param name="partitionIds">A sequence of integers representing the ids of the partitions from
+            which the contract exposures should be retrieved.</param>
+            <returns>A sequence of <see cref="T:Rms.DataServices.DataObjects.ContractExposure"/> objects retrieved.</returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.GetRITExposureAttributeValues(System.Nullable{System.Guid},Rms.DataServices.DataObjects.ExposureSnapshotKey,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets the RITExposure attribute value collections for a given set of attributes. 
+            I.e. for a given set of attributes, the values corresponding to these attributes are
+            extracted from each RITExposure and value collections are formed per attribute.
+            </summary>
+            <param name="sessionId">The session id in case session is used for this operation. 
+            It can be null and then <paramref name="exposureSnapshotKey"/> will be used.</param>
+            <param name="exposureSnapshotKey">The snapshot key of the exposure from which the RIT Exposure 
+            attribute values are extracted.
+            If this is specified <paramref name="sessionId"/> won't be used.</param>
+            <param name="attributeKeys">A sequence of strings representing the keys of the attributes whose
+            values should be extracted.</param>
+            <returns>A sequence of <see cref="T:Rms.DataServices.ExposureBulkService.DataObjects.RITExposureAttributeValueCollection"/> objects retrieved.</returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.GetProducts(System.Nullable{System.Guid},System.Collections.Generic.List{System.Tuple{System.Int64,System.DateTime}})">
+            <summary>
+            Gets products by their product snapshot keys. 
+            </summary>
+            <param name="sessionId">The session id in case session is used for this operation.</param>
+            <param name="productKeys">A list of product snapshot keys for which the products should be returned.</param>
+            <returns>A sequence of <see cref="T:Rms.DataServices.DataObjects.Binary.ProductBinary"/> objects found for the provided product snapshot keys.</returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.GetExposures(System.Nullable{System.Guid},System.Collections.Generic.List{Rms.DataServices.DataObjects.ExposureSnapshotKey})">
+            <summary>
+            Gets exposures by their exposure snapshot keys. 
+            </summary>
+            <param name="sessionId">The session id in case session is used for this operation.</param>
+            <param name="exposureSnapshotKeys">A list of exposure snapshot keys for which the exposures should be returned.</param>
+            <returns>A sequence of <see cref="T:Rms.DataServices.DataObjects.Exposure"/> objects found for the provided exposure snapshot keys.</returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.GetPositions(System.Nullable{System.Guid},Rms.DataServices.DataObjects.ExposureSnapshotKey)">
+            <summary>
+            Gets the positions for an exposure.
+            </summary>
+            <param name="sessionId">The session id in case session is used for this operation.</param>
+            <param name="exposureSnapshotkey">The snapshot key identifying the exposure whose 
+            positions should be returned.</param>
+            <returns>A sequence of <see cref="T:Rms.DataServices.DataObjects.Position"/> objects representing the positions to be returned.</returns>
+            <exception cref="T:System.ArgumentException">exposureSnapshotKey</exception>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.GetRITExposures(System.Nullable{System.Guid},Rms.DataServices.DataObjects.ExposureSnapshotKey,System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Gets the contract exposures for a list of partitions.
+            </summary>
+            <param name="sessionId">The session id in case session is used for this operation. 
+            It can be null and then <paramref name="exposureSnapshotKey"/> will be used.</param>
+            <param name="exposureSnapshotKey">The snapshot key of the exposure whose contract exposures should be read.
+            If this is specified <paramref name="sessionId"/> won't be used.</param>
+            <param name="partitionIds">A sequence of integers representing the ids of the partitions from
+            which the contract exposures should be retrieved.</param>
+            <returns>A sequence of <see cref="T:Rms.DataServices.DataObjects.ContractExposure"/> objects retrieved.</returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.PrepareExposureCache(System.Nullable{System.Guid},Rms.DataServices.DataObjects.ExposureSnapshotKey,Rms.DataServices.Common.PartitionType,System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Prepares exposure cache.
+            </summary>
+            <param name="sessionId">The id of the session representing the exposure in case a session is used. 
+            It can be null and then <paramref name="exposureSnapshotKey" /> will be used.</param>
+            <param name="exposureSnapshotKey">The snapshot key of the exposure for which the cache should be prepared.</param>
+            <param name="partitionType">The type of the partitions to be retrieved and during the cache phase.</param>
+            <param name="partitionSize">The size of the partitions to retrieve. This will be ignored for MEX partitions.</param>
+            <param name="attributeKeys">The attributes for which values should be cached.</param>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.GetLargeContractRITExposures(System.Nullable{System.Guid},Rms.DataServices.DataObjects.ExposureSnapshotKey,System.Int64)">
+            <summary>
+            Gets the RIT exposures building a large contract exposure.
+            </summary>
+            <param name="sessionId">The session id in case session is used for this operation. 
+            It can be null and then <paramref name="exposureSnapshotKey"/> will be used only.</param>
+            <param name="exposureSnapshotKey">The snapshot key of the exposure to which the contract whose RITEs 
+            should be loaded belong.</param>
+            <param name="contractExposureId">The id of the contract exposure whose RITEs should be loaded.</param>
+            <returns>A sequence of <see cref="T:Rms.DataServices.DataObjects.RITExposure"/> objects retrieved.</returns>
+            <remarks>
+            This operation can be executed only for large contract exposures. Executing it for contracts which are not marked
+            as being large (have more RITEs than the configured threshold) will throw an error.
+            </remarks>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.ExecuteGetReaderAsEnumerable``1(System.String,System.String)">
+            <summary>
+            Executes a get operation that returns a reader and returns it as an <see cref="T:System.Linq.Enumerable"/>
+            ensuring that the reader is closed. It makes request to the exposure bulk service.
+            </summary>
+            <typeparam name="T">The type of the objects to be returned by the reader.</typeparam>
+            <param name="operation">The part of the data service url that identifies the operation 
+            (i.e. the one after the base address.)</param>
+            <param name="operationAlias">A short string that will be set in the request header 
+            to identify the operation.</param>
+            <returns>A sequence of elements read with the returned reader.</returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.ExecuteGetReader``1(System.String,System.String)">
+            <summary>
+            Executes a get operation that returns a reader. It makes request to the exposure bulk service.
+            </summary>
+            <typeparam name="T">The type of the objects to be returned by the reader.</typeparam>
+            <param name="operation">The part of the data service url that identifies the operation 
+            (i.e. the one after the base address.)</param>
+            <param name="operationAlias">A short string that will be set in the request header 
+            to identify the operation.</param>
+            <returns>A reader to read the elements returned by the operation.</returns>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.FormatDate(System.DateTime)">
+            <summary>
+            Formats a date time object to a string which can be passed to the exposure bulk service.
+            </summary>
+            <param name="dateTime">The data time object to be formatted.</param>
+            <returns>The formatted data time string.</returns>
+            <remarks>The date time is converted to UTC date time.</remarks>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.DeserializeContractExposureBlobs(Rms.DataServices.DataObjects.Binary.ContractExposureTrulyBinary)">
+            <summary>
+            Deserializes blobs from contract exposure binary and adds the properties.
+            </summary>
+            <param name="contractExposure">The binary contract exposure.</param>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.GetItemsBatched``2(System.String,System.String,System.Collections.Generic.IList{``1},System.Func{System.Collections.Generic.IEnumerable{``1},System.String},System.Int32)">
+            <summary>
+            Request items in batches.
+            </summary>
+            <typeparam name="T1">The type of the items to return.</typeparam>
+            <typeparam name="T2">The type of the item key by which the items are requested.</typeparam>
+            <param name="operationTemplate">The template for the operation requesting the items. 
+            {0} will be replaced with the item keys string.</param>
+            <param name="operationAlias">The alias of the operation requesting the items.</param>
+            <param name="itemKeys">A list with the keys of the requested items.</param>
+            <param name="convertItemKeysToString">A function that converts a sequence of item keys to a string
+            representation to be used when calling the service.</param>
+            <param name="batchSize">The size of the batches on which the items are requested. 0 means no limit i.e. one batch.</param>
+            <returns>A sequence of items.</returns>
+        </member>
+        <member name="T:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.ContractExposureReadEventHandler">
+            <summary>
+            An event handler for events fired on contract exposure read.
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.ContractExposureReadEventHandler.#ctor(Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit,System.Nullable{System.Guid},Rms.DataServices.DataObjects.ExposureSnapshotKey)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.ContractExposureReadEventHandler"/> class.
+            </summary>
+            <param name="clientToolkit">The client toolkit to be used for sending operation 
+            to the Exposure Bulk Service.</param>
+            <param name="sessionId">The session id to be used for operations to the Exposure Bulk Service.</param>
+            <param name="exposureSnapshotKey">The snapshot key of the exposure to which the operation in 
+            the exposure bulk service applies.</param>
+        </member>
+        <member name="M:Rms.DataServices.ExposureBulkService.ClientToolkit.V2.ExposureBulkServiceClientToolkit.ContractExposureReadEventHandler.ContractExposureReader_ObjectRead(System.Object,Rms.DataServices.Common.EventArgs.GenericEventArgs{Rms.DataServices.DataObjects.Binary.ContractExposureTrulyBinary})">
+            <summary>
+            An event handler for lazily loading the child RITExposures of a contract exposure.
+            </summary>
+            <param name="sender">The object that raised the event.</param>
+            <param name="e">Arguments keeping the data for the event. Its data property keeps the contract exposure read.</param>
+        </member>
+    </members>
+</doc>

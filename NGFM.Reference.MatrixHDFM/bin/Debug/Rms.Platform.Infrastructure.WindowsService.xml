@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.Platform.Infrastructure.WindowsService</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Platform.Infrastructure.WindowsService.IRmsHostedProcess">
+            <summary>
+            Contract for hosted components.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.IRmsHostedProcess.Start(Rms.Platform.Infrastructure.WindowsService.IRmsHostingService)">
+            <summary>
+            Called by hosting infrastructure on startup.
+            </summary>
+            <param name="host">Reference to hosting environment</param>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.IRmsHostedProcess.HandleFailNode(System.String)">
+            <summary>
+            Further subcomponents can invoke this method to announce critical failure.
+            </summary>
+            <param name="reason">Whatever reason to be logged</param>
+        </member>
+        <member name="T:Rms.Platform.Infrastructure.WindowsService.IRmsHostedProcessArgs">
+            <summary>
+            Interface to hosting component's arguments.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.Infrastructure.WindowsService.IRmsHostedProcessArgs.CommandLineArgs">
+            <summary>
+            Command line arguments.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.Infrastructure.WindowsService.IRmsHostedProcessArgs.IsInteractive">
+            <summary>
+            True when process is running as interactive console.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Infrastructure.WindowsService.IRmsHostingService">
+            <summary>
+            Callback interface to enable hosted components communicate to hosting service.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.IRmsHostingService.HandleHostedProcessFailure(Rms.Platform.Infrastructure.WindowsService.IRmsHostedProcess,System.String)">
+            <summary>
+            Invoke to indicate critical failure in the hosted component.
+            This may initiate process shutdown.
+            </summary>
+            <param name="sender">Failed component</param>
+            <param name="reason">Whatever reason to be logged</param>
+        </member>
+        <member name="T:Rms.Platform.Infrastructure.WindowsService.HostRegistry">
+            <summary>
+            Registers implementations of <see cref="T:Rms.Platform.Infrastructure.WindowsService.IRmsHostedProcessArgs"/> and <see cref="T:Rms.Platform.Infrastructure.WindowsService.WindowsHostService"/> within IoC container.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.HostRegistry.#ctor">
+            <summary>
+            Ctr.
+            Registers implementations of <see cref="T:Rms.Platform.Infrastructure.WindowsService.IRmsHostedProcessArgs"/> and <see cref="T:Rms.Platform.Infrastructure.WindowsService.WindowsHostService"/> within IoC container.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Infrastructure.WindowsService.HostRegistry.SingletonConvention`1">
+            <summary>
+            Singleton registration convention.
+            </summary>
+            <typeparam name="TPluginFamily"></typeparam>
+        </member>
+        <member name="T:Rms.Platform.Infrastructure.WindowsService.ProgramBase">
+            <summary>
+            Common implementation for a program's main entry point, both for service and interactive modes.
+            Derive your Program from this class and invoke <see cref="M:Rms.Platform.Infrastructure.WindowsService.ProgramBase.MainImpl(System.String[])"/> inside your Main function.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Infrastructure.WindowsService.ProgramBase.Logger">
+            <summary>
+            Logger.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.ProgramBase.MainImpl(System.String[])">
+            <summary>
+            Initializes the logger and unobserved exception handler for Tasks, initializes IoC container and starts windows hosting service.
+            </summary>
+            <param name="args">Command line arguments</param>
+            <returns>Zero or throws exception</returns>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.ProgramBase.InitializeLogger">
+            <summary>
+            Initializes <see cref="T:Rms.Platform.Infrastructure.Diagnostics.RmsLoggerFactory"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.ProgramBase.InitializeUnobservedExceptionHandler">
+            <summary>
+            Initializes unobserved exceptions handler, to prevent unhandled exceptions in tasks from crashing the process.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Infrastructure.WindowsService.RmsHostedProcessArgs">
+            <summary>
+            Holds environment information for hosted components.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.RmsHostedProcessArgs.#ctor">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.Infrastructure.WindowsService.RmsHostedProcessArgs.CommandLineArgs">
+            <summary>
+            Command line arguments.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.Infrastructure.WindowsService.RmsHostedProcessArgs.IsInteractive">
+            <summary>
+            True when process is running as interactive console.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Infrastructure.WindowsService.ServiceInstallerBase">
+            <summary>
+            Common base for service installer. Implements command line interface for use with installutil.
+            Override this installer in your project and attach [RunInstaller(true)] attribute.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.ServiceInstallerBase.#ctor">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.ServiceInstallerBase.OnBeforeInstall(System.Collections.IDictionary)">
+            <summary>
+            Raises the <see cref="E:System.Configuration.Install.Installer.BeforeInstall"/> event.
+            </summary>
+            <param name="savedState">An <see cref="T:System.Collections.IDictionary"/> that contains the state of the computer before the installers in the <see cref="P:System.Configuration.Install.Installer.Installers"/> property are installed. This <see cref="T:System.Collections.IDictionary"/> object should be empty at this point. </param>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.ServiceInstallerBase.OnBeforeUninstall(System.Collections.IDictionary)">
+            <summary>
+            Raises the <see cref="E:System.Configuration.Install.Installer.BeforeUninstall"/> event.
+            </summary>
+            <param name="savedState">An <see cref="T:System.Collections.IDictionary"/> that contains the state of the computer before the installers in the <see cref="P:System.Configuration.Install.Installer.Installers"/> property uninstall their installations. </param>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.ServiceInstallerBase.ParseCommandLineArguments">
+            <summary>
+            Parses command line, overrides service name, display name and other similar parameters.
+            Override this to supply custom hard-coded service name etc. if needed.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Infrastructure.WindowsService.ServiceInstallerBase.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.ServiceInstallerBase.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.ServiceInstallerBase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Infrastructure.WindowsService.ServiceInstallerBase.serviceInstaller">
+            <summary>
+            Service installer, to make its properties overridable in inheritors.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Infrastructure.WindowsService.ServiceInstallerBase.serviceProcessInstaller">
+            <summary>
+            Service process installer, to make its properties overridable in inheritors.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Infrastructure.WindowsService.WindowsHostService">
+            <summary>
+            Implements a windows service that can host long-running components.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.WindowsHostService.#ctor">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.WindowsHostService.OnStart(System.String[])">
+            <summary>
+            When implemented in a derived class, executes when a Start command is sent to the service by the Service Control Manager (SCM) 
+            or when the operating system starts (for a service that starts automatically). Specifies actions to take when the service starts.
+            </summary>
+            <param name="args">Data passed by the start command. </param>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.WindowsHostService.OnStop">
+            <summary>
+            When implemented in a derived class, executes when a Stop command is sent to the service by the Service Control Manager (SCM). 
+            Specifies actions to take when a service stops running.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.WindowsHostService.RunInteractive(System.String[])">
+            <summary>
+            Starts as interactive console process.
+            </summary>
+            <param name="args">Command line arguments</param>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.WindowsHostService.HandleHostedProcessFailure(Rms.Platform.Infrastructure.WindowsService.IRmsHostedProcess,System.String)">
+            <summary>
+            Invoke to indicate critical failure in the hosted component.
+            This may initiate process shutdown.
+            </summary>
+            <param name="sender">Failed component</param>
+            <param name="reason">Whatever reason to be logged</param>
+        </member>
+        <member name="F:Rms.Platform.Infrastructure.WindowsService.WindowsHostService.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.WindowsHostService.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Rms.Platform.Infrastructure.WindowsService.WindowsHostService.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC1CDE85-FD21-4ABD-AB56-D0B8FC1D672E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RMS.ContractObjectModel</RootNamespace>
+    <AssemblyName>RMS.ContractObjectModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Lib\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\..\lib\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="protobuf-net, Version=2.0.0.480, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\NG3rdParty\ProtoBuf\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.DataObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5353c9f66d4ed1ec, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.DataObjects.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contract.cs" />
+    <Compile Include="Expressions\ArithmeticExpression.cs" />
+    <Compile Include="GULoss.cs" />
+    <Compile Include="ResultPosition.cs" />
+    <Compile Include="Subject.cs" />
+    <Compile Include="Expressions\IEvaluatableValue.cs" />
+    <Compile Include="HoursClause.cs" />
+    <Compile Include="Interaction.cs" />
+    <Compile Include="Loss.cs" />
+    <Compile Include="NetPosition.cs" />
+    <Compile Include="Attachment.cs" />
+    <Compile Include="Cover.cs" />
+    <Compile Include="Deductible.cs" />
+    <Compile Include="Expressions\IExpression.cs" />
+    <Compile Include="Expressions\IValue.cs" />
+    <Compile Include="Expressions\Expression.cs" />
+    <Compile Include="Expressions\FunctionInvocation.cs" />
+    <Compile Include="Participation.cs" />
+    <Compile Include="Limit.cs" />
+    <Compile Include="LimitSpecification.cs" />
+    <Compile Include="PrimaryPosition.cs" />
+    <Compile Include="Ratio.cs" />
+    <Compile Include="Expressions\SymbolicExpression.cs" />
+    <Compile Include="Expressions\Money.cs" />
+    <Compile Include="Expressions\NumericExpression.cs" />
+    <Compile Include="Expressions\Percentage.cs" />
+    <Compile Include="Expressions\SimpleExpression.cs" />
+    <Compile Include="Expressions\Value.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RITEAttributes.cs" />
+    <Compile Include="Schedule.cs" />
+    <Compile Include="SubjectPosition.cs" />
+    <Compile Include="Sublimit.cs" />
+    <Compile Include="Term.cs" />
+    <Compile Include="TimeBasis.cs" />
+    <Compile Include="UniversalSubjectPosition.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,575 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.AbstractionLayers.Provider.ElasticSearch</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider">
+            <summary>
+            Class to represent ElasticSearch Provider
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.BATCH_SIZE">
+            <summary>
+            The batch_ size
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.INDEX_NAME">
+            <summary>
+            The index_ name
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.RETRY_COUNT">
+            <summary>
+            The retry_ count
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ServerName">
+            <summary>
+            The connection
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.Logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider"/> class.
+            </summary>
+            <param name="serverName">Name of the server.</param>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetResults(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Gets the results.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="fields">The fields.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Query is null or empty</exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetResultsWithDistinctCount(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Gets the results with distict count.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="field">The fields.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetStatisticalResults(Rms.Platform.Common.Filters.EntityType,System.String,System.String)">
+            <summary>
+            Gets the statistical results.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="fields">The fields.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Query is null or empty
+            or
+            fields is null or empty</exception>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetStatisticalResultsWithScriptField(Rms.Platform.Common.Filters.EntityType,System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Gets the statistical results with script field.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="scriptFieldList">The script fields.</param>
+            <param name="fields">The fields.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">
+            Query is null or empty
+            or
+            fields is null or empty
+            </exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetDistinctResults(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Gets the distinct results.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="field">The field.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Query is null or empty</exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetPlainResults(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Gets the results.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.InflateData(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String,System.String,Rms.Platform.Common.Filters.EntityType,System.String)">
+            <summary>
+            Inflates the data.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <param name="parentEntityType">Type of the parent entity.</param>
+            <param name="parentId">The parent identifier.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetResultBySortedId(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Gets the result by sorted id.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="fields">The fields.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Query is null or empty</exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetResults(System.Collections.Generic.List{System.String},Rms.Platform.Common.Filters.EntityType,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Gets the results.
+            </summary>
+            <param name="exposureIdList">The exposure id list.</param>
+            <param name="entityType">Type of the source entity.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="fields">The fields.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Query is null or empty</exception>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.BulkLoadItems(Rms.Platform.Common.Filters.EntityType,System.String,System.Boolean)">
+            <summary>
+            Bulk loads the items to the index layer
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="jsonObjectArray">The json object array.</param>
+            <param name="refresh">if set to <c>true</c> [refresh].</param>
+            <exception cref="T:System.Exception">jsonObjectArray is null or empty</exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.LoadItem(Rms.Platform.Common.Filters.EntityType,System.String,System.String,System.Boolean)">
+            <summary>
+            Loads the item to the search layer
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="jsonObject">The json object.</param>
+            <param name="id">The id.</param>
+            <param name="refresh">if set to <c>true</c> [refresh].</param>
+            <exception cref="T:System.Exception">jsonObject is null or empty</exception>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.LoadItem(Rms.Platform.Common.Filters.EntityType,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Loads the item.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="jsonObject">The json object.</param>
+            <param name="id">The id.</param>
+            <param name="parentId">The parent id.</param>
+            <param name="refresh">if set to <c>true</c> [refresh].</param>
+            <exception cref="T:System.Exception">jsonObject is null or empty</exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.Update(Rms.Platform.Common.Filters.EntityType,System.String,System.Collections.Generic.List{System.Tuple{System.String,System.String,Rms.Platform.Common.Filters.DataType,System.Boolean}},System.String)">
+            <summary>
+            Updates the specified query.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="fieldValueDataTypeTupleList">The field value data type tuple list.</param>
+            <param name="elasticSearchScript">The elastic search script.</param>
+            <exception cref="T:System.Exception">FieldValueDataTypeTupleList is null or empty
+            or
+            query is null or empty
+            or
+            elasticSearchScript is null or empty</exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.Delete(Rms.Platform.Common.Filters.EntityType,System.String,System.Boolean)">
+            <summary>
+            Deletes the specified entity type.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="isElasticSearchQuery">if set to <c>true</c> [is elastic search query].</param>
+            <exception cref="T:System.Exception">query is null or empty</exception>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ValidateQuery(Rms.Platform.Common.Filters.EntityType,System.String)">
+            <summary>
+            Validates the query.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.RefreshIndex">
+            <summary>
+            Refreshes the index.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ConvertQueryToFilter(System.String,Rms.Platform.Common.Filters.EntityType)">
+            <summary>
+            Converts the query to filter.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="entityType">Type of the entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ConvertFilterToESQuery(Rms.Platform.Common.Filters.Filter,Rms.Platform.Common.Filters.EntityType)">
+            <summary>
+            Converts the filter to es query.
+            </summary>
+            <param name="filter">The filter.</param>
+            <param name="entityType">Type of the entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetElasticSearchResults(System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Gets the elastic search results.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="type">The type.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="fields">The fields.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetPlainElasticSearchResults(System.String,Rms.Platform.Common.Filters.EntityType,System.Int32,System.Int32,System.String,System.String,Rms.Platform.Common.Filters.EntityType,System.String,System.Boolean)">
+            <summary>
+            Gets the plain elastic search results.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="entityType">The type.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <param name="parentEntityType">Type of the parent entity.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="isInflatedata">if set to <c>true</c> [is inflatedata].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetDistinctElasticSearchResults(System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Gets the distinct elastic search results.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="type">The type.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="field">The field.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <param name="getDistinctCount">if set to <c>true</c> [get distinct count].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetStatisticalElasticSearchResults(System.String,System.String,System.String)">
+            <summary>
+            Gets the distinct elastic search results.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="type">The type.</param>
+            <param name="fields">The fields.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.StatisticalQueryAndRecordTiming(System.String,PlainElastic.Net.SearchCommand,System.String)">
+            <summary>
+            Statisticals the query and record timing.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="searchCommand">The search command.</param>
+            <param name="fields">The fields.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ValidateSelectFields(Rms.Platform.Common.Filters.EntityType,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Validates the select fields.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="fields">The fields.</param>
+            <param name="idRequired">if set to <c>true</c> [id required].</param>
+            <param name="isSingleField">if set to <c>true</c> [is single field].</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Id has to be one of fiels among all the fileds</exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetElasticSearchResultsBySortedId(System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Gets the elastic search results by sorted id.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="query">The query.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="fields">The fields.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetTenantIndex">
+            <summary>
+            Gets the index of the tenant.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.QueryAndRecordTiming(System.String,PlainElastic.Net.SearchCommand)">
+            <summary>
+            Queries the and record timing.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="searchCommand">The search command.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.PlainQueryAndRecordTiming(Rms.Platform.Common.Filters.EntityType,System.String,PlainElastic.Net.SearchCommand,Rms.Platform.Common.Filters.EntityType,System.String,System.Boolean)">
+            <summary>
+            Plains the query and record timing.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="searchCommand">The search command.</param>
+            <param name="parentEntityType">Type of the parent entity.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="isInflatedata">if set to <c>true</c> [is inflatedata].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ModifyResultsAndBulkLoadData(Rms.Platform.Common.Filters.EntityType,System.String,System.String)">
+            <summary>
+            Modifies the results and bulk load data.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="input">The input.</param>
+            <param name="parentId">The parent identifier.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.DistinctQueryAndRecordTiming(System.String,PlainElastic.Net.SearchCommand,System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Distincts the query and record timing.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="searchCommand">The search command.</param>
+            <param name="field">The field.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="getDistinctCount">if set to <c>true</c> [get distinct count].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.QueryAndRecordTimingBySortedId(System.String,PlainElastic.Net.SearchCommand)">
+            <summary>
+            Queries the and record timing by sorted id.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="searchCommand">The search command.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.QueryAndRecordTimingWithScroll(System.String,System.String,System.String,PlainElastic.Net.SearchCommand,System.Int32,System.String,System.String,PlainElastic.Net.SortDirection)">
+            <summary>
+            Queries the and record timing with scroll.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="type">The type.</param>
+            <param name="index">The index.</param>
+            <param name="searchCommand">The search command.</param>
+            <param name="limit">Size of the batch.</param>
+            <param name="fields">The fields.</param>
+            <param name="sort">The sort.</param>
+            <param name="sortDirection">The sort direction.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.PlainQueryAndRecordTimingWithScroll(System.String,Rms.Platform.Common.Filters.EntityType,System.String,PlainElastic.Net.SearchCommand,System.Int32,System.String,PlainElastic.Net.SortDirection,Rms.Platform.Common.Filters.EntityType,System.String,System.Boolean)">
+            <summary>
+            Plains the query and record timing with scroll.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="entityType">The type.</param>
+            <param name="index">The index.</param>
+            <param name="searchCommand">The search command.</param>
+            <param name="limit">The limit.</param>
+            <param name="sort">The sort.</param>
+            <param name="sortDirection">The sort direction.</param>
+            <param name="parentEntityType">Type of the parent entity.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="isInflatedata">if set to <c>true</c> [is inflatedata].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetRecordsAndBulkLoadThem(System.String,Rms.Platform.Common.Filters.EntityType,System.String,System.String,PlainElastic.Net.SortDirection,System.String,System.Boolean,System.Int32,System.Int32,System.String,System.Int32@,System.String@)">
+            <summary>
+            Currents the record records and bulk load them.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="entityType">Type of the entity.</param>
+            <param name="index">The index.</param>
+            <param name="sort">The sort.</param>
+            <param name="sortDirection">The sort direction.</param>
+            <param name="parentId">The parent identifier.</param>
+            <param name="isInflatedata">if set to <c>true</c> [is inflatedata].</param>
+            <param name="from">The current record count.</param>
+            <param name="size">Size of the temporary batch.</param>
+            <param name="scrollId">The scroll identifier.</param>
+            <param name="took">The took.</param>
+            <param name="result">The result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.QueryAndRecordTimingWithScrollBySortedId(System.String,System.String,System.String,PlainElastic.Net.SearchCommand,System.Int32,System.String)">
+            <summary>
+            Queries the and record timing with scroll by sorted id.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="type">The type.</param>
+            <param name="index">The index.</param>
+            <param name="searchCommand">The search command.</param>
+            <param name="limit">Size of the batch.</param>
+            <param name="fields">The fields.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ParseTook(System.String)">
+            <summary>
+            Parses the took.
+            </summary>
+            <param name="operationResult">The operation result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ParseCount(System.String)">
+            <summary>
+            Parses the count.
+            </summary>
+            <param name="operationResult">The operation result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ParseResultsCount(System.String)">
+            <summary>
+            Parses the results count.
+            </summary>
+            <param name="operationResult">The operation result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ParseError(System.String)">
+            <summary>
+            Parses the error.
+            </summary>
+            <param name="operationResult">The operation result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ParseElasticSearchResults(PlainElastic.Net.OperationResult)">
+            <summary>
+            Parses the elastic search results.
+            </summary>
+            <param name="operationResult">The operation result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ParseElasticSearchFacets(PlainElastic.Net.OperationResult,System.String,System.Int32,System.Int32,System.Int32@,System.Boolean)">
+            <summary>
+            Parses the elastic search facets.
+            </summary>
+            <param name="operationResult">The operation result.</param>
+            <param name="field">The field.</param>
+            <param name="offset">The offset.</param>
+            <param name="limit">The limit.</param>
+            <param name="count">The count.</param>
+            <param name="getOnlyCount">if set to <c>true</c> [get only count].</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Elastic Search Search operation resulted in null</exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ParseElasticSearchStatisticalData(PlainElastic.Net.OperationResult)">
+            <summary>
+            Parses the elastic search facets.
+            </summary>
+            <param name="operationResult">The operation result.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Elastic Search Search operation resulted in null</exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ParseElasticSearchResultsBySortedId(PlainElastic.Net.OperationResult)">
+            <summary>
+            Parses the elastic search results by sorted id.
+            </summary>
+            <param name="operationResult">The operation result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.RetryRequest(System.Action,System.String)">
+            <summary>
+            Retries the request.
+            </summary>
+            <param name="action">The action.</param>
+            <param name="operationType">Type of the operation.</param>
+            <exception cref="T:System.Exception">Failed to send request. Retry limit exceeded.</exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.CreateExposureFilter(System.Collections.Generic.List{System.String},Rms.Platform.Common.Filters.EntityType)">
+            <summary>
+            Creates the graph filter.
+            </summary>
+            <param name="exposureIdList">The exposure id list.</param>
+            <param name="entityType">Type of the source entity.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">sourceEntityType</exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ParseBulkLoadResults(System.String,System.String)">
+            <summary>
+            Parses the load results.
+            </summary>
+            <param name="result">The result.</param>
+            <param name="method">The method.</param>
+            <exception cref="T:System.Exception">
+            </exception>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GetESQuery(Rms.Platform.Common.Filters.EntityType,System.String)">
+            <summary>
+            Gets the es query.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.GeneratQueryWithTermFacet(Rms.Platform.Common.Filters.EntityType,System.String,System.String)">
+            <summary>
+            Genarets the query with term facet.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="field">The field.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Provider.ElasticSearch.ElasticSearchProvider.ValidateGetResultsInput(Rms.Platform.Common.Filters.EntityType,System.String,System.Int32,System.String@,System.String,System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Validates the get results input.
+            </summary>
+            <param name="entityType">Type of the entity.</param>
+            <param name="query">The query.</param>
+            <param name="limit">The limit.</param>
+            <param name="fields">The fields.</param>
+            <param name="sort">The sort.</param>
+            <param name="order">The order.</param>
+            <param name="offset">The offset.</param>
+            <param name="idRequired">if set to <c>true</c> [id required].</param>
+            <param name="isSingleField">if set to <c>true</c> [is single field].</param>
+            <param name="validateFields">if set to <c>true</c> [validate fields].</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Query is null or empty</exception>
+        </member>
+    </members>
+</doc>

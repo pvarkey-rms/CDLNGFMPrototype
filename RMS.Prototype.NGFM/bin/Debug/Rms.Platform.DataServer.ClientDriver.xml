@@ -1,0 +1,2385 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.Platform.DataServer.ClientDriver</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream">
+            <summary>
+            A reusable buffering reader. Can be attached to multiple streams at different times.
+            Implements block-oriented streaming transfer protocol, with markers.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.#ctor(System.Int32)">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="bufferSize">Size of the buffer to allocate</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.#ctor(System.IO.Stream,System.Int32)">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="stream">Stream to attach to, initially</param>
+            <param name="bufferSize">Size of the buffer</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.Attach(System.IO.Stream)">
+            <summary>
+            Resets stream state and re-attaches it to another base stream.
+            </summary>
+            <param name="stream">Another base stream to attach to</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.Detach">
+            <summary>
+            Removes reference to the base stream.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:System.IO.Stream"/> and optionally releases the managed resources.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.Flush">
+            <summary>
+            When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device.
+            </summary>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.SetLength(System.Int64)">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.
+            </summary>
+            <returns>
+            The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available, or zero (0) if the end of the stream has been reached.
+            </returns>
+            <param name="buffer">An array of bytes. When this method returns, the buffer contains the specified byte array with the values between <paramref name="offset"/> and (<paramref name="offset"/> + <paramref name="count"/> - 1) replaced by the bytes read from the current source. </param><param name="offset">The zero-based byte offset in <paramref name="buffer"/> at which to begin storing the data read from the current stream. </param><param name="count">The maximum number of bytes to be read from the current stream. </param><exception cref="T:System.ArgumentException">The sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length. </exception><exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> is null. </exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset"/> or <paramref name="count"/> is negative. </exception><exception cref="T:System.IO.IOException">An I/O error occurs. </exception><exception cref="T:System.NotSupportedException">The stream does not support reading. </exception><exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed. </exception><filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.WriteBlock(System.IO.BinaryWriter,System.Int32,System.Byte[])">
+            <summary>
+            Protocol support.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.WriteBlock(System.IO.BinaryWriter,System.IO.MemoryStream)">
+            <summary>
+            Protocol support.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.WriteStreamEndMarker(System.IO.BinaryWriter)">
+            <summary>
+            Protocol support.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.MyReader">
+            <summary>
+            Reader on this stream.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.CanRead">
+            <summary>
+            Returns true.
+            </summary>
+            <returns>
+            true if the stream supports reading; otherwise, false.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.CanSeek">
+            <summary>
+            Returns false.
+            </summary>
+            <returns>
+            true if the stream supports seeking; otherwise, false.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.CanWrite">
+            <summary>
+            Returns false.
+            </summary>
+            <returns>
+            true if the stream supports writing; otherwise, false.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.Length">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.BufferedReaderStream.Position">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Wcf.IRmsDataWriter">
+            <summary>
+            Producer's callback interface. 
+            Used by <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement"/>'s custom encoder to write data into network output stream.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.IRmsDataWriter.WriteTo(System.IO.Stream)">
+            <summary>
+            Writes data to output stream.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.IRmsDbCommand">
+            <summary>
+            Contract for DbCommand extensions for EQL server.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.IRmsDbCommand.BulkInsert(System.String,System.String[],System.Int32,System.Collections.Generic.IEnumerable{Rms.Platform.DataServer.ClientDriver.RowData})">
+            <summary>
+            Overload of <see cref="M:System.Data.IDbCommand.ExecuteNonQuery"/> for bulk operations.
+            </summary>
+            <param name="argCount">Number of items in <paramref name="bulkArgs"/></param>
+            <param name="bulkArgs">Data to be streamed to server, one row at a time. May be same object with different values. 
+            Must match fields number and order specified by <paramref name="fieldNames"/></param>
+            <param name="entityName">Name of the entity to be run operation on</param>
+            <param name="fieldNames">Names of fields to be selected, inserted or updated. Must include primary key field for all modification commands, optional for select</param>
+            <returns>Number of records selected or affected</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="bulkArgs"/> may not be null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="fieldNames"/> may not be null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="entityName"/> may not be null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="argCount"/> has invalid value</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.IRmsDbCommand.BulkUpdate(System.String,System.String[],System.Int32,System.Collections.Generic.IEnumerable{Rms.Platform.DataServer.ClientDriver.RowData})">
+            <summary>
+            Overload of <see cref="M:System.Data.IDbCommand.ExecuteNonQuery"/> for bulk operations.
+            </summary>
+            <param name="argCount">Number of items in <paramref name="requestBulk"/></param>
+            <param name="requestBulk">Data to be streamed to server, one row at a time. May be same object with different values. 
+            Must match fields number and order specified by <paramref name="fieldNames"/></param>
+            <param name="entityName">Name of the entity to be run operation on</param>
+            <param name="fieldNames">Names of fields to be selected, inserted or updated. Must include primary key field for all modification commands, optional for select</param>
+            <returns>Number of records selected or affected</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="requestBulk"/> may not be null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="fieldNames"/> may not be null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="entityName"/> may not be null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="argCount"/> has invalid value</exception>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Protocol.AuthContextSerializer">
+            <summary>
+            Utility to write RMS authentication information, including tenantId, userId etc.
+            Captures several properties of <see cref="T:Rms.Platform.Infrastructure.Diagnostics.OperationContext"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.AuthContextSerializer.GetString(Rms.Platform.Infrastructure.Diagnostics.OperationContext)">
+            <summary>
+            Writes <see cref="T:Rms.Platform.Infrastructure.Diagnostics.OperationContext"/> to semicolon-separated string.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.AuthContextSerializer.GetObject(System.String)">
+            <summary>
+            Reads <see cref="T:Rms.Platform.Infrastructure.Diagnostics.OperationContext"/> from a semicolon-separated string.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector">
+            <summary>
+            Bitvector implementation.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.BitsPerInt32">
+            <summary>
+            Number of bits per Int32.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.Get(System.Int32[],System.Int32)">
+            <summary>
+            Bit accessor.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">Invalid index</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.Set(System.Int32[],System.Int32)">
+            <summary>
+            Bit setter.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">Invalid index</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.Clear(System.Int32[],System.Int32)">
+            <summary>
+            Bit setter.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">Invalid index</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.SafeGet(System.Int32[],System.Int32)">
+            <summary>
+            Bit accessor.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">Invalid index</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.SafeSet(System.Int32[],System.Int32)">
+            <summary>
+            Bit setter.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">Invalid index</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.SafeClear(System.Int32[],System.Int32)">
+            <summary>
+            Bit setter.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">Invalid index</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.SetAll(System.Int32[],System.Boolean)">
+            <summary>
+            Sets all bits to specified value.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.GetArrayLength(System.Int32)">
+            <summary>
+            Computes length of Int32 array needed to store N bits.
+            </summary>
+            <param name="n">Number of bits</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.Write(System.Int32[],System.Int32,System.IO.BinaryWriter)">
+            <summary>
+            Writes bitvector data to stream.
+            </summary>
+            <param name="bits">Bit data</param>
+            <param name="count">Number of elements in the bits data</param>
+            <param name="writer">Stream writer</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.Read(System.Int32[],System.Int32,System.IO.BinaryReader)">
+            <summary>
+            Reads bitvector data from stream.
+            </summary>
+            <param name="bits">Bit data</param>
+            <param name="count">Number of elements in the bits data</param>
+            <param name="reader">Stream reader</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.BitVector.GetByteCount(System.Int32)">
+            <summary>
+            Calculates the number of bytes needed to represent given number of bits.
+            </summary>
+            <param name="size">Number of bits</param>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestBulk">
+            <summary>
+            Headers for bulk part of the request.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestBulk.DbStatementType">
+            <summary>
+            Type of this bulk command.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestBulk.EntityName">
+            <summary>
+            Name of the entity that we select, insert, update or delete.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestBulk.FieldNames">
+            <summary>
+            Identifiers of fields whose values will be inserted.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestBulk.InputItemsCount">
+            <summary>
+            Number of items that are going to be sent as part of this command.
+            Helps processor to pre-allocate capacity for large INSERTs.
+            Is not used for other statement types.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestBulk.Bulk">
+            <summary>
+            Data enumerator.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestBulk.Clear">
+            <summary>
+            Resets content of this request.
+            Used for pooling.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequest">
+            <summary>
+            Input command.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequest.CommandText">
+            <summary>
+            EQL query text. Optional, not used for bulk requests (see <see cref="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequest.HaveRequestBulk"/>).
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequest.PrepareOnly">
+            <summary>
+            True to indicate that client wants server to validate the query and cache execution plan.
+            If true, server will not perform any actual data access beside query compilation and validation.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequest.ReturnDataset">
+            <summary>
+            True to indicate that client is expecting to receive a dataset in response.
+            If false, server will only stream the general status response back.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequest.HaveParameters">
+            <summary>
+            True to indicate that client has supplied an instance of <see cref="T:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestParams"/> in request stream.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequest.HaveRequestBulk">
+            <summary>
+            True to indicate that client has supplied an instance of <see cref="T:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestBulk"/> in request stream.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequest.Clear">
+            <summary>
+            Resets content of this request.
+            Used for pooling.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestParams">
+            <summary>
+            Headers for parameters part of the request.
+            Number of elements in <see cref="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestParams.Names"/> and other arrays must match.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestParams.Names">
+            <summary>
+            Names of parameters.
+            Number of elements in <see cref="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestParams.Names"/> and other arrays must match.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestParams.DataTypes">
+            <summary>
+            Data types of parameters. For parameters with collections, indicates individual element's type.
+            Number of elements in <see cref="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestParams.Names"/> and other arrays must match.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestParams.IsCollectionFlags">
+            <summary>
+            A BitVector. For every parameter, corresponding bit indicates whether parameter comes with a collection of values.
+            Number of elements in <see cref="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestParams.Names"/> and other arrays must match. 
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestParams.Bulk">
+            <summary>
+            Parameter values.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.DataRequestParams.Clear">
+            <summary>
+            Resets content of this request.
+            Used for pooling.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Protocol.ObjectPool`1">
+            <summary>
+            Implements object pool.
+            </summary>
+            <typeparam name="T">Type of object to hold</typeparam>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.ObjectPool`1.#ctor(System.Int32,System.Func{`0})">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="boundedCapacity">Maximum number of objects to hold</param>
+            <param name="objectFactory">Optional factory function to produce new objects</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.ObjectPool`1.Take(System.Threading.CancellationToken)">
+            <summary>
+            Attempts to take an available object from pool.
+            Will wait until cancellation token is signaled if pool is empty.
+            </summary>
+            <returns>Helper to facilitate guaranteed return of the object to the pool</returns>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.ObjectPool`1.Return(`0)">
+            <summary>
+            Returns an object to the pool. 
+            Also use this method to initially populate the pool with free objects.
+            </summary>
+            <exception cref="T:System.Exception">Bounded capacity exceeded</exception>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Protocol.ObjectPool`1.Capacity">
+            <summary>
+            Maximum number of objects to be held.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Protocol.ObjectPool`1.ObjectPoolAccessor">
+            <summary>
+            Helper to facilitate IDisposable pattern.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.ObjectPool`1.ObjectPoolAccessor.#ctor(Rms.Platform.DataServer.ClientDriver.Protocol.ObjectPool{`0},`0)">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.ObjectPool`1.ObjectPoolAccessor.Dispose">
+            <summary>
+            Dispose returns the object to pool.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Protocol.ObjectPool`1.ObjectPoolAccessor.Item">
+            <summary>
+            Element to be returned to the pool once this holder is disposed.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection">
+            <summary>
+            Implements a collection of command parameters.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.#ctor">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.GetParameter(System.Int32)">
+            <summary>
+            Returns the <see cref="T:System.Data.Common.DbParameter"/> object at the specified index in the collection.
+            </summary>
+            <returns>
+            The <see cref="T:System.Data.Common.DbParameter"/> object at the specified index in the collection.
+            </returns>
+            <param name="index">The index of the <see cref="T:System.Data.Common.DbParameter"/> in the collection.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.GetParameter(System.String)">
+            <summary>
+            Returns <see cref="T:System.Data.Common.DbParameter"/> the object with the specified name.
+            </summary>
+            <returns>
+            The <see cref="T:System.Data.Common.DbParameter"/> the object with the specified name.
+            </returns>
+            <param name="parameterName">The name of the <see cref="T:System.Data.Common.DbParameter"/> in the collection.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.ICollection"/> to an <see cref="T:System.Array"/>, 
+            starting at a particular <see cref="T:System.Array"/> index.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from 
+            <see cref="T:System.Collections.ICollection"/>. The <see cref="T:System.Array"/> must have zero-based indexing. </param>
+            <param name="index">The zero-based index in <paramref name="array"/> at which copying begins. </param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is less than zero. </exception>
+            <exception cref="T:System.ArgumentException"><paramref name="array"/> is multidimensional.-or- The number of elements 
+            in the source <see cref="T:System.Collections.ICollection"/> is greater than the available space from <paramref name="index"/> 
+            to the end of the destination <paramref name="array"/>.-or-The type of the source <see cref="T:System.Collections.ICollection"/> 
+            cannot be cast automatically to the type of the destination <paramref name="array"/>.</exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.SetParameter(System.String,System.Data.Common.DbParameter)">
+            <summary>
+            Sets the <see cref="T:System.Data.Common.DbParameter"/> object with the specified name to a new value.
+            </summary>
+            <param name="parameterName">The name of the <see cref="T:System.Data.Common.DbParameter"/> object in the collection.</param>
+            <param name="value">The new <see cref="T:System.Data.Common.DbParameter"/> value.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.Add(System.Object)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.IList"/>.
+            </summary>
+            <returns>
+            The position into which the new element was inserted, or -1 to indicate that the item was not inserted into the collection,
+            </returns>
+            <param name="value">The object to add to the <see cref="T:System.Collections.IList"/>. </param>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"/> is read-only.
+            -or- The <see cref="T:System.Collections.IList"/> has a fixed size. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.AddRange(System.Array)">
+            <summary>
+            Adds an array of items with the specified values to the <see cref="T:System.Data.Common.DbParameterCollection"/>.
+            </summary>
+            <param name="values">An array of values of type <see cref="T:System.Data.Common.DbParameter"/> to add to the collection.</param>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.Contains(System.Object)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.IList"/> contains a specific value.
+            </summary>
+            <returns>
+            true if the <see cref="T:System.Object"/> is found in the <see cref="T:System.Collections.IList"/>; otherwise, false.
+            </returns>
+            <param name="value">The object to locate in the <see cref="T:System.Collections.IList"/>. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.Clear">
+            <summary>
+            Removes all items from the <see cref="T:System.Collections.IList"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"/> is read-only. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.IndexOf(System.Object)">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:System.Collections.IList"/>.
+            </summary>
+            <returns>
+            The index of <paramref name="value"/> if found in the list; otherwise, -1.
+            </returns>
+            <param name="value">The object to locate in the <see cref="T:System.Collections.IList"/>. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts an item to the <see cref="T:System.Collections.IList"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <paramref name="value"/> should be inserted. </param><param name="value">The object to insert into the <see cref="T:System.Collections.IList"/>. </param><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.IList"/>. </exception><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"/> is read-only.-or- The <see cref="T:System.Collections.IList"/> has a fixed size. </exception><exception cref="T:System.NullReferenceException"><paramref name="value"/> is null reference in the <see cref="T:System.Collections.IList"/>.</exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.Remove(System.Object)">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:System.Collections.IList"/>.
+            </summary>
+            <param name="value">The object to remove from the <see cref="T:System.Collections.IList"/>. </param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"/> is read-only.-or- The <see cref="T:System.Collections.IList"/> has a fixed size. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the <see cref="T:System.Collections.IList"/> item at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the item to remove. </param><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.IList"/>. </exception><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"/> is read-only.-or- The <see cref="T:System.Collections.IList"/> has a fixed size. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.Contains(System.String)">
+            <summary>
+            Gets a value indicating whether a parameter in the collection has the specified name.
+            </summary>
+            <returns>
+            true if the collection contains the parameter; otherwise, false.
+            </returns>
+            <param name="parameterName">The name of the parameter. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.IndexOf(System.String)">
+            <summary>
+            Gets the location of the <see cref="T:System.Data.IDataParameter"/> within the collection.
+            </summary>
+            <returns>
+            The zero-based location of the <see cref="T:System.Data.IDataParameter"/> within the collection.
+            </returns>
+            <param name="parameterName">The name of the parameter. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.RemoveAt(System.String)">
+            <summary>
+            Removes the <see cref="T:System.Data.IDataParameter"/> from the collection.
+            </summary>
+            <param name="parameterName">The name of the parameter. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.SetParameter(System.Int32,System.Data.Common.DbParameter)">
+            <summary>
+            Sets the <see cref="T:System.Data.Common.DbParameter"/> object at the specified index to a new value. 
+            </summary>
+            <param name="index">The index where the <see cref="T:System.Data.Common.DbParameter"/> object is located.</param>
+            <param name="value">The new <see cref="T:System.Data.Common.DbParameter"/> value.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.Validate">
+            <summary>
+            Validates consistency of configuration values assigned to parameters.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.ParametersData">
+            <summary>
+            Internal direct access to typed parameters information.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:System.Collections.ICollection"/>.
+            </summary>
+            <returns>
+            The number of elements contained in the <see cref="T:System.Collections.ICollection"/>.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>.
+            </summary>
+            <returns>
+            An object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the <see cref="T:System.Collections.ICollection"/> is synchronized (thread safe).
+            </summary>
+            <returns>
+            true if access to the <see cref="T:System.Collections.ICollection"/> is synchronized (thread safe); otherwise, false.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.System#Collections#IList#Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <returns>
+            The element at the specified index.
+            </returns>
+            <param name="index">The zero-based index of the element to get or set. </param><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.IList"/>. </exception><exception cref="T:System.NotSupportedException">The property is set and the <see cref="T:System.Collections.IList"/> is read-only. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.IList"/> is read-only.
+            </summary>
+            <returns>
+            true if the <see cref="T:System.Collections.IList"/> is read-only; otherwise, false.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.IsFixedSize">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.IList"/> has a fixed size.
+            </summary>
+            <returns>
+            true if the <see cref="T:System.Collections.IList"/> has a fixed size; otherwise, false.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameterCollection.System#Data#IDataParameterCollection#Item(System.String)">
+            <summary>
+            Gets or sets the parameter at the specified index.
+            </summary>
+            <returns>
+            An <see cref="T:System.Object"/> at the specified index.
+            </returns>
+            <param name="parameterName">The name of the parameter to retrieve. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter">
+            <summary>
+            Implements a holder for parameter data.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.ResetDbType">
+            <summary>
+            Resets the DbType property to its original settings.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.Validate">
+            <summary>
+            Validates consistency of configuration values on this parameter instance.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes value of this parameter to stream.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.IsValidatedCollection">
+            <summary>
+            A call to <see cref="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.Validate"/> sets this property if client supplied a valid collection in <see cref="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.Value"/>.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.DbType">
+            <summary>
+            Gets or sets the <see cref="T:System.Data.DbType"/> of the parameter.
+            </summary>
+            <returns>
+            One of the <see cref="T:System.Data.DbType"/> values. The default is <see cref="F:System.Data.DbType.String"/>.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The property was not set to a valid <see cref="T:System.Data.DbType"/>. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.Direction">
+            <summary>
+            Gets or sets a value indicating whether the parameter is input-only, output-only, bidirectional, or a stored procedure return value parameter.
+            </summary>
+            <returns>
+            One of the <see cref="T:System.Data.ParameterDirection"/> values. The default is Input.
+            </returns>
+            <exception cref="T:System.ArgumentException">The property was not set to one of the valid <see cref="T:System.Data.ParameterDirection"/> values. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.IsNullable">
+            <summary>
+            Gets a value indicating whether the parameter accepts null values.
+            </summary>
+            <returns>
+            true if null values are accepted; otherwise, false. The default is false.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.ParameterName">
+            <summary>
+            Gets or sets the name of the <see cref="T:System.Data.IDataParameter"/>.
+            </summary>
+            <returns>
+            The name of the <see cref="T:System.Data.IDataParameter"/>. The default is an empty string.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.SourceColumn">
+            <summary>
+            Gets or sets the name of the source column that is mapped to the <see cref="T:System.Data.DataSet"/> and used for loading or returning the <see cref="P:System.Data.IDataParameter.Value"/>.
+            </summary>
+            <returns>
+            The name of the source column that is mapped to the <see cref="T:System.Data.DataSet"/>. The default is an empty string.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.SourceColumnNullMapping">
+            <summary>
+            Sets or gets a value which indicates whether the source column is nullable. 
+            This allows <see cref="T:System.Data.Common.DbCommandBuilder"/> to correctly generate Update statements for nullable columns.
+            </summary>
+            <returns>
+            true if the source column is nullable; false if it is not.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.SourceVersion">
+            <summary>
+            Gets or sets the <see cref="T:System.Data.DataRowVersion"/> to use when loading <see cref="P:System.Data.IDataParameter.Value"/>.
+            </summary>
+            <returns>
+            One of the <see cref="T:System.Data.DataRowVersion"/> values. The default is Current.
+            </returns>
+            <exception cref="T:System.ArgumentException">The property was not set one of the <see cref="T:System.Data.DataRowVersion"/> values. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.Value">
+            <summary>
+            Gets or sets the value of the parameter.
+            </summary>
+            <returns>
+            An <see cref="T:System.Object"/> that is the value of the parameter. The default value is null.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.Precision">
+            <summary>
+            Indicates the precision of numeric parameters.
+            </summary>
+            <returns>
+            The maximum number of digits used to represent the Value property of a data provider Parameter object. 
+            The default value is 0, which indicates that a data provider sets the precision for Value.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.Scale">
+            <summary>
+            Indicates the scale of numeric parameters.
+            </summary>
+            <returns>
+            The number of decimal places to which <see cref="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.Value"/> is resolved. The default is 0.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommandParameter.Size">
+            <summary>
+            The size of the parameter.
+            </summary>
+            <returns>
+            The maximum size, in bytes, of the data within the column. The default value is inferred from the the parameter value.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.RmsDataProviderFactory">
+            <summary>
+            Integration with ADO.NET framework, used in machine.config under system.data/DbProviderFactories section.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RmsDataProviderFactory.Instance">
+            <summary>
+            Required by ADO.NET infrastructure (<see cref="M:System.Data.Common.DbProviderFactories.GetFactory(System.String)"/> will read it when spawning a provider).
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataProviderFactory.CreateCommand">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbCommand"/> class.
+            </summary>
+            <returns>
+            A new instance of <see cref="T:System.Data.Common.DbCommand"/>.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataProviderFactory.CreateConnection">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbConnection"/> class.
+            </summary>
+            <returns>
+            A new instance of <see cref="T:System.Data.Common.DbConnection"/>.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataProviderFactory.CreateParameter">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbParameter"/> class.
+            </summary>
+            <returns>
+            A new instance of <see cref="T:System.Data.Common.DbParameter"/>.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.RmsProtocolUtility.ReadResponse">
+            <summary>
+            Reads <see cref="T:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse"/> from input stream referenced by <see cref="F:Rms.Platform.DataServer.ClientDriver.Protocol.RmsProtocolUtility.InputStream"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.RmsProtocolUtility.#ctor(Rms.Platform.DataServer.ClientDriver.RmsDataConnection,System.IO.Stream,System.IDisposable[])">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="connection">Parent connection</param>
+            <param name="inputStream">Incoming data stream from server</param>
+            <param name="holders">Array of holder objects that must be disposed when reader is closed</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.RmsProtocolUtility.Dispose">
+            <summary>
+            Releases the managed resources used by the <see cref="T:System.Data.Common.DbDataReader"/> and optionally releases the unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Protocol.RmsErrorDataWriter">
+            <summary>
+            Utility class, used to write error information into output stream
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.RmsErrorDataWriter.#ctor(System.Int32,System.Exception,System.Boolean)">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="errorCode">Optional error code</param>
+            <param name="exception">Optional exception information</param>
+            <param name="writeBlockHeaderAndStreamEnd">True to write a block header</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.RmsErrorDataWriter.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.RmsErrorDataWriter.WriteTo(System.IO.Stream)">
+            <summary>
+            Writes data to output stream.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage">
+            <summary>
+            This custom message type helps to get rid of default XML/SOAP features and work with raw data streams over TCP/IP.
+            Works with <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingElement"/> and <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement"/>.
+            Server interface must be based on Message in-out unimethod.
+            Serialization, encoding and formatting features of WCF are completely disabled.
+            To use, construct a custom binding with two binding elements: <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement"/> and <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement"/>.
+            Transport must operate in streaming mode, buffering is not supported.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.#ctor(Rms.Platform.DataServer.ClientDriver.Wcf.IRmsDataWriter,System.IDisposable[],System.String,System.String,System.String)">
+            <summary>
+            Ctr. Used on producer's side, which implements synchronous or asynchronous data generation process, 
+            to buffer and pipeline the data straight into network output stream.
+            </summary>
+            <param name="dataWriter">Producer's callback interface</param>
+            <param name="holders">Optional IDisposable to enable controlled cleanup of <paramref name="dataWriter"/> and others</param>
+            <param name="authTicket">Authentication information, including tenantId, userId etc.</param>
+            <param name="scopeId">Scope identifier or some other key</param>
+            <param name="protocolVersion">Version information on the sender of this message</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.#ctor(System.IO.Stream,System.IDisposable[])">
+            <summary>
+            Ctr. Used on consumer's side, to connect the raw network input stream.
+            Client is completely responsible for the serialization and data format.
+            </summary>
+            <param name="stream">Content stream</param>
+            <param name="holders">Optional IDisposable to enable controlled cleanup of <paramref name="stream"/></param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.#ctor">
+            <summary>
+            Dummy contsructor, for testing only.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.ReadHeaders">
+            <summary>
+            Reads message headers from stream.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.WriteHeaders(System.IO.Stream)">
+            <summary>
+            Writes message headers to stream.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)">
+            <summary>
+            Called when the message body is written to an XML file.
+            </summary>
+            <param name="writer">A <see cref="T:System.Xml.XmlDictionaryWriter"/> that is used to write this message body to an XML file.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.OnClose">
+            <summary>
+            Called when the message is closing (no need to implement Dispose here).
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.OnCreateBufferedCopy(System.Int32)">
+            <summary>
+            Called when a message buffer is created to store this message.
+            </summary>
+            <returns>
+            A <see cref="T:System.ServiceModel.Channels.MessageBuffer"/> object for the newly created message copy.
+            </returns>
+            <param name="maxBufferSize">The maximum size of the buffer to be created.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.OnGetReaderAtBodyContents">
+            <summary>
+            Called when an XML dictionary reader that accesses the body content of this message is retrieved.
+            </summary>
+            <returns>
+            A <see cref="T:System.Xml.XmlDictionaryReader"/> object that accesses the body content of this message.
+            </returns>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.AuthTicket">
+            <summary>
+            Tenant Id. At this time, must be tenantId converted to string.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.ScopeId">
+            <summary>
+            Scope Id. At this time, must be workspace session Id converted to string.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.ProtocolVersion">
+            <summary>
+            Protocol version information.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.CreatedOn">
+            <summary>
+            Local time when this message object was created.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.Stream">
+            <summary>
+            The incoming (network) data stream. Usually assigned on consumer's side. 
+            Either <see cref="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.Stream"/> or <see cref="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.DataWriter"/> must be initialized.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.DataWriter">
+            <summary>
+            The producer's callback interface. Usually assigned on producer's side.
+            Either <see cref="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.Stream"/> or <see cref="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.DataWriter"/> must be initialized.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.Headers">
+            <summary>
+            When overridden in a derived class, gets the headers of the message. 
+            </summary>
+            <returns>
+            A <see cref="T:System.ServiceModel.Channels.MessageHeaders"/> object that represents the headers of the message. 
+            </returns>
+            <exception cref="T:System.ObjectDisposedException">The message has been disposed of.</exception>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.Properties">
+            <summary>
+            When overridden in a derived class, gets a set of processing-level annotations to the message. 
+            </summary>
+            <returns>
+            A <see cref="T:System.ServiceModel.Channels.MessageProperties"/> that contains a set of processing-level annotations to the message.
+            </returns>
+            <exception cref="T:System.ObjectDisposedException">The message has been disposed of.</exception>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.Version">
+            <summary>
+            When overridden in a derived class, gets the SOAP version of the message.
+            </summary>
+            <returns>
+            A <see cref="T:System.ServiceModel.Channels.MessageVersion"/> object that represents the SOAP version. 
+            </returns>
+            <exception cref="T:System.ObjectDisposedException">The message has been disposed of.</exception>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage.IsFault">
+            <summary>
+            Gets a value that indicates whether this message generates any SOAP faults.
+            </summary>
+            <returns>
+            true if this message generates any SOAP faults; otherwise, false.
+            </returns>
+            <exception cref="T:System.ObjectDisposedException">The message has been disposed of.</exception>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory">
+            <summary>
+            This custom message encoder helps to get rid of default XML/SOAP features and work with raw data streams over TCP/IP.
+            Works with <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingElement"/> and <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement"/>.
+            Server interface must be based on Message in-out unimethod.
+            Serialization, encoding and formatting features of WCF are completely disabled.
+            To use, construct a custom binding with two binding elements: <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement"/> and <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement"/>.
+            Transport must operate in streaming mode, buffering is not supported.
+            Custom message encoder expects all messages to be of type <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory.#ctor">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory.Encoder">
+            <summary>
+            When overridden in a derived class, gets the message encoder that is produced by the factory.
+            </summary>
+            <returns>
+            The <see cref="T:System.ServiceModel.Channels.MessageEncoder"/> used by the factory.
+            </returns>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory.MessageVersion">
+            <summary>
+            When overridden in a derived class, gets the message version that is used by the encoders produced by the factory to encode messages.
+            </summary>
+            <returns>
+            The <see cref="T:System.ServiceModel.Channels.MessageVersion"/> used by the factory.
+            </returns>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory.RmsMessageEncoder">
+            <summary>
+            Actual encoder.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory.RmsMessageEncoder.ReadMessage(System.ArraySegment{System.Byte},System.ServiceModel.Channels.BufferManager,System.String)">
+            <summary>
+            When overridden in a derived class, reads a message from a specified stream.
+            </summary>
+            <returns>
+            The <see cref="T:System.ServiceModel.Channels.Message"/> that is read from the stream specified.
+            </returns>
+            <param name="buffer">A <see cref="T:System.ArraySegment`1"/> of type <see cref="T:System.Byte"/> that provides the buffer from which the message is deserialized.</param><param name="bufferManager">The <see cref="T:System.ServiceModel.Channels.BufferManager"/> that manages the buffer from which the message is deserialized.</param><param name="contentType">The Multipurpose Internet Mail Extensions (MIME) message-level content-type.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory.RmsMessageEncoder.WriteMessage(System.ServiceModel.Channels.Message,System.Int32,System.ServiceModel.Channels.BufferManager,System.Int32)">
+            <summary>
+            When overridden in a derived class, writes a message of less than a specified size to a byte array buffer at the specified offset.
+            </summary>
+            <returns>
+            A <see cref="T:System.ArraySegment`1"/> of type byte that provides the buffer to which the message is serialized.
+            </returns>
+            <param name="message">The <see cref="T:System.ServiceModel.Channels.Message"/> to write to the message buffer.</param><param name="maxMessageSize">The maximum message size that can be written.</param><param name="bufferManager">The <see cref="T:System.ServiceModel.Channels.BufferManager"/> that manages the buffer to which the message is written.</param><param name="messageOffset">The offset of the segment that begins from the start of the byte array that provides the buffer.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory.RmsMessageEncoder.ReadMessage(System.IO.Stream,System.Int32,System.String)">
+            <summary>
+            When overridden in a derived class, reads a message from a specified stream.
+            </summary>
+            <returns>
+            The <see cref="T:System.ServiceModel.Channels.Message"/> that is read from the stream specified.
+            </returns>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> object from which the message is read.</param><param name="maxSizeOfHeaders">The maximum size of the headers that can be read from the message.</param><param name="contentType">The Multipurpose Internet Mail Extensions (MIME) message-level content-type.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory.RmsMessageEncoder.WriteMessage(System.ServiceModel.Channels.Message,System.IO.Stream)">
+            <summary>
+            When overridden in a derived class, writes a message to a specified stream.
+            </summary>
+            <param name="message">The <see cref="T:System.ServiceModel.Channels.Message"/> to write to the <paramref name="stream"/>.</param><param name="stream">The <see cref="T:System.IO.Stream"/> object to which the <paramref name="message"/> is written.</param>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory.RmsMessageEncoder.ContentType">
+            <summary>
+            When overridden in a derived class, gets the MIME content type used by the encoder.
+            </summary>
+            <returns>
+            The content type that is supported by the message encoder.
+            </returns>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory.RmsMessageEncoder.MediaType">
+            <summary>
+            When overridden in a derived class, gets the media type value that is used by the encoder.
+            </summary>
+            <returns>
+            The media type that is supported by the message encoder.
+            </returns>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncoderFactory.RmsMessageEncoder.MessageVersion">
+            <summary>
+            When overridden in a derived class, gets the message version value that is used by the encoder.
+            </summary>
+            <returns>
+            The <see cref="T:System.ServiceModel.Channels.MessageVersion"/> that is used by the encoder.
+            </returns>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement">
+            <summary>
+            This custom message encoder helps to get rid of default XML/SOAP features and work with raw data streams over TCP/IP.
+            Works with <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingElement"/> and <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement"/>.
+            Server interface must be based on Message in-out unimethod.
+            Serialization, encoding and formatting features of WCF are completely disabled.
+            To use, construct a custom binding with two binding elements: <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement"/> and <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement"/>.
+            Transport must operate in streaming mode, buffering is not supported.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement.CreateMessageEncoderFactory">
+            <summary>
+            When overridden in a derived class, creates a factory for producing message encoders.
+            </summary>
+            <returns>
+            The <see cref="T:System.ServiceModel.Channels.MessageEncoderFactory"/> used to produce message encoders.
+            </returns>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement.Clone">
+            <summary>
+            When overridden in a derived class, returns a copy of the binding element object.
+            </summary>
+            <returns>
+            A <see cref="T:System.ServiceModel.Channels.BindingElement"/> object that is a deep clone of the original.
+            </returns>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+            <summary>
+            Initializes a channel factory for producing channels of a specified type from the binding context.
+            </summary>
+            <param name="context">The <see cref="T:System.ServiceModel.Channels.BindingContext"/> that provides context for the binding element. </param>
+            <typeparam name="TChannel">The type of channel the factory builds.</typeparam
+            ><exception cref="T:System.ArgumentNullException"><paramref name="context"/> is null.</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)">
+            <summary>
+            Initializes a channel listener to accept channels of a specified type from the binding context.
+            </summary>
+            <returns>
+            The <see cref="T:System.ServiceModel.Channels.IChannelListener`1"/> of type <see cref="T:System.ServiceModel.Channels.IChannel"/> initialized from the <paramref name="context"/>.
+            </returns>
+            <param name="context">The <see cref="T:System.ServiceModel.Channels.BindingContext"/> that provides context for the binding element.</param>
+            <typeparam name="TChannel">The type of channel the listener is built to accept.</typeparam>
+            <exception cref="T:System.ArgumentNullException"><paramref name="context"/> is null.</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement.CanBuildChannelListener``1(System.ServiceModel.Channels.BindingContext)">
+            <summary>
+            Returns a value that indicates whether the binding element can build a listener for a specific type of channel.
+            </summary>
+            <returns>
+            true if the <see cref="T:System.ServiceModel.Channels.IChannelListener`1"/> of type <see cref="T:System.ServiceModel.Channels.IChannel"/> can be built by the binding element; otherwise, false.
+            </returns>
+            <param name="context">The <see cref="T:System.ServiceModel.Channels.BindingContext"/> that provides context for the binding element. </param>
+            <typeparam name="TChannel">The type of channel the listener accepts.</typeparam>
+            <exception cref="T:System.ArgumentNullException"><paramref name="context"/> is null.</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement.System#ServiceModel#Description#IPolicyExportExtension#ExportPolicy(System.ServiceModel.Description.MetadataExporter,System.ServiceModel.Description.PolicyConversionContext)">
+            <summary>
+            Implement to include for exporting a custom policy assertion about bindings.
+            </summary>
+            <param name="exporter">The <see cref="T:System.ServiceModel.Description.MetadataExporter"/> that you can use to modify the exporting process.</param>
+            <param name="context">The <see cref="T:System.ServiceModel.Description.PolicyConversionContext"/> that you can use to insert your custom policy assertion.</param>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement.MessageVersion">
+            <summary>
+            When overridden in a derived class, gets or sets the message version that can be handled by the message encoders produced by the message encoder factory.
+            </summary>
+            <returns>
+            The <see cref="T:System.ServiceModel.Channels.MessageVersion"/> used by the encoders produced by the message encoder factory.
+            </returns>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Protocol.IDataService">
+            <summary>
+            WCF service contract for EQL query processor.
+            Works in conjunction with custom binding and encoder, <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement"/>.
+            Requires streaming mode for transport.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.IDataService.Process(System.ServiceModel.Channels.Message)">
+            <summary>
+            Unimethod.
+            </summary>
+            <param name="request">Incoming message, must be of type <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage"/></param>
+            <returns>Output message, of type <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessage"/></returns>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponseField">
+            <summary>
+            Field metadata object. Holds information about a single column in the response dataset.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponseField.Name">
+            <summary>
+            Internal name of the field.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponseField.DisplayName">
+            <summary>
+            Display name of the field.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponseField.DataType">
+            <summary>
+            DbType of the field.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponseField.Ordinal">
+            <summary>
+            Index of this field in the response dataset.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse">
+            <summary>
+            Data server's response schema. Gets written into the stream, then comes data stream.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.ErrorCode">
+            <summary>
+            Error code. Zero for success.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.ServerMessage">
+            <summary>
+            Detailed error information.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.Fields">
+            <summary>
+            Field metadata. Should be null if <see cref="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.ErrorCode"/> is non-zero.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.RecordsAffected">
+            <summary>
+            Number of records affected by non-query command.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.#ctor">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.#ctor(System.Int32,System.String)">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.#ctor(Rms.Platform.DataServer.ClientDriver.Protocol.DataResponseField[])">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="fields">Field metadata</param>
+            <exception cref="T:System.ArgumentNullException">Fields data is null</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.RequireField(System.String)">
+            <summary>
+            Looks up a field object by its internal name.
+            </summary>
+            <param name="name">Name to look for</param>
+            <returns>Field metadata object</returns>
+            <exception cref="T:System.IndexOutOfRangeException">Unknown name</exception>
+            <exception cref="T:System.ArgumentNullException">Name is null</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.RequireField(System.Int32)">
+            <summary>
+            Looks up a field object by its index in the fields metadata.
+            </summary>
+            <param name="indexInResponse">Index of the field in the metadata</param>
+            <returns>Field metadata object</returns>
+            <exception cref="T:System.IndexOutOfRangeException">Invalid field index</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.GetName(System.Int32)">
+            <summary>
+            Looks up a field name by its index in the fields metadata.
+            </summary>
+            <param name="indexInResponse">Index of the field in the metadata</param>
+            <returns>Internal name of the field</returns>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.AfterDeserialization(System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Reassembles the field-by-name lookup dictionary after deserialization.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponse.FieldCount">
+            <summary>
+            Number of fields.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.RmsDataReader">
+            <summary>
+            IDataReader implementation for RMS query processor client driver.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.#ctor(Rms.Platform.DataServer.ClientDriver.RmsDataConnection,Rms.Platform.DataServer.ClientDriver.BufferedReaderStream,System.IDisposable[])">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="connection">Parent connection</param>
+            <param name="inputStream">Incoming data stream from server</param>
+            <param name="holders">Array of holder objects that must be disposed when reader is closed</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.Dispose(System.Boolean)">
+            <summary>
+            Releases the managed resources used by the <see cref="T:System.Data.Common.DbDataReader"/> and optionally releases the unmanaged resources.
+            </summary>
+            <param name="disposing">true to release managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetName(System.Int32)">
+            <summary>
+            Gets the name for the field to find.
+            </summary>
+            <returns>
+            The name of the field or the empty string (""), if there is no value to return.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetDataTypeName(System.Int32)">
+            <summary>
+            Gets the data type information for the specified field.
+            </summary>
+            <returns>
+            The data type information for the specified field.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetEnumerator">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerator"/> that can be used to iterate through the rows in the data reader.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> that can be used to iterate through the rows in the data reader.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetFieldType(System.Int32)">
+            <summary>
+            Gets the <see cref="T:System.Type"/> information corresponding to the type of <see cref="T:System.Object"/> that would be returned from <see cref="M:System.Data.IDataRecord.GetValue(System.Int32)"/>.
+            </summary>
+            <returns>
+            The <see cref="T:System.Type"/> information corresponding to the type of <see cref="T:System.Object"/> that would be returned from <see cref="M:System.Data.IDataRecord.GetValue(System.Int32)"/>.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetValue(System.Int32)">
+            <summary>
+            Return the value of the specified field.
+            </summary>
+            <returns>
+            The <see cref="T:System.Object"/> which will contain the field value upon return.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetValues(System.Object[])">
+            <summary>
+            Populates an array of objects with the column values of the current record.
+            </summary>
+            <returns>
+            The number of instances of <see cref="T:System.Object"/> in the array.
+            </returns>
+            <param name="values">An array of <see cref="T:System.Object"/> to copy the attribute fields into. </param>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetOrdinal(System.String)">
+            <summary>
+            Return the index of the named field.
+            </summary>
+            <returns>
+            The index of the named field.
+            </returns>
+            <param name="name">The name of the field to find. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetBoolean(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a Boolean.
+            </summary>
+            <returns>
+            The value of the column.
+            </returns>
+            <param name="i">The zero-based column ordinal. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetByte(System.Int32)">
+            <summary>
+            Gets the 8-bit unsigned integer value of the specified column.
+            </summary>
+            <returns>
+            The 8-bit unsigned integer value of the specified column.
+            </returns>
+            <param name="i">The zero-based column ordinal. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a stream of bytes from the specified column offset into the buffer as an array, starting at the given buffer offset.
+            </summary>
+            <returns>
+            The actual number of bytes read.
+            </returns>
+            <param name="i">The zero-based column ordinal. </param>
+            <param name="fieldoffset">The index within the field from which to start the read operation. </param>
+            <param name="buffer">The buffer into which to read the stream of bytes. </param>
+            <param name="bufferoffset">The index for <paramref name="buffer"/> to start the read operation. </param>
+            <param name="length">The number of bytes to read. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetChar(System.Int32)">
+            <summary>
+            Gets the character value of the specified column.
+            </summary>
+            <returns>
+            The character value of the specified column.
+            </returns>
+            <param name="i">The zero-based column ordinal. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)">
+            <summary>
+            Reads a stream of characters from the specified column offset into the buffer as an array, starting at the given buffer offset.
+            </summary>
+            <returns>
+            The actual number of characters read.
+            </returns>
+            <param name="i">The zero-based column ordinal. </param><param name="fieldoffset">The index within the row from which to start the read operation. </param>
+            <param name="buffer">The buffer into which to read the stream of bytes. </param>
+            <param name="bufferoffset">The index for <paramref name="buffer"/> to start the read operation. </param>
+            <param name="length">The number of bytes to read. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetGuid(System.Int32)">
+            <summary>
+            Returns the GUID value of the specified field.
+            </summary>
+            <returns>
+            The GUID value of the specified field.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetInt16(System.Int32)">
+            <summary>
+            Gets the 16-bit signed integer value of the specified field.
+            </summary>
+            <returns>
+            The 16-bit signed integer value of the specified field.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetInt32(System.Int32)">
+            <summary>
+            Gets the 32-bit signed integer value of the specified field.
+            </summary>
+            <returns>
+            The 32-bit signed integer value of the specified field.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetInt64(System.Int32)">
+            <summary>
+            Gets the 64-bit signed integer value of the specified field.
+            </summary>
+            <returns>
+            The 64-bit signed integer value of the specified field.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetFloat(System.Int32)">
+            <summary>
+            Gets the single-precision floating point number of the specified field.
+            </summary>
+            <returns>
+            The single-precision floating point number of the specified field.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetDouble(System.Int32)">
+            <summary>
+            Gets the double-precision floating point number of the specified field.
+            </summary>
+            <returns>
+            The double-precision floating point number of the specified field.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetString(System.Int32)">
+            <summary>
+            Gets the string value of the specified field.
+            </summary>
+            <returns>
+            The string value of the specified field.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetDecimal(System.Int32)">
+            <summary>
+            Gets the fixed-position numeric value of the specified field.
+            </summary>
+            <returns>
+            The fixed-position numeric value of the specified field.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetDateTime(System.Int32)">
+            <summary>
+            Gets the date and time data value of the specified field.
+            </summary>
+            <returns>
+            The date and time data value of the specified field.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.IsDBNull(System.Int32)">
+            <summary>
+            Return whether the specified field is set to null.
+            </summary>
+            <returns>
+            true if the specified field is set to null; otherwise, false.
+            </returns>
+            <param name="i">The index of the field to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.Close">
+            <summary>
+            Closes the <see cref="T:System.Data.IDataReader"/> Object.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.GetSchemaTable">
+            <summary>
+            Returns a <see cref="T:System.Data.DataTable"/> that describes the column metadata of the <see cref="T:System.Data.IDataReader"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.Data.DataTable"/> that describes the column metadata.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Data.IDataReader"/> is closed. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.NextResult">
+            <summary>
+            Advances the data reader to the next result, when reading the results of batch SQL statements.
+            </summary>
+            <returns>
+            true if there are more rows; otherwise, false.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataReader.Read">
+            <summary>
+            Advances the <see cref="T:System.Data.IDataReader"/> to the next record.
+            </summary>
+            <returns>
+            true if there are more rows; otherwise, false.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataReader.CloseConnection">
+            <summary>
+            Set to true to close the connection when reader is disposed or closed.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataReader.FieldCount">
+            <summary>
+            Gets the number of columns in the current row.
+            </summary>
+            <returns>
+            When not positioned in a valid recordset, 0; otherwise, the number of columns in the current record. The default is -1.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataReader.HasRows">
+            <summary>
+            Gets a value that indicates whether this <see cref="T:System.Data.Common.DbDataReader"/> contains one or more rows.
+            </summary>
+            <returns>
+            true if the <see cref="T:System.Data.Common.DbDataReader"/> contains one or more rows; otherwise false.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataReader.Item(System.Int32)">
+            <summary>
+            Gets the column located at the specified index.
+            </summary>
+            <returns>
+            The column located at the specified index as an <see cref="T:System.Object"/>.
+            </returns>
+            <param name="i">The zero-based index of the column to get. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataReader.Item(System.String)">
+            <summary>
+            Gets the column with the specified name.
+            </summary>
+            <returns>
+            The column with the specified name as an <see cref="T:System.Object"/>.
+            </returns>
+            <param name="name">The name of the column to find. </param>
+            <exception cref="T:System.IndexOutOfRangeException">No column with the specified name was found. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataReader.Depth">
+            <summary>
+            Gets a value indicating the depth of nesting for the current row.
+            </summary>
+            <returns>
+            The level of nesting.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataReader.IsClosed">
+            <summary>
+            Gets a value indicating whether the data reader is closed.
+            </summary>
+            <returns>
+            true if the data reader is closed; otherwise, false.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataReader.RecordsAffected">
+            <summary>
+            Gets the number of rows changed, inserted, or deleted by execution of the SQL statement.
+            </summary>
+            <returns>
+            The number of rows changed, inserted, or deleted; 0 if no rows were affected or the statement failed; and -1 for SELECT statements.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.RmsDataCommand">
+            <summary>
+            Command implementation for EQL server.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.#ctor(Rms.Platform.DataServer.ClientDriver.RmsDataConnection)">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="rmsDataConnection">Parent connection (optional). May be set later via <see cref="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.DbConnection"/> property</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.#ctor">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.Prepare">
+            <summary>
+            Creates a prepared (or compiled) version of the command on the data source.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Data.OleDb.OleDbCommand.Connection"/> is not set.
+            -or- The <see cref="P:System.Data.OleDb.OleDbCommand.Connection"/> is not <see cref="M:System.Data.OleDb.OleDbConnection.Open"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.Cancel">
+            <summary>
+            Attempts to cancels the execution of an <see cref="T:System.Data.IDbCommand"/>.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.CreateDbParameter">
+            <summary>
+            Creates a new instance of a <see cref="T:System.Data.Common.DbParameter"/> object.
+            </summary>
+            <returns>
+            A <see cref="T:System.Data.Common.DbParameter"/> object.
+            </returns>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.ExecuteDbDataReader(System.Data.CommandBehavior)">
+            <summary>
+            Executes the command text against the connection.
+            </summary>
+            <returns>
+            A task representing the operation.
+            </returns>
+            <param name="behavior">An instance of <see cref="T:System.Data.CommandBehavior"/>.</param><exception cref="T:System.Data.Common.DbException">An error occurred while executing the command text.</exception><exception cref="T:System.ArgumentException">An invalid <see cref="T:System.Data.CommandBehavior"/> value.</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.BulkInsert(System.String,System.String[],System.Int32,System.Collections.Generic.IEnumerable{Rms.Platform.DataServer.ClientDriver.RowData})">
+            <summary>
+            Overload of <see cref="M:System.Data.IDbCommand.ExecuteNonQuery"/> for bulk operations.
+            </summary>
+            <param name="argCount">Number of items in <paramref name="bulkArgs"/></param>
+            <param name="bulkArgs">Data to be streamed to server, one row at a time. May be same object with different values. 
+            Must match fields number and order specified by <paramref name="fieldNames"/></param>
+            <param name="entityName">Name of the entity to be run operation on</param>
+            <param name="fieldNames">Names of fields to be selected, inserted or updated. Must include primary key field for all modification commands, optional for select</param>
+            <returns>Number of records selected or affected</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="bulkArgs"/> cannot be null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="fieldNames"/> cannot be null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="entityName"/> cannot be null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="argCount"/> has invalid value</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.BulkUpdate(System.String,System.String[],System.Int32,System.Collections.Generic.IEnumerable{Rms.Platform.DataServer.ClientDriver.RowData})">
+            <summary>
+            Overload of <see cref="M:System.Data.IDbCommand.ExecuteNonQuery"/> for bulk operations.
+            </summary>
+            <param name="argCount">Number of items in <paramref name="requestBulk"/></param>
+            <param name="requestBulk">Data to be streamed to server, one row at a time. May be same object with different values. 
+            Must match fields number and order specified by <paramref name="fieldNames"/></param>
+            <param name="entityName">Name of the entity to be run operation on</param>
+            <param name="fieldNames">Names of fields to be selected, inserted or updated. Must include primary key field for all modification commands, optional for select</param>
+            <returns>Number of records selected or affected</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="requestBulk"/> cannot be null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="fieldNames"/> cannot be null</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="entityName"/> cannot be null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="argCount"/> has invalid value</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.ExecuteNonQuery">
+            <summary>
+            Executes an SQL statement against the Connection object of a .NET Framework data provider, and returns the number of rows affected.
+            </summary>
+            <returns>
+            The number of rows affected.
+            </returns>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.ExecuteScalar">
+            <summary>
+            Executes the query, and returns the first column of the first row in the resultset returned by the query. Extra columns or rows are ignored.
+            </summary>
+            <returns>
+            The first column of the first row in the resultset.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.DbConnection">
+            <summary>
+            Gets or sets the <see cref="T:System.Data.Common.DbConnection"/> used by this <see cref="T:System.Data.Common.DbCommand"/>.
+            </summary>
+            <returns>
+            The connection to the data source.
+            </returns>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.DbParameterCollection">
+            <summary>
+            Gets the collection of <see cref="T:System.Data.Common.DbParameter"/> objects.
+            </summary>
+            <returns>
+            The parameters of the SQL statement or stored procedure.
+            </returns>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.DbTransaction">
+            <summary>
+            Gets or sets the <see cref="P:System.Data.Common.DbCommand.DbTransaction"/> within which this <see cref="T:System.Data.Common.DbCommand"/> object executes.
+            </summary>
+            <returns>
+            The transaction within which a Command object of a .NET Framework data provider executes. The default value is a null reference (Nothing in Visual Basic).
+            </returns>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.DesignTimeVisible">
+            <summary>
+            Gets or sets a value indicating whether the command object should be visible in a customized interface control.
+            </summary>
+            <returns>
+            true, if the command object should be visible in a control; otherwise false. The default is true.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.CommandText">
+            <summary>
+            Gets or sets the text command to run against the data source.
+            </summary>
+            <returns>
+            The text command to execute. The default value is an empty string ("").
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.CommandTimeout">
+            <summary>
+            Gets or sets the wait time before terminating the attempt to execute a command and generating an error.
+            </summary>
+            <returns>
+            The time (in seconds) to wait for the command to execute. The default value is 30 seconds.
+            </returns>
+            <exception cref="T:System.ArgumentException">The property value assigned is less than 0. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.CommandType">
+            <summary>
+            Indicates or specifies how the <see cref="P:System.Data.IDbCommand.CommandText"/> property is interpreted.
+            </summary>
+            <returns>
+            One of the <see cref="T:System.Data.CommandType"/> values. The default is Text.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataCommand.UpdatedRowSource">
+            <summary>
+            Not supported by EQL server.
+            </summary>
+            <returns>
+            One of the <see cref="T:System.Data.UpdateRowSource"/> values. The default is Both unless the command is automatically generated. Then the default is None.
+            </returns>
+            <exception cref="T:System.ArgumentException">The value entered was not one of the <see cref="T:System.Data.UpdateRowSource"/> values. </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.RmsDataConnection">
+            <summary>
+            Implements a connection to EQL server.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.#ctor">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.BeginDbTransaction(System.Data.IsolationLevel)">
+            <summary>
+            Starts a database transaction.
+            </summary>
+            <returns>
+            An object representing the new transaction.
+            </returns>
+            <param name="isolationLevel">Specifies the isolation level for the transaction.</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.Close">
+            <summary>
+            Closes the connection to the database.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.ChangeDatabase(System.String)">
+            <summary>
+            Changes the current database for an open Connection object.
+            </summary>
+            <param name="databaseName">The name of the database to use in place of the current database. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.CreateDbCommand">
+            <summary>
+            Creates and returns a <see cref="T:System.Data.Common.DbCommand"/> object associated with the current connection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Data.Common.DbCommand"/> object.
+            </returns>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.Open">
+            <summary>
+            Opens a database connection with the settings specified by the ConnectionString property of the provider-specific Connection object.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.ConnectionString">
+            <summary>
+            Gets or sets the string used to open a database.
+            </summary>
+            <returns>
+            A string containing connection settings.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.ConnectionProps">
+            <summary>
+            Parsed information from connection string, maybe some other context info about this connection.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.ConnectionTimeout">
+            <summary>
+            Gets the time to wait while trying to establish a connection before terminating the attempt and generating an error.
+            </summary>
+            <returns>
+            The time (in seconds) to wait for a connection to open. The default value is 15 seconds.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.Database">
+            <summary>
+            Gets the name of the current database or the database to be used after a connection is opened.
+            </summary>
+            <returns>
+            The name of the current database or the name of the database to be used once a connection is open. The default value is an empty string.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.DataSource">
+            <summary>
+            Gets the name of the database server to which to connect.
+            </summary>
+            <returns>
+            The name of the database server to which to connect. The default value is an empty string.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.ServerVersion">
+            <summary>
+            Gets a string that represents the version of the server to which the object is connected.
+            </summary>
+            <returns>
+            The version of the database. The format of the string returned depends on the specific type of connection you are using.
+            </returns>
+            <exception cref="T:System.InvalidOperationException"><see cref="P:System.Data.Common.DbConnection.ServerVersion"/> was called while 
+            the returned Task was not completed and the connection was not opened after a call to OpenAsync.
+            </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.RmsDataConnection.State">
+            <summary>
+            Gets the current state of the connection.
+            </summary>
+            <returns>
+            One of the <see cref="T:System.Data.ConnectionState"/> values.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.RowData">
+            <summary>
+            Holder for data of a single row returned or generated by EQL server. 
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.FieldArrayIndexes">
+            <summary>
+            Indexes of field values in corresponding typed arrays. 
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.RowHead">
+            <summary>
+            Marker, gets written before each row.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.StreamEnd">
+            <summary>
+            Marker, gets written after the last row to indicate stream end.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.BlockHead">
+            <summary>
+            Marker, gets written before each block to indicate stream continuation.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.NotNulls">
+            <summary>
+            NotNulls bitvector, indexes correspond to every field's ordinal.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.FieldTypes">
+            <summary>
+            Data types, indexes correspond to every field's ordinal.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.FieldRepresentationTypes">
+            <summary>
+            Storage types, indexes correspond to every field's ordinal.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueData8Bytes">
+            <summary>
+            Data for value types up to 8 bytes in size, indexes correspond to special mapping of field's ordinal to this array.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueData16Bytes">
+            <summary>
+            Data for value types from 9 to 16 bytes in size, indexes correspond to special mapping of field's ordinal to this array.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.StringData">
+            <summary>
+            Data for string types, indexes correspond to special mapping of field's ordinal to this array.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.BinaryData">
+            <summary>
+            Data for binary types, indexes correspond to special mapping of field's ordinal to this array.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.#ctor(System.Data.DbType[])">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="fieldTypes">Field metadata</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetIndexInArray(System.Int32)">
+            <summary>
+            Returns index of the field in a typed array.
+            </summary>
+            <param name="indexInResponse">Index of the field in the response, irrespective of its data type. Also known as Ordinal: <see cref="F:Rms.Platform.DataServer.ClientDriver.Protocol.DataResponseField.Ordinal"/></param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetInt64(System.Int32)">
+            <summary>
+            Returns integral value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetInt32(System.Int32)">
+            <summary>
+            Returns integral value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetInt16(System.Int32)">
+            <summary>
+            Returns integral value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetByte(System.Int32)">
+            <summary>
+            Returns integral value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetBoolean(System.Int32)">
+            <summary>
+            Returns integral value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetDateTime(System.Int32)">
+            <summary>
+            Returns datetime value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetDateTimeOffset(System.Int32)">
+            <summary>
+            Returns datetime value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetString(System.Int32)">
+            <summary>
+            Returns string value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetChar(System.Int32)">
+            <summary>
+            Returns single-character value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+            <exception cref="T:System.Data.DataException">String data must have exactly one character</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)">
+            <summary>
+            Reads a stream of characters from the specified column offset into the buffer as an array, starting at the given buffer offset.
+            </summary>
+            <returns>
+            The actual number of characters read.
+            </returns>
+            <param name="i">The zero-based column ordinal. </param><param name="fieldoffset">The index within the row from which to start the read operation. </param>
+            <param name="buffer">The buffer into which to read the stream of bytes. </param>
+            <param name="bufferoffset">The index for <paramref name="buffer"/> to start the read operation. </param>
+            <param name="length">The number of bytes to read. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetDouble(System.Int32)">
+            <summary>
+            Returns floating point value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetSingle(System.Int32)">
+            <summary>
+            Returns floating point value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetFloat(System.Int32)">
+            <summary>
+            Returns floating point value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetGuid(System.Int32)">
+            <summary>
+            Returns guid value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetBinary(System.Int32)">
+            <summary>
+            Returns binary value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetBinary(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a stream of bytes from the specified column offset into the buffer as an array, starting at the given buffer offset.
+            </summary>
+            <returns>
+            The actual number of bytes read.
+            </returns>
+            <param name="i">The zero-based column ordinal. </param>
+            <param name="fieldoffset">The index within the field from which to start the read operation. </param>
+            <param name="buffer">The buffer into which to read the stream of bytes. </param>
+            <param name="bufferoffset">The index for <paramref name="buffer"/> to start the read operation. </param>
+            <param name="length">The number of bytes to read. </param>
+            <exception cref="T:System.IndexOutOfRangeException">The index passed was outside the range of 0 through <see cref="P:System.Data.IDataRecord.FieldCount"/>. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetCurrency(System.Int32)">
+            <summary>
+            Returns decimal value for the give field's ordinal, or default/null value if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetValue(System.Int32)">
+            <summary>
+            Returns object-boxed value for the give field's ordinal, or null object if it is marked as null in response.
+            </summary>
+            <param name="indexInResponse">Field's ordinal</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetValues(System.Object[])">
+            <summary>
+            Returns array of object values, as many as can fit in <paramref name="values"/>.
+            </summary>
+            <param name="values">Destination array</param>
+            <returns>Number of values written to array</returns>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.Read(System.IO.BinaryReader)">
+            <summary>
+            Attempts to read next row from the data stream.  
+            </summary>
+            <returns>True is successful and row data is available for retrieval with Getxxx methods. False otherwise.</returns> 
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes row data into output stream.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.GetMinimumSize">
+            <summary>
+            Returns minimum byte count that call to <see cref="M:Rms.Platform.DataServer.ClientDriver.RowData.Write(System.IO.BinaryWriter)"/> will generate.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.Read7BitEncodedInt(System.IO.BinaryReader)">
+            <summary>
+            Disassembled method from BinaryReader.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.Write7BitEncodedInt(System.IO.BinaryWriter,System.Int32)">
+            <summary>
+            Disassembled method from BinaryWriter.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.RowData.DeriveSystemType(System.Data.DbType)">
+            <summary>
+            Attempts to find a system type based on provided logical data type.
+            </summary>
+            <param name="dbType">Logical data type</param>
+            <returns>System type</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Unknown data type</exception>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.RowData.DataTypeRepresentation">
+            <summary>
+            In-memory representation.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.DataTypeRepresentation.ByteArray">
+            <summary>
+            Array of bytes
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.DataTypeRepresentation.CharArray">
+            <summary>
+            Array of chars (two-byte Unicode chars)
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.DataTypeRepresentation.Value8Bytes">
+            <summary>
+            Uses <see cref="T:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes"/>
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.DataTypeRepresentation.Value16Bytes">
+            <summary>
+            Uses <see cref="T:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder16Bytes"/>
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes">
+            <summary>
+            Universal value holder. Temporary, to reduce complexity.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsBoolean">
+            <summary>
+            Boolean value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsByte">
+            <summary>
+            Byte value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsSByte">
+            <summary>
+            signed byte value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsInt64">
+            <summary>
+            Int64 value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsUInt64">
+            <summary>
+            Unsigned Int64 value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsInt16">
+            <summary>
+            Int16 value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsUInt16">
+            <summary>
+            Unsigned Int16 value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsInt32">
+            <summary>
+            Int32 value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsUInt32">
+            <summary>
+            Unsigned Int32 value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsDouble">
+            <summary>
+            Double (64bit) floating point value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsSingle">
+            <summary>
+            Single (32bit) floating point value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsDateTime">
+            <summary>
+            DateTime (64bit) value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder8Bytes.AsTimeSpan">
+            <summary>
+            TimeSpan (64bit) value.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder16Bytes">
+            <summary>
+            Universal value holder. Temporary, to reduce complexity.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder16Bytes.Lo">
+            <summary>
+            Raw data.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder16Bytes.Hi">
+            <summary>
+            Raw data.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder16Bytes.AsDecimal">
+            <summary>
+            Decimal-currency (128bit) value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder16Bytes.AsGuid">
+            <summary>
+            Guid (128bit) value.
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.RowData.ValueHolder16Bytes.AsDateTimeOffset">
+            <summary>
+            DateTimeOffset (80bit) value.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.SizableArray`1">
+            <summary>
+            A List-like array of arbitrary objects or value types.
+            Directly exposes array of objects, to allow performance optimizations.
+            </summary>
+            <typeparam name="T">Type of the object to hold</typeparam>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.SizableArray`1.Data">
+            <summary>
+            Array of elements. May contain more elements than actually used.
+            </summary>
+            <see cref="F:Rms.Platform.DataServer.ClientDriver.SizableArray`1.Length"/>
+        </member>
+        <member name="F:Rms.Platform.DataServer.ClientDriver.SizableArray`1.Length">
+            <summary>
+            Number of valid elements inside <see cref="F:Rms.Platform.DataServer.ClientDriver.SizableArray`1.Data"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.SizableArray`1.#ctor">
+            <summary>
+            Ctr.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.SizableArray`1.#ctor(System.Int32)">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="capacity">Initial capacity</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.SizableArray`1.#ctor(`0[])">
+            <summary>
+            Ctr.
+            </summary>
+            <param name="data">The buffer to take as initial storage</param>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.SizableArray`1.EnsureCapacity(System.Int32)">
+            <summary>
+            Reallocates <see cref="F:Rms.Platform.DataServer.ClientDriver.SizableArray`1.Data"/> if needed to accomodate <paramref name="capacity"/> number of elements.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.SizableArray`1.SetLength(System.Int32)">
+            <summary>
+            Reallocates <see cref="F:Rms.Platform.DataServer.ClientDriver.SizableArray`1.Data"/> if needed to accomodate <paramref name="length"/> number of elements.
+            Updates value of <see cref="F:Rms.Platform.DataServer.ClientDriver.SizableArray`1.Length"/> too.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.SizableArray`1.AssertState">
+            <summary>
+            Verifies consistency.
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.SizableArray`1.Capacity">
+            <summary>
+            Capacity of the <see cref="F:Rms.Platform.DataServer.ClientDriver.SizableArray`1.Data"/> array or zero if it is null.
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingElement">
+            <summary>
+            This is a configuration element for <see cref="T:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingBindingElement"/>.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingElement.ApplyConfiguration(System.ServiceModel.Channels.BindingElement)">
+            <summary>
+            Applies the content of a specified binding element to this binding configuration element.
+            </summary>
+            <param name="bindingElement">A binding element.</param><exception cref="T:System.ArgumentNullException"><paramref name="bindingElement"/> is null.</exception>
+        </member>
+        <member name="M:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingElement.CreateBindingElement">
+            <summary>
+            When overridden in a derived class, returns a custom binding element object. 
+            </summary>
+            <returns>
+            A custom <see cref="T:System.ServiceModel.Channels.BindingElement"/> object.
+            </returns>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingElement.BindingElementType">
+            <summary>
+            When overridden in a derived class, gets the <see cref="T:System.Type"/> object that represents the custom binding element. 
+            </summary>
+            <returns>
+            A <see cref="T:System.Type"/> object that represents the custom binding type.
+            </returns>
+        </member>
+        <member name="P:Rms.Platform.DataServer.ClientDriver.Wcf.RmsMessageEncodingElement.InnerMessageEncoding">
+            <summary>
+            Compression level to use. Currently ignored.
+            </summary>
+        </member>
+    </members>
+</doc>

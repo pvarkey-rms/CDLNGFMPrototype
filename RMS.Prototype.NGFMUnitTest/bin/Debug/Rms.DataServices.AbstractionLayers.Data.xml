@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.AbstractionLayers.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.AbstractionLayers.Data.SortedIdOutputComparer">
+            <summary>
+            Class respresenting comparer for SortedIdOutputComparer
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Data.SortedIdOutputComparer.Compare(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>
+            A signed integer that indicates the relative values of <paramref name="x" /> and <paramref name="y" />, as shown in the following table.Value Meaning Less than zero<paramref name="x" /> is less than <paramref name="y" />.Zero<paramref name="x" /> equals <paramref name="y" />.Greater than zero<paramref name="x" /> is greater than <paramref name="y" />.
+            </returns>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Data.SortedIdSearchOutput">
+            <summary>
+            Class to represent SortedId Search Output
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.AbstractionLayers.Data.SortedIdSearchOutput.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rms.DataServices.AbstractionLayers.Data.SortedIdSearchOutput"/> class.
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Data.SortedIdSearchOutput.ResultList">
+            <summary>
+            Gets or sets the result list.
+            </summary>
+            <value>
+            The result list.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Data.SortedIdSearchOutput.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Data.ObjectType">
+            <summary>
+            Enum representing items object types stored in index layer
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Data.ObjectType.Portfolio">
+            <summary>
+            The portfolio
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Data.ObjectType.CedantExposure">
+            <summary>
+            The cedant exposure
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Data.ObjectType.Treaty">
+            <summary>
+            The treaty
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Data.ObjectType.Policy">
+            <summary>
+            The policy
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Data.ObjectType.Program">
+            <summary>
+            The program
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Data.ObjectType.RiskItem">
+            <summary>
+            The risk item
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Data.ObjectType.RiskItemCharacteristics">
+            <summary>
+            The risk item characteristics
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.AbstractionLayers.Data.ObjectType.ExposureGraph">
+            <summary>
+            The exposure graph
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.AbstractionLayers.Data.SearchOutput">
+            <summary>
+            Class to represent Search Output
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Data.SearchOutput.ResultList">
+            <summary>
+            Gets or sets the result list.
+            </summary>
+            <value>
+            The result list.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.AbstractionLayers.Data.SearchOutput.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+    </members>
+</doc>

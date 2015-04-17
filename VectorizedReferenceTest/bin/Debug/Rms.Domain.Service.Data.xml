@@ -1,0 +1,563 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.Domain.Service.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Domain.Service.Data.AttributeBasicInfo">
+            <summary>
+            Attribute basic information
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.TemplateBasicInfo">
+            <summary>
+            Basic template
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.TemplateBasicInfo.Code">
+            <summary>
+            Code of a resource
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.TemplateBasicInfo.Name">
+            <summary>
+            Name of a resource
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.TemplateBasicInfo.Description">
+            <summary>
+            Description of a resource
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.AttributeBasicInfo.Type">
+            <summary>
+            Data type of an attribute
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.AttributeBasicInfo.Constraint">
+            <summary>
+            Constraints of an attribute
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.AttributeBasicInfo.Reference">
+            <summary>
+            Gets or sets the reference.
+            </summary>
+            <value>
+            The reference.
+            </value>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.DomainBasicInfo">
+            <summary>
+            Domain basic information
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.DomainDataConstraint">
+            <summary>
+            Data constraints
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainDataConstraint.IsUnique">
+            <summary>
+            IsUnique flag
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainDataConstraint.AllowsNull">
+            <summary>
+            IsNotNull flag
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainDataConstraint.IsLocked">
+            <summary>
+            Gets or sets a value indicating whether this instance is locked.
+            </summary>
+            <value>
+              <c>true</c> if this instance is locked; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainDataConstraint.IsPrimaryKey">
+            <summary>
+            Gets or sets a value indicating whether this instance is primary key.
+            </summary>
+            <value>
+            <c>true</c> if this instance is primary key; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainDataConstraint.IsMaskable">
+            <summary>
+            Gets or sets a value indicating whether this instance is maskable.
+            </summary>
+            <value>
+            <c>true</c> if this instance is maskable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainDataConstraint.IsSearchable">
+            <summary>
+            Gets or sets a value indicating whether this instance is searchable.
+            </summary>
+            <value>
+            <c>true</c> if this instance is searchable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.DomainDataReference">
+            <summary>
+            DomainDataReference
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainDataReference.ParentPath">
+            <summary>
+            Parent Path
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainDataReference.Code">
+            <summary>
+            Code
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainDataReference.AsOfDate">
+            <summary>
+            Gets or sets as of date.
+            </summary>
+            <value>
+            As of date.
+            </value>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.DomainDataType">
+            <summary>
+            Data type definitions
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.DomainDataType.String">
+            <summary>
+            String data type
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.DomainDataType.Reference">
+            <summary>
+            Entity reference data type
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.DomainDataType.Integer">
+            <summary>
+            Integer data type
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.DomainDataType.Float">
+            <summary>
+            Float data type
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.DomainDataType.Boolean">
+            <summary>
+            The boolean
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.DomainDataType.Long">
+            <summary>
+            The long
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.DomainDataType.DateTime">
+            <summary>
+            The date time
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.DomainDataType.Url">
+            <summary>
+            The URL
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.DomainDetailInfo">
+            <summary>
+            Domain detailed information
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.TemplateDetailInfo">
+            <summary>
+            Detailed template
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.TemplateDetailInfo.Id">
+            <summary>
+            Id of a resource
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.TemplateDetailInfo.AsOfDate">
+            <summary>
+            As-of-date of a resource
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.TemplateDetailInfo.Path">
+            <summary>
+            Path of a resource
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.TemplateDetailInfo.OwnerName">
+            <summary>
+            User who created the resource
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainDetailInfo.NamespaceCount">
+            <summary>
+            Namespace count
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.DomainInfoList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainInfoList.DomainInfos">
+            <summary>
+            Gets or sets the domain infos.
+            </summary>
+            <value>
+            The domain infos.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.DomainInfoList.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.DomainResourceType">
+            <summary>
+            Resource type
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.DomainResourceType.Domain">
+            <summary>
+            Domain resource
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.DomainResourceType.Namespace">
+            <summary>
+            Namespace resource
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.DomainResourceType.Entity">
+            <summary>
+            Entity resource
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.EntityDetailInfo">
+            <summary>
+            Entity detailed information
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.EntityInfoList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityInfoList.EntityInfos">
+            <summary>
+            Gets or sets the entity infos.
+            </summary>
+            <value>
+            The entity infos.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityInfoList.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.EntityMetaBasicInfo">
+            <summary>
+                Entity schema basic information
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaBasicInfo.Attributes">
+            <summary>
+                Attributes of an entity
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaBasicInfo.IsViewable">
+            <summary>
+                IsViewable flag
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaBasicInfo.IsExtensible">
+            <summary>
+                IsExtensible flag
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaBasicInfo.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaBasicInfo.IsCascadable">
+            <summary>
+            Gets or sets a value indicating whether this instance is cascadable.
+            </summary>
+            <value>
+            <c>true</c> if this instance is cascadable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.EntityMetaDetailInfo">
+            <summary>
+            Entity schema detailed information
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaDetailInfo.Attributes">
+            <summary>
+            Attributes of an entity
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaDetailInfo.IsViewable">
+            <summary>
+            IsViewable flag
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaDetailInfo.IsExtensible">
+            <summary>
+            IsExtensible flag
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaDetailInfo.AttributeCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaDetailInfo.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaDetailInfo.IsCascadable">
+            <summary>
+            Gets or sets a value indicating whether this instance is cascadable.
+            </summary>
+            <value>
+            <c>true</c> if this instance is cascadable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaDetailInfo.IsDeleted">
+            <summary>
+            Gets or sets a value indicating whether this instance is deleted.
+            </summary>
+            <value>
+            <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaDetailInfo.CreateDate">
+            <summary>
+            Gets or sets the create date.
+            </summary>
+            <value>
+            The create date.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaDetailInfo.UpdateDate">
+            <summary>
+            Gets or sets the update date.
+            </summary>
+            <value>
+            The update date.
+            </value>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.EntityMetaInfoList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaInfoList.EntityMetaInfos">
+            <summary>
+            Gets or sets the entity meta infos.
+            </summary>
+            <value>
+            The entity meta infos.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityMetaInfoList.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.EntityType">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.EntityType.Table">
+            <summary>
+                The table
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.EntityType.DataPack">
+            <summary>
+                The data pack
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.EntityType.Tree">
+            <summary>
+                The tree
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.EntityValueBasicInfo">
+            <summary>
+            Entity value basic information
+            </summary>
+        </member>
+        <member name="F:Rms.Domain.Service.Data.EntityValueBasicInfo.Tuple">
+            <summary>
+            Records/tuples of an entity
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.EntityValueDetailInfo">
+            <summary>
+            Entity value detailed information
+            </summary>    
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityValueDetailInfo.Id">
+            <summary>
+            Id of an entity value
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityValueDetailInfo.AsOfDate">
+            <summary>
+            As-of-date for an entity
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityValueDetailInfo.OwnerName">
+            <summary>
+            Owner name
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityValueDetailInfo.Tuple">
+            <summary>
+            Records
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.EntityValueInfoList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityValueInfoList.EntityCode">
+            <summary>
+            Gets or sets the entity code.
+            </summary>
+            <value>
+            The entity code.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityValueInfoList.ParentPath">
+            <summary>
+            Gets or sets the parent path.
+            </summary>
+            <value>
+            The parent path.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityValueInfoList.EntityValueInfos">
+            <summary>
+            Gets or sets the entity value infos.
+            </summary>
+            <value>
+            The entity value infos.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.EntityValueInfoList.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.ExportValueInfo">
+            <summary>
+            Export information
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.ExportValueInfo.HasHeader">
+            <summary>
+            HasHeader flag
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.NamespaceBasicInfo">
+            <summary>
+            Namespace basic information
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.NamespaceDetailInfo">
+            <summary>
+            Namespace detailed information
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.NamespaceDetailInfo.EntityCount">
+            <summary>
+            Entity count
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.NamespaceInfoList">
+            <summary>
+            Namespace info list object
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.NamespaceInfoList.NamespaceInfos">
+            <summary>
+            Gets or sets the namespace infos.
+            </summary>
+            <value>
+            The namespace infos.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.NamespaceInfoList.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.SearchDetails">
+            <summary>
+            Search results
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.SearchDetails.Type">
+            <summary>
+            Resource type
+            </summary>
+        </member>
+        <member name="T:Rms.Domain.Service.Data.SearchInfoList">
+            <summary>
+            Search Info List class
+            </summary>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.SearchInfoList.SearchInfos">
+            <summary>
+            Gets or sets the search infos.
+            </summary>
+            <value>
+            The search infos.
+            </value>
+        </member>
+        <member name="P:Rms.Domain.Service.Data.SearchInfoList.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+    </members>
+</doc>

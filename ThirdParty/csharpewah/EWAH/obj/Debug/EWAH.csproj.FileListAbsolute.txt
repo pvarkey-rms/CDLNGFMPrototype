@@ -1,0 +1,4 @@
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH\bin\Debug\EWAH.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH\bin\Debug\EWAH.pdb
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH\obj\Debug\EWAH.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\ThirdParty\csharpewah\EWAH\obj\Debug\EWAH.pdb

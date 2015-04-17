@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.Contracts.Public</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.Contracts.Public.IExposureBulkService">
+            <summary>
+            Interface for the ExposureBulkService. All exposure bulk functions reside here
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.Contracts.Public.IExposureBulkServiceV2">
+            <summary>
+            Interface for the ExposureBulkService. All exposure bulk functions reside here
+            </summary>
+        </member>
+        <member name="M:Rms.DataServices.Contracts.Public.IExposureBulkServiceV2.GetPartitions(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets the partitions for an exposure by providing a partition type. It will create partitions if they are 
+            not created yet.
+            </summary>
+            <param name="string_sessionId">An id of the session in case a session should be used for the operation.</param>
+            <param name="long_exposureId">The id of the exposure which is a string representing a long number.</param>
+            <param name="dateTime_snapshotDate">The snapshot date of the exposure as a string.</param>
+            <param name="long_filterId">An id representing a filter in case the exposure data should be filtered 
+            (a string representing a long number).</param>
+            <param name="string_partitionType">The type of partitions to be created. Such as MEX, LI, etc.</param>
+            <param name="int_partitionSize">The size of the partitions to create as an integer representing the number of items. 
+            For some partition types static size is used and this value is ignored.</param>
+            <returns>A stream with the partitions meta data.</returns>
+        </member>
+        <member name="M:Rms.DataServices.Contracts.Public.IExposureBulkServiceV2.GetContractExposures(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets the primary contract exposures building a parent exposure by snapshot date of the parent exposure. 
+            </summary>
+            <param name="string_sessionId">An id of the session in case a session should be used for the operation.</param>
+            <param name="long_exposureId">The id of the parent exposure which is a string representing a long number.</param>
+            <param name="dateTime_snapshotDate">The snapshot date of the parent exposure as a string.</param>
+            <param name="long_filterId">An id representing a filter in case the exposure data should be filtered 
+            (a string representing a long number).</param>
+            <param name="string_partitionIds">A comma separated list of partition ids as a string, representing the partitions
+            whose contract exposures to return.</param>
+            <returns>A stream with the contract exposures.</returns>
+        </member>
+        <member name="M:Rms.DataServices.Contracts.Public.IExposureBulkServiceV2.GetLargeContractRITExposures(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets the RITExposures building a large contract with a large number of RITEs which should be lazily loaded. 
+            </summary>
+            <param name="string_sessionId">An id of the session in case a session should be used for the operation.</param>
+            <param name="long_exposureId">The id of the parent exposure which is a string representing a long number.</param>
+            <param name="dateTime_snapshotDate">The snapshot date of the parent exposure as a string.</param>
+            <param name="long_filterId">An id representing a filter in case the exposure data should be filtered 
+            (a string representing a long number).</param>
+            <param name="long_contractExposureId">The id of the contract exposure whose RITEs should be retrieved.</param>
+            <returns>A stream with the contract exposures.</returns>
+        </member>
+        <member name="M:Rms.DataServices.Contracts.Public.IExposureBulkServiceV2.GetRITExposureAttributeValues(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets requested RIT Exposures attribute values for RITEs belonging to a given exposure. 
+            </summary>
+            <param name="string_sessionId">An id of the session in case a session should be used for the operation.</param>
+            <param name="long_exposureId">The id of the exposure which is a string representing a long number.</param>
+            <param name="dateTime_snapshotDate">The snapshot date of the exposure as a string.</param>
+            <param name="long_filterId">An id representing a filter in case the exposure data should be filtered 
+            (a string representing a long number).</param>
+            <param name="string_attributeKeys">A comma separated list of attributes' keys as a string, representing 
+            the attributes whose values should be returned.</param>
+            <returns>A stream with the attributes' values.</returns>
+        </member>
+        <member name="M:Rms.DataServices.Contracts.Public.IExposureBulkServiceV2.GetProducts(System.String,System.String)">
+            <summary>
+            Gets the products for an exposure. 
+            </summary>
+            <param name="string_sessionId">An id of the session in case a session should be used for the operation.</param>
+            <param name="json_productSnapshots">A JSON string representing product snapshots (product id and product as of date).
+            It is compatible with List of Tuples with Item1 - long and Item2 - DateTime.</param>
+            <returns>A stream with the products.</returns>
+        </member>
+        <member name="M:Rms.DataServices.Contracts.Public.IExposureBulkServiceV2.GetExposures(System.String,System.String)">
+            <summary>
+            Gets a list of exposures by their snapshot keys. 
+            </summary>
+            <param name="string_sessionId">An id of the session in case a session should be used for the operation.</param>
+            <param name="json_exposureSnapshotKeys">A JSON string representing exposure snapshots (exposure id and exposure as of date).
+            It is compatible with List of ExposureSnapshotKey objects.</param>
+            <returns>A stream with the exposures matching the input snapshot keys.</returns>
+        </member>
+        <member name="M:Rms.DataServices.Contracts.Public.IExposureBulkServiceV2.GetPositions(System.String,System.String,System.String)">
+            <summary>
+            Gets the positions for a given exposure.
+            </summary>
+            <param name="string_sessionId">An id of the session in case a session should be used for the operation.</param>
+            <param name="long_exposureId">The id of the exposure which as a string representing a long number.</param>
+            <param name="dateTime_snapshotDate">The snapshot date of the exposure as a string.</param>
+            <returns>A stream with the positions.</returns>
+        </member>
+        <member name="M:Rms.DataServices.Contracts.Public.IExposureBulkServiceV2.GetRITExposures(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets the RIT exposures for a number of partitions building a parent exposure by snapshot date of the parent exposure. 
+            </summary>
+            <param name="string_sessionId">An id of the session in case a session should be used for the operation.</param>
+            <param name="long_exposureId">The id of the parent exposure which is a string representing a long number.</param>
+            <param name="dateTime_snapshotDate">The snapshot date of the parent exposure as a string.</param>
+            <param name="long_filterId">An id representing a filter in case the exposure data should be filtered 
+            (a string representing a long number).</param>
+            <param name="string_partitionIds">A comma separated list of partition ids as a string, representing the partitions
+            whose RIT exposures to return.</param>
+            <returns>A stream with the RIT exposures.</returns>
+        </member>
+        <member name="M:Rms.DataServices.Contracts.Public.IExposureBulkServiceV2.PrepareExposureCache(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Prepares the exposure cache.
+            </summary>
+            <param name="string_sessionId">An id of the session in case a session should be used for the operation.</param>
+            <param name="long_exposureId">The id of the exposure which is a string representing a long number.</param>
+            <param name="dateTime_snapshotDate">The snapshot date of the exposure as a string.</param>
+            <param name="long_filterId">An id representing a filter in case the exposure data should be filtered 
+            (a string representing a long number).</param>
+            <param name="string_partitionType">The type of partitions to be created. Such as MEX, LI, etc.</param>
+            <param name="int_partitionSize">The size of the partitions to be created. For MEX it will be ignored.</param>
+            <param name="string_attributeKeys">A comma separated list of attributes' keys as a string, representing 
+            the attributes whose values should be returned.</param>
+            <returns>A stream with the partitions meta data.</returns>
+        </member>
+    </members>
+</doc>

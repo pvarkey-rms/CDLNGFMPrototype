@@ -1,0 +1,13 @@
+bin/*
+logs/*
+TestResults/*
+NGFMPrototype.sln.ide/*
+NGFMPrototype.v11.suo
+RMS.Prototype.NGFMUnitTest/obj/*
+RMS.Prototype.NGFMTestAutomation/obj/*
+RMS.Prototype.NGFMTest/obj/*
+RMS.Prototype.NGFM/obj/*
+RMS.Prototype.NGFM.DLL/obj/*
+RMS.Prototype.NGFM.DLL/bin/*
+RMS.ContractGraphModel/obj/*
+RMS.CDLModel/obj/*

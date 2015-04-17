@@ -1,0 +1,627 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.Platform.Cache</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.Platform.Cache.CacheStoreFactory">
+            <summary>
+            Cache store factory
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Cache.CacheStoreFactory.GetCacheStore(Rms.Platform.Cache.CacheStoreType,Rms.Platform.Cache.ICacheConfig)">
+            <summary>
+            Get cache store
+            </summary>
+            <param name="cacheStoreType"></param>
+            <param name="cacheConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.Platform.Cache.CacheStoreType">
+            <summary>
+            Cache store enum
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Cache.CacheStoreType.Mongo">
+            <summary>
+            Enum type for Mongo store
+            </summary>
+        </member>
+        <member name="F:Rms.Platform.Cache.CacheStoreType.Couch">
+            <summary>
+            Enum type for Couch store
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Cache.ICacheConfig">
+            <summary>
+            ICacheConfig interface
+            </summary>
+        </member>
+        <member name="P:Rms.Platform.Cache.ICacheConfig.ConnectionString">
+            Gets or sets the connection string.
+        </member>
+        <member name="T:Rms.Platform.Cache.ICacheStore">
+            <summary>
+            ICacheStore API
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.GetObject``1(System.String)">
+            <summary>
+            Gets the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.GetObjectByAttribute``1(System.String,System.String)">
+            <summary>
+            Gets the object by attribute.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="attributeValue">The attribute value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.GetObjectByAttribute``1(System.String,System.Int64)">
+            <summary>
+            Gets the object by attribute.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="attributeValue">The attribute value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.GetObjects``1(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="keys">The keys.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.GetObjects``1(Rms.Platform.Common.Filters.Filter)">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filter">The filter.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.GetObjects``1(Rms.Platform.Common.Filters.Filter,System.Int32,System.Int32,System.Collections.Generic.List{Rms.Platform.Common.Filters.SortField},System.Collections.Generic.List{``0}@,System.Int64@)">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filter">The filter.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="sortFieldList">The sort field list.</param>
+            <param name="objectList">The object list.</param>
+            <param name="totalCount">The total count.</param>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.SaveObject``1(System.String,``0)">
+            <summary>
+            Saves the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <param name="singleObject">The single object.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.SaveObject``1(``0)">
+            <summary>
+            Saves the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="singleObject">The single object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.DeleteObject``1(System.String)">
+            <summary>
+            Deletes the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.DeleteObject``1(System.Int64)">
+            <summary>
+            Deletes the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.DeleteObjects``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+            Deletes the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query">The query.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.SearchAndReplace``1(System.String,System.String,System.String)">
+            <summary>
+            Searches the and replace.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="searchValue">The search value.</param>
+            <param name="replaceValue">The replace value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.RemoveAllData">
+            <summary>
+            Removes all data.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.IsAlive">
+            <summary>
+            Determines whether this instance is alive.
+            </summary>
+            <returns><c>true</c> if this instance is alive; otherwise, <c>false</c>.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.GetNextId">
+            <summary>
+            Gets the next id.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.ConditionalUpdate``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy,MongoDB.Driver.IMongoUpdate)">
+            <summary>
+            Updates based on conditions
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query">The query.</param>
+            <param name="sortBy">The sort by.</param>
+            <param name="update">The update.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.ICacheStore.GetObjects``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query">The query.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Rms.Platform.Cache.CouchCacheStore">
+            <summary>
+            Couch Cache Store class.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.#ctor(Rms.Platform.Cache.ICacheConfig)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="cacheConfig"></param>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.GetObject``1(System.String)">
+            <summary>
+            Gets the object by cache id.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.GetObjects``1(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="values">The keys.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.GetObjectByAttribute``1(System.String,System.String)">
+            <summary>
+            Gets the object by cache id.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="attributeValue">Value of the attribute .</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.DeleteObject``1(System.Int64)">
+            <summary>
+            Delete the object by cache id
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.SearchAndReplace``1(System.String,System.String,System.String)">
+            <summary>
+            Searches the and replace.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="searchValue">The attribute value.</param>
+            <param name="replaceValue">The replace value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.GetObjects``1(Rms.Platform.Common.Filters.Filter)">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filter">The filter.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.GetObjects``1(Rms.Platform.Common.Filters.Filter,System.Int32,System.Int32,System.Collections.Generic.List{Rms.Platform.Common.Filters.SortField},System.Collections.Generic.List{``0}@,System.Int64@)">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filter">The filter.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="sortFieldList">The sort field list.</param>
+            <param name="objectList">The object list.</param>
+            <param name="totalCount">The total count.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.GetNextId">
+            <summary>
+            Gets the next id.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.ConditionalUpdate``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy,MongoDB.Driver.IMongoUpdate)">
+            <summary>
+            Updates based on conditions
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query">The query.</param>
+            <param name="sortBy">The sort by.</param>
+            <param name="update">The update.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.GetObjects``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query">The query.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.SaveObject``1(System.String,``0)">
+            <summary>
+            Saves the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <param name="singleObject">The single object.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.SaveObject``1(``0)">
+            <summary>
+            Saves the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="singleObject">The single object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.DeleteObject``1(System.String)">
+            <summary>
+            Deletes the object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.DeleteObjects``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+            Deletes the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query">The query.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.RemoveAllData">
+            <summary>
+            Removes all data.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.IsAlive">
+            <summary>
+            Determines whether this instance is alive.
+            </summary>
+            <returns>
+              <c>true</c> if this instance is alive; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.Dispose">
+            <summary>
+            Disposes Couchbase Client Connection
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.ValidateKeys(System.Collections.Generic.List{System.String})">
+            <summary>
+            Validates the keys.
+            </summary>
+            <param name="keys">The keys.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.CouchCacheStore.Initialize(Rms.Platform.Cache.ICacheConfig)">
+            <summary>
+            Initialize
+            </summary>
+            <param name="cacheConfig"></param>
+        </member>
+        <member name="T:Rms.Platform.Cache.CouchConfig">
+            <summary>
+            Class representing mongo config
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Cache.CouchConfig.ConnectionString">
+            <summary>
+            Gets or sets the connection string.
+            </summary>
+            <value>The connection string.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Cache.CouchConfig.BucketName">
+            <summary>
+            Gets or sets the name of the bucket.
+            </summary>
+            <value>The name of the bucket.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Cache.CouchConfig.BucketPassword">
+            <summary>
+            Gets or sets the bucket password.
+            </summary>
+            <value>The bucket password.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Cache.CouchConfig.RetryCount">
+            <summary>
+            Gets or sets the retry count.
+            </summary>
+            <value>The retry count.</value>
+            <remarks></remarks>
+        </member>
+        <member name="T:Rms.Platform.Cache.MongoCacheStore">
+            <summary>
+            Mongo Cache Store class.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.#ctor(Rms.Platform.Cache.ICacheConfig)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="cacheConfig"></param>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.GetObject``1(System.String)">
+            <summary>
+            Gets the object by cache id.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.GetObjects``1(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="values">The keys.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.GetObjectByAttribute``1(System.String,System.String)">
+            <summary>
+            Gets the object by cache id.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="attributeValue">Value of the attribute .</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.GetObjectByAttribute``1(System.String,System.Int64)">
+            <summary>
+            Gets the object by cache id.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="attributeValue">Value of the attribute .</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.SearchAndReplace``1(System.String,System.String,System.String)">
+            <summary>
+            Searches the and replace.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="searchValue">The attribute value.</param>
+            <param name="replaceValue">The replace value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.GetObjects``1(Rms.Platform.Common.Filters.Filter)">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filter">The filter.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.GetObjects``1(Rms.Platform.Common.Filters.Filter,System.Int32,System.Int32,System.Collections.Generic.List{Rms.Platform.Common.Filters.SortField},System.Collections.Generic.List{``0}@,System.Int64@)">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filter">The filter.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="sortFieldList">The sort field list.</param>
+            <param name="objectList">The object list.</param>
+            <param name="totalCount">The total count.</param>
+            <exception cref="T:System.Exception">Failed to find the collection.</exception>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.GetNextId">
+            <summary>
+            Gets the next id.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.ConditionalUpdate``1(MongoDB.Driver.IMongoQuery,MongoDB.Driver.IMongoSortBy,MongoDB.Driver.IMongoUpdate)">
+            <summary>
+            Conditionals the update.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query">The query.</param>
+            <param name="sortBy">The sort by.</param>
+            <param name="update">The update.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Failed to get  + IdGeneratorAttributeName +  from the counter collection</exception>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.GetObjects``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+            Gets the objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query">The query.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.SaveObject``1(System.String,``0)">
+            <summary>
+            Saves the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <param name="singleObject">The single object.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.SaveObject``1(``0)">
+            <summary>
+            Saves the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="singleObject">The single object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.DeleteObjects``1(MongoDB.Driver.IMongoQuery)">
+            <summary>
+            Deletes objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query">The query.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">Invalid IMongoQuery</exception>
+            <exception cref="T:System.Exception">
+            Failed to delete object from database. Key doesn't exist.
+            or
+            Failed to delete object from database.
+            </exception>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.DeleteObject``1(System.String)">
+            <summary>
+            Deletes the object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.DeleteObject``1(System.Int64)">
+            <summary>
+            Deletes the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Failed to delete object from database. Key doesn't exist.</exception>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.RemoveAllData">
+            <summary>
+            Removes all data.
+            </summary>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.IsAlive">
+            <summary>
+            Determines whether this instance is alive.
+            </summary>
+            <returns>
+              <c>true</c> if this instance is alive; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.ValidateKeys(System.Collections.Generic.List{System.String})">
+            <summary>
+            Validates the keys.
+            </summary>
+            <param name="keys">The keys.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.Initialize(Rms.Platform.Cache.ICacheConfig)">
+            <summary>
+            Initialize
+            </summary>
+            <param name="cacheConfig"></param>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.GetCollection``1">
+            <summary>
+            Gets the collection.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Rms.Platform.Cache.MongoCacheStore.Dispose">
+            <summary>
+            Dispose method
+            </summary>
+        </member>
+        <member name="T:Rms.Platform.Cache.MongoConfig">
+            <summary>
+            Class representing mongo config
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Cache.MongoConfig.ConnectionString">
+            <summary>
+            Gets or sets the connection string.
+            </summary>
+            <value>The connection string.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Cache.MongoConfig.DatabaseName">
+            <summary>
+            Gets or sets the name of the database.
+            </summary>
+            <value>The name of the database.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Cache.MongoConfig.CollectionName">
+            <summary>
+            Gets or sets the name of the collection.
+            </summary>
+            <value>The name of the collection.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Rms.Platform.Cache.MongoConfig.RetryCount">
+            <summary>
+            Gets or sets the retry count.
+            </summary>
+            <value>The retry count.</value>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>

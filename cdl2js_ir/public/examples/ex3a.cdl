@@ -1,0 +1,16 @@
+Contract
+Declarations
+ Product is EDMSurplusShare1 { ver 0.1-a }
+ Number is T12345
+ Name is T12345
+ Insured is ZurichNA
+ Currency is USD
+ Inception is 1 Jan 2013
+ Expiration is (Inception + 1 year)
+ Attachment Basis is Risk Attaching
+ Risk is each Section
+ Subject is ZurichNA.Gross net of fac
+ Schedule[] is [S1, S2, S3, S4, S5] //group cessions with like geometry into a per risk schedule (everything in S1 is covered 20% each, everything in S2 30% each
+ CoveredAndPlaced[] is [20, 30, 40, 25, 15] //would be much longer list
+ Cession[] is [Cession-1, Cession-2, Cession-3, Cession-4, Cession-5]
+ 

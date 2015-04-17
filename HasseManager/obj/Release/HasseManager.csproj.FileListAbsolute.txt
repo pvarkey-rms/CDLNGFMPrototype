@@ -1,0 +1,11 @@
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\bin\Release\HasseManager.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\bin\Release\HasseManager.pdb
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\bin\Release\indigo-dotnet.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\bin\Release\indigo-inchi-dotnet.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\bin\Release\indigo-renderer-dotnet.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Release\HasseManager.csprojResolveAssemblyReference.cache
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Release\HasseManager.Form1.resources
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Release\HasseManager.Properties.Resources.resources
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Release\HasseManager.csproj.GenerateResource.Cache
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Release\HasseManager.dll
+D:\main\NGDLM\Sandbox\CDLNGFMPrototype\HasseManager\obj\Release\HasseManager.pdb

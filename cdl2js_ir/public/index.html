@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>CDL Grammar</title>
+<style>
+@import url(css/styleorig.css);
+@import url(css/syntax.css);
+</style>
+<body>
+
+<h2>CDL Javascript Parser</h2>
+
+<script type="text/javascript" language="JavaScript">
+function CDLFileChooser() {
+		$('#inputCDL').show();
+		$('#inputCDL').focus();
+		$('#inputCDL').click();
+		$('#inputCDL').hide();
+	}
+</script>
+
+<div class="body">
+  <a href="product.html">Source</a>
+  <div class="content">
+    <div class="topbar">
+		<button type="button" onclick="CDLFileChooser()">Choose CDL file</button>
+		<input id = "inputCDL" type="file" 
+			name="inputCDL" accept="text/*.cdl" style="display: none" ></input>
+		OR select from list:
+		<select id="examples">
+			<option value="ex1.cdl">Simple Contract</option>
+			<option value="EDMSurplusShare1 { ver 0.1-a }">Product for EDMSurplusShare1 (ver 0.1a)</option>
+			<option value="Simple { ver 0.1-b }">Product for Simple (ver 0.1b)</option>
+			<option value="ex3a.cdl">Product instance (ver 0.1a)</option>
+			<option value="ex3b.cdl">Product instance (ver 0.1b)</option>
+			<option value="ex4.cdl">CAT Treaty</option>
+			<option value="ex5.cdl">% RC Examples</option>
+			<option value="ex6.cdl">Sections</option>
+			<option value="YAP { ver 1 }">Yet Another Product</option>
+			<option value="yap-instance.cdl">Yet Another Product Instance</option>
+		</select>
+      <button id="parse">Parse</button>
+    </div>
+    <div id="gallery">
+<section>
+  <span class="window_label">Model</span>
+  <textarea id="model" class="source pane">
+Contract 
+  Declarations
+      Subject is Loss to Acme by HU
+      Inception is 5 Jun 2014
+      Expiration is 4 Jun 2015
+      PolicyNum is A5059-3
+  Covers 
+    100% share of 10M 
+  Sublimits
+    10000 by Wind
+  </textarea>
+</section>
+<section>
+  <span class="window_label">Product Instance View</span>
+  <textarea id="view" class="pane">
+  </textarea>
+</section>
+<section>
+  <span class="window_label">JSON</span>
+  <textarea id="ast" class="pane">
+  </textarea>
+</section>
+<section id="designer"  class="pane designer">
+  <span class="window_label">Form View</span>
+    <h3>A Simple Insurance Policy</h3>
+    <hr/><h5>
+    Policy Number: <input type="text" class="PolicyNum" size=20 /><p>
+    Subject of Insurance: <input type="text" class="Subject" size=20/><p>
+    Named Insured: <input type="text" class="Insured" size=40 /><p>
+    Inception: <input type="text" class="Inception" size=12 />
+    Expiration: <input type="text" class="Expiration" size=12 /><p>
+    <hr/>
+    Blanket Limit: <input type="text" class="BlanketLim" value="0" size="9"/>
+    Wind SubLimit: <input type="text" class="WindSublim" value="0" size="9"/>
+    <hr/>
+    Covers:     100% of <input type="text" readonly class="BlanketLim" value="0" size=10 /><p>
+	Sublimits:   <input type="text" readonly class="WindSublim" value="0" size=9 /> by Wind</h5>
+   
+</section>
+    </div>
+  </div>
+</div>
+<script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+<script src="scripts/grammar-ast.js"></script>
+<script src="lib/product.js"></script>
+<script src="lib/controller.js"></script>

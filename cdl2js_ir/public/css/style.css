@@ -1,0 +1,144 @@
+.good {
+  background: #efe;
+  border: 2px solid green;
+}
+
+.bad {
+  background: #fee;
+  border: 2px solid red;
+}
+
+body {
+  font: 14px Helvetica Neue;
+  text-rendering: optimizeLegibility;
+  margin-top: 1em;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+a {
+  color: steelblue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.body {
+  width: 700px;
+  height: 400px;
+  margin: auto;
+}
+
+.topbar a {
+  margin-right: .5em;
+}
+
+.content {
+  position: relative;
+  margin-left: 60px;
+}
+
+.content img {
+  display: block;
+  margin: auto;
+}
+
+.sidebar {
+  position: absolute;
+  left: -120px;
+  width: 140px;
+  font-weight: 100;
+}
+
+.gallery {
+  position: relative;
+  left: 0px;
+}
+
+.knobs {
+  position: relative;
+  left: 0px;
+}
+.content .gallery a:hover img {
+  border-color: steelblue;
+}
+
+.content .knobs a:hover img {
+  border-color: steelblue;
+}
+.list {
+  clear: left;
+  margin-top: 14px;
+}
+
+.list img {
+  float: left;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: .3em;
+}
+
+.sidebar {
+  color: #666;
+}
+
+.sidebar ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.sidebar h3 {
+  font-weight: 300;
+}
+
+.foot {
+  position: relative;
+  font-weight: 300;
+  margin-left: 40px;
+  padding-top: 3em;
+  width: 1100px;
+/*  clear: left; */
+}
+
+input[type=button] {
+  font: 20px Helvetica Neue;
+  color: #333; 
+  padding: 4px 6px 4px 6px;
+  border: 0;
+  border-bottom: 1px solid #222;
+  -moz-border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px #999;
+  -webkit-border-radius: 5px;
+  -webkit-box-shadow: 0 1px 3px #999;
+}
+
+input[type=button]:hover {
+  background-color: #555;
+}
+
+.highlight {
+  font: 12px monospace;
+}
+
+.highlight pre {
+  overflow-x: auto;
+}
+
+.invisible {
+    display: none
+}
+
+label {
+  font: 18px Helvetica Neue;
+  margin-bottom: 22px;
+}
+
+.log {
+    height: 300px;
+    overflow: scroll;
+}

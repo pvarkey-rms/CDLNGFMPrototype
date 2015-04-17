@@ -1,0 +1,105 @@
+﻿// *******************************************************
+// *** Independent Primary Contracts (Single Building) ***
+// *******************************************************
+
+[Test 001] //With Factor
+RITE:001_extract.dat
+DR:001_damage_ratios.txt
+RESULT:1,673542.72;	2,742042.72;	3,673542.72;	4,623115.81;	5,668602.02;	6,565000;	7,678602.02;	8,600941.15;	9,606844.78;	10,400000;	11,328947.78;	12,530000;	13,328947.78;	14,623117.61;	15,623115.71;	16,623115.71;	17,636844.78;	18,597917.86;	19,553602.02;
+[Test 002]
+RITE:002_extract.dat
+DR:002_damage_ratios.txt
+RESULT:1,365602.55;2,444780.32;3,434780.32;4,326888.53;5,306888.53;6,341888.53;7,150000;8,150000;9,165000;10,165000;11,365602.55;12,365602.55;13,306888.53
+
+[Test 003]
+RITE:003_extract.dat
+DR:003_damage_ratios.txt
+RESULT:1,141565.06;2,120000;3,120000;4,141565.06;5,141565.06
+
+[Test 004]
+RITE:004_extract.dat
+DR:004_damage_ratios.txt
+RESULT:1,750000;2,1347085.44
+
+[Test 005]
+RITE:005_extract.dat
+DR:005_damage_ratios.txt
+RESULT:1,619602.55;2,725560.64
+
+[Test 016]
+RITE:016_extract.dat
+DR:016_damage_ratios.txt
+RESULT:11331,565975.4;1,81195.08;2,302780.32;3,662931.46;4,2000000
+
+// *******************************************************
+// *** Independent Primary Contracts (Multi Building) ***
+// *******************************************************
+
+[Test 006]
+RITE:006_extract.dat
+DR:006_damage_ratios.txt
+RESULT:1,2164014.59;2,2368991.52
+
+[Test 007]
+RITE:007_extract.dat
+DR:007_damage_ratios.txt
+RESULT:1,916164.92;2,1003007.89
+
+[Test 008]
+RITE:008_extract.dat
+DR:008_damage_ratios.txt
+RESULT:1,14211.8;2,14211.8
+
+[Test 009]
+RITE:009_extract.dat
+DR:009_damage_ratios.txt
+RESULT:1,0;2,0
+
+[Test 010]
+RITE:010_extract.dat
+DR:010_damage_ratios.txt
+RESULT:1,2147613.15
+
+[Test 011]
+RITE:011_extract.dat
+DR:011_damage_ratios.txt
+RESULT:1,804375.65
+
+[Test 012]
+RITE:012_extract.dat
+DR:012_damage_ratios.txt
+RESULT:1,0
+
+[Test 013]
+RITE:013_extract.dat
+DR:013_damage_ratios.txt
+RESULT:1,0
+
+[Test 014]
+RITE:014_extract.dat
+DR:014_damage_ratios.txt
+RESULT:1,2000000;2,1608751.31
+
+
+
+
+// *******************************************************
+// *** Treaty Contracts ***
+// *******************************************************
+
+[Test 015]
+RITE:015_extract.dat
+DR:015_damage_ratios.txt
+RESULT:-2,2000000
+
+//Hours Clause
+[Test 017]
+RITE:017_extract.dat
+DR:017_damage_ratios.txt
+RESULT:-1,35000;-2,97500
+
+//Hours Clause, Reinstatements
+[Test 018]
+RITE:018_extract.dat
+DR:018_damage_ratios.txt
+RESULT:-1,167750;-2,50000

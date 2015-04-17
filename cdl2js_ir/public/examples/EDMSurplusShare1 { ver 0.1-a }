@@ -1,0 +1,13 @@
+Product EDMSurplusShare1 
+  Declarations
+      Required Parameters are (Number, Name, Insured, Currency, Inception, Expiration, Attachment Basis, Subject, Schedule[], Cession[])
+      Optional Parameters are (AttachPt[], RiskLimit[], CoveredAndPlaced[],OccLimitLayerHeight, Producer, Premium, UserId1, UserId2)
+	  Type is {Surplus Share Treaty}
+      CoveredAndPlaced[] is [100,...] //initializes every entry of the vector to 100
+      AttachPt[] is [0,...]
+      RiskLimit[] is [Unlimited,...]
+	  OccLimitLayerHeight is Unlimited
+  Covers 
+    OccLimCover: 100% Share of OccLimitLayerHeight on Cession[*] //Subject is sum of all Cessions
+    Cession[]: CoveredAndPlaced[] % Share of RiskLimit[] xs AttachPt[] to Schedule[] per risk
+	

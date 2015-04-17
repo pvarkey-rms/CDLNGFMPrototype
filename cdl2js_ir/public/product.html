@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>product.coffee</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>product.coffee</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>Pattern matching routines to create merged view of CDL product instance.</p>
+<p>Return product file name and version from cdl text</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="title">productFile</span></span> = (text) -&gt;
+    pattern = <span class="regexp">/\sproduct\s+is\s+(.*)/i</span>
+    matches = pattern.exec text
+    matches?[<span class="number">1</span>] <span class="keyword">or</span> <span class="keyword">throw</span> <span class="string">'Expected product filename'</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Return all declarations in text as a single string</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="title">declarationText</span></span> = (text) -&gt;
+    pattern = <span class="regexp">/declarations([\s|\S]*)covers/i</span>
+    matches = pattern.exec( text )</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>if no match, append &#39;covers&#39; and try again</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    matches <span class="keyword">or</span>= pattern.exec( text + <span class="string">"\ncovers"</span>)
+    matches?[<span class="number">1</span>] <span class="keyword">or</span> <span class="string">''</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Return true if text is CDL of a product instance</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="title">isProductInstance</span></span> = (text) -&gt;
+    pattern = <span class="regexp">/^contract\s+declarations[\s|\S]+product\s+is\s+/i</span>
+    pattern.test text</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Return list of parameter names specified in product definition</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="title">formalParams</span></span> = (text) -&gt;
+    pattern = <span class="regexp">/parameters\s+are\s+\((.*)\)/i</span>
+    matches = pattern.exec text
+    <span class="keyword">return</span> [] <span class="keyword">unless</span> matches?[<span class="number">1</span>]
+    arr = matches[<span class="number">1</span>].split <span class="regexp">/,/</span>
+    _.map arr, (e) -&gt; e.trim()    <span class="comment"># remove spaces before and after each param</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Return list of [name, value] found in text for each name in formal params</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="title">actualParams</span></span> = (formal, text ) -&gt;
+    lines = text.split(<span class="string">'\n'</span>)
+    pattern = <span class="regexp">/(.*)(is|are)(.*)/i</span>
+    _.reduce(
+      lines
+      , (accum, line) -&gt;
+          matches = pattern.exec line
+          <span class="keyword">return</span> accum <span class="keyword">unless</span> matches?[<span class="number">3</span>]
+          name = matches[<span class="number">1</span>].trim()
+          <span class="keyword">return</span> accum <span class="keyword">unless</span> name <span class="keyword">in</span> formal
+          accum.push [ name, matches[<span class="number">3</span>].trim() ]
+          accum
+      , [] )</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Return CDL text starting from Covers keyword</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="title">bodyOf</span></span> = (text) -&gt;
+    pattern = <span class="regexp">/^(\s*covers\s*[\s|\S]*)$/im</span>
+    matches = pattern.exec text
+    matches?[<span class="number">1</span>] <span class="keyword">or</span> <span class="keyword">throw</span> <span class="string">"Expected 'Covers'"</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Replace parameter names in Product terms &amp; conditions
+with values specified in product instance.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="title">merge</span></span> = ( texts ) -&gt;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Set template to product text starting from &#39;Covers&#39;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    template = bodyOf texts.product</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>formal is the list of parameter names defined by the product</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    formal = formalParams texts.product</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>actual is the list of [name, value] pairs where name is a formal param</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    actual = actualParams( formal, declarationText texts.instance )</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Replace each occurrence of a param name with its value, thruout template</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    body = _.reduce(
+      actual
+      , ((t,k) -&gt; t.replace _.first(k), _.last(k))
+      , template )</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>Set decls to product decls - {ProductName, Parameters} + instance decls</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    decls = declarationText texts.instance</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>Return &#39;Contract&#39; + decls + template</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="string">"Contract\n  Declarations<span class="subst">#{decls}</span><span class="subst">#{body}</span>"</span>
+
+  <span class="function"><span class="title">isWhitespace</span></span> = (str) -&gt;
+    <span class="regexp">/^\s+$/</span>.test str</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

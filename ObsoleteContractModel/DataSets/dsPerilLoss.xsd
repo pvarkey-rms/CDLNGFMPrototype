@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPerilLoss" targetNamespace="http://tempuri.org/PerilLossDs.xsd" xmlns:mstns="http://tempuri.org/PerilLossDs.xsd" xmlns="http://tempuri.org/PerilLossDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPerilLoss" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsPerilLoss" msprop:Generator_UserDSName="dsPerilLoss">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PerilLoss" msprop:Generator_TableClassName="PerilLossDataTable" msprop:Generator_TableVarName="tablePerilLoss" msprop:Generator_TablePropName="PerilLoss" msprop:Generator_RowDeletingName="PerilLossRowDeleting" msprop:Generator_UserTableName="PerilLoss" msprop:Generator_RowChangingName="PerilLossRowChanging" msprop:Generator_RowEvHandlerName="PerilLossRowChangeEventHandler" msprop:Generator_RowDeletedName="PerilLossRowDeleted" msprop:Generator_RowEvArgName="PerilLossRowChangeEvent" msprop:Generator_RowChangedName="PerilLossRowChanged" msprop:Generator_RowClassName="PerilLossRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PerilID" msprop:Generator_ColumnVarNameInTable="columnPerilID" msprop:Generator_ColumnPropNameInRow="PerilID" msprop:Generator_ColumnPropNameInTable="PerilIDColumn" msprop:Generator_UserColumnName="PerilID" type="xs:int" minOccurs="0" />
+              <xs:element name="ExposureID" msprop:Generator_ColumnVarNameInTable="columnExposureID" msprop:Generator_ColumnPropNameInRow="ExposureID" msprop:Generator_ColumnPropNameInTable="ExposureIDColumn" msprop:Generator_UserColumnName="ExposureID" type="xs:string" minOccurs="0" />
+              <xs:element name="LossRate" msprop:Generator_ColumnVarNameInTable="columnLossRate" msprop:Generator_ColumnPropNameInRow="LossRate" msprop:Generator_ColumnPropNameInTable="LossRateColumn" msprop:Generator_UserColumnName="LossRate" type="xs:double" minOccurs="0" />
+              <xs:element name="Exposure" msprop:Generator_ColumnVarNameInTable="columnExposure" msprop:Generator_ColumnPropNameInRow="Exposure" msprop:Generator_ColumnPropNameInTable="ExposureColumn" msprop:Generator_UserColumnName="Exposure" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

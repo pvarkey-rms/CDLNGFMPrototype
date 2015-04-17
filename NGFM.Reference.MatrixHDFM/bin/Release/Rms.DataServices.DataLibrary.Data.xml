@@ -1,0 +1,1042 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rms.DataServices.DataLibrary.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Rms.DataServices.DataLibrary.Data.Account">
+            <summary>
+            Account class
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.Node">
+            <summary>
+            The base class for all types of nodes
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Node.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Node.Name">
+            <summary>
+            Gets or sets the name of the node.
+            </summary>
+            <value>
+            The name of the node.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Node.Type">
+            <summary>
+            Gets or sets the type of the node.
+            </summary>
+            <value>
+            The type of the node.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Node.Level">
+            <summary>
+            Gets or sets the node level.
+            </summary>
+            <value>
+            The node level.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Node.HasChild">
+            <summary>
+            Gets or sets a value indicating whether this instance has child.
+            </summary>
+            <value>
+              <c>true</c> if this instance has child; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Node.ExpSummary">
+            <summary>
+            Gets or sets the exp summary.
+            </summary>
+            <value>
+            The exp summary.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Node.SnapshotDate">
+            <summary>
+            Gets or sets the snapshot date.
+            </summary>
+            <value>
+            The snapshot date.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Node.IsNew">
+            <summary>
+            Gets or sets a value indicating whether [is new].
+            </summary>
+            <value>
+              <c>true</c> if [is new]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Account.Number">
+            <summary>
+            Gets or sets the number.
+            </summary>
+            <value>
+            The number.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Account.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Account.AccountManagerName">
+            <summary>
+            Gets or sets the name of the account manager.
+            </summary>
+            <value>
+            The name of the account manager.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Account.InsurerPartyId">
+            <summary>
+            Gets or sets the insurer party unique identifier.
+            </summary>
+            <value>
+            The insurer party unique identifier.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Account.Insurer">
+            <summary>
+            Gets or sets the insurer.
+            </summary>
+            <value>
+            The insurer.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Account.ImportSetID">
+            <summary>
+            Gets or sets the import set unique identifier.
+            </summary>
+            <value>
+            The import set unique identifier.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Account.ExternalSourceID">
+            <summary>
+            Gets or sets the external source unique identifier.
+            </summary>
+            <value>
+            The external source unique identifier.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.Artifact">
+            <summary>
+            Artifact class
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Artifact.FileSize">
+            <summary>
+            Gets or sets the size of the file.
+            </summary>
+            <value>
+            The size of the file.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Artifact.CreationDate">
+            <summary>
+            Gets or sets the creation date.
+            </summary>
+            <value>
+            The creation date.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.CedantExposure">
+            <summary>
+            Cedant Exposure class
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.Exposure">
+            <summary>
+            Exposure class
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Exposure.ExposedPartyId">
+            <summary>
+            Gets or sets the exposed party unique identifier.
+            </summary>
+            <value>
+            The exposed party unique identifier.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Exposure.ExposedParty">
+            <summary>
+            Gets or sets the exposed party.
+            </summary>
+            <value>
+            The exposed party.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.AssetTypeID">
+            <summary>
+            Gets or sets the asset type ID.
+            </summary>
+            <value>
+            The asset type ID.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.IsDeleted">
+            <summary>
+            Gets or sets a value indicating whether this instance is deleted.
+            </summary>
+            <value>
+            <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.CreateUserID">
+            <summary>
+            Gets or sets the create user ID.
+            </summary>
+            <value>
+            The create user ID.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.CreateDate">
+            <summary>
+            Gets or sets the create date.
+            </summary>
+            <value>
+            The create date.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.HasContracts">
+            <summary>
+            Gets or sets a value indicating whether this instance has contracts.
+            </summary>
+            <value>
+            <c>true</c> if this instance has contracts; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.PortfolioDescription">
+            <summary>
+            Gets or sets the portfolio desc.
+            </summary>
+            <value>
+            The portfolio desc.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.UserId">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.PortfolioType">
+            <summary>
+            Gets or sets the type of the portfolio.
+            </summary>
+            <value>
+            The type of the portfolio.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.WhatIfTag">
+            <summary>
+            Gets or sets the what if tag.
+            </summary>
+            <value>
+            The what if tag.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.NumberOfContracts">
+            <summary>
+            Gets or sets the number of contracts.
+            </summary>
+            <value>
+            The number of contracts.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.Tiv">
+            <summary>
+            Gets or sets the tiv.
+            </summary>
+            <value>
+            The tiv.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantExposure.ExposedLimit">
+            <summary>
+            Gets or sets the exposed limit.
+            </summary>
+            <value>
+            The exposed limit.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.CedantProject">
+            <summary>
+            Class for CedantProject Project
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantProject.NumOfCedantExposures">
+            <summary>
+            Gets or sets the num of cedant exposures.
+            </summary>
+            <value>
+            The num of cedant exposures.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantProject.NumOfContracts">
+            <summary>
+            Gets or sets the num of contracts.
+            </summary>
+            <value>
+            The num of contracts.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantProject.HasPrograms">
+            <summary>
+            Gets or sets a value indicating whether this instance has programs.
+            </summary>
+            <value>
+            <c>true</c> if this instance has programs; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.CedantProject.HasCedantExposure">
+            <summary>
+            Gets or sets a value indicating whether this instance has cedant exposure.
+            </summary>
+            <value>
+            <c>true</c> if this instance has cedant exposure; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.Contract">
+            <summary>
+            Class for Contract
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.ContractType">
+            <summary>
+            Gets or sets the type of the contract.
+            </summary>
+            <value>
+            The type of the contract.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.InceptionDate">
+            <summary>
+            Gets or sets the inception date.
+            </summary>
+            <value>
+            The inception date.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.ExpirationDate">
+            <summary>
+            Gets or sets the expiration date.
+            </summary>
+            <value>
+            The expiration date.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.InsuredParty">
+            <summary>
+            Gets or sets the insured party.
+            </summary>
+            <value>
+            The insured party.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.InsurerParty">
+            <summary>
+            Gets or sets the insurer party.
+            </summary>
+            <value>
+            The insurer party.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.ProducerParty">
+            <summary>
+            Gets or sets the producer party.
+            </summary>
+            <value>
+            The producer party.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.UnderWriter">
+            <summary>
+            Gets or sets the under writer.
+            </summary>
+            <value>
+            The under writer.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.Branch">
+            <summary>
+            Gets or sets the branch.
+            </summary>
+            <value>
+            The branch.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.ExposedLimit">
+            <summary>
+            Gets or sets the exposed limit.
+            </summary>
+            <value>
+            The exposed limit.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.NotionalLimit">
+            <summary>
+            Gets or sets the notional limit.
+            </summary>
+            <value>
+            The notional limit.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.HasSchedule">
+            <summary>
+            Gets or sets a value indicating whether this instance has schedule.
+            </summary>
+            <value>
+            <c>true</c> if this instance has schedule; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.HasWhatIf">
+            <summary>
+            Gets or sets a value indicating whether this instance has what if tag.
+            </summary>
+            <value>
+            <c>true</c> if this instance has what if tag; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.HasCedantExposure">
+            <summary>
+            Gets or sets a value indicating whether this instance has cedant exposure.
+            </summary>
+            <value>
+            <c>true</c> if this instance has cedant exposure; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.Tiv">
+            <summary>
+            Gets or sets the tiv.
+            </summary>
+            <value>
+            The tiv.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.InsuredPartyId">
+            <summary>
+            Gets or sets the insured party id.
+            </summary>
+            <value>
+            The insured party id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.InsurerPartyId">
+            <summary>
+            Gets or sets the insurer party id.
+            </summary>
+            <value>
+            The insurer party id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.ProducerPartyId">
+            <summary>
+            Gets or sets the producer party id.
+            </summary>
+            <value>
+            The producer party id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.UnderwriterPartyId">
+            <summary>
+            Gets or sets the underwriter party id.
+            </summary>
+            <value>
+            The underwriter party id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Contract.BranchPartyId">
+            <summary>
+            Gets or sets the branch party id.
+            </summary>
+            <value>
+            The branch party id.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.EDM">
+            <summary>
+            EDM class
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.EDM.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.ExposureType">
+            <summary>
+            To define type of exposure in the input
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ExposureType.Contract">
+            <summary>
+            The contract
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ExposureType.CedantExposure">
+            <summary>
+            The cedant exposure
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ExposureType.Program">
+            <summary>
+            The program
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ExposureType.Portfolio">
+            <summary>
+            The portfolio
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ExposureType.WhatIfContract">
+            <summary>
+            The what if contract
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ExposureType.CedantProject">
+            <summary>
+            The cedant project
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.ExposureTypeEnum">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ExposureTypeEnum.Portfolio">
+            <summary>
+            The portfolio
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ExposureTypeEnum.Contract">
+            <summary>
+            The contract
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ExposureTypeEnum.RiteSchedule">
+            <summary>
+            The rite schedule
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ExposureTypeEnum.CedantExposure">
+            <summary>
+            The cedant exposure
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.Output">
+            <summary>
+            Class to represent node output
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Output.TotalRecords">
+            <summary>
+            Gets or sets the total records.
+            </summary>
+            <value>
+            The total records.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Output.Nodes">
+            <summary>
+            Gets or sets the nodes.
+            </summary>
+            <value>
+            The nodes.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.NodeType">
+            <summary>
+            Determines the type of node for the given output
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.None">
+            <summary>
+            The none
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.Portfolio">
+            <summary>
+            The portfolio
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.Analysis">
+            <summary>
+            The analysis
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.Contract">
+            <summary>
+            The contract
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.Program">
+            <summary>
+            The program
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.CedantProject">
+            <summary>
+            The cedant projects
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.Hierarchy">
+            <summary>
+            The hierarchy
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.Schedule">
+            <summary>
+            The schedule
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.Artifact">
+            <summary>
+            The artifact
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.Account">
+            <summary>
+            The account
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.CedantExposure">
+            <summary>
+            The cedant exposure
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.ImportedLoss">
+            <summary>
+            The imported loss
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.WhatIfContract">
+            <summary>
+            The what if contract
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.Label">
+            <summary>
+            The label
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.CedantContract">
+            <summary>
+            The cedant contract
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.ProgramContract">
+            <summary>
+            The program contract
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.Result">
+            <summary>
+            The result
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.RiteSchedule">
+            <summary>
+            The rite schedule
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.NodeType.EDM">
+            <summary>
+            The edm
+            </summary>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.PathOutput">
+            <summary>
+            Path class (to be deprecated)
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.PathOutput.Path">
+            <summary>
+            Gets or sets the path.
+            </summary>
+            <value>
+            The path.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.PathOutput.NodeDetail">
+            <summary>
+            Gets or sets the node detail.
+            </summary>
+            <value>
+            The node detail.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.Portfolio">
+            <summary>
+            Portfolio class output object
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Portfolio.Description">
+            <summary>
+            Gets or sets the portfolio desc.
+            </summary>
+            <value>
+            The portfolio desc.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Portfolio.UserId">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Portfolio.CreateDate">
+            <summary>
+            Gets or sets the create date.
+            </summary>
+            <value>
+            The create date.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Portfolio.PortfolioType">
+            <summary>
+            Gets or sets the type of the portfolio.
+            </summary>
+            <value>
+            The type of the portfolio.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Portfolio.NumOfContracts">
+            <summary>
+            Gets or sets the num of contracts.
+            </summary>
+            <value>
+            The num of contracts.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Portfolio.TIV">
+            <summary>
+            Gets or sets the tiv.
+            </summary>
+            <value>
+            The tiv.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Portfolio.NotionalLimit">
+            <summary>
+            Gets or sets the notional limit.
+            </summary>
+            <value>
+            The notional limit.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Portfolio.ExposedLimit">
+            <summary>
+            Gets or sets the exposed limit.
+            </summary>
+            <value>
+            The exposed limit.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Portfolio.WhatIfTag">
+            <summary>
+            Gets or sets the what if tag.
+            </summary>
+            <value>
+            The what if tag.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.Program">
+            <summary>
+            For programs under cedant view
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Program.HasContracts">
+            <summary>
+            Gets or sets a value indicating whether this instance has contracts.
+            </summary>
+            <value>
+            <c>true</c> if this instance has contracts; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.Reference">
+            <summary>
+            Reference class output object
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Reference.CreateDate">
+            <summary>
+            Gets or sets the create time.
+            </summary>
+            <value>
+            The create time.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.RITESchedule">
+            <summary>
+            RITE Schedule
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.RITESchedule.ParentId">
+            <summary>
+            Gets or sets the parent unique identifier.
+            </summary>
+            <value>
+            The parent unique identifier.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.RITESchedule.NumOfRits">
+            <summary>
+            Gets or sets the num of rits.
+            </summary>
+            <value>
+            The num of rits.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.RITESchedule.NumOfContracts">
+            <summary>
+            Gets or sets the num of contracts.
+            </summary>
+            <value>
+            The num of contracts.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.RITESchedule.Tiv">
+            <summary>
+            Gets or sets the tiv.
+            </summary>
+            <value>
+            The tiv.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.Schedule">
+            <summary>
+            Schedule class output object
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Schedule.NumOfRits">
+            <summary>
+            Gets or sets the num of rits.
+            </summary>
+            <value>
+            The num of rits.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Schedule.NumOfContracts">
+            <summary>
+            Gets or sets the num of contracts.
+            </summary>
+            <value>
+            The num of contracts.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Schedule.Tiv">
+            <summary>
+            Gets or sets the tiv.
+            </summary>
+            <value>
+            The tiv.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.Tree">
+            <summary>
+            Tree class (for custom and default tree views)
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Tree.TreeId">
+            <summary>
+            Gets or sets the tree id.
+            </summary>
+            <value>
+            The tree id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Tree.TreeName">
+            <summary>
+            Gets or sets the name of the tree.
+            </summary>
+            <value>
+            The name of the tree.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Tree.ViewType">
+            <summary>
+            Gets or sets the type of the view.
+            </summary>
+            <value>
+            The type of the view.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Tree.IsDefault">
+            <summary>
+            Gets or sets a value indicating whether this instance is default.
+            </summary>
+            <value>
+            <c>true</c> if this instance is default; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Tree.TreeLevels">
+            <summary>
+            Gets or sets the tree levels.
+            </summary>
+            <value>
+            The tree levels.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.Tree.UserId">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.TreeLevels">
+            <summary>
+            Showing different levels of <ref>Tree</ref>
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.TreeLevels.Level">
+            <summary>
+            Gets or sets the level.
+            </summary>
+            <value>
+            The level.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.TreeLevels.TreeAttribute">
+            <summary>
+            Gets or sets the tree attribute.
+            </summary>
+            <value>
+            The tree attribute.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.TreeNode">
+            <summary>
+            Object for ContractHierarchySelectByViewType SP
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.TreeNode.ContractHierarchyId">
+            <summary>
+            Gets or sets the contract hierarchy id.
+            </summary>
+            <value>
+            The contract hierarchy id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.TreeNode.ContractHierarchyName">
+            <summary>
+            Gets or sets the name of the contract hierarchy.
+            </summary>
+            <value>
+            The name of the contract hierarchy.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.TreeNode.LevelNum">
+            <summary>
+            Gets or sets the level num.
+            </summary>
+            <value>
+            The level num.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.TreeNode.ContractAttributeName">
+            <summary>
+            Gets or sets the name of the contract attribute.
+            </summary>
+            <value>
+            The name of the contract attribute.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.TreeNode.ViewTypeId">
+            <summary>
+            Gets or sets the view type id.
+            </summary>
+            <value>
+            The view type id.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.TreeNode.IsEditable">
+            <summary>
+            Gets or sets a value indicating whether this instance is editable.
+            </summary>
+            <value>
+            <c>true</c> if this instance is editable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.TreeOutput">
+            <summary>
+            Tree output class, main class encapsulating all output objects
+            </summary>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.TreeOutput.TotalRecords">
+            <summary>
+            Gets or sets the total records.
+            </summary>
+            <value>
+            The total records.
+            </value>
+        </member>
+        <member name="P:Rms.DataServices.DataLibrary.Data.TreeOutput.Nodes">
+            <summary>
+            Gets or sets the nodes.
+            </summary>
+            <value>
+            The nodes.
+            </value>
+        </member>
+        <member name="T:Rms.DataServices.DataLibrary.Data.ViewType">
+            <summary>
+            Enumeration for different types of views
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ViewType.None">
+            <summary>
+            The none
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ViewType.Portfolio">
+            <summary>
+            The portfolio
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ViewType.Contract">
+            <summary>
+            The contract
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ViewType.Cedant">
+            <summary>
+            The cedant
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ViewType.Account">
+            <summary>
+            The account
+            </summary>
+        </member>
+        <member name="F:Rms.DataServices.DataLibrary.Data.ViewType.Reference">
+            <summary>
+            The reference
+            </summary>
+        </member>
+    </members>
+</doc>

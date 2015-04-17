@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBDC38B1-69DA-4EF9-A38C-E7BB241D9D3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NGFMReference</RootNamespace>
+    <AssemblyName>NGFMReference</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\lib\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Noesis.Javascript, Version=0.0.0.0, Culture=neutral, PublicKeyToken=ae36d046c7f89f85, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdParty\Noesis.Javascript v0.7 - Binaries\.Net4.0\x64\Noesis.Javascript.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Analytics.DataService.Zip">
+      <HintPath>..\..\..\..\LossAnalytics\lib\Rms.Analytics.DataService.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.Analytics.Module.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Rms.Analytics.Module.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5353c9f66d4ed1ec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rms.DataServices.DataObjects">
+      <HintPath>..\..\..\..\NGDataServices\Lib\Rms.DataServices.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contract Building and Parsing\JavascriptParser.cs" />
+    <Compile Include="Execution\AllocatedLossAdaptor.cs" />
+    <Compile Include="Execution\GraphExecuterAdaptor.cs" />
+    <Compile Include="Execution\GULossAdaptor.cs" />
+    <Compile Include="Execution\HoursClauseWindowGenerator.cs" />
+    <Compile Include="Execution\ReferenceResultOutput.cs" />
+    <Compile Include="Exposure\Exposure Model\ExtractRITCharInfo.cs" />
+    <Compile Include="Graph Building\AutoGraphBuilder.cs" />
+    <Compile Include="Fixed Graphs\Fixed Matrix Graphs\FixedMatrixGraph.cs" />
+    <Compile Include="Fixed Graphs\Fixed Matrix Graphs\FixedMatrixGraphAmlin1.cs" />
+    <Compile Include="Fixed Graphs\Fixed Matrix Graphs\FixedMatrixGraphAmlin2.cs" />
+    <Compile Include="Fixed Graphs\Fixed Matrix Graphs\FixedMatrixGraphJPTY.cs" />
+    <Compile Include="Fixed Graphs\Fixed Matrix Graphs\FixedMatrixGraphPerRisk.cs" />
+    <Compile Include="Fixed Graphs\Fixed Node Graphs\FixedMatrixGraphAmlin0.cs" />
+    <Compile Include="Graph Building\AutoMatrixGraphBuilder.cs" />
+    <Compile Include="Graph Building\DescriptiveGraphBuilder.cs" />
+    <Compile Include="Graph Building\DescriptiveGraph.cs" />
+    <Compile Include="Graph Building\PrimaryContractNodeBuilder.cs" />
+    <Compile Include="Graph Building\NodeTree.cs" />
+    <Compile Include="Graph Building\SubjectTreeBuilder.cs" />
+    <Compile Include="Loss Generation\AggNumSamplesGenerator.cs" />
+    <Compile Include="Loss Generation\SubSamplingAnalysisSetting.cs" />
+    <Compile Include="Loss Generation\EventLoss.cs" />
+    <Compile Include="Graph Building\ScheduleTreeBuilder.cs" />
+    <Compile Include="Graph Building\ScheduleInput.cs" />
+    <Compile Include="Loss Generation\FactorGenerator.cs" />
+    <Compile Include="Loss Generation\PLTGenerator.cs" />
+    <Compile Include="Loss Generation\Period.cs" />
+    <Compile Include="Contract Building and Parsing\ContractExtractor.cs" />
+    <Compile Include="Graph and Contract Model\Contract Model\Cover.cs" />
+    <Compile Include="Graph and Contract Model\Contract Model\Deductible.cs" />
+    <Compile Include="Graph and Contract Model\Contract Model\ExposureTypeCollection.cs" />
+    <Compile Include="Graph and Contract Model\Contract Model\Limit.cs" />
+    <Compile Include="Graph and Contract Model\Contract Model\Value.cs" />
+    <Compile Include="Graph Building\GraphCache.cs" />
+    <Compile Include="Fixed Graphs\Fixed Node Graphs\StepPolicyGraph.cs" />
+    <Compile Include="Fixed Graphs\Fixed Node Graphs\FixedGraphOverlapSubperil2.cs" />
+    <Compile Include="Graph Building\HasseDiagramGenerator.cs" />
+    <Compile Include="Exposure\PartitionDataAdpator.cs" />
+    <Compile Include="Exposure\Exposure Model\PositionData.cs" />
+    <Compile Include="Execution\TermFunctionalEngine.cs" />
+    <Compile Include="Exposure\ExposureDataExtractor.cs" />
+    <Compile Include="Fixed Graphs\Fixed Node Graphs\FixedGraphOverlapSubperil.cs" />
+    <Compile Include="Fixed Graphs\Fixed Node Graphs\FixedGraph3.cs" />
+    <Compile Include="Fixed Graphs\Fixed Node Graphs\FixedTreaty1.cs" />
+    <Compile Include="Graph and Contract Model\Graph Model\PrimaryGraph.cs" />
+    <Compile Include="Graph and Contract Model\Graph Model\TreatyGraph.cs" />
+    <Compile Include="Graph and Contract Model\Contract Model\HoursClause.cs" />
+    <Compile Include="Graph and Contract Model\Contract Model\TimeWindow.cs" />
+    <Compile Include="Execution\GraphAllocation.cs" />
+    <Compile Include="Graph Building\GraphNodeBuilder.cs" />
+    <Compile Include="Fixed Graphs\Fixed Node Graphs\FixedGraphOverlap.cs" />
+    <Compile Include="Graph and Contract Model\Graph Model\AtomicRITE.cs" />
+    <Compile Include="Graph and Contract Model\Contract Model\COLCollection.cs" />
+    <Compile Include="Execution\CoverNodeFunctionalEngine.cs" />
+    <Compile Include="Execution\DedFunctionalEngine.cs" />
+    <Compile Include="Exposure\ExposureDataAdaptor.cs" />
+    <Compile Include="Contract Building and Parsing\FinancialTermExtractor.cs" />
+    <Compile Include="Fixed Graphs\Fixed Node Graphs\FixedGraph2.cs" />
+    <Compile Include="Graph and Contract Model\Contract Model\Declarations.cs" />
+    <Compile Include="Exposure\Exposure Model\RITCharacteristic.cs" />
+    <Compile Include="Graph Building\GraphBuilder.cs" />
+    <Compile Include="Graph Building\GraphPostProcess.cs" />
+    <Compile Include="Execution\LimitFunctionalEngine.cs" />
+    <Compile Include="Graph and Contract Model\Graph Model\CoverNode.cs" />
+    <Compile Include="Graph and Contract Model\Graph Model\Graph.cs" />
+    <Compile Include="Fixed Graphs\Fixed Node Graphs\FixedGraph1.cs" />
+    <Compile Include="Execution\GraphExecuter.cs" />
+    <Compile Include="Execution\GUInputEngine.cs" />
+    <Compile Include="Loss Generation\GUInputGenerator.cs" />
+    <Compile Include="Execution\InteractionEngine.cs" />
+    <Compile Include="Execution\InteractionObject.cs" />
+    <Compile Include="Graph and Contract Model\Graph Model\GraphNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Exposure\Exposure Model\RITE.cs" />
+    <Compile Include="Exposure\Exposure Model\Schedule.cs" />
+    <Compile Include="Graph and Contract Model\Contract Model\Subject.cs" />
+    <Compile Include="Graph and Contract Model\Graph Model\TermNode.cs" />
+    <Compile Include="ReferencePrototype.cs" />
+    <Compile Include="Contract Building and Parsing\TermParser.cs" />
+    <Compile Include="Loss Generation\VectorGUInputGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HasseManager\HasseManager.csproj">
+      <Project>{0042d5e3-1937-4612-9f3b-2d277c9046b6}</Project>
+      <Name>HasseManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NGFM.Reference.MatrixHDFM\NGFM.Reference.MatrixHDFM.csproj">
+      <Project>{ae80708e-2bbe-4103-b62d-2dd523c78902}</Project>
+      <Name>NGFM.Reference.MatrixHDFM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.CDLModel\RMS.ContractObjectModel.csproj">
+      <Project>{ec1cde85-fd21-4abd-ab56-d0b8fc1d672e}</Project>
+      <Name>RMS.ContractObjectModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

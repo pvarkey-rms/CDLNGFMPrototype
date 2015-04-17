@@ -1,0 +1,18 @@
+Contract 
+  Declarations
+      Subject is Acme { account is 1101 }
+      Inception is 5 Jun 2014
+      Expiration is 4 Jun 2015
+  Covers 
+    100% share
+  Deductibles
+    1% RCV
+    2% RCV Covered
+    3% RCV Affected
+    4% Replacement Cost
+    5.1% Replacement Cost
+    6% Replacement Cost franchise
+    7% Replacement Cost aggregate
+    8% Replacement Cost by Wind
+    9% Replacement Cost to Structures 
+    10% Replacement Cost Affected for Contents

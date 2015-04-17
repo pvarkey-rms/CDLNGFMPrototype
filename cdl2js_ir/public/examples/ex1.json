@@ -1,0 +1,84 @@
+{ "Name" : "Contract",
+  "Declarations" : [
+
+    { "Key" : "ContractType",
+      "Value" :  "Insurance",
+      "Type" : "Lookup"
+    },
+
+    { "Key" : "Currency",
+      "Value" :  "USD",
+      "Type" : "Lookup"
+    },
+
+    { "Key" : "CoverageType",
+      "Value" :  "Loss",
+      "Type" : "Lookup"
+    },
+
+    { "Key" : "Schedule",
+      "Value" :  "Acme",
+      "Type" : "String"
+    },
+
+    { "Key" : "CauseOfLoss",
+      "Value" :  "HU",
+      "Type" : "Lookup"
+    },
+
+    { "Key" : "Inception",
+      "Value" :  "5 Jun 2014",
+      "Type" : "Date"
+    },
+    
+    { "Key" : "Expiration",
+      "Value" :  "4 Jun 2015",
+      "Type" : "Date"
+    },
+
+    { "Key" : "PolicyNum",
+      "Value" :  "A5059-3",
+      "Type" : "String"
+    } ],
+   "Covers" : [ 
+     [
+	{ "Key" : "Share",
+	  "Value" :  "100%",
+	  "Type" : "Percent"
+	},
+
+	{ "Key" : "TimeBasis",
+	  "Value" :  "Occurrence",
+	  "Type" : "Lookup"
+	},
+
+	{ "Key" : "Limit",
+	  "Value" :  "10000000",
+	  "Type" : "Number"
+	},
+       
+	{ "Key" : "Attachment",
+	  "Value" :  "0",
+	  "Type" : "Number"
+	}
+     ]
+   ],
+   "Sublimits" : [
+    [
+	{ "Key" : "Amount",
+	  "Value" :  "10000",
+	  "Type" : "Number"
+	},
+	{ "Key" : "TimeBasis",
+	  "Value" :  "Occurrence",
+	  "Type" : "Lookup"
+	},
+
+	{ "Key" : "CauseOfLoss",
+	  "Value" :  "Wind",
+	  "Type" : "Lookup"
+	}
+    ]
+   ],
+   "Deductibles": []
+}

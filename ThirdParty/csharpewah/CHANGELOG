@@ -1,0 +1,35 @@
+0.2.5 (May 21st 2013)
+  Fixed bug with addStreamOfNegatedDirtyWords (Vicent Marti)
+
+0.2.4 (May 15th 2013)
+  Fixed bug with Intersects (Ciaran Jessup)
+
+0.2.3 (May 14th 2013)
+  Fixed violation of GetHashCode contract (Ciaran Jessup)
+
+0.2.2 (May 13th 2013)
+  Fixed bug with Intersects (ynosa)
+
+
+0.2.1 (April 16th 2013)
+  Clone method does not clone the _Rlw variable
+  Fixed bug in function Not when SizeInBits is not a multiple of 64
+  added method "bitmapOf"
+  made method ToString return something friendlier
+  change the semantics of "equals" so that a Xor is computed (small perf penalty, but nicer in practice)
+  added many unit tests
+  
+
+0.2.0 (April 20th 2012)
+  New lightweight serialization infrastructure (Ciaran Jessup).
+
+0.1.0 (April 19th 2012)
+  New file layout.
+  Fixed a bug in how the cardinality is computed.
+  Made the computation of the cardinality faster.
+
+
+
+Note: A version 0.2.1 was released on May 1st 2012,  but it had
+faulty decoding.
+
